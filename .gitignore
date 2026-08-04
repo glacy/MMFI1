@@ -1,0 +1,18 @@
+# Jupyter Book / MyST build artifacts
+_build/
+.myst/
+.jupyter_cache/
+
+# Python cache and environments
+__pycache__/
+*.py[cod]
+.venv/
+env/
+.env
+.conda/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# OS generated files
+.DS_Store
