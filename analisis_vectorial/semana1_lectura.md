@@ -30,7 +30,7 @@ es una matemática estadounidense cuya investigación fue clave en el desarrollo
 :label: fig-Gladys_West.jpg
 :alt: retrato de Dra. Gladys West
 :align: center
-Dra. Gladys West (1930 - )
+Dra. Gladys West
 ```
 :::
 
