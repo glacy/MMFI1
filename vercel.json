@@ -1,3 +1,13 @@
 {
-  "outputDirectory": "_build/html"
+  "outputDirectory": "_build/html",
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "release/*": true,
+      "dev": true,
+      "v2026.*": true
+    }
+  },
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run vercel-build"
 }
