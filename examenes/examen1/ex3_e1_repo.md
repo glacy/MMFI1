@@ -1,0 +1,1 @@
+Exprese $z=\arccos (2+i)$ en forma $z=x+iy$.

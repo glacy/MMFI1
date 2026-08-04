@@ -1,0 +1,168 @@
+version: 1
+project:
+  toc:
+    - file: programa-curso.md
+    - title: Semana 1
+      children:
+        - file: ./analisis_vectorial/semana1_lectura.md
+        - file: ./analisis_vectorial/semana1_practica.md
+    - title: Semana 2
+      children:
+        - file: ./analisis_vectorial/semana2_lectura.md
+        - file: ./analisis_vectorial/semana2_practica.md
+    - title: Semana 3
+      children:
+        - file: ./analisis_vectorial/semana3_lectura.md
+        - file: ./analisis_vectorial/semana3_practica.md
+    - title: Semana 4
+      children:
+        - file: ./numeros_complejos/semana4_lectura.md
+        - file: ./numeros_complejos/semana4_practica.md
+    - title: Semana 5
+      children:
+        - file: ./numeros_complejos/semana5_lectura.md
+        - file: ./numeros_complejos/semana5_practica.md
+    - title: Semana 6
+      children:
+        - file: ./numeros_complejos/semana6_lectura.md
+        - file: ./numeros_complejos/graficas_funciones_complejas.md
+    - title: Semana 7
+      children:
+        - file: ./numeros_complejos/semana7_lectura.md
+    - title: Semana 8
+      children:
+        - file: ./espacios_vectoriales/semana8_lectura.md
+        - file: ./espacios_vectoriales/semana8_practica.md
+    - title: Semana 9
+      children:
+        - file: ./espacios_vectoriales/semana9_lectura.md
+        - file: ./espacios_vectoriales/semana9_practica.md
+    - title: Semana 10
+      children:
+        - file: ./espacios_vectoriales/semana10_lectura.md
+        - file: ./espacios_vectoriales/semana10_practica.md
+    - title: Semana 11
+      children:
+        - file: ./matrices/semana11_lectura.md
+        - file: ./matrices/semana11_practica.md
+    - title: Semana 12
+      children:
+        - file: ./matrices/semana12_lectura.md
+        - file: ./matrices/semana12_practica.md
+    - title: Semana 13
+      children:
+        - file: ./matrices/semana13_lectura.md
+        - file: ./matrices/semana13_practica.md
+    - title: Semana 14
+      children:
+        - file: ./edps/semana14_lectura.md
+    - title: Semana 15
+      children:
+        - file: ./edps/semana15_lectura.md
+    - file: ./proyecto/proyecto.md
+      hidden: true
+    - file: ./tareas/tarea1/tarea1.md
+      hidden: true
+    - file: ./tareas/tarea1/tarea1_export.md
+      hidden: true
+    - file: ./tareas/tarea2/tarea2.md
+      hidden: true
+    - file: ./tareas/tarea2/tarea2_export.md
+      hidden: true
+    - file: ./tareas/tarea3/tarea3.md
+      hidden: true
+    - file: ./tareas/tarea3/tarea3_export.md
+      hidden: true
+    - file: ./tareas/tarea4/tarea4.md
+      hidden: true
+    - file: ./tareas/tarea4/tarea4_export.md
+      hidden: true
+    - file: ./examenes/examen1/examen1.md
+      hidden: true
+    - file: ./examenes/examen1/examen1_export.md
+      hidden: true
+    - file: ./examenes/examen1/examen1_repo.md
+      hidden: true
+    - file: ./examenes/examen1/examen1_repo_export.md
+      hidden: true
+    - file: ./examenes/examen2/examen2.md
+      hidden: true
+    - file: ./examenes/examen2/examen2_export.md
+      hidden: true
+  # plugins:
+  #   - type: javascript
+  #     path: markup.mjs
+  title: MMFI1
+  github: https://github.com/glacy/thebe-binder-base
+  jupyter: binder
+  description: Material didáctico del IF3602
+  short_title: ""
+  keywords: []
+  authors:
+    - userId: 1eYInOrNXeRckmzXIMkyZNoAA7k2
+      nameParsed:
+        literal: Gerardo Lacy Mora
+        given: Gerardo
+        family: Lacy Mora
+      name: Gerardo Lacy Mora
+      corresponding: true
+      email: glacy@itcr.ac.cr
+      roles:
+        - Writing – review & editing
+      affiliations:
+        - Licenciatura en Ingeniería Física, Escuela de Física
+      id: contributors-generated-uid-0
+  affiliations:
+    - id: ITCR
+      name: ITCR
+    - id: Licenciatura en Ingeniería Física, Escuela de Física
+      name: Licenciatura en Ingeniería Física, Escuela de Física
+  open_access: true
+  # id: a7oQQocM3jAjAuctG9ns
+  # remote: a7oQQocM3jAjAuctG9ns
+  # references:
+  #   scipy: https://docs.scipy.org/doc/scipy/  
+  #   sympy: https://docs.sympy.org/latest/
+  #   matplotlib: https://matplotlib.org/stable/
+  #   numpy: https://numpy.org/doc/2.2/reference/generated/
+site:
+  title: MMFI1
+  options:
+    logo: site_logo.svg
+    logo_dark: site_logo_dark.svg
+    search: true
+  actions:
+    - title: tecDigital
+      url: https://tecdigital.tec.ac.cr/dotlrn
+    - title: Google Colab
+      url: https://colab.research.google.com/?authuser=0#create=true
+    - title: MyST
+      url: https://mystmd.org/guide/quickstart
+  # parts:
+  #   footer: footer.md
+  nav:
+    - title: Proyecto
+      children:
+      - title: Instrucciones
+        url: /proyecto
+    - title: Tareas
+      children:
+      - title: Tarea 1 
+        url: /tarea1
+      - title: Tarea 2 
+        url: /tarea2 
+      - title: Tarea 3 
+        url: /tarea3 
+      - title: Tarea 4 
+        url: /tarea4 
+    - title: Exámenes
+      children:
+      - title: Examen 1
+        url: /examen1
+      - title: Examen 1 (extraordinario)
+        url: /examen1-repo
+      - title: Examen 2
+        url: /examen2
+  domains:
+    - glacy-mmfi1.curve.space
+  template: book-theme

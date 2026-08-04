@@ -1,0 +1,1 @@
+Exprese $z=\arcsin (3)$ en forma $z=x+iy$.

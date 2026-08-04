@@ -1,0 +1,28 @@
+defaultpen(fontsize(14pt));          // Tamaño global de fuente
+size(0,300,IgnoreAspect);
+import graph;
+import math;
+pen c1=rgb(0,39,87);
+pen c2=rgb(255,64,0);
+pair z0=(0,0);
+pair z1=(2,0);
+pair z2=(-1,sqrt(3));
+pair z3=(-1,-sqrt(3));
+draw(scale(2)*unitcircle,gray);
+xaxis("$x$",xmax=3.5,above=true);
+yaxis("$y$",ymax=3.,ymin=-3.,above=true);
+label("$(1,\sqrt{3})$",z2,NW);
+label("$(-1,-\sqrt{3})$",z3,SW);
+label("$(2,0)$",z1,SE);
+draw(Label("$2$",c1),z1--z0,c1);
+draw(Label("$2$",c1),z0--z2,c1);
+draw(Label("$2$",c1),z3--z0,c1);
+draw(z2--(0,z2.y),c2+dashed);
+draw(z2--z3,c2+dashed);
+label("$\sqrt{3}$",(0,z2.y),E,c2);
+draw(z3--(0,z3.y),c2+dashed);
+label("$-\sqrt{3}$",(0,z3.y),E,c2);
+label("$-1$",(z2.x,0),NW,c2);
+dot(z1);
+dot(z2);
+dot(z3);
