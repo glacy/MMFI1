@@ -4,6 +4,6 @@
     "mystmd": "^1.0.0"
   },
   "scripts": {
-    "vercel-build": "myst build --html"
+    "vercel-build": "myst build --html && cp -r _build/html/* . || true"
   }
 }
