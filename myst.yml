@@ -89,11 +89,8 @@ project:
       hidden: true
     - file: ./examenes/examen2/examen2_export.md
       hidden: true
-  # plugins:
-  #   - type: javascript
-  #     path: markup.mjs
   title: MMFI1
-  github: https://github.com/glacy/thebe-binder-base
+  github: https://github.com/glacy/MMFI1
   jupyter: binder
   description: Material didáctico del IF3602
   short_title: ""
