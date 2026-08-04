@@ -2,14 +2,13 @@
 title: Métodos Matemáticos para Física e Ingeniería I
 description: Introducción, Objetivos, Evaluación, Cronograma
 short_title: ""
-subtitle: II semestre 2025
+subtitle: II semestre 2026
 tags:
   - objetivos
   - evaluacion
   - cronograma
   - introduccion
 subject: IF3602
-thumbnail: thumbnails/metodos_matematicos.png
 downloads:
  - file: ./programa-curso.pdf
    title: programa-curso.pdf
@@ -17,10 +16,6 @@ downloads:
    title: programa-curso.md
 bibliography:
   - my_references.bib
-#exports:
-#  - format: pdf
-#    template: arxiv_two_column
-#    line_numbers: true
 ---
 
 
