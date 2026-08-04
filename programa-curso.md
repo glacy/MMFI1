@@ -139,17 +139,17 @@ La evaluación de carácter sumativo se llevará a cabo por medio de dos exámen
 
     (%)
 
-* - Exámenes parciales (2)
+* - Exámenes parciales (3)
 
   - 60
 
-* - Tareas (4)
+* - Tareas (3)
 
-  - 20
+  - 15
 
 * - Investigación grupal
 
-  - 20
+  - 25
 
 * - Total
 
