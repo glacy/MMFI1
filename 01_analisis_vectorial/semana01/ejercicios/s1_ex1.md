@@ -1,5 +1,17 @@
 ---
 title: Ejercicio 1
+keywords:
+  - producto-punto
+  - producto-cruz
+  - producto-triple
+  - vectores
+  - operaciones-vectoriales
+tags:
+  - operaciones-vectoriales
+  - producto-punto
+  - producto-cruz
+  - producto-triple
+  - calculo-vectorial
 ---
 
 Si 

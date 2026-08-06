@@ -1,5 +1,16 @@
 ---
 title: Ejercicio 5
+keywords:
+  - derivacion-vectorial
+  - coordenadas-polares
+  - vectores-unitarios
+  - derivada-temporal
+tags:
+  - derivacion-vectorial
+  - coordenadas-polares
+  - vectores-unitarios
+  - derivada-temporal
+  - cinematica
 ---
 
 Demuestre que, en coordenadas polares, 

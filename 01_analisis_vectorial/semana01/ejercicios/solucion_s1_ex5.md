@@ -1,5 +1,16 @@
 ---
 title: Solución Ejercicio 5
+keywords:
+  - derivacion-vectorial
+  - coordenadas-polares
+  - vectores-unitarios
+  - derivada-temporal
+tags:
+  - derivacion-vectorial
+  - coordenadas-polares
+  - vectores-unitarios
+  - derivada-temporal
+  - cinematica
 ---
 
 En coordenadas polares $(r, \theta)$, los vectores unitarios se relacionan con los vectores unitarios cartesianos $\hat{\iota}$ y $\hat{\jmath}$ como:

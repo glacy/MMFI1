@@ -1,5 +1,15 @@
 ---
 title: Ejercicio 2
+keywords:
+  - identidad-lagrange
+  - producto-vectorial-doble
+  - demostracion
+  - producto-cruz
+tags:
+  - demostracion
+  - identidad-lagrange
+  - producto-vectorial-doble
+  - producto-cruz
 ---
 
 **Arfken ejercicio 1.5.12 (pág. 31) / Boas ejercicio 6.3.12(b) (pág. 284) / Riley ejercicio 7.9 (pág. 235)**

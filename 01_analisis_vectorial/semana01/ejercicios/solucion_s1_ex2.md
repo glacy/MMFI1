@@ -1,5 +1,15 @@
 ---
 title: Solución Ejercicio 2
+keywords:
+  - identidad-lagrange
+  - producto-vectorial-doble
+  - demostracion
+  - producto-cruz
+tags:
+  - demostracion
+  - identidad-lagrange
+  - producto-vectorial-doble
+  - producto-cruz
 ---
 
 

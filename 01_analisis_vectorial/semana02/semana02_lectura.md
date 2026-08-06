@@ -8,25 +8,25 @@ subject: Cálculo y análisis vectorial - Semana 2
 keywords: [nabla, operador, coordenadas, curvilíneas]
 exports:
  - format: pdf
-   template: arxiv_two_column
-   output: ./semana2_lectura.pdf
-downloads:
-  - file: ./semana2_lectura.md
-    title: semana2_lectura.md
-  - file: ./semana2_lectura.pdf
-    title: semana2_lectura.pdf
-  - file: ./dV_coordenadas_cilindricas.asy
-    title: dV_coordenadas_cilindricas.asy
-  - file: ./coordenadas_esfericas.asy
-    title: coordenadas_esfericas.asy
-  - file: ./dV_coordenadas_esfericas.asy
-    title: dV_coordenadas_esfericas.asy
+   template: curvenote
+   output: ./semana02_lectura.pdf
+# downloads:
+#   - file: ./semana02_lectura.md
+#     title: semana02_lectura.md
+#   - file: ./semana02_lectura.pdf
+#     title: semana02_lectura.pdf
+#   - file: ./dV_coordenadas_cilindricas.asy
+#     title: dV_coordenadas_cilindricas.asy
+#   - file: ./coordenadas_esfericas.asy
+#     title: coordenadas_esfericas.asy
+#   - file: ./dV_coordenadas_esfericas.asy
+#     title: dV_coordenadas_esfericas.asy
 ---
 
 :::{aside} <wiki:Annalisa_Buffa>
 ha hecho contribuciones significativas al desarrollo de métodos numéricos para ecuaciones diferenciales parciales sobre dominios con geometría no trivial, usando técnicas basadas en coordenadas curvilíneas, variedades diferenciables y operadores vectoriales generalizados. Es reconocida por su trabajo en la formulación y análisis de modelos físicos en geometrías complejas, como las que aparecen en mecánica estructural, electrodinámica y biomecánica.
 
-```{figure} ./Annalisa_Buffa.jpg
+```{figure} ./../images/Annalisa_Buffa.jpg
 :label: fig-Annalisa_Buffa.jpg
 :alt: retrato de Dra. Annalisa Buffa
 :align: center
@@ -255,7 +255,7 @@ de acuerdo $$\begin{aligned}
 ### Coordenadas cilíndricas
 
 Las [coordenadas cilíndricas](https://en-m-wikipedia-org.translate.goog/wiki/Cylindrical_coordinate_system?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc) $(\rho, \phi,z)$
-```{figure} ./dV_cilindricas.png
+```{figure} ./../images/dV_cilindricas.png
 :label: fig-dV_cilindricas
 :alt: diferencial de volumen en coordenadas cilíndricas
 :align: center
@@ -269,7 +269,7 @@ x=\rho \cos\phi, \qquad y=\rho \sin \phi, \qquad z=z,
 
 
 donde
-$\rho>0$, $0\leq \phi \leq2\pi$ y $-\infty< z < \infty$. Ver [Figura](#fig-dV_cilindricas)
+$\rho>0$, $0\leq \phi \leq2\pi$ y $-\infty< z < \infty$. Ver [Figura %s](#fig-dV_cilindricas).
 
 :::{note} Factores de escala en coordenadas cilíndricas
 $$h_\rho=1, \quad h_\phi=\rho, \quad h_z=1$$
@@ -287,14 +287,14 @@ Las coordenadas esféricas $(r, \theta, \phi)$  describen un punto en términos 
 
 (Ver [Figura %s](#fig-coordenadas_esfericas))
 
-```{figure} ./coordenadas_esfericas.png
+```{figure} ./../images/coordenadas_esfericas.png
 :label: fig-coordenadas_esfericas
 :alt: Coordenadas esféricas
 :align: center
 Coordenadas esféricas $(r,\theta,\phi)$. Imagen generada con [Asymptote](https://asymptote.sourceforge.io/).
 ```
 
-```{figure} ./dV_esfericas.png
+```{figure} ./../images/dV_esfericas.png
 :label: fig-dV_esfericas
 :alt: Diferencial de volumen en coordenadas esféricas
 :align: center

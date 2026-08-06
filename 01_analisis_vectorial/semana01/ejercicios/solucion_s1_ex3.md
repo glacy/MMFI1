@@ -1,5 +1,15 @@
 ---
 title: Solución Ejercicio 3
+keywords:
+  - producto-triple-escalar
+  - volumen-paralelepipedo
+  - geometria-espacial
+  - visualizacion
+tags:
+  - producto-triple-escalar
+  - volumen-paralelepipedo
+  - geometria-espacial
+  - visualizacion
 ---
 
 El volumen de un paralelepípedo definido por tres vectores $\vec{A}$, $\vec{B}$ y $\vec{C}$ está dado por el valor absoluto del producto triple escalar:

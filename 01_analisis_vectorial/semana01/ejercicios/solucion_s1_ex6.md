@@ -1,5 +1,15 @@
 ---
 title: Solución Ejercicio 6
+keywords:
+  - derivacion-vectorial
+  - coordenadas-polares
+  - derivada-temporal
+  - vectores-dependientes
+tags:
+  - derivacion-vectorial
+  - coordenadas-polares
+  - derivada-temporal
+  - cinematica
 ---
 
 

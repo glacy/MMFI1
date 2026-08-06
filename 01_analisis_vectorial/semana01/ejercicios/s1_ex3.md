@@ -1,5 +1,15 @@
 ---
 title: Ejercicio 3
+keywords:
+  - producto-triple-escalar
+  - volumen-paralelepipedo
+  - geometria-espacial
+  - visualizacion
+tags:
+  - producto-triple-escalar
+  - volumen-paralelepipedo
+  - geometria-espacial
+  - visualizacion
 ---
 
 Considere el paralelepípedo con lados $$\vec{A}=2\hat{\iota}+3\hat{\jmath}+3\hat{\kappa}$$ $$\vec{B}=-\hat{\iota}-3\hat{\jmath}+4\hat{\kappa}$$ y $$\vec{C}=-2\hat{\iota}+3\hat{\jmath}+4\hat{\kappa}$$

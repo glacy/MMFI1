@@ -1,5 +1,16 @@
 ---
 title: Ejercicio 4
+keywords:
+  - momentum-angular
+  - producto-vectorial
+  - rotacion
+  - velocidad-angular
+tags:
+  - momentum-angular
+  - producto-vectorial
+  - rotacion
+  - velocidad-angular
+  - mecanica
 ---
 
 **Arfken ejercicio 1.5.5 (pág. 30)**

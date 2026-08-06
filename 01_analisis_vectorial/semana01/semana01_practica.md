@@ -19,7 +19,6 @@ keywords: [producto, escalar, vector]
 #     title: semana1-practica.md
 #   - file: ./semana1-practica.pdf
 #     title: semana1-practica.pdf
-# abstract: asdsdasdadasdasdasda
 # kernelspec:
 #   name: python3
 #   display_name: "Python 3"

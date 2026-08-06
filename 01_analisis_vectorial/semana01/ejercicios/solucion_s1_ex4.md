@@ -1,5 +1,16 @@
 ---
 title: Solución Ejercicio 4
+keywords:
+  - momentum-angular
+  - producto-vectorial
+  - rotacion
+  - velocidad-angular
+tags:
+  - momentum-angular
+  - producto-vectorial
+  - rotacion
+  - velocidad-angular
+  - mecanica
 ---
 
 Tenemos que
