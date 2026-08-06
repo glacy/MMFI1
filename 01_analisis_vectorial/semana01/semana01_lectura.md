@@ -1,4 +1,4 @@
---- https://mmfi-1-qd1iyh88p-gerardo-s-projects-0ef7eb80.vercel.app/
+---
 title: Operaciones vectoriales   
 description: Operaciones vectoriales 
 short_title: Operaciones vectoriales
