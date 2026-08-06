@@ -10,7 +10,7 @@ tags:
   - introduccion
 subject: IF3602
 downloads:
- - file: ./programa-curso.pdf
+ - file: ./IF3602_Metodos_matematicos_para_fisica_e_ingenieria_I_2026-II.pdf
    title: programa-curso.pdf
  - file: ./programa-curso.md
    title: programa-curso.md
