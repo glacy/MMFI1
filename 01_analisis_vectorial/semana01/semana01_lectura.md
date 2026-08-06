@@ -8,13 +8,13 @@ subject: Cálculo y análisis vectorial - Semana 1
 keywords: [producto, escalar, vector]
 exports:
  - format: pdf
-   template: arxiv_two_column
-   output: ./semana1_lectura.pdf
+   template: curvenote
+   output: ./semana01_lectura.pdf
 downloads:
-  - file: ./semana1_lectura.md
-    title: semana1_lectura.md
-  - file: ./semana1_lectura.pdf
-    title: semana1_lectura.pdf
+  - file: ./semana01_lectura.md
+    title: semana01_lectura.md
+  - file: ./semana01_lectura.pdf
+    title: semana01_lectura.pdf
   - file: ./componentes-cartesianas.asy
     title: componentes-cartesianas.asy
   - file: ./paralelogramo.asy
@@ -23,14 +23,14 @@ downloads:
     title: paralelepipedo.asy
 ---
 
-:::{aside} <wiki:Gladys_West>
-es una matemática estadounidense cuya investigación fue clave en el desarrollo del Sistema de Posicionamiento Global (GPS). Su trabajo consistió en modelar con alta precisión la forma y el comportamiento dinámico de la Tierra, conocida como el geoide, mediante cálculos vectoriales avanzados y procesamiento de datos satelitales. Para esto, fue necesario integrar el uso de productos vectoriales, análisis de trayectorias en espacio tridimensional, y técnicas de diferenciación vectorial para describir el movimiento de satélites y la rotación terrestre.
+:::{aside} <wiki:Anne_L%27Huillier>
+es una física francesa premiada con el Nobel de Física 2023 por sus métodos experimentales que generan pulsos de attosegundos de luz para estudiar la dinámica de electrones en la materia. Su investigación revolucionó la física óptica mediante la generación de armónicos de alta frecuencia en gases, donde el análisis de campos electromagnéticos oscilatorios y vectores de onda es fundamental. Su trabajo requiere el uso de productos vectoriales para describir la interacción entre campos eléctricos y magnéticos, y análisis de vectores de polarización para comprender los procesos de ionización atómica en escalas de tiempo extremadamente cortas.
 
-```{figure} ./Gladys_West.jpg
-:label: fig-Gladys_West.jpg
-:alt: retrato de Dra. Gladys West
+```{figure} ../images/Huillier.webp
+:label: fig-Anne_LHuiller
+:alt: retrato de Dra. Anne L'Huillier
 :align: center
-Dra. Gladys West (1930 - )
+Dra. Anne L'Huillier (1958 - )  [Créditos](https://www.unesco.org/en/virtual-science-museum/women-science/anne-lhuillier)
 ```
 :::
 
@@ -85,7 +85,7 @@ $$\begin{aligned}
 *[vectores directores](https://es.wikipedia.org/wiki/Vector_director) [unitarios](https://es.wikipedia.org/wiki/Vector_unitario)* y son vectores de magnitud uno y
 dirección a lo largo de los ejes $x$, $y$ y $z$, respectivamente.
 
-```{figure} ./componentes-cartesianas.png
+```{figure} ../images/componentes-cartesianas.png
 :label: fig-vector
 :alt: sistema cartesiano
 :align: center
@@ -172,7 +172,7 @@ $\theta$ el ángulo entre $\vec{A}$ y $\vec{B}$. Geométricamente, esta
 magnitud equivale al área del paralelogramo que se forma entre $\vec{A}$
 y $\vec{B}$ (ver [Figura %s](#fig-paralelogramo))
 
-```{figure} ./paralelogramo.png
+```{figure} ../images/paralelogramo.png
 :label: fig-paralelogramo
 :alt: parelelogramo formado por vectores
 :align: center
@@ -245,7 +245,7 @@ Ver [Figura %s](#fig-paralelepipedo).
 :::
 
 
-```{figure} ./paralelepipedo.png
+```{figure} ../images/paralelepipedo.png
 :label: fig-paralelepipedo
 :alt: paralelepípedo
 :align: center

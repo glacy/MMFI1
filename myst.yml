@@ -4,8 +4,8 @@ project:
     - file: programa-curso.md
     - title: Semana 1
       children:
-        - file: ./01_analisis_vectorial/semana1_lectura.md
-        - file: ./01_analisis_vectorial/semana1_practica.md
+        - file: ./01_analisis_vectorial/semana01/semana01_lectura.md
+        - file: ./01_analisis_vectorial/semana01/semana01_practica.md
   title: MMFI1
   github: https://github.com/glacy/MMFI1
   jupyter: binder
