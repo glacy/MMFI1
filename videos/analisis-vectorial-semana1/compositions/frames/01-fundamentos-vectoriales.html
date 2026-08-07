@@ -1,0 +1,154 @@
+<template>
+  <style>
+    @font-face {
+      font-family: 'Space Grotesk';
+      src: url('capture/assets/fonts/SpaceGrotesk-500.ttf') format('truetype');
+      font-weight: 500;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Space Grotesk';
+      src: url('capture/assets/fonts/SpaceGrotesk-600.ttf') format('truetype');
+      font-weight: 600;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Space Grotesk';
+      src: url('capture/assets/fonts/SpaceGrotesk-700.ttf') format('truetype');
+      font-weight: 700;
+      font-display: swap;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #fdfae7;
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      color: #111111;
+      overflow: hidden;
+    }
+    .f1-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(17,17,17,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,17,17,0.035) 1px, transparent 1px);
+      background-size: 96px 96px;
+      opacity: 0;
+    }
+    .f1-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 105px;
+    }
+    .f1-eyebrow {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1e2bfa;
+      opacity: 0;
+    }
+    .f1-axes {
+      opacity: 0;
+      margin-top: 25px;
+    }
+    .f1-components {
+      font-size: 52px;
+      font-weight: 500;
+      color: #111111;
+      white-space: nowrap;
+      margin-top: 30px;
+    }
+    .f1-components .term {
+      opacity: 0;
+      display: inline-block;
+    }
+    .f1-tuple-zone {
+      position: relative;
+      margin-top: 28px;
+    }
+    .f1-glow {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 740px;
+      height: 180px;
+      margin-left: -370px;
+      margin-top: -90px;
+      background: radial-gradient(ellipse, rgba(30,43,250,0.12) 0%, transparent 70%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .f1-tuple {
+      position: relative;
+      z-index: 1;
+      font-size: 68px;
+      font-weight: 700;
+      color: #1e2bfa;
+      white-space: nowrap;
+      letter-spacing: -0.02em;
+      opacity: 0;
+    }
+    .f1-caption-band {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 17%;
+      border-top: 1px dashed rgba(17,17,17,0.06);
+    }
+  </style>
+
+  <div data-hf-id="hf-z6v3" id="root" data-composition-id="01-fundamentos-vectoriales" data-width="1920" data-height="1080" data-duration="5.6">
+    <div data-hf-id="hf-h9n8" class="f1-grid"></div>
+
+    <div data-hf-id="hf-bdnv" class="f1-content">
+      <div data-hf-id="hf-vcpt" class="f1-eyebrow">Análisis Vectorial · Fundamentos</div>
+
+      <svg data-hf-id="hf-oqjm" class="f1-axes" viewBox="0 0 280 280" width="170" height="170">
+        <line data-hf-id="hf-j31y" x1="140" y1="240" x2="140" y2="40" stroke="rgba(17,17,17,0.28)" stroke-width="2" />
+        <line data-hf-id="hf-wdcc" x1="140" y1="240" x2="250" y2="240" stroke="rgba(17,17,17,0.28)" stroke-width="2" />
+        <line data-hf-id="hf-s5b0" x1="140" y1="240" x2="50" y2="170" stroke="rgba(17,17,17,0.28)" stroke-width="2" />
+        <text data-hf-id="hf-6h4p" x="255" y="248" fill="rgba(17,17,17,0.45)" font-size="20" font-family="Space Grotesk, sans-serif">x</text>
+        <text data-hf-id="hf-ylfx" x="128" y="32" fill="rgba(17,17,17,0.45)" font-size="20" font-family="Space Grotesk, sans-serif">z</text>
+        <text data-hf-id="hf-ttdv" x="28" y="162" fill="rgba(17,17,17,0.45)" font-size="20" font-family="Space Grotesk, sans-serif">y</text>
+      </svg>
+
+      <div data-hf-id="hf-5c4o" class="f1-components">
+        <span data-hf-id="hf-n46u" class="term"><b data-hf-id="hf-c7cc">A</b> =</span><span data-hf-id="hf-oub0" class="term">&#160;A<sub data-hf-id="hf-8s9j">x</sub>î</span><span data-hf-id="hf-soh8" class="term">&#160;+&#160;</span><span data-hf-id="hf-mu25" class="term">A<sub data-hf-id="hf-96kk">y</sub>ĵ</span><span data-hf-id="hf-nc78" class="term">&#160;+&#160;</span><span data-hf-id="hf-z28z" class="term">A<sub data-hf-id="hf-7znh">z</sub>k̂</span>
+      </div>
+
+      <div data-hf-id="hf-lxdx" class="f1-tuple-zone">
+        <div data-hf-id="hf-7qev" class="f1-glow"></div>
+        <div data-hf-id="hf-p36d" class="f1-tuple"><b data-hf-id="hf-kngk">A</b> = (A<sub data-hf-id="hf-5ogn">x</sub>, A<sub data-hf-id="hf-8m9o">y</sub>, A<sub data-hf-id="hf-e9u9">z</sub>)</div>
+      </div>
+    </div>
+
+    <div data-hf-id="hf-w6zq" class="f1-caption-band"></div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    /* Scene 1 (0.0-1.5s): field establishes -- grid, axes, eyebrow */
+    tl.fromTo(".f1-grid",    { opacity: 0 },         { opacity: 1, duration: 0.8, ease: "power3.out" }, 0);
+    tl.fromTo(".f1-axes",    { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 1.0, ease: "power3.out" }, 0.2);
+    tl.fromTo(".f1-eyebrow", { opacity: 0, y: 10 },  { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.3);
+
+    /* Scene 2 (1.5-3.5s): component notation builds per-term, VO-paced */
+    var termTimes = [1.5, 1.9, 2.2, 2.5, 2.8, 3.1];
+    document.querySelectorAll('[data-composition-id="01-fundamentos-vectoriales"] .f1-components .term').forEach(function(term, i) {
+      tl.fromTo(term, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, termTimes[i]);
+    });
+
+    /* Scene 3 (3.5-5.0s): tuple blooms with glow, then holds STILL */
+    tl.fromTo(".f1-glow", { opacity: 0 },             { opacity: 1, duration: 0.6, ease: "power3.out" }, 3.5);
+    tl.fromTo(".f1-tuple", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power3.out" }, 3.5);
+
+    window.__timelines["01-fundamentos-vectoriales"] = tl;
+  </script>
+</template>

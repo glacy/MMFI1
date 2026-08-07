@@ -1,0 +1,181 @@
+<template>
+  <style>
+    @font-face {
+      font-family: 'Space Grotesk';
+      src: url('capture/assets/fonts/SpaceGrotesk-500.ttf') format('truetype');
+      font-weight: 500;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Space Grotesk';
+      src: url('capture/assets/fonts/SpaceGrotesk-600.ttf') format('truetype');
+      font-weight: 600;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Space Grotesk';
+      src: url('capture/assets/fonts/SpaceGrotesk-700.ttf') format('truetype');
+      font-weight: 700;
+      font-display: swap;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #fdfae7;
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      color: #111111;
+      overflow: hidden;
+    }
+    .f3-field {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 65% 48%, rgba(30,43,250,0.03) 0%, transparent 60%);
+      opacity: 0;
+    }
+    .f3-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 105px;
+    }
+    .f3-eyebrow {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1e2bfa;
+      opacity: 0;
+    }
+    .f3-body {
+      display: flex;
+      align-items: flex-start;
+      gap: 100px;
+      margin-top: 45px;
+    }
+    .f3-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .f3-operator {
+      font-size: 80px;
+      font-weight: 700;
+      color: #111111;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      margin-bottom: 15px;
+    }
+    .f3-swap-zone {
+      position: relative;
+      height: 62px;
+      width: 420px;
+    }
+    .f3-swap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 44px;
+      font-weight: 500;
+      color: rgba(17,17,17,0.7);
+      white-space: nowrap;
+      opacity: 0;
+    }
+    .f3-orbit {
+      opacity: 0;
+      margin-top: 5px;
+    }
+    .f3-final-zone {
+      position: relative;
+      margin-top: 35px;
+    }
+    .f3-glow {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 700px;
+      height: 170px;
+      margin-left: -350px;
+      margin-top: -85px;
+      background: radial-gradient(ellipse, rgba(30,43,250,0.12) 0%, transparent 70%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .f3-final {
+      position: relative;
+      z-index: 1;
+      font-size: 66px;
+      font-weight: 700;
+      color: #1e2bfa;
+      white-space: nowrap;
+      letter-spacing: -0.02em;
+      opacity: 0;
+    }
+    .f3-caption-band {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 17%;
+      border-top: 1px dashed rgba(17,17,17,0.06);
+    }
+  </style>
+
+  <div data-hf-id="hf-scex" id="root" data-composition-id="03-diferenciacion-dinamica" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-nmvm" class="f3-field"></div>
+
+    <div data-hf-id="hf-r5yh" class="f3-content">
+      <div data-hf-id="hf-v6ph" class="f3-eyebrow">Diferenciación y Dinámica</div>
+
+      <div data-hf-id="hf-uwpm" class="f3-body">
+        <div data-hf-id="hf-x691" class="f3-left">
+          <div data-hf-id="hf-xnan" class="f3-operator" id="f3-operator">d/dt</div>
+          <div data-hf-id="hf-uquq" class="f3-swap-zone">
+            <div data-hf-id="hf-w8q8" class="f3-swap" id="f3-swap1"><b data-hf-id="hf-hdbp">r</b>(t)</div>
+            <div data-hf-id="hf-yani" class="f3-swap" id="f3-swap2"><b data-hf-id="hf-iyjt">v</b> = d<b data-hf-id="hf-37xl">r</b>/dt</div>
+            <div data-hf-id="hf-0rov" class="f3-swap" id="f3-swap3"><b data-hf-id="hf-ox58">a</b> = d<b data-hf-id="hf-cgnx">v</b>/dt</div>
+          </div>
+        </div>
+
+        <svg data-hf-id="hf-3eo7" class="f3-orbit" id="f3-orbit" viewBox="0 0 400 400" width="280" height="280">
+          <circle data-hf-id="hf-uh2g" cx="200" cy="200" r="60" fill="none" stroke="rgba(17,17,17,0.15)" stroke-width="1.5" />
+          <circle data-hf-id="hf-9uck" cx="200" cy="200" r="115" fill="none" stroke="rgba(17,17,17,0.10)" stroke-width="1.5" />
+          <circle data-hf-id="hf-ggb2" cx="200" cy="200" r="170" fill="none" stroke="rgba(17,17,17,0.06)" stroke-width="1.5" />
+          <circle data-hf-id="hf-oac0" cx="200" cy="200" r="6" fill="rgba(17,17,17,0.3)" />
+        </svg>
+      </div>
+
+      <div data-hf-id="hf-16g1" class="f3-final-zone">
+        <div data-hf-id="hf-cgfp" class="f3-glow"></div>
+        <div data-hf-id="hf-z3vc" class="f3-final" id="f3-final"><b data-hf-id="hf-93ok">a</b> = d²<b data-hf-id="hf-4euo">r</b>/dt²</div>
+      </div>
+    </div>
+
+    <div data-hf-id="hf-mq6c" class="f3-caption-band"></div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    /* Scene 1 (0.0-1.5s): field + eyebrow + operator seats + orbit */
+    tl.fromTo(".f3-field",    { opacity: 0 },             { opacity: 1, duration: 0.8, ease: "power3.out" }, 0);
+    tl.fromTo(".f3-eyebrow",  { opacity: 0, y: 10 },      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.3);
+    tl.fromTo("#f3-operator", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, 0.5);
+    tl.fromTo("#f3-orbit",    { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 1.0, ease: "power3.out" }, 0.6);
+
+    /* Scene 2 (1.0-3.4s): token swap chain, hard-cut per VO cue */
+    tl.fromTo("#f3-swap1", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power3.out" }, 1.0);
+    tl.to("#f3-swap1", { opacity: 0, duration: 0.15, ease: "power3.out" }, 1.8);
+    tl.fromTo("#f3-swap2", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power3.out" }, 1.82);
+    tl.to("#f3-swap2", { opacity: 0, duration: 0.15, ease: "power3.out" }, 2.6);
+    tl.fromTo("#f3-swap3", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power3.out" }, 2.62);
+
+    /* Scene 3 (3.5-5.0s): final formula blooms with glow, holds STILL */
+    tl.fromTo(".f3-glow",  { opacity: 0 },             { opacity: 1, duration: 0.6, ease: "power3.out" }, 3.5);
+    tl.fromTo("#f3-final", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power3.out" }, 3.5);
+
+    window.__timelines["03-diferenciacion-dinamica"] = tl;
+  </script>
+</template>

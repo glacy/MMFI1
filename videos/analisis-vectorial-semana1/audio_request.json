@@ -1,0 +1,24 @@
+{
+  "provider": "auto",
+  "speed": 1,
+  "lines": [
+    {
+      "id": "01",
+      "text": "Las operaciones vectoriales conectan el álgebra con la geometría, describiendo magnitudes con dirección en el espacio 3D."
+    },
+    {
+      "id": "02",
+      "text": "El producto escalar calcula trabajo mecánico. El producto vectorial genera torcas y áreas. Los productos triples determinan volúmenes."
+    },
+    {
+      "id": "03",
+      "text": "La diferenciación vectorial describe velocidades y aceleraciones. Esencial para dinámica y campos variables."
+    }
+  ],
+  "bgm": {
+    "mode": "retrieve",
+    "query": "electronic-upbeat",
+    "blob": "",
+    "arc": ""
+  }
+}

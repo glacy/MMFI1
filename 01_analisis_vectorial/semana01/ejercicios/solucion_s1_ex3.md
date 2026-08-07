@@ -40,7 +40,7 @@ $$= -48 - 12 - 27$$
 
 $$= -87$$
 
-Paso 3: Calcular el volumen
+De  manera que
 
 $$V = |-87| = 87 \text{ unidades}^3$$
 

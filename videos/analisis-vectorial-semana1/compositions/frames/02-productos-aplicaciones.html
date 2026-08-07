@@ -1,0 +1,158 @@
+<template>
+  <style>
+    @font-face {
+      font-family: 'Space Grotesk';
+      src: url('capture/assets/fonts/SpaceGrotesk-500.ttf') format('truetype');
+      font-weight: 500;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Space Grotesk';
+      src: url('capture/assets/fonts/SpaceGrotesk-600.ttf') format('truetype');
+      font-weight: 600;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Space Grotesk';
+      src: url('capture/assets/fonts/SpaceGrotesk-700.ttf') format('truetype');
+      font-weight: 700;
+      font-display: swap;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      background: #fdfae7;
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+      color: #111111;
+      overflow: hidden;
+    }
+    .f2-field {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 42%, rgba(30,43,250,0.03) 0%, transparent 65%);
+      opacity: 0;
+    }
+    .f2-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 105px;
+    }
+    .f2-eyebrow {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1e2bfa;
+      opacity: 0;
+    }
+    .f2-cards {
+      display: flex;
+      gap: 40px;
+      margin-top: 55px;
+    }
+    .f2-card {
+      width: 380px;
+      height: 420px;
+      background: rgba(30,43,250,0.04);
+      border: 1.5px solid rgba(30,43,250,0.2);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      opacity: 0;
+    }
+    .f2-card-focal {
+      border: 1.5px solid #1e2bfa;
+    }
+    .f2-symbol {
+      font-size: 72px;
+      font-weight: 700;
+      color: #111111;
+      letter-spacing: -0.02em;
+    }
+    .f2-card-focal .f2-symbol {
+      color: #1e2bfa;
+    }
+    .f2-icon {
+      font-size: 38px;
+      color: #6b6b6b;
+    }
+    .f2-card-focal .f2-icon {
+      color: #1e2bfa;
+    }
+    .f2-label {
+      font-size: 22px;
+      font-weight: 500;
+      color: #111111;
+      margin-top: 6px;
+    }
+    .f2-desc {
+      font-size: 18px;
+      color: #6b6b6b;
+    }
+    .f2-caption-band {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 17%;
+      border-top: 1px dashed rgba(17,17,17,0.06);
+    }
+  </style>
+
+  <div data-hf-id="hf-mrnj" id="root" data-composition-id="02-productos-aplicaciones" data-width="1920" data-height="1080" data-duration="5.6">
+    <div data-hf-id="hf-yjnv" class="f2-field"></div>
+
+    <div data-hf-id="hf-0x3k" class="f2-content">
+      <div data-hf-id="hf-oe8o" class="f2-eyebrow">Productos Vectoriales</div>
+
+      <div data-hf-id="hf-7fcy" class="f2-cards">
+        <div data-hf-id="hf-g389" class="f2-card" id="f2-card1">
+          <div data-hf-id="hf-siie" class="f2-symbol"><b data-hf-id="hf-c7cc">A</b> · <b data-hf-id="hf-b0f9">B</b></div>
+          <div data-hf-id="hf-8mbi" class="f2-icon">θ</div>
+          <div data-hf-id="hf-y23m" class="f2-label">Producto escalar</div>
+          <div data-hf-id="hf-ldz6" class="f2-desc">Trabajo mecánico</div>
+        </div>
+
+        <div data-hf-id="hf-k1ca" class="f2-card" id="f2-card2">
+          <div data-hf-id="hf-fspi" class="f2-symbol"><b data-hf-id="hf-kngk">A</b> × <b data-hf-id="hf-tu0p">B</b></div>
+          <div data-hf-id="hf-6wl1" class="f2-icon">⊥</div>
+          <div data-hf-id="hf-hyp2" class="f2-label">Producto vectorial</div>
+          <div data-hf-id="hf-zsjf" class="f2-desc">Torca · Área</div>
+        </div>
+
+        <div data-hf-id="hf-bob4" class="f2-card f2-card-focal" id="f2-card3">
+          <div data-hf-id="hf-feoq" class="f2-symbol"><b data-hf-id="hf-jgjh">A</b>·(<b data-hf-id="hf-v0xs">B</b>×<b data-hf-id="hf-beqa">C</b>)</div>
+          <div data-hf-id="hf-u7hs" class="f2-icon">▢</div>
+          <div data-hf-id="hf-7yu7" class="f2-label">Producto triple</div>
+          <div data-hf-id="hf-uy2r" class="f2-desc">Volumen orientado</div>
+        </div>
+      </div>
+    </div>
+
+    <div data-hf-id="hf-wkm7" class="f2-caption-band"></div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    var tl = gsap.timeline({ paused: true });
+
+    /* Scene 1 (0.0-1.5s): field + eyebrow establish */
+    tl.fromTo(".f2-field",   { opacity: 0 },        { opacity: 1, duration: 0.8, ease: "power3.out" }, 0);
+    tl.fromTo(".f2-eyebrow", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.3);
+
+    /* Scene 2 (0.5-3.3s): cards self-assemble staggered cascade */
+    tl.fromTo("#f2-card1", { opacity: 0, y: 30, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "power3.out" }, 0.5);
+    tl.fromTo("#f2-card2", { opacity: 0, y: 30, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "power3.out" }, 1.5);
+    tl.fromTo("#f2-card3", { opacity: 0, y: 30, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "power3.out" }, 2.5);
+
+    /* Scene 3 (3.3-5.0s): all cards resolved, hold STILL */
+
+    window.__timelines["02-productos-aplicaciones"] = tl;
+  </script>
+</template>
