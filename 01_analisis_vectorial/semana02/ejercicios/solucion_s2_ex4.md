@@ -40,7 +40,7 @@ Las componentes del campo son:
 
 $$\nabla \cdot \vec{E} = \frac{\partial E_x}{\partial x} + \frac{\partial E_y}{\partial y} + \frac{\partial E_z}{\partial z}$$
 
-#### Cálculo de $\frac{\partial E_x}{\partial x}$
+**Cálculo de $\frac{\partial E_x}{\partial x}$**
 
 Sea $r = (x^2 + y^2 + z^2)^{1/2}$, entonces $r^3 = (x^2 + y^2 + z^2)^{3/2}$.
 

@@ -14,11 +14,11 @@ tags:
   - gradiente
 ---
 
-## Demostración de identidades vectoriales fundamentales
+**Demostración de identidades vectoriales fundamentales**
 
-### Parte 1: $\nabla \cdot (\nabla \times \vec{u}) = 0$
+**Parte 1: $\nabla \cdot (\nabla \times \vec{u}) = 0$**
 
-#### Demostración en notación de componentes
+**Demostración en notación de componentes**
 
 Sea $\vec{u} = u_x\hat{\iota} + u_y\hat{\jmath} + u_z\hat{\kappa}$. El rotacional de $\vec{u}$ es:
 
@@ -42,7 +42,7 @@ $$= \frac{\partial^2 u_z}{\partial y \partial x} - \frac{\partial^2 u_y}{\partia
 
 $$= \cancel{\frac{\partial^2 u_z}{\partial y \partial x}} - \cancel{\frac{\partial^2 u_y}{\partial z \partial x}} - \cancel{\frac{\partial^2 u_z}{\partial x \partial y}} + \cancel{\frac{\partial^2 u_x}{\partial z \partial y}} + \cancel{\frac{\partial^2 u_y}{\partial x \partial z}} - \cancel{\frac{\partial^2 u_x}{\partial y \partial z}} = 0$$
 
-#### Interpretación física
+**Interpretación física**
 
 Esta identidad expresa que el rotacional de un campo vectorial no tiene fuentes ni sumideros. Si imaginamos las líneas del campo $\nabla \times \vec{u}$ como tubos de flujo, estas tuberías no tienen "fugas" ni "entradas" en ningún punto del espacio.
 
@@ -50,9 +50,9 @@ $$\boxed{\nabla \cdot (\nabla \times \vec{u}) = 0}$$
 
 ---
 
-### Parte 2: $\nabla \times (\nabla f) = 0$
+**Parte 2: $\nabla \times (\nabla f) = 0$**
 
-#### Demostración en notación de componentes
+**Demostración en notación de componentes**
 
 El gradiente de una función escalar $f$ es:
 
@@ -74,7 +74,7 @@ $$= \cancel{\frac{\partial^2 f}{\partial y \partial z}} - \cancel{\frac{\partial
 
 $$= 0\hat{\iota} - 0\hat{\jmath} + 0\hat{\kappa} = \vec{0}$$
 
-#### Interpretación física
+**Interpretación física**
 
 Esta identidad significa que un campo vectorial derivado de un potencial escalar es irrotacional. Los campos conservativos (como el campo eléctrico electrostático) tienen esta propiedad.
 
@@ -82,9 +82,9 @@ $$\boxed{\nabla \times (\nabla f) = \vec{0}}$$
 
 ---
 
-### Parte 3: $\nabla \times (\nabla \times \vec{u}) = \nabla (\nabla \cdot \vec{u}) - \nabla \cdot \nabla \vec{u}$
+**Parte 3: $\nabla \times (\nabla \times \vec{u}) = \nabla (\nabla \cdot \vec{u}) - \nabla \cdot \nabla \vec{u}$**
 
-#### Demostración usando notación de índices
+**Demostración usando notación de índices**
 
 Usando la notación de Einstein y el símbolo de Levi-Civita $\varepsilon_{ijk}$:
 
@@ -108,13 +108,13 @@ En notación vectorial:
 
 $$\nabla \times (\nabla \times \vec{u}) = \nabla (\nabla \cdot \vec{u}) - \nabla^2 \vec{u}$$
 
-#### Nota sobre la notación
+**Nota sobre la notación**
 
 En la identidad original se usa $\nabla \cdot \nabla \vec{u}$, pero en notación moderna esto se escribe como $\nabla^2 \vec{u}$. Ambos son equivalentes:
 
 $$\nabla \cdot \nabla \vec{u} = \nabla^2 \vec{u}$$
 
-#### Demostración alternativa usando componentes
+**Demostración alternativa usando componentes**
 
 Sean $u = (u_1, u_2, u_3)$. Calculamos el rotacional doble:
 
@@ -144,7 +144,7 @@ Lo mismo se aplica para las componentes 2 y 3, dando:
 
 $$\boxed{\nabla \times (\nabla \times \vec{u}) = \nabla (\nabla \cdot \vec{u}) - \nabla^2 \vec{u}}$$
 
-#### Aplicaciones importantes
+**Aplicaciones importantes**
 
 Esta identidad es fundamental en:
 
@@ -153,14 +153,14 @@ Esta identidad es fundamental en:
 3. **Mecánica cuántica**: Aparece en el Hamiltoniano de partículas con espín
 4. **Elasticidad**: Esencial en teoría de elasticidad lineal
 
-#### Relación con identidades anteriores
+**Relación con identidades anteriores**
 
 Esta identidad conecta las dos identidades anteriores:
 
 - Si $\vec{u} = \nabla f$, entonces $\nabla \times \vec{u} = \vec{0}$ y el lado izquierdo es $\vec{0}$
 - El lado derecho se convierte en $\nabla (\nabla \cdot \nabla f) - \nabla^2 \nabla f = \nabla^3 f - \nabla^3 f = \vec{0}$
 
-### Resumen de las identidades demostradas
+**Resumen de las identidades demostradas**
 
 $$\boxed{\nabla \cdot (\nabla \times \vec{u}) = 0}$$
 $$\boxed{\nabla \times (\nabla f) = \vec{0}}$$

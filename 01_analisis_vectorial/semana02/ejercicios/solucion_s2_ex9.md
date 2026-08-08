@@ -12,9 +12,9 @@ tags:
   - coordenadas-curvilíneas
 ---
 
-## Campo de potencial eléctrico esféricamente simétrico
+**Campo de potencial eléctrico esféricamente simétrico**
 
-### Parte 1: Expresión en coordenadas esféricas
+**Parte 1: Expresión en coordenadas esféricas**
 
 El potencial está dado por:
 
@@ -24,7 +24,7 @@ En coordenadas esféricas $(r, \theta, \phi)$, esta expresión es exactamente la
 
 $$\boxed{V(r,\theta,\phi) = \frac{q}{4\pi\epsilon_0 r}}$$
 
-### Parte 2: Gradiente en coordenadas esféricas
+**Parte 2: Gradiente en coordenadas esféricas**
 
 En coordenadas esféricas, los factores de escala son:
 
@@ -48,7 +48,7 @@ $$\nabla V = -\frac{q}{4\pi\epsilon_0 r^2}\hat{e}_r + 0\hat{e}_\theta + 0\hat{e}
 
 $$\boxed{\nabla V = -\frac{q}{4\pi\epsilon_0 r^2}\hat{e}_r}$$
 
-### Parte 3: Campo eléctrico
+**Parte 3: Campo eléctrico**
 
 El campo eléctrico está relacionado con el potencial mediante:
 
@@ -58,7 +58,7 @@ Esto verifica el resultado esperado para una carga puntual:
 
 $$\boxed{\vec{E} = \frac{q}{4\pi\epsilon_0 r^2}\hat{e}_r}$$
 
-### Interpretación física
+**Interpretación física**
 
 Este resultado muestra que:
 
@@ -67,7 +67,7 @@ Este resultado muestra que:
 3. **Consistencia con la Ley de Gauss**: Este resultado es consistente con la Ley de Gauss para una carga puntual.
 4. **Conveniencia de coordenadas esféricas**: Al usar coordenadas esféricas, el cálculo del gradiente se simplifica enormemente debido a la simetría esférica del problema.
 
-### Ventajas de usar coordenadas curvilíneas apropiadas
+**Ventajas de usar coordenadas curvilíneas apropiadas**
 
 Este ejercicio demuestra la importancia de elegir el sistema de coordenadas adecuado:
 

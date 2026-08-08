@@ -12,9 +12,9 @@ tags:
   - coordenadas-cilindricas
 ---
 
-## Flujo axial simétrico en coordenadas cilíndricas
+**Flujo axial simétrico en coordenadas cilíndricas**
 
-### Planteamiento del problema
+**Planteamiento del problema**
 
 Tenemos un campo de velocidad axial simétrico:
 
@@ -22,7 +22,7 @@ $$\vec{v} = v_\rho(\rho,z)\hat{e}_\rho + v_z(\rho,z)\hat{e}_z$$
 
 En coordenadas cilíndricas, los factores de escala son: $h_\rho = 1$, $h_\phi = \rho$, $h_z = 1$.
 
-### Parte 1: Divergencia en coordenadas cilíndricas
+**Parte 1: Divergencia en coordenadas cilíndricas**
 
 El operador divergencia en coordenadas cilíndricas es:
 
@@ -40,7 +40,7 @@ Por lo tanto:
 
 $$\boxed{\nabla \cdot \vec{v} = \frac{v_\rho}{\rho} + \frac{\partial v_\rho}{\partial \rho} + \frac{\partial v_z}{\partial z}}$$
 
-### Parte 2: Rotacional en coordenadas cilíndricas
+**Parte 2: Rotacional en coordenadas cilíndricas**
 
 El operador rotacional en coordenadas cilíndricas es:
 
@@ -66,7 +66,7 @@ $$= -\hat{e}_\phi\left(\frac{\partial v_z}{\partial \rho} - \frac{\partial v_\rh
 
 $$\boxed{\nabla \times \vec{v} = \hat{e}_\phi\left(\frac{\partial v_\rho}{\partial z} - \frac{\partial v_z}{\partial \rho}\right)}$$
 
-### Parte 3: Flujo incompresible
+**Parte 3: Flujo incompresible**
 
 Para un flujo incompresible con:
 
@@ -90,7 +90,7 @@ $$f''(z) - f'(z) = 0$$
 
 Esta es una ecuación diferencial ordinaria de segundo orden.
 
-#### Solución de la ecuación diferencial
+**Solución de la ecuación diferencial**
 
 La ecuación $f''(z) - f'(z) = 0$ tiene solución de la forma $f(z) = Ae^{z} + B$.
 
@@ -107,13 +107,13 @@ $$\boxed{f(z) = Ae^{z} + B}$$
 
 Donde $A$ y $B$ son constantes determinadas por las condiciones de contorno del problema.
 
-### Interpretación física
+**Interpretación física**
 
 1. **Flujo incompresible**: La condición $\nabla \cdot \vec{v} = 0$ expresa la conservación de masa para un fluido de densidad constante.
 2. **Simetría axial**: El campo de velocidad no tiene componente en $\phi$, lo que es apropiado para problemas con simetría axial.
 3. **Función $f(z)$**: La solución exponencial describe cómo la velocidad vertical varía con $z$ manteniendo la incompresibilidad.
 
-### Aplicaciones
+**Aplicaciones**
 
 Este tipo de análisis es fundamental en:
 - **Mecánica de fluidos**: Estudio de flujos en tuberías y canales
@@ -121,7 +121,7 @@ Este tipo de análisis es fundamental en:
 - **Meteorología**: Flujo atmosférico
 - **Oceanografía**: Corrientes oceánicas
 
-### Resumen de resultados
+**Resumen de resultados**
 
 $$\boxed{\nabla \cdot \vec{v} = \frac{v_\rho}{\rho} + \frac{\partial v_\rho}{\partial \rho} + \frac{\partial v_z}{\partial z}}$$
 
