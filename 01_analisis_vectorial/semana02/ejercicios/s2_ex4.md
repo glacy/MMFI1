@@ -10,6 +10,7 @@ tags:
   - campo-electrico
   - electrostatica
   - ley-gauss
+objetivos: [1, 2]
 ---
 
 El campo electrostático de una carga puntual $q$ es

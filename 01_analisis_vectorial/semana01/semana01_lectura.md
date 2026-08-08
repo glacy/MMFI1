@@ -93,7 +93,7 @@ dirección a lo largo de los ejes $x$, $y$ y $z$, respectivamente.
 Componentes cartesianas de un vector. Imagen generada con [Asymptote](https://asymptote.sourceforge.io/).
 ```
 
-# 📝 Operaciones vectoriales
+# 💻 Operaciones vectoriales
 
 ## Producto escalar de dos vectores
 

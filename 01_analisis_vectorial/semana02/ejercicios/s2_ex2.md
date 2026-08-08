@@ -10,6 +10,7 @@ tags:
   - campo-vectorial
   - derivadas-parciales
   - curl
+objetivos: [1]
 ---
 
 Arfken ejercicio 1.5.12 (pág. 235)
