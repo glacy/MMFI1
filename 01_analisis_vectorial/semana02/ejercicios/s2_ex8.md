@@ -10,6 +10,7 @@ tags:
   - coordenadas-cartesianas
   - transformacion-coordenadas
   - vectores-base
+objetivos: [3]
 ---
 
 Demuestre que en coordenadas cilíndricas $(\rho, \phi, z)$, los vectores unitarios se relacionan con los vectores cartesianos como:

@@ -26,7 +26,7 @@ downloads:
 ---
 
 :::{aside} <wiki:Olga_Ladyzhenskaya>
-dedicó su carrera al estudio matemático de las ecuaciones de Navier-Stokes —aquellas que describen el flujo de fluidos y que se expresan con el operador nabla, demostrando resultados fundamentales sobre la existencia y unicidad de sus soluciones. Su trabajo sobre la regularidad de las soluciones de ecuaciones en derivadas parciales, incluida su contribución al decimonoveno problema de Hilbert <wiki:Hilbert%27s_nineteenth_problem>, constituye la base teórica de la dinámica de fluidos computacional (CFD).
+dedicó su carrera al estudio matemático de las ecuaciones de Navier-Stokes —aquellas que describen el flujo de fluidos y que se expresan con el operador nabla, demostrando resultados fundamentales sobre la existencia y unicidad de sus soluciones. Su trabajo sobre la regularidad de las soluciones de ecuaciones en derivadas parciales, incluida su contribución al [decimonoveno problema de Hilbert](https://es.wikipedia.org/wiki/Decimonoveno_problema_de_Hilbert), constituye la base teórica de la dinámica de fluidos computacional (CFD).
 
 ```{figure} ./../images/Olga_Ladyzhenskaya.jpg
 :label: fig-Olga_Ladyzhenskaya
@@ -39,7 +39,7 @@ Dra. Olga Ladýzhenskaya (1922 - 2004). Foto: K. Jacobs, [MFO](https://opc.mfo.d
 ```{note} Objetivos
 Al completar esta lección, serás capaz de
 1. **Definir el operador nabla** $(\nabla)$ en coordenadas cartesianas y **calcular el gradiente, la divergencia, el rotacional y el laplaciano** de campos escalares y vectoriales.
-2. **Interpretar físicamente** las operaciones del nabla e **identificarlas en ecuaciones fundamentales** de la física, como la conservación de la masa ($\nabla \cdot \vec{u}=0$), la ley de Ampère-Maxwell ($\nabla\times \vec{B}=\mu_0\vec{J}$) y las ecuaciones de Navier-Stokes.
+2. **Interpretar físicamente** las operaciones del nabla e **identificarlas en ecuaciones fundamentales** de la física.
 3. **Expresar transformaciones entre coordenadas cartesianas y curvilíneas ortogonales**, e interpretar geométricamente los vectores base y los factores de escala asociados.
 4. **Generalizar el operador nabla** a coordenadas curvilíneas, deducir las expresiones del gradiente, la divergencia, el rotacional y el laplaciano en función de los factores de escala, y **aplicarlas a los sistemas de coordenadas cilíndricas y esféricas**.
 ```
@@ -75,8 +75,11 @@ El **gradiente** de una función escalar $\phi$ produce un campo vectorial que a
 
 $$\mbox{grad}\phi=\nabla \phi= \hat{\iota}\frac{\partial \phi}{\partial x}+\hat{\jmath}\frac{\partial \phi}{\partial y}+\hat{\kappa}\frac{\partial \phi}{\partial z}$$
 
-El gradiente suele usarse para aproximar funciones localmente, ya que 
-$$f(\vec{x}+\Delta \vec{x})\approx f(\vec{x}+\nabla f(\vec{x}))\cdot \Delta \vec{x} $$
+El gradiente permite aproximar una función localmente mediante su expansión de Taylor de primer orden:
+
+$$f(\vec{x}+\Delta \vec{x})\approx f(\vec{x})+\nabla f(\vec{x})\cdot \Delta \vec{x},$$
+
+válida cuando el desplazamiento $\Delta \vec{x}$ es suficientemente pequeño.
 
 #### Derivada direccional
 
@@ -94,7 +97,7 @@ proyección de $\nabla \phi$ en la dirección de $\hat{n}$.
 :::{note} Campo de temperatura
 Considere el campo de temperatura $$T(x,y,z)=x^2-y^2+xyz+273$$
 La temperatura (en un punto particular) aumentará más rápidamente en la
-dirección que máximice $dT/ds$, es decir, en la dirección de $\nabla T$.
+dirección que maximice $dT/ds$, es decir, en la dirección de $\nabla T$.
 Para este caso
 $$\nabla T=(2x+yz)\hat{\iota}+(-2y+xz)\hat{\jmath}+xy\hat{\kappa}.$$ Por
 ejemplo, en $\vec{r}=(-1,2,3)$, la temperatura aumenta más rápidamente
@@ -121,13 +124,14 @@ En la Mecánica de fluidos, la conservación de la masa establece que
 $$\frac{d\rho}{dt}+\nabla \cdot (\rho\vec{u})+Q=0,$$
 
 donde $\rho$ representa la densidad del fluido, $\vec{u}$ su campo de
-velocidad y $Q$ el flujo neto.
+velocidad y $Q$ un término fuente/sumidero (la tasa neta de generación de
+masa por unidad de volumen).
 
 Para un fluido incompresible ($\rho=\mbox{constante}$), sin fuentes ni
 sumideros $$\nabla \cdot \vec{u}=0$$
 :::
 
-#### Derivada material
+### Derivada material
 
 En mecánica de fluidos y física de medios continuos, la derivada material (también llamada derivada sustancial, derivada convectiva o derivada de Lagrange) describe la variación temporal de una cantidad física medida siguiendo el movimiento de una partícula de fluido.
 
@@ -150,7 +154,7 @@ V_x & V_y & V_z
 \end{vmatrix}
 \end{aligned}$$
 
-El rotacional es una manera de medir que tan  rápido gira, localmente,  un campo vectorial. Un campo vectorial cuyo rotacional es cero, se denomina _irrotacional_. 
+El rotacional es una manera de medir cuán rápido gira, localmente, un campo vectorial. Un campo vectorial cuyo rotacional es cero, se denomina _irrotacional_. 
 :::{note} Ley de Øersted
 El descubrimiento de Hans Christian Ørsted de que una corriente eléctrica produce un campo magnético se generaliza en la **ley de Ampère-Maxwell**, que expresa el rotacional del campo magnético:
 
@@ -181,7 +185,7 @@ El Laplaciano $\nabla^2$ aparece de forma natural en muchas de las ecuaciones fu
 :::{math}
 \begin{aligned}
         \nabla^2\phi=&0 && \mbox{ecuaci\'on de Laplace}\\
-        \nabla^2 \phi =&q && \mbox{ecuaci\'on de Poisson}
+        \nabla^2 \phi =&q && \mbox{ecuaci\'on de Poisson}\\
         \nabla^2\phi=&\frac{1}{a^2}\frac{\partial^2 \phi}{\partial t^2} && \mbox{ecuaci\'on de onda}\\
         \nabla^2\phi=&\frac{1}{a^2}\frac{\partial \phi}{\partial t} && \mbox{difusi\'on, conducci\'on de calor, ecuaci\'on de Schr{\"o}dinger}    
 \end{aligned}
@@ -269,6 +273,8 @@ En coordenadas curvilíneas generalizadas, el operador nabla se expresa mediante
     \right]
 \end{aligned}$$
 
+Estas fórmulas generalizan las definiciones de la primera sección: en coordenadas cartesianas, donde $h_1=h_2=h_3=1$ y los vectores base $\hat{e}_i$ coinciden con $\hat{\iota},\hat{\jmath},\hat{\kappa}$, las expresiones anteriores se reducen exactamente a las definiciones del operador nabla, la divergencia, el rotacional y el laplaciano vistas al inicio. Así, los factores de escala no solo parametrizan el sistema de coordenadas, sino que son la pieza que permite *escribir* nabla en cualquier sistema curvilíneo. Para concretar esta idea, a continuación se aplican estas fórmulas a los sistemas cilíndrico y esférico.
+
 ### Coordenadas cilíndricas
 
 El sistema de [coordenadas cilíndricas](https://en-m-wikipedia-org.translate.goog/wiki/Cylindrical_coordinate_system?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc) $(\rho, \phi, z)$ es el más adecuado para problemas con simetría axial, como el flujo en una tubería o el campo magnético alrededor de un conductor recto. Sus coordenadas son:
@@ -320,6 +326,23 @@ h_z =& 1
 ```
 
 $$\boxed{h_\rho=1, \quad h_\phi=\rho, \quad h_z=1}$$
+
+Sustituyendo estos factores en las fórmulas generales, se obtienen las expresiones explícitas del operador nabla en coordenadas cilíndricas:
+
+$$\begin{aligned}
+    \nabla \phi =&\frac{\partial \phi}{\partial \rho}\hat{e}_\rho+\frac{1}{\rho}\frac{\partial \phi}{\partial \phi}\hat{e}_\phi+\frac{\partial \phi}{\partial z}\hat{e}_z\\[.2cm]
+    \nabla \cdot \vec{A}=&\frac{1}{\rho}\frac{\partial}{\partial \rho}(\rho A_\rho)+\frac{1}{\rho}\frac{\partial A_\phi}{\partial \phi}+\frac{\partial A_z}{\partial z}\\[.2cm]
+    \nabla \times \vec{A}=&\frac{1}{\rho}\begin{vmatrix}
+  \hat{e}_\rho & \rho\,\hat{e}_\phi & \hat{e}_z\\ 
+  \displaystyle\frac{\partial}{\partial \rho} & \displaystyle\frac{\partial}{\partial \phi} & \displaystyle\frac{\partial}{\partial z} \\
+  A_\rho & \rho A_\phi & A_z
+    \end{vmatrix}\\[.2cm]
+    \nabla^2\phi=&\frac{1}{\rho}\frac{\partial}{\partial \rho}\left(\rho \frac{\partial \phi}{\partial \rho} \right)
+    +\frac{1}{\rho^2}\frac{\partial^2 \phi}{\partial \phi^2}
+    +\frac{\partial^2 \phi}{\partial z^2}
+\end{aligned}$$
+
+Estas son las expresiones que se utilizan en los ejemplos y ejercicios siguientes.
 :::
 
 
@@ -391,8 +414,15 @@ Diferencial de volumen en coordenadas esféricas $(r,\theta,\phi)$. Imagen gener
 
 
 :::{note} Factores de escala en coordenadas esféricas
-De forma análoga, para las coordenadas esféricas $(r, \theta, \phi)$ los factores de escala determinan el elemento de volumen y permiten expresar el gradiente, la divergencia, el rotacional y el laplaciano en este sistema:
-$$h_r=1, \quad h_\theta=r, \quad h_\phi=r\sin \theta$$
+De forma análoga al caso cilíndrico, los factores de escala se calculan como $h_i = \left|\partial \vec{r}/\partial u_i\right|$. Para las coordenadas esféricas, el vector de posición es
+
+$$\vec{r} = r\sin\theta\cos\phi\,\hat{\iota} + r\sin\theta\sin\phi\,\hat{\jmath} + r\cos\theta\,\hat{\kappa}$$
+
+Derivando respecto a cada coordenada y calculando las magnitudes se obtienen los factores de escala esféricos:
+
+$$\boxed{h_r=1, \quad h_\theta=r, \quad h_\phi=r\sin \theta}$$
+
+Estos factores determinan el elemento de volumen $dV = h_r h_\theta h_\phi\,dr\,d\theta\,d\phi = r^2\sin\theta\,dr\,d\theta\,d\phi$, y sustituyéndolos en las fórmulas generales permiten expresar el gradiente, la divergencia, el rotacional y el laplaciano en este sistema.
 :::
 
 

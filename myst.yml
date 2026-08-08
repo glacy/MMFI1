@@ -48,6 +48,7 @@ site:
   options:
     logo: site_logo.svg
     logo_dark: site_logo_dark.svg
+    favicon: favicon.ico
     search: true
   actions:
     - title: tecDigital

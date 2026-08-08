@@ -24,7 +24,7 @@
 | s2_ex1 | Vector unitario perpendicular a superficie | - | ✓ | - | Gradiente |
 | s2_ex2 | Rotacional de campo vectorial | - | ✓ | - | Rotacional |
 | s2_ex3 | Rotacional en rotación rígida | - | ✓ | ✓ | Rotacional, Mecánica |
-| s2_ex4 | Divergencia de campo electrostático | - | ✓ | ✓ | Divergencia, Electromagnetismo |
+| s2_ex4 | Divergencia de campo electrostático | - | ✓ | ✓ | Divergencia esférica, Electromagnetismo |
 | s2_ex5 | Laplaciano en diferentes sistemas | ✓ | ✓ | - | Laplaciano, Transformación |
 | s2_ex6 | Coordenadas paraboloidales | ✓ | - | - | Factores de escala |
 | s2_ex7 | Identidades vectoriales | - | ✓ | - | Divergencia, Rotacional, Gradiente |
@@ -82,9 +82,9 @@
 - **Conceptos clave**: Rotacional, Velocidad angular, Identidad triple producto
 
 #### s2_ex4: Divergencia de campo electrostático
-- **Cobertura**: Divergencia en coordenadas cartesianas
-- **Habilidades**: Cálculo de divergencia, interpretación física
-- **Conceptos clave**: Divergencia, Ley de Gauss, Campos electrostáticos
+- **Cobertura**: Divergencia en coordenadas esféricas del campo de Coulomb
+- **Habilidades**: Sustitución de factores de escala, cálculo de divergencia esférica, interpretación física
+- **Conceptos clave**: Divergencia esférica, Ley de Gauss, Carga puntual, Delta de Dirac
 
 #### s2_ex5: Laplaciano en diferentes sistemas
 - **Cobertura**: Laplaciano en cartesianas y cilíndricas
@@ -160,7 +160,6 @@ Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      �
 ### Coordenadas Cartesianas
 - s2_ex1: Gradiente
 - s2_ex2: Rotacional
-- s2_ex4: Divergencia
 - s2_ex5: Laplaciano (primera parte)
 
 ### Coordenadas Cilíndricas
@@ -169,6 +168,7 @@ Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      �
 - s2_ex10: Flujo axial simétrico
 
 ### Coordenadas Esféricas
+- s2_ex4: Divergencia del campo electrostático
 - s2_ex9: Potencial esféricamente simétrico
 
 ### Sistema Paraboloidal
@@ -183,7 +183,7 @@ Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      �
 - s2_ex9: Potencial esférico
 
 ### Divergencia (∇·)
-- s2_ex4: Campo electrostático
+- s2_ex4: Campo electrostático (esféricas)
 - s2_ex7: Identidad fundamental
 - s2_ex10: Flujo incompresible
 
@@ -202,7 +202,7 @@ Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      �
 ## Aplicaciones Físicas por Dominio
 
 ### Electromagnetismo
-- s2_ex4: Ley de Gauss
+- s2_ex4: Ley de Gauss (esféricas)
 - s2_ex9: Potencial de carga puntual
 
 ### Mecánica

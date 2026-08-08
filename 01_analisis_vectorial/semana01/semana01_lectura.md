@@ -23,14 +23,14 @@ downloads:
     title: paralelepipedo.asy
 ---
 
-:::{aside} <wiki:Anne_L%27Huillier>
+:::{aside} [Anne L'Huillier](https://es.wikipedia.org/wiki/Anne_L%27Huillier)
 es una física francesa premiada con el Nobel de Física 2023 por sus métodos experimentales que generan pulsos de attosegundos de luz para estudiar la dinámica de electrones en la materia. Su investigación revolucionó la física óptica mediante la generación de armónicos de alta frecuencia en gases, donde el análisis de campos electromagnéticos oscilatorios y vectores de onda es fundamental. Su trabajo requiere el uso de productos vectoriales para describir la interacción entre campos eléctricos y magnéticos, y análisis de vectores de polarización para comprender los procesos de ionización atómica en escalas de tiempo extremadamente cortas.
 
-```{figure} ../images/Huillier.webp
-:label: fig-Anne_LHuiller
+```{figure} ./../images/Anne_LHuillier.jpg
+:label: fig-Anne_LHuillier
 :alt: retrato de Dra. Anne L'Huillier
 :align: center
-Dra. Anne L'Huillier (1958 - )  [Créditos](https://www.unesco.org/en/virtual-science-museum/women-science/anne-lhuillier)
+Dra. Anne L'Huillier (1958 - ). Foto: Bengt Oberger ([Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Anne_LHuiller_01.JPG), CC BY-SA 3.0).
 ```
 :::
 
