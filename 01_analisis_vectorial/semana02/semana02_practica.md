@@ -64,6 +64,24 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ````
 
 ````{exercise}
+:label: s2_ex8
+
+```{include} ./ejercicios/s2_ex8.md
+
+```
+````
+
+````{solution} s2_ex8
+:label: solucion-s2_ex8
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s2_ex8.md
+
+```
+````
+
+
+````{exercise}
 :label: s2_ex3
 
 ```{include} ./ejercicios/s2_ex3.md
@@ -148,22 +166,7 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```
 ````
 
-````{exercise}
-:label: s2_ex8
 
-```{include} ./ejercicios/s2_ex8.md
-
-```
-````
-
-````{solution} s2_ex8
-:label: solucion-s2_ex8
-:class: dropdown
-
-```{include} ./ejercicios/solucion_s2_ex8.md
-
-```
-````
 
 ````{exercise}
 :label: s2_ex9

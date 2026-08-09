@@ -14,17 +14,16 @@ tags:
   - gradiente
 ---
 
-**Demostración de identidades vectoriales fundamentales**
 
-**Parte 1: $\nabla \cdot (\nabla \times \vec{u}) = 0$**
+**$\nabla \cdot (\nabla \times \vec{u}) = 0$**
 
-**Demostración en notación de componentes**
+Sea $\vec{u} = u_x\hat{\iota} + u_y\hat{\jmath} + u_z\hat{\kappa}$.
 
-Sea $\vec{u} = u_x\hat{\iota} + u_y\hat{\jmath} + u_z\hat{\kappa}$. El rotacional de $\vec{u}$ es:
+El rotacional de $\vec{u}$ es:
 
 $$\nabla \times \vec{u} = \begin{vmatrix}
 \hat{\iota} & \hat{\jmath} & \hat{\kappa} \\
-\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+\partial_x & \partial_y & \partial_z \\
 u_x & u_y & u_z
 \end{vmatrix}$$
 
@@ -32,17 +31,16 @@ $$= \left(\frac{\partial u_z}{\partial y} - \frac{\partial u_y}{\partial z}\righ
 
 Calculamos la divergencia de este resultado:
 
-$$\nabla \cdot (\nabla \times \vec{u}) = \frac{\partial}{\partial x}\left(\frac{\partial u_z}{\partial y} - \frac{\partial u_y}{\partial z}\right) + \frac{\partial}{\partial y}\left(-\frac{\partial u_z}{\partial x} + \frac{\partial u_x}{\partial z}\right) + \frac{\partial}{\partial z}\left(\frac{\partial u_y}{\partial x} - \frac{\partial u_x}{\partial y}\right)$$
+$$\nabla \cdot (\nabla \times \vec{u}) = \partial_x\left(\frac{\partial u_z}{\partial y} - \frac{\partial u_y}{\partial z}\right) + \partial_y\left(-\frac{\partial u_z}{\partial x} + \frac{\partial u_x}{\partial z}\right) + \partial_z\left(\frac{\partial u_y}{\partial x} - \frac{\partial u_x}{\partial y}\right)$$
 
 $$= \frac{\partial^2 u_z}{\partial x \partial y} - \frac{\partial^2 u_y}{\partial x \partial z} - \frac{\partial^2 u_z}{\partial y \partial x} + \frac{\partial^2 u_x}{\partial y \partial z} + \frac{\partial^2 u_y}{\partial z \partial x} - \frac{\partial^2 u_x}{\partial z \partial y}$$
 
-Asumiendo que las funciones son suficientemente suaves para que las derivadas parciales mixtas sean iguales ($\frac{\partial^2}{\partial x \partial y} = \frac{\partial^2}{\partial y \partial x}$, etc.):
+Asumiendo que las funciones son suficientemente suaves para que las derivadas parciales mixtas sean iguales $\displaystyle \left(\frac{\partial^2}{\partial x \partial y} = \frac{\partial^2}{\partial y \partial x},\ldots\right)$:
 
 $$= \frac{\partial^2 u_z}{\partial y \partial x} - \frac{\partial^2 u_y}{\partial z \partial x} - \frac{\partial^2 u_z}{\partial x \partial y} + \frac{\partial^2 u_x}{\partial z \partial y} + \frac{\partial^2 u_y}{\partial x \partial z} - \frac{\partial^2 u_x}{\partial y \partial z}$$
 
 $$= \cancel{\frac{\partial^2 u_z}{\partial y \partial x}} - \cancel{\frac{\partial^2 u_y}{\partial z \partial x}} - \cancel{\frac{\partial^2 u_z}{\partial x \partial y}} + \cancel{\frac{\partial^2 u_x}{\partial z \partial y}} + \cancel{\frac{\partial^2 u_y}{\partial x \partial z}} - \cancel{\frac{\partial^2 u_x}{\partial y \partial z}} = 0$$
 
-**Interpretación física**
 
 Esta identidad expresa que el rotacional de un campo vectorial no tiene fuentes ni sumideros. Si imaginamos las líneas del campo $\nabla \times \vec{u}$ como tubos de flujo, estas tuberías no tienen "fugas" ni "entradas" en ningún punto del espacio.
 
@@ -50,9 +48,8 @@ $$\boxed{\nabla \cdot (\nabla \times \vec{u}) = 0}$$
 
 ---
 
-**Parte 2: $\nabla \times (\nabla f) = 0$**
+$\nabla \times (\nabla f) = 0$
 
-**Demostración en notación de componentes**
 
 El gradiente de una función escalar $f$ es:
 
@@ -62,8 +59,8 @@ Calculamos el rotacional:
 
 $$\nabla \times (\nabla f) = \begin{vmatrix}
 \hat{\iota} & \hat{\jmath} & \hat{\kappa} \\
-\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
-\frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} & \frac{\partial f}{\partial z}
+\partial_x & \partial_y & \partial_z \\
+\displaystyle \frac{\partial f}{\partial x} & \displaystyle  \frac{\partial f}{\partial y} &\displaystyle  \frac{\partial f}{\partial z}
 \end{vmatrix}$$
 
 $$= \left(\frac{\partial^2 f}{\partial y \partial z} - \frac{\partial^2 f}{\partial z \partial y}\right)\hat{\iota} - \left(\frac{\partial^2 f}{\partial x \partial z} - \frac{\partial^2 f}{\partial z \partial x}\right)\hat{\jmath} + \left(\frac{\partial^2 f}{\partial x \partial y} - \frac{\partial^2 f}{\partial y \partial x}\right)\hat{\kappa}$$
@@ -74,7 +71,7 @@ $$= \cancel{\frac{\partial^2 f}{\partial y \partial z}} - \cancel{\frac{\partial
 
 $$= 0\hat{\iota} - 0\hat{\jmath} + 0\hat{\kappa} = \vec{0}$$
 
-**Interpretación física**
+
 
 Esta identidad significa que un campo vectorial derivado de un potencial escalar es irrotacional. Los campos conservativos (como el campo eléctrico electrostático) tienen esta propiedad.
 
@@ -82,9 +79,9 @@ $$\boxed{\nabla \times (\nabla f) = \vec{0}}$$
 
 ---
 
-**Parte 3: $\nabla \times (\nabla \times \vec{u}) = \nabla (\nabla \cdot \vec{u}) - \nabla \cdot \nabla \vec{u}$**
+$\nabla \times (\nabla \times \vec{u}) = \nabla (\nabla \cdot \vec{u}) - \nabla \cdot \nabla \vec{u}$
 
-**Demostración usando notación de índices**
+<!-- **Demostración usando notación de índices**
 
 Usando la notación de Einstein y el símbolo de Levi-Civita $\varepsilon_{ijk}$:
 
@@ -112,9 +109,7 @@ $$\nabla \times (\nabla \times \vec{u}) = \nabla (\nabla \cdot \vec{u}) - \nabla
 
 En la identidad original se usa $\nabla \cdot \nabla \vec{u}$, pero en notación moderna esto se escribe como $\nabla^2 \vec{u}$. Ambos son equivalentes:
 
-$$\nabla \cdot \nabla \vec{u} = \nabla^2 \vec{u}$$
-
-**Demostración alternativa usando componentes**
+$$\nabla \cdot \nabla \vec{u} = \nabla^2 \vec{u}$$ -->
 
 Sean $u = (u_1, u_2, u_3)$. Calculamos el rotacional doble:
 
@@ -142,26 +137,4 @@ $$= \frac{\partial}{\partial x_1}(\nabla \cdot \vec{u}) - \nabla^2 u_1$$
 
 Lo mismo se aplica para las componentes 2 y 3, dando:
 
-$$\boxed{\nabla \times (\nabla \times \vec{u}) = \nabla (\nabla \cdot \vec{u}) - \nabla^2 \vec{u}}$$
-
-**Aplicaciones importantes**
-
-Esta identidad es fundamental en:
-
-1. **Electromagnetismo**: Aparece en las ecuaciones de Maxwell, especialmente en la ecuación de onda electromagnética
-2. **Dinámica de fluidos**: Se usa en la ecuación de Navier-Stokes
-3. **Mecánica cuántica**: Aparece en el Hamiltoniano de partículas con espín
-4. **Elasticidad**: Esencial en teoría de elasticidad lineal
-
-**Relación con identidades anteriores**
-
-Esta identidad conecta las dos identidades anteriores:
-
-- Si $\vec{u} = \nabla f$, entonces $\nabla \times \vec{u} = \vec{0}$ y el lado izquierdo es $\vec{0}$
-- El lado derecho se convierte en $\nabla (\nabla \cdot \nabla f) - \nabla^2 \nabla f = \nabla^3 f - \nabla^3 f = \vec{0}$
-
-**Resumen de las identidades demostradas**
-
-$$\boxed{\nabla \cdot (\nabla \times \vec{u}) = 0}$$
-$$\boxed{\nabla \times (\nabla f) = \vec{0}}$$
 $$\boxed{\nabla \times (\nabla \times \vec{u}) = \nabla (\nabla \cdot \vec{u}) - \nabla^2 \vec{u}}$$

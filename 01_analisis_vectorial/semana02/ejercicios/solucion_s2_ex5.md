@@ -12,9 +12,7 @@ tags:
   - operador-laplaciano
 ---
 
-**Cálculo del laplaciano de $\psi(x,y,z)$**
 
-**Definición del problema**
 
 $$\psi(x,y,z) = \frac{zx^2}{x^2 + y^2 + z^2}$$
 
@@ -22,7 +20,6 @@ El laplaciano está definido como:
 
 $$\nabla^2 \psi = \frac{\partial^2 \psi}{\partial x^2} + \frac{\partial^2 \psi}{\partial y^2} + \frac{\partial^2 \psi}{\partial z^2}$$
 
-**Parte 1: Cálculo en coordenadas cartesianas**
 
 Para simplificar el cálculo, sea $r = \sqrt{x^2 + y^2 + z^2}$, entonces:
 

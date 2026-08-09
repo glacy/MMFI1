@@ -12,9 +12,7 @@ tags:
   - vectores-base
 ---
 
-**Relación entre coordenadas cilíndricas y cartesianas**
 
-**Definición de coordenadas cilíndricas**
 
 Las coordenadas cilíndricas $(\rho, \phi, z)$ se relacionan con las coordenadas cartesianas $(x, y, z)$ mediante:
 
@@ -75,19 +73,7 @@ Los factores de escala se definen como $h_i = |\vec{e}_i|$:
 - $h_\phi = |\vec{e}_\phi| = \rho$
 - $h_z = |\vec{e}_z| = 1$
 
-**Verificación de ortogonalidad**
-
-Los vectores base son ortogonales entre sí:
-
-$$\hat{e}_\rho \cdot \hat{e}_\phi = (\cos\phi\hat{\iota} + \sin\phi\hat{\jmath}) \cdot (-\sin\phi\hat{\iota} + \cos\phi\hat{\jmath})$$
-
-$$= \cos\phi(-\sin\phi) + \sin\phi(\cos\phi) = -\cos\phi\sin\phi + \sin\phi\cos\phi = 0$$
-
-$$\hat{e}_\rho \cdot \hat{e}_z = (\cos\phi\hat{\iota} + \sin\phi\hat{\jmath}) \cdot \hat{\kappa} = 0$$
-
-$$\hat{e}_\phi \cdot \hat{e}_z = (-\sin\phi\hat{\iota} + \cos\phi\hat{\jmath}) \cdot \hat{\kappa} = 0$$
-
-**Resultado final**
+En resumen,
 
 $$\boxed{\hat{e}_\rho = \cos\phi\hat{\iota} + \sin\phi\hat{\jmath}}$$
 $$\boxed{\hat{e}_\phi = -\sin\phi\hat{\iota} + \cos\phi\hat{\jmath}}$$
