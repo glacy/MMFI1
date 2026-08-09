@@ -16,7 +16,8 @@ objetivos: [2, 4]
 ---
 
 **Arfken ejercicio 1.7.6**
-0El campo electrostático de una carga puntual $q$ es´i90u8
+
+El campo electrostático de una carga puntual $q$ es
 $$\vec{E}=\frac{q}{4\pi \epsilon_0}\cdot \frac{\hat{r}}{r^{2}},$$
 donde $\hat{r}$ es el vector unitario radial.
 

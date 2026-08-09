@@ -31,6 +31,7 @@
 | s2_ex8 | Coordenadas cilíndricas | ✓ | - | - | Vectores base, Factores de escala |
 | s2_ex9 | Potencial esféricamente simétrico | ✓ | ✓ | ✓ | Gradiente, Coordenadas esféricas, Electromagnetismo |
 | s2_ex10 | Flujo axial simétrico | - | ✓ | ✓ | Divergencia, Rotacional, Mecánica de fluidos |
+| s2_ex11 | Vectores base en coordenadas esféricas | ✓ | - | - | Vectores base, Factores de escala, Ortogonalidad |
 
 ---
 
@@ -54,6 +55,11 @@
 - **Cobertura**: Transformación cartesiano-cilíndrico completa con vectores base
 - **Habilidades**: Derivación de vectores base, normalización, verificación ortogonalidad
 - **Conceptos clave**: Vectores base $\hat{e}_\rho, \hat{e}_\phi, \hat{e}_z$, Normalización, Ortogonalidad
+
+#### s2_ex11: Vectores base en coordenadas esféricas
+- **Cobertura**: Transformación cartesiano-esférico completa con vectores base
+- **Habilidades**: Derivación de vectores base, normalización, verificación ortogonalidad
+- **Conceptos clave**: Vectores base $\hat{e}_r, \hat{e}_\theta, \hat{e}_\phi$, Normalización, Ortogonalidad
 
 #### s2_ex9: Potencial esféricamente simétrico
 - **Cobertura**: Expresión de potencial en coordenadas esféricas
@@ -149,8 +155,9 @@ Ejercicio  │  s2_ex7     │    -         │     ✓       │     -      │
 Ejercicio  │  s2_ex8     │    ✓         │     -       │     -      │
 Ejercicio  │  s2_ex9     │    ✓         │     ✓       │     ✓      │
 Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      │
+Ejercicio  │  s2_ex11    │    ✓         │     -       │     -      │
                           └─────────────┴─────────────┴─────────────
-                            Total: 4      Total: 8      Total: 4
+                            Total: 5      Total: 8      Total: 4
 ```
 
 ---
@@ -170,6 +177,7 @@ Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      �
 ### Coordenadas Esféricas
 - s2_ex4: Divergencia del campo electrostático
 - s2_ex9: Potencial esféricamente simétrico
+- s2_ex11: Vectores base y factores de escala
 
 ### Sistema Paraboloidal
 - s2_ex6: Factores de escala
@@ -212,13 +220,13 @@ Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      �
 - s2_ex10: Flujo axial simétrico
 
 ### Matemáticas Fundamentales
-- s2_ex1, s2_ex2, s2_ex5, s2_ex6, s2_ex7, s2_ex8: Conceptos teóricos
+- s2_ex1, s2_ex2, s2_ex5, s2_ex6, s2_ex7, s2_ex8, s2_ex11: Conceptos teóricos
 
 ---
 
 ## Conclusión
 
-Los 10 ejercicios de la semana 2 proporcionan una cobertura **completa y equilibrada** de los tres objetivos de aprendizaje:
+Los 11 ejercicios de la semana 2 proporcionan una cobertura **completa y equilibrada** de los tres objetivos de aprendizaje:
 
 1. **Objetivo 1 (4 ejercicios)**: Cubre transformaciones, vectores base y factores de escala en múltiples sistemas
 2. **Objetivo 2 (8 ejercicios)**: Cubre todos los operadores del nabla en diversos sistemas de coordenadas
