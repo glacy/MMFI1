@@ -13,16 +13,16 @@ exports:
 downloads:
   - file: ./../images/cilindricas.html
     title: cilindricas.html
-#   - file: ./semana02_lectura.md
-#     title: semana02_lectura.md
-#   - file: ./semana02_lectura.pdf
-#     title: semana02_lectura.pdf
-#   - file: ./dV_coordenadas_cilindricas.asy
-#     title: dV_coordenadas_cilindricas.asy
-#   - file: ./coordenadas_esfericas.asy
-#     title: coordenadas_esfericas.asy
-#   - file: ./dV_coordenadas_esfericas.asy
-#     title: dV_coordenadas_esfericas.asy
+  - file: ./semana02_lectura.md
+    title: semana02_lectura.md
+  - file: ./semana02_lectura.pdf
+    title: semana02_lectura.pdf
+  - file: ./dV_coordenadas_cilindricas.asy
+    title: dV_coordenadas_cilindricas.asy
+  - file: ./coordenadas_esfericas.asy
+    title: coordenadas_esfericas.asy
+  - file: ./dV_coordenadas_esfericas.asy
+    title: dV_coordenadas_esfericas.asy
 ---
 
 :::{aside} <wiki:Olga_Ladyzhenskaya>
