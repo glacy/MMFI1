@@ -10,6 +10,9 @@ tags:
   - vector-unitario
   - superficie
   - geometria-diferencial
+objetivos: [1, 2]
 ---
+
+**Arfken ejercicio 1.6.2**
 
 Determine un vector unitario perpendicular a la superficie $$ x^2+y^2+z^2=3$$

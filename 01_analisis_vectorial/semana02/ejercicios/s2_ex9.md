@@ -10,6 +10,7 @@ tags:
   - operador-nabla
   - gradiente
   - coordenadas-curvilíneas
+objetivos: [2, 4]
 ---
 
 Un campo de potencial eléctrico esféricamente simétrico está dado por $V(r) = \frac{q}{4\pi\epsilon_0 r}$, donde $r = \sqrt{x^2 + y^2 + z^2}$ es la distancia desde el origen.

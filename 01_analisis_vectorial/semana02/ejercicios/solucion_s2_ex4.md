@@ -5,100 +5,38 @@ keywords:
   - campo-electrico
   - electrostatica
   - ley-gauss
+  - coordenadas-esfericas
 tags:
   - divergencia
   - campo-electrico
   - electrostatica
   - ley-gauss
+  - coordenadas-esfericas
 ---
 
-**Cálculo de la divergencia del campo electrostático**
+La expresión general de la divergencia en coordenadas curvilíneas ortogonales es
 
-**Definición del problema**
+$$\nabla \cdot \vec{A} = \frac{1}{h_1h_2h_3}\left[ \frac{\partial}{\partial u_1}(h_2h_3A_1)+\frac{\partial}{\partial u_2}(h_1h_3A_2)+\frac{\partial}{\partial u_3}(h_1h_2A_3) \right].$$
 
-El campo electrostático de una carga puntual $q$ está dado por:
+Para las coordenadas esféricas los factores de escala son $$h_r=1, \quad h_\theta=r\quad \text{y} \quad h_\phi=r\sin\theta$$
+ de donde se obtiene
 
-$$\vec{E} = \frac{q}{4\pi \epsilon_0} \cdot \frac{\hat{r}}{r^2}$$
+$$\nabla \cdot \vec{A} = \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2 A_r\right) + \frac{1}{r\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\, A_\theta\right) + \frac{1}{r\sin\theta}\frac{\partial A_\phi}{\partial \phi}.$$
 
-Donde:
-- $\hat{r} = \frac{\vec{r}}{r}$ es el vector unitario radial
-- $\vec{r} = x\hat{\iota} + y\hat{\jmath} + z\hat{\kappa}$ es el vector de posición
-- $r = \sqrt{x^2 + y^2 + z^2}$ es la distancia desde el origen
+El campo de una carga puntual es puramente radial, $\vec{E} = E_r\hat{e}_r$ con $E_r = \dfrac{q}{4\pi\epsilon_0 r^2}$, por lo que $E_\theta = E_\phi = 0$ y solo sobrevive el primer término:
 
-**Expresión del campo en coordenadas cartesianas**
+$$\nabla \cdot \vec{E} = \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2 \cdot \frac{q}{4\pi\epsilon_0 r^2}\right) = \frac{1}{r^2}\frac{\partial}{\partial r}\left(\frac{q}{4\pi\epsilon_0}\right) = 0.$$
 
-Podemos expresar el campo como:
+$$\boxed{\nabla \cdot \vec{E} = 0 \quad \text{para } r > 0}$$
 
-$$\vec{E} = \frac{q}{4\pi \epsilon_0} \cdot \frac{\vec{r}}{r^3} = \frac{q}{4\pi \epsilon_0} \cdot \frac{x\hat{\iota} + y\hat{\jmath} + z\hat{\kappa}}{(x^2 + y^2 + z^2)^{3/2}}$$
+---
 
-Las componentes del campo son:
-- $E_x = \frac{q}{4\pi \epsilon_0} \cdot \frac{x}{(x^2 + y^2 + z^2)^{3/2}}$
-- $E_y = \frac{q}{4\pi \epsilon_0} \cdot \frac{y}{(x^2 + y^2 + z^2)^{3/2}}$
-- $E_z = \frac{q}{4\pi \epsilon_0} \cdot \frac{z}{(x^2 + y^2 + z^2)^{3/2}}$
+La forma diferencial de la ley de Gauss establece
 
-**Cálculo de la divergencia en coordenadas cartesianas**
+$$\nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0}.$$
 
-$$\nabla \cdot \vec{E} = \frac{\partial E_x}{\partial x} + \frac{\partial E_y}{\partial y} + \frac{\partial E_z}{\partial z}$$
+Para $r>0$ no hay carga en la vecindad del punto, $\rho=0$, y el resultado coincide: la divergencia se anula. En el origen ($r=0$) se concentra toda la carga puntual $q$, que en términos de densidad se escribe $\rho = q\,\delta^3(\vec{r})$, donde $\delta^3$ es la función delta de Dirac tridimensional. Por lo tanto
 
-#### Cálculo de $\frac{\partial E_x}{\partial x}$
+$$\nabla \cdot \vec{E} = \frac{q}{\epsilon_0}\,\delta^3(\vec{r}),$$
 
-Sea $r = (x^2 + y^2 + z^2)^{1/2}$, entonces $r^3 = (x^2 + y^2 + z^2)^{3/2}$.
-
-$$\frac{\partial}{\partial x}\left[\frac{x}{r^3}\right] = \frac{\partial}{\partial x}\left[x(x^2 + y^2 + z^2)^{-3/2}\right]$$
-
-Usando la regla del producto:
-
-$$= (x^2 + y^2 + z^2)^{-3/2} \cdot \frac{\partial}{\partial x}[x] + x \cdot \frac{\partial}{\partial x}[(x^2 + y^2 + z^2)^{-3/2}]$$
-
-$$= (x^2 + y^2 + z^2)^{-3/2} \cdot 1 + x \cdot (-3/2)(x^2 + y^2 + z^2)^{-5/2} \cdot 2x$$
-
-$$= \frac{1}{r^3} - \frac{3x^2}{r^5} = \frac{r^2 - 3x^2}{r^5}$$
-
-De manera similar:
-
-$$\frac{\partial E_y}{\partial y} = \frac{q}{4\pi \epsilon_0} \cdot \frac{r^2 - 3y^2}{r^5}$$
-
-$$\frac{\partial E_z}{\partial z} = \frac{q}{4\pi \epsilon_0} \cdot \frac{r^2 - 3z^2}{r^5}$$
-
-**Suma de las derivadas parciales**
-
-$$\nabla \cdot \vec{E} = \frac{q}{4\pi \epsilon_0 r^5}\left[(r^2 - 3x^2) + (r^2 - 3y^2) + (r^2 - 3z^2)\right]$$
-
-$$= \frac{q}{4\pi \epsilon_0 r^5}\left[3r^2 - 3(x^2 + y^2 + z^2)\right]$$
-
-$$= \frac{q}{4\pi \epsilon_0 r^5}\left[3r^2 - 3r^2\right] = 0$$
-
-**Resultado en el espacio libre**
-
-$$\boxed{\nabla \cdot \vec{E} = 0 \quad \text{para } r \neq 0}$$
-
-**Interpretación física**
-
-Este resultado es consistente con la **Ley de Gauss** para el campo eléctrico:
-
-- En el espacio libre (donde no hay carga eléctrica), la divergencia del campo eléctrico es cero.
-- Esto indica que no hay "fuentes" o "sumideros" del campo eléctrico en el espacio libre.
-- Las líneas del campo eléctrico no comienzan ni terminan en el espacio libre; se pueden considerar como líneas continuas.
-
-**Nota importante sobre el origen ($r = 0$)**
-
-El cálculo anterior es válido para $r \neq 0$ (puntos distintos del origen donde está la carga). En el origen ($r = 0$), la divergencia es:
-
-$$\nabla \cdot \vec{E} = \frac{q}{\epsilon_0}\delta^3(\vec{r})$$
-
-Donde $\delta^3(\vec{r})$ es la **función delta de Dirac tridimensional**. Esto refleja que toda la carga $q$ está concentrada en el origen.
-
-**Aplicación de la Ley de Gauss**
-
-La forma general de la Ley de Gauss en forma diferencial es:
-
-$$\nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0}$$
-
-Para una carga puntual, la densidad de carga es $\rho = q\delta^3(\vec{r})$, lo que es consistente con nuestro resultado.
-
-**Resumen del resultado**
-
-$$\boxed{\nabla \cdot \vec{E} = \begin{cases}
-0 & \text{para } r \neq 0 \\
-\frac{q}{\epsilon_0}\delta^3(\vec{r}) & \text{para } r = 0
-\end{cases}}$$
+que integrado sobre cualquier volumen que contenga el origen da $q/\epsilon_0$, en concordancia con la ley de Gauss en forma integral $\oint \vec{E}\cdot d\vec{A} = q/\epsilon_0$.

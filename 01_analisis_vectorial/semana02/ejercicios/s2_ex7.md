@@ -12,6 +12,7 @@ tags:
   - divergencia
   - rotacional
   - gradiente
+objetivos: [1]
 ---
 
 Demuestre que

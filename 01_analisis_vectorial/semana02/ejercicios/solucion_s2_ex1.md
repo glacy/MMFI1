@@ -12,10 +12,6 @@ tags:
   - geometria-diferencial
 ---
 
-**Vector unitario perpendicular a la superficie**
-
-**Método del gradiente**
-
 La ecuación de la superficie es:
 
 $$f(x,y,z) = x^2 + y^2 + z^2 - 3 = 0$$

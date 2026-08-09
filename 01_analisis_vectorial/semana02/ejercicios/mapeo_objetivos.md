@@ -24,13 +24,14 @@
 | s2_ex1 | Vector unitario perpendicular a superficie | - | ✓ | - | Gradiente |
 | s2_ex2 | Rotacional de campo vectorial | - | ✓ | - | Rotacional |
 | s2_ex3 | Rotacional en rotación rígida | - | ✓ | ✓ | Rotacional, Mecánica |
-| s2_ex4 | Divergencia de campo electrostático | - | ✓ | ✓ | Divergencia, Electromagnetismo |
+| s2_ex4 | Divergencia de campo electrostático | - | ✓ | ✓ | Divergencia esférica, Electromagnetismo |
 | s2_ex5 | Laplaciano en diferentes sistemas | ✓ | ✓ | - | Laplaciano, Transformación |
 | s2_ex6 | Coordenadas paraboloidales | ✓ | - | - | Factores de escala |
 | s2_ex7 | Identidades vectoriales | - | ✓ | - | Divergencia, Rotacional, Gradiente |
 | s2_ex8 | Coordenadas cilíndricas | ✓ | - | - | Vectores base, Factores de escala |
 | s2_ex9 | Potencial esféricamente simétrico | ✓ | ✓ | ✓ | Gradiente, Coordenadas esféricas, Electromagnetismo |
 | s2_ex10 | Flujo axial simétrico | - | ✓ | ✓ | Divergencia, Rotacional, Mecánica de fluidos |
+| s2_ex11 | Vectores base en coordenadas esféricas | ✓ | - | - | Vectores base, Factores de escala, Ortogonalidad |
 
 ---
 
@@ -54,6 +55,11 @@
 - **Cobertura**: Transformación cartesiano-cilíndrico completa con vectores base
 - **Habilidades**: Derivación de vectores base, normalización, verificación ortogonalidad
 - **Conceptos clave**: Vectores base $\hat{e}_\rho, \hat{e}_\phi, \hat{e}_z$, Normalización, Ortogonalidad
+
+#### s2_ex11: Vectores base en coordenadas esféricas
+- **Cobertura**: Transformación cartesiano-esférico completa con vectores base
+- **Habilidades**: Derivación de vectores base, normalización, verificación ortogonalidad
+- **Conceptos clave**: Vectores base $\hat{e}_r, \hat{e}_\theta, \hat{e}_\phi$, Normalización, Ortogonalidad
 
 #### s2_ex9: Potencial esféricamente simétrico
 - **Cobertura**: Expresión de potencial en coordenadas esféricas
@@ -82,9 +88,9 @@
 - **Conceptos clave**: Rotacional, Velocidad angular, Identidad triple producto
 
 #### s2_ex4: Divergencia de campo electrostático
-- **Cobertura**: Divergencia en coordenadas cartesianas
-- **Habilidades**: Cálculo de divergencia, interpretación física
-- **Conceptos clave**: Divergencia, Ley de Gauss, Campos electrostáticos
+- **Cobertura**: Divergencia en coordenadas esféricas del campo de Coulomb
+- **Habilidades**: Sustitución de factores de escala, cálculo de divergencia esférica, interpretación física
+- **Conceptos clave**: Divergencia esférica, Ley de Gauss, Carga puntual, Delta de Dirac
 
 #### s2_ex5: Laplaciano en diferentes sistemas
 - **Cobertura**: Laplaciano en cartesianas y cilíndricas
@@ -149,8 +155,9 @@ Ejercicio  │  s2_ex7     │    -         │     ✓       │     -      │
 Ejercicio  │  s2_ex8     │    ✓         │     -       │     -      │
 Ejercicio  │  s2_ex9     │    ✓         │     ✓       │     ✓      │
 Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      │
+Ejercicio  │  s2_ex11    │    ✓         │     -       │     -      │
                           └─────────────┴─────────────┴─────────────
-                            Total: 4      Total: 8      Total: 4
+                            Total: 5      Total: 8      Total: 4
 ```
 
 ---
@@ -160,7 +167,6 @@ Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      �
 ### Coordenadas Cartesianas
 - s2_ex1: Gradiente
 - s2_ex2: Rotacional
-- s2_ex4: Divergencia
 - s2_ex5: Laplaciano (primera parte)
 
 ### Coordenadas Cilíndricas
@@ -169,7 +175,9 @@ Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      �
 - s2_ex10: Flujo axial simétrico
 
 ### Coordenadas Esféricas
+- s2_ex4: Divergencia del campo electrostático
 - s2_ex9: Potencial esféricamente simétrico
+- s2_ex11: Vectores base y factores de escala
 
 ### Sistema Paraboloidal
 - s2_ex6: Factores de escala
@@ -183,7 +191,7 @@ Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      �
 - s2_ex9: Potencial esférico
 
 ### Divergencia (∇·)
-- s2_ex4: Campo electrostático
+- s2_ex4: Campo electrostático (esféricas)
 - s2_ex7: Identidad fundamental
 - s2_ex10: Flujo incompresible
 
@@ -202,7 +210,7 @@ Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      �
 ## Aplicaciones Físicas por Dominio
 
 ### Electromagnetismo
-- s2_ex4: Ley de Gauss
+- s2_ex4: Ley de Gauss (esféricas)
 - s2_ex9: Potencial de carga puntual
 
 ### Mecánica
@@ -212,13 +220,13 @@ Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      �
 - s2_ex10: Flujo axial simétrico
 
 ### Matemáticas Fundamentales
-- s2_ex1, s2_ex2, s2_ex5, s2_ex6, s2_ex7, s2_ex8: Conceptos teóricos
+- s2_ex1, s2_ex2, s2_ex5, s2_ex6, s2_ex7, s2_ex8, s2_ex11: Conceptos teóricos
 
 ---
 
 ## Conclusión
 
-Los 10 ejercicios de la semana 2 proporcionan una cobertura **completa y equilibrada** de los tres objetivos de aprendizaje:
+Los 11 ejercicios de la semana 2 proporcionan una cobertura **completa y equilibrada** de los tres objetivos de aprendizaje:
 
 1. **Objetivo 1 (4 ejercicios)**: Cubre transformaciones, vectores base y factores de escala en múltiples sistemas
 2. **Objetivo 2 (8 ejercicios)**: Cubre todos los operadores del nabla en diversos sistemas de coordenadas

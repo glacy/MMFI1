@@ -6,10 +6,10 @@ project:
       children:
         - file: ./01_analisis_vectorial/semana01/semana01_lectura.md
         - file: ./01_analisis_vectorial/semana01/semana01_practica.md
-    # - title: Semana 2
-    #   children:
-    #     - file: ./01_analisis_vectorial/semana02/semana02_lectura.md
-    #     - file: ./01_analisis_vectorial/semana02/semana02_practica.md
+    - title: Semana 2
+      children:
+        - file: ./01_analisis_vectorial/semana02/semana02_lectura.md
+        - file: ./01_analisis_vectorial/semana02/semana02_practica.md
   title: MMFI1
   github: https://github.com/glacy/MMFI1
   jupyter: binder
@@ -48,6 +48,7 @@ site:
   options:
     logo: site_logo.svg
     logo_dark: site_logo_dark.svg
+    favicon: favicon.ico
     search: true
   actions:
     - title: tecDigital
