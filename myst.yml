@@ -9,7 +9,7 @@ project:
     - title: Semana 2
       children:
         - file: ./01_analisis_vectorial/semana02/semana02_lectura.md
-        - file: ./01_analisis_vectorial/semana02/semana02_practica.md 
+       - file: ./01_analisis_vectorial/semana02/semana02_practica.md 
     - title: Semana 3
       children:
         - file: ./01_analisis_vectorial/semana03/semana03_lectura.md
@@ -52,7 +52,7 @@ site:
   options:
     logo: site_logo.svg
     logo_dark: site_logo_dark.svg
-    favicon: favicon.ico
+    # favicon: favicon.ico
     search: true
   actions:
     - title: tecDigital
