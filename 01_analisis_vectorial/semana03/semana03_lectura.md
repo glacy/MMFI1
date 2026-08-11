@@ -9,24 +9,24 @@ keywords: [teoremas, integrales, Gauss, Stokes, Green]
 exports:
  - format: pdf
    template: curvenote
-   output: ./semana3_lectura.pdf
-downloads:
-  - file: ./semana3_lectura.md
-    title: semana3_lectura.md
-  - file: ./semana3_lectura.pdf
-    title: semana3_lectura.pdf
-  - file: ./superficie_normal.asy
-    title: superficie_normal.asy
-  - file: ./campo_vectorial_curva.asy
-    title: campo_vectorial_curva.asy
-  - file: ./ley_ampere.asy
-    title: ley_ampere.asy
+   output: ./semana03_lectura.pdf
+# downloads:
+#   - file: ./semana3_lectura.md
+#     title: semana3_lectura.md
+#   - file: ./semana3_lectura.pdf
+#     title: semana3_lectura.pdf
+#   - file: ./superficie_normal.asy
+#     title: superficie_normal.asy
+#   - file: ./campo_vectorial_curva.asy
+#     title: campo_vectorial_curva.asy
+#   - file: ./ley_ampere.asy
+#     title: ley_ampere.asy
 ---
 
 :::{aside} [Helen Czerski](https://www.helenczerski.net/)
 es una física británica especializada en dinámica de oceános y procesos de microescala en la interfaz aire-mar. Actualmente es parte del Departmento de Ingeniería Mecanica del University College London.
 
-```{figure} ./Helen_Czerski.png
+```{figure} ./../images/Helen_Czerski.png
 :label: fig-Helen_Czerski.jpg
 :alt: retrato de Dra. Helen Czerski
 :align: center
@@ -62,7 +62,7 @@ $$\int_a^b \displaystyle \frac{d}{dt}f(t)dt = f(b)-f(a)$$
 (integral_linea)=
 ## Integrales de línea (o de trayectoria) 
 
-```{figure} ./integral-linea.*
+```{figure} ./../images/integral-linea.*
 :label: fig-integral-linea
 :alt: trayectoria en espacio 3d
 :align: center
@@ -108,7 +108,7 @@ manera que
 $$\Rightarrow W=\int_0^2 \left(\frac{1}{4}x^3-\frac{1}{32}x^5 \right)dx=\frac{2}{3}.$$
 
 
-:::{figure} ./campo_vectorial_curva.png
+:::{figure} ./../images/campo_vectorial_curva.png
 :alt: grafico del problema
 :width: 500px
 :align: center
@@ -130,7 +130,7 @@ permeabilidad del vacío e $I_{\text{enc}}$ es la corriente neta
 encerrada por la curva $C$.
 
 En coordenadas cilíndricas, 
-```{figure} ./ampere_alambre.png
+```{figure} ./../images/ampere_alambre.png
 :alt: grafico del problema
 :align: center
 Aplicación de la Ley de Ampère en sistema con simetría cilíndrica. Imagen generada con [Asymptote](https://asymptote.sourceforge.io/).
@@ -160,7 +160,7 @@ $$\iint_S \vec{F}\cdot d\vec{S}= \iint_S \vec{F}\cdot \hat{n}dS,$$
 donde $d\vec{S}=\hat{n}dS$ es el vector diferencial de superficie, con
 $\hat{n}$ el vector normal unitario a la superficie, como se muestra en la [Figura %s](#fig-superficie_normal).
 
-```{figure} ./superficie_normal.png
+```{figure} ./../images/superficie_normal.png
 :width: 400px
 :label: fig-superficie_normal
 :alt: Vector normal a una superficie en un punto
@@ -180,7 +180,7 @@ $$% Área de una Superficie z = f(x,y)
 A = \iint dS = \iint \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 + \left(\frac{\partial f}{\partial y}\right)^2 + 1} \, dx \, dy$$
 
 
-```{figure} ./integral_doble.*
+```{figure} ./../images/integral_doble.*
 :alt: grafico del problema
 :align: center
 ```
@@ -288,7 +288,7 @@ El término $\oint _C
 \vec{V}\cdot d\vec{l}$ se conoce como la [*circulación*](https://es.wikipedia.org/wiki/Circulaci%C3%B3n_(aerodin%C3%A1mica)) de $\vec{V}$
 alrededor de una curva cerrada.
 
-```{figure} ./dS.png
+```{figure} ./../images/dS.png
 :label: fig-dS
 :alt: vector de superficie
 :align: center
@@ -324,7 +324,7 @@ superficie que encierra la región.
 $$\iiint \limits_{\tau}\nabla \cdot  \vec{V}d \tau = \oiint_{\sigma} \vec{V}\cdot \hat{n}d\sigma,$$
 donde $\hat{n}$ apunta hacia afuera de la superficie cerrada $\sigma$.
 
-```{figure} ./flujo.png
+```{figure} ./../images/flujo.png
 :label: fig-flujo
 :alt: flujo a través de una superficie
 :align: center
@@ -334,7 +334,7 @@ Flujo a través de una superficie. Imagen generada con [Inkscape](https://inksca
 Físicamente, el término $\nabla \cdot \vec{V}$ es el flujo neto por
 unidad de volumen.
 
-```{figure} ./gauss_E.png
+```{figure} ./../images/gauss_E.png
 :label: fig-gauss_E
 :alt: aaaaaaaa
 :align: center
