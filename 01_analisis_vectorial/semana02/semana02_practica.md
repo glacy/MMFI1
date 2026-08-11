@@ -82,6 +82,24 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 
 
 ````{exercise}
+:label: s2_ex12
+
+```{include} ./ejercicios/s2_ex12.md
+
+```
+````
+
+````{solution} s2_ex12
+:label: solucion-s2_ex12
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s2_ex12.md
+
+```
+````
+
+
+````{exercise}
 :label: s2_ex3
 
 ```{include} ./ejercicios/s2_ex3.md
