@@ -425,7 +425,79 @@ $$\boxed{h_r=1, \quad h_\theta=r, \quad h_\phi=r\sin \theta}$$
 Estos factores determinan el elemento de volumen $dV = h_r h_\theta h_\phi\,dr\,d\theta\,d\phi = r^2\sin\theta\,dr\,d\theta\,d\phi$, y sustituyéndolos en las fórmulas generales permiten expresar el gradiente, la divergencia, el rotacional y el laplaciano en este sistema.
 :::
 
+# 🔣 Símbolo de Levi-Civita y convención de suma
 
+## Definición del símbolo de Levi-Civita
+
+El símbolo de Levi-Civita $\varepsilon_{ijk}$ es un objeto antisimétrico con tres índices, definido como:
+
+$$
+\varepsilon_{ijk} = \begin{cases}
++1 & \text{si } (i,j,k) \text{ es una permutación par de } (1,2,3),\\
+-1 & \text{si } (i,j,k) \text{ es una permutación impar de } (1,2,3),\\
+0 & \text{si algún índice se repite}.
+\end{cases}
+$$
+
+Sus valores explícitos para los índices $i,j,k \in \{1,2,3\}$ son:
+
+$$
+\begin{array}{c|cccccc}
+(i,j,k) & (1,2,3) & (2,3,1) & (3,1,2) & (1,3,2) & (3,2,1) & (2,1,3)\\
+\hline
+\varepsilon_{ijk} & +1 & +1 & +1 & -1 & -1 & -1
+\end{array}
+$$
+
+y $\varepsilon_{ijk} = 0$ cuando dos o más índices coinciden (por ejemplo, $\varepsilon_{112} = \varepsilon_{232} = \varepsilon_{333} = 0$). La propiedad esencial es la antisimetría: intercambiar dos índices cambia el signo, $\varepsilon_{ijk} = -\varepsilon_{jik}$.
+
+## Convención de suma (Einstein).
+
+Siempre que un índice aparezca repetido dos veces en un producto, se sobreentiende la suma sobre él:
+
+$$
+a_i b_i \equiv \sum_{i=1}^{3} a_i b_i = a_1b_1 + a_2b_2 + a_3b_3.
+$$
+
+Así, por ejemplo, el producto punto se escribe simplemente $\vec{a}\cdot\vec{b} = a_i b_i$.
+
+
+:::{seealso} Producto vectorial en notación de índices
+
+La componente $i$-ésima del producto vectorial (producto cruz) se escribe con $\varepsilon_{ijk}$ y la convención de suma como:
+
+$$
+(\vec{A}\times\vec{B})_i = \varepsilon_{ijk} A_j B_k
+\;\equiv\;
+\sum_{j=1}^3\sum_{k=1}^3 \varepsilon_{ijk}A_jB_k.
+$$
+
+Por ejemplo, para $i=2$:
+
+$$
+(\vec{A}\times\vec{B})_2 = \varepsilon_{2jk}A_jB_k
+= \varepsilon_{231}A_2B_1 + \varepsilon_{213}A_1B_2
+= A_3B_1 - A_1B_3,
+$$
+
+ya que los únicos términos no nulos tienen índices $(2,3,1)$ ($+1$) y $(2,1,3)$ ($-1$).
+
+Tomando $i=1$ se obtiene la componente $x$:
+
+$$
+(\vec{A}\times\vec{B})_1 = \varepsilon_{1jk}A_jB_k
+= \varepsilon_{123}A_2B_3 + \varepsilon_{132}A_3B_2
+= A_2B_3 - A_3B_2.
+$$
+
+De la misma manera $(\vec{A}\times\vec{B})_3 = A_1B_2 - A_2B_1$, de modo que en notación vectorial:
+
+$$
+\boxed{\vec{A}\times\vec{B} = (A_2B_3 - A_3B_2)\hat{\iota} + (A_3B_1 - A_1B_3)\hat{\jmath} + (A_1B_2 - A_2B_1)\hat{\kappa}},
+$$
+
+que es exactamente la definicion usual.
+:::
 
 :::{seealso} Referencias
 @boas2006mathematical [Cap. 6 "Vector Analysis", pág. 289-299]
@@ -434,3 +506,4 @@ Estos factores determinan el elemento de volumen $dV = h_r h_\theta h_\phi\,dr\,
 
 @riley2006mathematical [Cap. 7 "Vector Algebra", pág. 347-369]
 :::
+
