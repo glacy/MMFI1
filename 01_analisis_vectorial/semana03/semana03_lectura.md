@@ -23,14 +23,14 @@ exports:
 #     title: ley_ampere.asy
 ---
 
-:::{aside} [Helen Czerski](https://www.helenczerski.net/)
-es una física británica especializada en dinámica de oceános y procesos de microescala en la interfaz aire-mar. Actualmente es parte del Departmento de Ingeniería Mecanica del University College London.
+:::{aside} [Sheila Widnall](https://es.wikipedia.org/wiki/Sheila_Widnall)
+es una ingeniera aeronáutica estadounidense, profesora del [MIT](https://www.mit.edu/) y primera mujer en ocupar el cargo de Secretaria de la Fuerza Aérea de los Estados Unidos (1993-1997). Su investigación se centra en la dinámica de fluidos: aerodinámica de vórtices, estelas de helicópteros y aviones, y el análisis del flujo de aire alrededor de aeronaves. En estos problemas son esenciales los teoremas integrales: el teorema de Stokes relaciona la circulación alrededor de un ala con el flujo de vorticidad, y el teorema de la divergencia vincula el flujo de masa y cantidad de movimiento a través de superficies de control en el estudio de los chorros y estelas.
 
-```{figure} ./../images/Helen_Czerski.png
-:label: fig-Helen_Czerski.jpg
-:alt: retrato de Dra. Helen Czerski
+```{figure} ./../images/Sheila_Widnall.png
+:label: fig-Sheila_Widnall
+:alt: retrato de Dra. Sheila Widnall
 :align: center
-Dra. Helen Czerski (1978 - )
+ScD. Sheila Widnall (1938 - ). Foto: Expert Infantry ([Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ASheila_Widnall_%285467715818%29.jpg), CC BY 2.0).
 ```
 :::
 
