@@ -98,6 +98,24 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```
 ````
 
+````{exercise}
+:label: s2_ex13
+
+```{include} ./ejercicios/s2_ex13.md
+
+```
+````
+
+````{solution} s2_ex13
+:label: solucion-s2_ex13
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s2_ex13.md
+
+```
+````
+
+
 
 ````{exercise}
 :label: s2_ex3

@@ -24,6 +24,7 @@
 | s3_ex5 | Ecuación de continuidad en mecánica de fluidos | ✓ | ✓ | ✓ | Divergencia, Conservación de masa, Fluidos |
 | s3_ex6 | Ley de Gauss para esfera con carga uniforme | ✓ | ✓ | ✓ | Divergencia, Campo eléctrico, Electromagnetismo |
 | s3_ex7 | Balance de energía en conducción de calor | ✓ | ✓ | ✓ | Divergencia, Ecuación del calor, Transferencia de calor |
+| s3_ex8 | Divergencia de un producto cruz | ✓ | ✓ | ✓ | Identidades vectoriales, Levi-Civita, Poynting |
 
 ---
 
@@ -74,6 +75,11 @@
 
 **Ejercicios que cubren este objetivo:**
 
+#### s3_ex8: Divergencia de un producto cruz
+- **Cobertura**: Demostración de la identidad con notación de índices y verificación con campos concretos
+- **Habilidades**: Notación de índices, símbolo de Levi-Civita, cálculo de divergencias y rotacionales
+- **Conceptos clave**: Divergencia, Producto cruz, Rotacional, Identidades vectoriales
+
 #### s3_ex2: Flujo a través de superficie cerrada cilíndrica
 - **Cobertura**: Cálculo de flujo directo y con teorema de la divergencia
 - **Habilidades**: Comparación de métodos, integral de superficie en cilíndricas
@@ -109,6 +115,11 @@
 ### Objetivo 3: Relacionar la formulación matemática con principios físicos
 
 **Ejercicios que cubren este objetivo:**
+
+#### s3_ex8: Divergencia de un producto cruz
+- **Cobertura**: Aplicación al teorema de Poynting en electromagnetismo
+- **Habilidades**: Interpretación física del flujo de un producto cruz
+- **Conceptos clave**: Vector de Poynting, Conservación de energía, Teorema de la divergencia
 
 #### s3_ex1: Tasa de cambio de energía electromagnética
 - **Cobertura**: Conservación de la energía en electromagnetismo
@@ -149,8 +160,9 @@ Ejercicio  │  s3_ex4      │     ✓       │     ✓       │     ✓     
 Ejercicio  │  s3_ex5      │     ✓       │     ✓       │     ✓      │
 Ejercicio  │  s3_ex6      │     ✓       │     ✓       │     ✓      │
 Ejercicio  │  s3_ex7      │     ✓       │     ✓       │     ✓      │
+Ejercicio  │  s3_ex8      │     ✓       │     ✓       │     ✓      │
                           └─────────────┴─────────────┴─────────────
-                            Total: 7      Total: 6      Total: 5
+                            Total: 8      Total: 7      Total: 6
 ```
 
 ---
@@ -193,10 +205,10 @@ Ejercicio  │  s3_ex7      │     ✓       │     ✓       │     ✓     
 
 ## Conclusión
 
-Los 7 ejercicios de la semana 3 proporcionan una cobertura **completa y equilibrada** de los tres objetivos de aprendizaje:
+Los 8 ejercicios de la semana 3 proporcionan una cobertura **completa y equilibrada** de los tres objetivos de aprendizaje:
 
-1. **Objetivo 1 (7 ejercicios)**: Todos los ejercicios enuncian o verifican los teoremas de Stokes, Green y Gauss.
-2. **Objetivo 2 (6 ejercicios)**: Transforman integrales de línea, superficie y volumen para simplificar cálculos.
-3. **Objetivo 3 (5 ejercicios)**: Aplican los teoremas a problemas físicos reales en electromagnetismo, mecánica de fluidos y transferencia de calor.
+1. **Objetivo 1 (8 ejercicios)**: Todos los ejercicios enuncian o verifican los teoremas de Stokes, Green y Gauss.
+2. **Objetivo 2 (7 ejercicios)**: Transforman integrales de línea, superficie y volumen para simplificar cálculos.
+3. **Objetivo 3 (6 ejercicios)**: Aplican los teoremas a problemas físicos reales en electromagnetismo, mecánica de fluidos y transferencia de calor.
 
 La progresión va desde los teoremas fundamentales (área, flujo) hasta aplicaciones físicas avanzadas (Poynting, continuidad, campo eléctrico, conducción de calor), cubriendo los tres dominios físicos mencionados en el objetivo 3 y asegurando la comprensión profunda de los teoremas integrales y su papel en la ingeniería.
