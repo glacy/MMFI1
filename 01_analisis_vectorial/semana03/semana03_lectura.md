@@ -11,10 +11,10 @@ exports:
    template: curvenote
    output: ./semana03_lectura.pdf
 # downloads:
-#   - file: ./semana3_lectura.md
-#     title: semana3_lectura.md
-#   - file: ./semana3_lectura.pdf
-#     title: semana3_lectura.pdf
+#   - file: ./semana03_lectura.md
+#     title: semana03_lectura.md
+#   - file: ./semana03_lectura.pdf
+#     title: semana03_lectura.pdf
 #   - file: ./superficie_normal.asy
 #     title: superficie_normal.asy
 #   - file: ./campo_vectorial_curva.asy
@@ -50,17 +50,28 @@ En ingeniería y física, estos teoremas son esenciales para la formulación y r
 
 
 
-# Aspectos preliminares
+# ⌛ Aspectos preliminares
+
+Antes de enunciar los teoremas integrales conviene repasar las herramientas que estos generalizan: el teorema fundamental del cálculo y las integrales de línea, superficie y volumen. Estas nociones, estudiadas en semanas anteriores, son el punto de partida de los resultados que se presentan en esta lección.
 
 (teorema-fundamental-calculo)=
 
 ## Teorema fundamental del Cálculo
-La integral de la derivada de una función en un intervalo, es la diferencia de la función evaluada en los límites del intervalo:
+
+El punto de partida de todos los teoremas integrales es el teorema fundamental del cálculo, que conecta la derivada de una función con su integral definida sobre un intervalo. En una dimensión, la integral de la derivada de $f$ entre $a$ y $b$ es igual a la diferencia de los valores de $f$ en los extremos:
 
 $$\int_a^b \displaystyle \frac{d}{dt}f(t)dt = f(b)-f(a)$$
 
 (integral_linea)=
-## Integrales de línea (o de trayectoria) 
+## Integrales de línea (o de trayectoria)
+
+El teorema fundamental del cálculo se generaliza a curvas en el espacio mediante las integrales de línea. Una [integral de trayectoria (o integral de línea)](https://es.wikipedia.org/wiki/Integral_de_l%C3%ADnea#Full_description_(English)) es una integral donde
+la función a integrar se evalúa a lo largo de una curva ($C$) o
+trayectoria en el espacio, por ejemplo:
+
+$$\int_C \phi(x,y,z) d\vec{r}=\hat{\iota}\int_{x_1}^{x_2} \phi(x,y,z)dx+\hat{\jmath}\int_{y_1}^{y_2} \phi(x,y,z)dy+\hat{\kappa}\int_{z_1}^{z_2} \phi(x,y,z)dz$$
+
+$$\int_C \vec{V}\cdot d\vec{r}=\int_{x_1}^{x_2} V_x(x,y,z)dx+\int_{y_1}^{y_2} V_y(x,y,z)dy+\int_{z_1}^{z_2} V_z(x,y,z)dz$$
 
 ```{figure} ./../images/integral-linea.*
 :label: fig-integral-linea
@@ -69,14 +80,6 @@ $$\int_a^b \displaystyle \frac{d}{dt}f(t)dt = f(b)-f(a)$$
 :width: 500px
 Trayectoria de integración $C$.
 ```
-
-Una [integral de trayectoria (o integral de línea)](https://es.wikipedia.org/wiki/Integral_de_l%C3%ADnea#Full_description_(English)) es una integral donde
-la función a integrar se evalúa a lo largo de una curva ($C$) o
-trayectoria en el espacio, por ejemplo:
-
-$$\int_C \phi(x,y,z) d\vec{r}=\hat{\iota}\int_{x_1}^{x_2} \phi(x,y,z)dx+\hat{\jmath}\int_{y_1}^{y_2} \phi(x,y,z)dy+\hat{\kappa}\int_{z_1}^{z_2} \phi(x,y,z)dz$$
-
-$$\int_C \vec{V}\cdot d\vec{r}=\int_{x_1}^{x_2} V_x(x,y,z)dx+\int_{y_1}^{y_2} V_y(x,y,z)dy+\int_{z_1}^{z_2} V_z(x,y,z)dz$$
 
 La curva $C$ puede ser una _trayectoria abierta_ (los puntos $A$ y $B$ son distintos) o una _trayectoria cerrada_, es decir, la curva forma un bucle (los puntos $A$ y $B$ son coincidentes). En este último caso, la integral de línea se escribe $\oint_C$ para indicarlo.
 
@@ -149,7 +152,7 @@ $$\vec{F}=I\displaystyle \oint_C d\vec{r}\times \vec{B} $$
 (int_sup)=
 ## Integrales de superficie 
 
-Una [integral de superficie](https://es.wikipedia.org/wiki/Integral_de_superficie#:~:text=La%20integral%20de%20superficie%20es,es%20evaluada%20sobre%20una%20superficie.) es una integral donde la función se evalúa
+De forma análoga a como las integrales de línea extienden la integración a lo largo de curvas, las integrales de superficie extienden la integración sobre superficies en el espacio. Una [integral de superficie](https://es.wikipedia.org/wiki/Integral_de_superficie#:~:text=La%20integral%20de%20superficie%20es,es%20evaluada%20sobre%20una%20superficie.) es una integral donde la función se evalúa
 sobre una superficie en el espacio.
 
 Si $\vec{F}$ es un campo vectorial y $S$ es una superficie en el
@@ -188,7 +191,7 @@ Siguiendo la notación para integrales de línea, las integrales definidas sobre
 
 ## Integrales de volumen
 
-El volumen $V$, bajo una superficie $S=f(x,y)$ está dada por
+Finalmente, las integrales de volumen extienden la integración a regiones tridimensionales del espacio. El volumen $V$ bajo una superficie $z=f(x,y)$ está dado por
 
 $$% Volumen Debajo de una Superficie z = f(x,y)
 V = \iiint_V dV = \iint_D f(x,y) \, dA$$ donde $D$ es la región en el
@@ -199,9 +202,9 @@ plano $xy$ sobre la cual se proyecta la superficie.
 
 ``` 
 
-# Teoremas integrales
+# 🏛️ Teoremas integrales
 
-Los teoremas integrales vectoriales son herramientas fundamentales en el
+Con las herramientas del teorema fundamental del cálculo y las integrales de línea, superficie y volumen ya definidas, estamos en condiciones de presentar los resultados centrales de esta lección. Los teoremas integrales vectoriales son herramientas fundamentales en el
 análisis matemático, que establecen relaciones entre integrales de
 funciones y sus derivadas en diferentes dimensiones. Los más relevantes
 son el *Teorema de la divergencia* (también conocido como Teorema de
@@ -218,7 +221,7 @@ Divergencia*, que relaciona la integral de línea de un campo vectorial a
 lo largo de una curva cerrada con la integral doble de la divergencia de
 ese campo sobre la región delimitada por la curva.
 
-Si $P(x,y)$ y $Q(x,y)$ son funciones con primeras derivadas continuas
+Para deducir su expresión, considere funciones $P(x,y)$ y $Q(x,y)$ con primeras derivadas continuas. Integrando $\partial P/\partial y$ sobre la región $A$ y usando el teorema fundamental del cálculo en la dirección $y$:
 
 :::{math}
 \begin{align}
@@ -260,7 +263,7 @@ $\displaystyle \int_{\partial A} \vec{V}\cdot \hat{n}dS$ se interpreta como el _
 :::{note} Teorema de Stokes en 2D
 
 Sean $Q=V_y$, $P=V_x$; donde $\vec{V}=V_x\hat{\iota}+V_y\hat{\jmath}$
-$$\iint \limits_\sigma \nabla \times \vec{V} \cdot \hat{n}dS = \int_{\partial \sigma} \vec{V}\cdot d\hat{r}$$
+$$\iint \limits_\sigma \nabla \times \vec{V} \cdot \hat{n}dS = \int_{\partial \sigma} \vec{V}\cdot d\vec{r}$$
 :::
 
 El teorema de Green es un caso especial en $ \mathbb {R} ^{2}$ del teorema de Stokes.
@@ -272,15 +275,14 @@ $$
 lo que indica que la circulación de $\vec{F}$ por unidad de área está dada por la componente $ z $ del **rotacional**.
 
 (stokes)=
-## Teorema de Stokes. 
+## Teorema de Stokes
 
 Formulado por [George Gabriel Stokes](https://es.wikipedia.org/wiki/George_Gabriel_Stokes) (1819-1903); matemático y físico
 irlandés, el *Teorema de Stokes* relaciona la circulación de un campo
 vectorial a lo largo de una curva cerrada con el flujo del rotacional de
 ese campo a través de una superficie abierta delimitada por la curva.
 
-Considere una superficie abierta, $S$, delimitada por una
-curva, $C$
+Considere una superficie abierta $S$ delimitada por una curva cerrada $C$:
 
  $$\oint _C \vec{V}\cdot d\vec{l}=\iint \limits_{S} (\nabla \times \vec{V}) \cdot \hat{n} dS$$
 
@@ -336,9 +338,9 @@ unidad de volumen.
 
 ```{figure} ./../images/gauss_E.png
 :label: fig-gauss_E
-:alt: aaaaaaaa
+:alt: Superficie gaussiana encerrando una distribución de carga
 :align: center
-Gauss. Imagen generada con [Inkscape](https://inkscape.org/).
+Superficie gaussiana para la aplicación del teorema de la divergencia. Imagen generada con [Inkscape](https://inkscape.org/).
 ```
 
 En **formulación diferencial**:
@@ -346,17 +348,6 @@ $$
 \lim_{\Delta V \to 0} \frac{1}{\Delta V} \iint_{\partial V} \vec{F} \cdot \hat{n} \, dS = \nabla \cdot \vec{F}
 $$
 Esto significa que la divergencia en un punto es el **flujo neto por unidad de volumen** que emana de él.
-
-
-:::{note} Teorema de la divergencia (Gauss) en electromagnetismo
-:class: dropdown
-```{include} ./ejercicio_divergencia.md
-
-```
-:::
-
-
-
 
 
 :::{seealso} Referencias
