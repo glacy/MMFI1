@@ -118,23 +118,6 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ````
 
 ````{exercise}
-:label: s3_ex6
-
-```{include} ./ejercicios/s3_ex6.md
-
-```
-````
-
-````{solution} s3_ex6
-:label: solucion-s3_ex6
-:class: dropdown
-
-```{include} ./ejercicios/solucion_s3_ex6.md
-
-```
-````
-
-````{exercise}
 :label: s3_ex7
 
 ```{include} ./ejercicios/s3_ex7.md
@@ -147,6 +130,23 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 :class: dropdown
 
 ```{include} ./ejercicios/solucion_s3_ex7.md
+
+```
+````
+
+````{exercise}
+:label: s3_ex9
+
+```{include} ./ejercicios/s3_ex9.md
+
+```
+````
+
+````{solution} s3_ex9
+:label: solucion-s3_ex9
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s3_ex9.md
 
 ```
 ````

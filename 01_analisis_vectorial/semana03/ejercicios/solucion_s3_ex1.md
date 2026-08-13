@@ -71,6 +71,8 @@ que es exactamente la expresión pedida:
 
 $$\boxed{\frac{dU}{dt} = -\int_V (\vec{J}\cdot\vec{E})\,dV - \frac{1}{\mu_0}\oint_S (\vec{E}\times\vec{B})\cdot d\vec{S}}$$
 
+---
+
 **Interpretación física.** El primer término, $-\int_V \vec{J}\cdot\vec{E}\,dV$, es la potencia disipada por efecto Joule en el conductor. El segundo término involucra al [vector de Poynting](https://es.wikipedia.org/wiki/Vector_de_Poynting)
 
 $$\vec{S}_p = \frac{1}{\mu_0}\,\vec{E}\times\vec{B},$$

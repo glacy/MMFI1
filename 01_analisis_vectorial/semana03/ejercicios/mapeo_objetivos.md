@@ -24,7 +24,7 @@
 | s3_ex5 | Ecuación de continuidad en mecánica de fluidos | ✓ | ✓ | ✓ | Divergencia, Conservación de masa, Fluidos |
 | s3_ex6 | Ley de Gauss para esfera con carga uniforme | ✓ | ✓ | ✓ | Divergencia, Campo eléctrico, Electromagnetismo |
 | s3_ex7 | Balance de energía en conducción de calor | ✓ | ✓ | ✓ | Divergencia, Ecuación del calor, Transferencia de calor |
-| s3_ex8 | Divergencia de un producto cruz | ✓ | ✓ | ✓ | Identidades vectoriales, Levi-Civita, Poynting |
+| s3_ex9 | Vórtice de Rankine (modelo de tornado) | ✓ | ✓ | ✓ | Vorticidad, Circulación, Stokes, Mecánica de fluidos |
 
 ---
 
@@ -75,10 +75,10 @@
 
 **Ejercicios que cubren este objetivo:**
 
-#### s3_ex8: Divergencia de un producto cruz
-- **Cobertura**: Demostración de la identidad con notación de índices y verificación con campos concretos
-- **Habilidades**: Notación de índices, símbolo de Levi-Civita, cálculo de divergencias y rotacionales
-- **Conceptos clave**: Divergencia, Producto cruz, Rotacional, Identidades vectoriales
+#### s3_ex9: Vórtice de Rankine (modelo de tornado)
+- **Cobertura**: Cálculo de vorticidad en un vórtice de núcleo sólido y exterior irrotacional
+- **Habilidades**: Rotacional en cilíndricas, circulación, verificación del teorema de Stokes
+- **Conceptos clave**: Vorticidad, Circulación, Teorema de Stokes, Mecánica de fluidos
 
 #### s3_ex2: Flujo a través de superficie cerrada cilíndrica
 - **Cobertura**: Cálculo de flujo directo y con teorema de la divergencia
@@ -116,10 +116,10 @@
 
 **Ejercicios que cubren este objetivo:**
 
-#### s3_ex8: Divergencia de un producto cruz
-- **Cobertura**: Aplicación al teorema de Poynting en electromagnetismo
-- **Habilidades**: Interpretación física del flujo de un producto cruz
-- **Conceptos clave**: Vector de Poynting, Conservación de energía, Teorema de la divergencia
+#### s3_ex9: Vórtice de Rankine (modelo de tornado)
+- **Cobertura**: Interpretación de la vorticidad y la circulación en un fenómeno atmosférico real
+- **Habilidades**: Conexión entre rotacional local y circulación global vía Stokes
+- **Conceptos clave**: Vorticidad, Circulación, Tornado, Teorema de Stokes
 
 #### s3_ex1: Tasa de cambio de energía electromagnética
 - **Cobertura**: Conservación de la energía en electromagnetismo
@@ -160,9 +160,9 @@ Ejercicio  │  s3_ex4      │     ✓       │     ✓       │     ✓     
 Ejercicio  │  s3_ex5      │     ✓       │     ✓       │     ✓      │
 Ejercicio  │  s3_ex6      │     ✓       │     ✓       │     ✓      │
 Ejercicio  │  s3_ex7      │     ✓       │     ✓       │     ✓      │
-Ejercicio  │  s3_ex8      │     ✓       │     ✓       │     ✓      │
+Ejercicio  │  s3_ex9      │     ✓       │     ✓       │     ✓      │
                           └─────────────┴─────────────┴─────────────
-                            Total: 8      Total: 7      Total: 6
+                            Total: 8      Total: 8      Total: 7
 ```
 
 ---
@@ -181,6 +181,7 @@ Ejercicio  │  s3_ex8      │     ✓       │     ✓       │     ✓     
 
 ### Teorema de Stokes
 - s3_ex4: Verificación con circulación y vorticidad
+- s3_ex9: Vórtice de Rankine (modelo de tornado)
 
 ---
 
@@ -193,6 +194,7 @@ Ejercicio  │  s3_ex8      │     ✓       │     ✓       │     ✓     
 ### Mecánica de Fluidos
 - s3_ex4: Circulación y vorticidad
 - s3_ex5: Ecuación de continuidad
+- s3_ex9: Vórtice de Rankine (tornado)
 
 ### Transferencia de Calor
 - s3_ex7: Conducción de calor y ecuación de difusión
@@ -208,7 +210,7 @@ Ejercicio  │  s3_ex8      │     ✓       │     ✓       │     ✓     
 Los 8 ejercicios de la semana 3 proporcionan una cobertura **completa y equilibrada** de los tres objetivos de aprendizaje:
 
 1. **Objetivo 1 (8 ejercicios)**: Todos los ejercicios enuncian o verifican los teoremas de Stokes, Green y Gauss.
-2. **Objetivo 2 (7 ejercicios)**: Transforman integrales de línea, superficie y volumen para simplificar cálculos.
-3. **Objetivo 3 (6 ejercicios)**: Aplican los teoremas a problemas físicos reales en electromagnetismo, mecánica de fluidos y transferencia de calor.
+2. **Objetivo 2 (8 ejercicios)**: Transforman integrales de línea, superficie y volumen para simplificar cálculos.
+3. **Objetivo 3 (7 ejercicios)**: Aplican los teoremas a problemas físicos reales en electromagnetismo, mecánica de fluidos y transferencia de calor.
 
 La progresión va desde los teoremas fundamentales (área, flujo) hasta aplicaciones físicas avanzadas (Poynting, continuidad, campo eléctrico, conducción de calor), cubriendo los tres dominios físicos mencionados en el objetivo 3 y asegurando la comprensión profunda de los teoremas integrales y su papel en la ingeniería.

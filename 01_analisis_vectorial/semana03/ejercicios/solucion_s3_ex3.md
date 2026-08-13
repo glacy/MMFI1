@@ -13,7 +13,7 @@ tags:
   - demostracion
 ---
 
-Por el teorema de Green (caso especial en $\mathbb{R}^2$ del teorema de Stokes), para funciones $P(x,y)$ y $Q(x,y)$ con derivadas continuas,
+Por el teorema de Green, para funciones $P(x,y)$ y $Q(x,y)$ con derivadas continuas,
 
 $$\oint_C (P\,dx + Q\,dy) = \iint_A\left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dx\,dy,$$
 
@@ -39,7 +39,9 @@ $$\boxed{A = \frac{1}{2}\oint_C (x\,dy - y\,dx)}$$
 
 ---
 
-**Verificación con un círculo.** Para una circunferencia de radio $R$ parametrizada por $x = R\cos\theta$, $y = R\sin\theta$, con $dx = -R\sin\theta\,d\theta$ y $dy = R\cos\theta\,d\theta$:
+**Verificación con un círculo.** 
+
+Para una circunferencia de radio $R$ parametrizada por $x = R\cos\theta$, $y = R\sin\theta$, con $dx = -R\sin\theta\,d\theta$ y $dy = R\cos\theta\,d\theta$:
 
 $$x\,dy - y\,dx = R\cos\theta\,(R\cos\theta\,d\theta) - R\sin\theta\,(-R\sin\theta\,d\theta)
 = R^2(\cos^2\theta + \sin^2\theta)\,d\theta = R^2\,d\theta,$$

@@ -22,7 +22,9 @@ La superficie cerrada está formada por cuatro trozos: el cilindro exterior $\rh
 ---
 
 
-**Superficie exterior ($\rho = 2a$).** El elemento de área es $dS = \rho\,d\theta\,dz = 2a\,d\theta\,dz$ y el integrando es
+**Superficie exterior ($\rho = 2a$).** 
+
+El elemento de área es $dS = \rho\,d\theta\,dz = 2a\,d\theta\,dz$ y el integrando es
 
 $$\vec{F}\cdot\hat{e}_\rho = \frac{F_0(2a)}{a}\cos(\lambda z) = 2F_0\cos(\lambda z).$$
 
@@ -33,14 +35,22 @@ Como $\int_{-a\pi/2}^{a\pi/2}\cos(\lambda z)\,dz = \frac{2}{\lambda}\sin(\lambda
 
 $$\Phi_{\text{ext}} = \frac{16\pi aF_0}{\lambda}\sin\!\left(\frac{\lambda a\pi}{2}\right).$$
 
-**Superficie interior ($\rho = a$).** Con $dS = a\,d\theta\,dz$ y normal $-\hat{e}_\rho$:
+---
+
+**Superficie interior ($\rho = a$).** 
+
+Con $dS = a\,d\theta\,dz$ y normal $-\hat{e}_\rho$:
 
 $$\vec{F}\cdot(-\hat{e}_\rho) = -\frac{F_0 a}{a}\cos(\lambda z) = -F_0\cos(\lambda z),$$
 
 $$\Phi_{\text{int}} = -\int_{-a\pi/2}^{a\pi/2}\int_0^{2\pi} F_0\cos(\lambda z)\,a\,d\theta\,dz
 = -\frac{4\pi aF_0}{\lambda}\sin\!\left(\frac{\lambda a\pi}{2}\right).$$
 
-**Plano superior ($z = a\pi/2$).** Con $dS = \rho\,d\rho\,d\theta$ y normal $\hat{\kappa}$:
+---
+
+**Plano superior ($z = a\pi/2$).** 
+
+Con $dS = \rho\,d\rho\,d\theta$ y normal $\hat{\kappa}$:
 
 $$\vec{F}\cdot\hat{\kappa} = F_0\sin\!\left(\frac{\lambda a\pi}{2}\right).$$
 
@@ -48,7 +58,11 @@ $$\Phi_{\text{sup}} = 2\pi F_0\sin\!\left(\frac{\lambda a\pi}{2}\right)\int_a^{2
 = 2\pi F_0\sin\!\left(\frac{\lambda a\pi}{2}\right)\frac{(2a)^2-a^2}{2}
 = 3\pi a^2 F_0\sin\!\left(\frac{\lambda a\pi}{2}\right).$$
 
-**Plano inferior ($z = -a\pi/2$).** Con normal $-\hat{\kappa}$:
+---
+
+**Plano inferior ($z = -a\pi/2$).** 
+
+Con normal $-\hat{\kappa}$:
 
 $$\vec{F}\cdot(-\hat{\kappa}) = -F_0\sin\!\left(-\frac{\lambda a\pi}{2}\right)
 = F_0\sin\!\left(\frac{\lambda a\pi}{2}\right),$$
@@ -56,6 +70,8 @@ $$\vec{F}\cdot(-\hat{\kappa}) = -F_0\sin\!\left(-\frac{\lambda a\pi}{2}\right)
 por lo que el flujo es idéntico al del plano superior:
 
 $$\Phi_{\text{inf}} = 3\pi a^2 F_0\sin\!\left(\frac{\lambda a\pi}{2}\right).$$
+
+---
 
 **Flujo total:**
 

@@ -10,11 +10,11 @@ exports:
  - format: pdf
    template: curvenote
    output: ./semana03_lectura.pdf
-# downloads:
-#   - file: ./semana03_lectura.md
-#     title: semana03_lectura.md
-#   - file: ./semana03_lectura.pdf
-#     title: semana03_lectura.pdf
+downloads:
+  - file: ./semana03_lectura.md
+    title: semana03_lectura.md
+  - file: ./semana03_lectura.pdf
+    title: semana03_lectura.pdf
 #   - file: ./superficie_normal.asy
 #     title: superficie_normal.asy
 #   - file: ./campo_vectorial_curva.asy
@@ -102,8 +102,8 @@ escalar*.
 ```{note} Trabajo realizado por una fuerza
 
 El trabajo de la fuerza
-$\vec{F}=xy\hat{\iota}-y^2\hat{\jmath}$ a lo largo de la parábola
-$y=\frac{1}{4}x^2$, desde (0,0) a (2,1):
+$$\vec{F}(x,y)=xy\hat{\iota}-y^2\hat{\jmath}$$ a lo largo de la parábola
+$$y=\frac{1}{4}x^2,$$ desde (0,0) a (2,1):
 $$\vec{F}\cdot d\vec{r}=(xy\hat{\iota}-y^2\hat{\jmath})\cdot (dx\hat{\iota}+dy\hat{\jmath})=xydx-y^2dy$$
 
 A partir de la parametrización de la curva, $dy=\frac{1}{2}xdx$, de
@@ -133,20 +133,26 @@ permeabilidad del vacío e $I_{\text{enc}}$ es la corriente neta
 encerrada por la curva $C$.
 
 En coordenadas cilíndricas, 
+$$\vec{B}(r)=\frac{\mu_0 I}{2\pi r}\hat{\theta}$$
+
 ```{figure} ./../images/ampere_alambre.png
 :alt: grafico del problema
 :align: center
 Aplicación de la Ley de Ampère en sistema con simetría cilíndrica. Imagen generada con [Asymptote](https://asymptote.sourceforge.io/).
 ```
 
-$$\vec{B}(r)=\frac{\mu_0 I}{2\pi r}\hat{\theta}$$
+
 :::
 
 :::{note} Fuerza magnética sobre un cable
 
-Si un bucle de alambre $C$ por el que pasa una corriente $I$ se coloca en un campo magnético $\vec{B}$, este experimenta una fuerza 
-$$\vec{F}=I\displaystyle \oint_C d\vec{r}\times \vec{B} $$
+La ley de Ampère describe cómo la corriente *genera* campo magnético, pero la relación entre electricidad y magnetismo es de doble sentido: un cable por el que circula corriente *dentro* de un campo magnético también experimenta una fuerza. La fuerza que el campo ejerce sobre cada carga en movimiento está dada por la fuerza de Lorentz, $\vec{F} = q\,\vec{v}\times\vec{B}$; al sumarla sobre todas las cargas de un conductor, la fuerza resultante sobre un elemento de cable de longitud $d\vec{r}$ por el que pasa una corriente $I$ es $d\vec{F} = I\,d\vec{r}\times\vec{B}$.
 
+Integrando a lo largo de todo el bucle cerrado $C$:
+
+$$\vec{F}=I\displaystyle \oint_C d\vec{r}\times \vec{B}.$$
+
+En esta integral de línea aparece de nuevo el producto cruz con un vector diferencial, lo que anticipa la relación entre integrales de línea y campos vectoriales que se formaliza con los teoremas integrales de esta semana.
 :::
 
 (int_sup)=
@@ -242,37 +248,65 @@ de manera que
 $$\oint_C (Pdx+Qdy)=\iint_A \left( \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy,$$
 donde $C$ es la curva que encierra el área $A$.
 
-En ocasiones se escribe
-$C=\partial A$ y se le llama _frontera del área $A$_.
+En ocasiones se escribe $C=\partial A$ y se le llama *frontera del área $A$*. Esta notación enfatiza una idea central: la curva $C$ no es un objeto independiente del área, sino su **borde**. Así, el teorema de Green se puede leer como una relación entre una integral (doble) sobre la región $A$ y otra (de línea) sobre su frontera $\partial A$:
+
+> El valor de una integral sobre una región queda determinado por lo que sucede en el borde de esa región.
+
+Esta misma lectura se repetirá en los teoremas de Stokes y de la divergencia, donde la integral sobre una superficie o un volumen se relaciona siempre con una integral sobre su frontera.
 
 Note que si $P$ y $Q$ son las componentes de un campo vectorial, por
 ejemplo $\vec{V}(x,y)=P(x,y)\hat{\iota}+Q(x,y)\hat{\jmath}$,
 $$P(x,y)dx+Q(x,y)dy=\vec{V}\cdot d\vec{r}$$
 
-:::{note} Flujo a través de una superficie
+:::{note} Flujo a través de una superficie (teorema de la divergencia en 2D)
 
-Teorema de la divergencia en 2D 
+Hasta aquí el teorema de Green se ha usado para calcular la *circulación* de $\vec{V}$ alrededor de $C$. Pero el mismo teorema admite una segunda lectura física: el **flujo** de $\vec{V}$ a través de la frontera.
 
-Sean $Q=V_x$, $P=-V_y$; donde
-$\vec{V}=V_x\hat{\iota}+V_y\hat{\jmath}$
-$$\iint \limits_A \nabla \cdot \vec{V} dx dy = \oint_{C} \vec{V}\cdot d\vec{r}.$$
+El flujo mide cuánto campo "atraviesa" la curva por unidad de longitud. Para ello se proyecta $\vec{V}$ sobre la normal exterior $\hat{n}$ a la frontera:
 
-$\displaystyle \int_{\partial A} \vec{V}\cdot \hat{n}dS$ se interpreta como el _flujo_ de $\vec{V}$ a través de la superficie dada. 
+$$\Phi = \oint_{\partial A} \vec{V}\cdot\hat{n}\,ds.$$
+
+Si $C$ se recorre en sentido antihorario, la normal exterior es $\hat{n}\,ds = dy\,\hat{\iota} - dx\,\hat{\jmath}$, de modo que
+
+$$\vec{V}\cdot\hat{n}\,ds = V_x\,dy - V_y\,dx = -V_y\,dx + V_x\,dy.$$
+
+Ahora bien, el teorema de Green con la elección $P = -V_y$ y $Q = V_x$ da
+
+$$\oint_{\partial A}(-V_y\,dx + V_x\,dy) = \iint_A\left(\frac{\partial V_x}{\partial x} + \frac{\partial V_y}{\partial y}\right)dx\,dy.$$
+
+Reconociendo el integrando como la divergencia $\nabla\cdot\vec{V}$ y el primer miembro como el flujo, obtenemos el **teorema de la divergencia en 2D**:
+
+$$\boxed{\ \Phi = \oint_{\partial A} \vec{V}\cdot\hat{n}\,ds = \iint_A \nabla\cdot\vec{V}\,dx\,dy\ }$$
+
+En palabras: el flujo neto de $\vec{V}$ a través de la frontera de $A$ es igual a la integral de su divergencia sobre $A$. La divergencia mide la tendencia del campo a "expandirse" desde un punto; sumándola sobre toda la región se obtiene exactamente el flujo que escapa por el borde.
 :::
 
-:::{note} Teorema de Stokes en 2D
+:::{note} Teorema de Stokes en 2D (la circulación en forma vectorial)
 
-Sean $Q=V_y$, $P=V_x$; donde $\vec{V}=V_x\hat{\iota}+V_y\hat{\jmath}$
-$$\iint \limits_\sigma \nabla \times \vec{V} \cdot \hat{n}dS = \int_{\partial \sigma} \vec{V}\cdot d\vec{r}$$
+Así como en la nota anterior obtuvimos el flujo eligiendo $P=-V_y$ y $Q=V_x$, ahora recuperamos la **circulación** eligiendo $P=V_x$ y $Q=V_y$, es decir, tomando $\vec{V}=V_x\hat{\iota}+V_y\hat{\jmath}$. Con esta elección:
+
+$$\vec{V}\cdot d\vec{r} = V_x\,dx + V_y\,dy = P\,dx + Q\,dy,$$
+
+y el teorema de Green se escribe
+
+$$\oint_{\partial A}\vec{V}\cdot d\vec{r} = \iint_A\left(\frac{\partial V_y}{\partial x} - \frac{\partial V_x}{\partial y}\right)dx\,dy.$$
+
+El integrando del segundo miembro es precisamente la componente $z$ del rotacional: $\nabla\times\vec{V} = \left(\frac{\partial V_y}{\partial x} - \frac{\partial V_x}{\partial y}\right)\hat{\kappa}$. Como la región plana $A$ tiene normal $\hat{n}=\hat{\kappa}$, el integrando es $(\nabla\times\vec{V})\cdot\hat{n}$, y la integral doble es el flujo del rotacional a través de $A$:
+
+$$\boxed{\ \oint_{\partial A}\vec{V}\cdot d\vec{r} = \iint_A (\nabla\times\vec{V})\cdot\hat{n}\,dS\ }$$
+
+Esta es la **versión 2D del teorema de Stokes**: la circulación de $\vec{V}$ a lo largo de la frontera es igual al flujo de su rotacional sobre la superficie que encierra. La circulación mide cuánto "gira" el campo alrededor de la curva; el rotacional mide esa rotación localmente, y la integral los conecta. Esta forma vectorial es la que se generaliza en tres dimensiones en la siguiente sección.
 :::
 
-El teorema de Green es un caso especial en $ \mathbb {R} ^{2}$ del teorema de Stokes.
+Resumiendo, el teorema de Green es un caso especial en $\mathbb{R}^2$ del teorema de Stokes que se presenta en la siguiente sección.
 
-En **formulación diferencial**, si $\vec{F}=P\hat{\iota}+Q\hat{\jmath}$, se expresa como:
+**Formulación diferencial.** Si $\vec{F}=P\hat{\iota}+Q\hat{\jmath}$ es un campo en el plano, el rotacional se reduce a su componente $z$:
+
 $$
-\nabla \times \vec{F} = \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \, \hat{\kappa}
+\nabla \times \vec{F} = \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \, \hat{\kappa}.
 $$
-lo que indica que la circulación de $\vec{F}$ por unidad de área está dada por la componente $ z $ del **rotacional**.
+
+En esta forma se aprecia que la circulación de $\vec{F}$ por unidad de área está dada por la componente $z$ del **rotacional**: el rotacional mide, punto a punto, cuánto tiende el campo a girar alrededor de cada punto del plano.
 
 (stokes)=
 ## Teorema de Stokes
@@ -298,22 +332,34 @@ Vector de superficie. Imagen generada con [Inkscape](https://inkscape.org/).
 ```
 
 
-:::{note} Ley de Ampère
-  La Ley de Ampère establece que
-$$\oint_C \vec{B}\cdot d\vec{r}=\mu_0 I$$ lo cual podemos escribir como
-$$\oint_C \vec{H}\cdot d\vec{r}=I,$$ con $\vec{H}=\vec{B}/\mu_0$.
+:::{note} Ley de Ampère: Stokes aplicado al electromagnetismo
 
- Ahora, la *corriente* se relaciona con la *densidad de corriente* mediante
-$\vec{J}$ $$I=\iint_\sigma \vec{J}\cdot \hat{n}d\sigma,$$ de donde
-$$\oint_C \vec{H}\cdot d\vec{r}=\iint_\sigma \vec{J}\cdot \hat{n}d\sigma=\iint_\sigma (\nabla \times \vec{H})\cdot \hat{n}d\sigma;$$
-por lo tanto, $$\nabla \times \vec{H}=\vec{J}.$$
+Un ejemplo físico directo del teorema de Stokes es la [ley de Ampère](https://es.wikipedia.org/wiki/Ley_de_Amp%C3%A8re), que relaciona el campo magnético con la corriente que lo produce. En forma integral establece que la circulación de $\vec{B}$ alrededor de una curva cerrada $C$ es proporcional a la corriente total $I$ que atraviesa cualquier superficie $\sigma$ delimitada por $C$:
+
+$$\oint_C \vec{B}\cdot d\vec{r}=\mu_0 I.$$
+
+Dividiendo por $\mu_0$ e introduciendo el campo $\vec{H}=\vec{B}/\mu_0$:
+
+$$\oint_C \vec{H}\cdot d\vec{r}=I.$$
+
+La corriente se relaciona con la densidad de corriente $\vec{J}$ mediante la integral de flujo $I=\iint_\sigma \vec{J}\cdot\hat{n}\,d\sigma$. Por el teorema de Stokes, el primer miembro es el flujo de $\nabla\times\vec{H}$ sobre $\sigma$:
+
+$$\iint_\sigma (\nabla\times\vec{H})\cdot\hat{n}\,d\sigma = \iint_\sigma \vec{J}\cdot\hat{n}\,d\sigma.$$
+
+Como la superficie $\sigma$ es arbitraria, los integrandos deben coincidir, obteniendo la **ley de Ampère en forma diferencial**:
+
+$$\boxed{\ \nabla \times \vec{H} = \vec{J}\ }$$
+
+Este ejemplo ilustra el patrón que se repite en todo el análisis vectorial: el teorema de Stokes permite pasar de una ley expresada sobre una curva (forma integral) a una ley local válida en cada punto (forma diferencial).
 :::
 
-En **formulación diferencial**:
+**Formulación diferencial del teorema de Stokes.** Si se considera una superficie $S$ muy pequeña con normal $\hat{n}$, el teorema de Stokes se puede reinterpretar tomando el límite $\Delta S \to 0$:
+
 $$
-\lim_{\Delta S \to 0} \frac{1}{\Delta S} \oint_{\partial S} \vec{F} \cdot d\vec{r} = (\nabla \times \vec{F}) \cdot \hat{n}
+\lim_{\Delta S \to 0} \frac{1}{\Delta S} \oint_{\partial S} \vec{F} \cdot d\vec{r} = (\nabla \times \vec{F}) \cdot \hat{n}.
 $$
-Esto describe la **circulación local** por unidad de área en términos del rotacional del campo.
+
+Esta expresión describe la **circulación local por unidad de área** en términos del rotacional del campo: fija el punto, orienta la pequeña superficie con normal $\hat{n}$ y mide cuánto gira el campo alrededor de ese punto; el resultado máximo se alcanza cuando $\hat{n}$ se alinea con el rotacional.
 
 (gauss)=
 ## Teorema de Gauss (o de la divergencia) 
@@ -343,11 +389,32 @@ unidad de volumen.
 Superficie gaussiana para la aplicación del teorema de la divergencia. Imagen generada con [Inkscape](https://inkscape.org/).
 ```
 
-En **formulación diferencial**:
+:::{note} Ley de Gauss: la divergencia aplicada al electromagnetismo
+
+Como ocurrió con Stokes y la ley de Ampère, el teorema de la divergencia tiene un ejemplo físico fundamental: la [ley de Gauss](https://es.wikipedia.org/wiki/Ley_de_Gauss) de la electrostática.
+
+En su forma integral, la ley de Gauss establece que el flujo del campo eléctrico $\vec{E}$ a través de una superficie cerrada $\sigma$ es igual a la carga neta $Q_{\text{enc}}$ que encierra, dividida por $\epsilon_0$:
+
+$$\oiint_\sigma \vec{E}\cdot\hat{n}\,d\sigma = \frac{Q_{\text{enc}}}{\epsilon_0}.$$
+
+La carga encerrada se escribe en términos de la densidad volumétrica de carga como $Q_{\text{enc}}=\iiint_\tau \rho\,d\tau$. Por el teorema de la divergencia, el primer miembro es la integral de $\nabla\cdot\vec{E}$ sobre el volumen $\tau$:
+
+$$\iiint_\tau \nabla\cdot\vec{E}\,d\tau = \frac{1}{\epsilon_0}\iiint_\tau \rho\,d\tau.$$
+
+Como el volumen $\tau$ es arbitrario, los integrandos deben coincidir, obteniendo la **ley de Gauss en forma diferencial**:
+
+$$\boxed{\ \nabla\cdot\vec{E} = \frac{\rho}{\epsilon_0}\ }$$
+
+Al igual que en los casos anteriores, el teorema de la divergencia convierte una ley global (sobre una superficie cerrada) en una ley local válida en cada punto del espacio.
+:::
+
+**Formulación diferencial del teorema de la divergencia.** Considerando un volumen $\tau$ muy pequeño, se toma el límite $\Delta V \to 0$:
+
 $$
-\lim_{\Delta V \to 0} \frac{1}{\Delta V} \iint_{\partial V} \vec{F} \cdot \hat{n} \, dS = \nabla \cdot \vec{F}
+\lim_{\Delta V \to 0} \frac{1}{\Delta V} \iint_{\partial V} \vec{F} \cdot \hat{n} \, dS = \nabla \cdot \vec{F}.
 $$
-Esto significa que la divergencia en un punto es el **flujo neto por unidad de volumen** que emana de él.
+
+Esto significa que la divergencia en un punto es el **flujo neto por unidad de volumen** que emana de él: si en un punto $\nabla\cdot\vec{F}>0$, el campo "sale" de ese punto (fuente); si es negativo, "entra" (sumidero); si es nulo, el campo es divergente-free (sin fuentes ni sumideros), como en los fluidos incompresibles.
 
 
 :::{seealso} Referencias
