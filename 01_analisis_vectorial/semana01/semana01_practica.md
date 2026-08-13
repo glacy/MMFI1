@@ -13,7 +13,15 @@ tags:
   - demostracion
   - calculo
 subject: Cálculo y análisis vectorial - Semana 1
-keywords: [producto, escalar, vector]
+keywords:
+  - producto-punto
+  - producto-cruz
+  - producto-triple
+  - vectores
+  - operaciones-vectoriales
+  - coordenadas-polares
+  - cinematica
+  - calculo-vectorial
 # downloads:
 #   - file: ./semana1-practica.md
 #     title: semana1-practica.md

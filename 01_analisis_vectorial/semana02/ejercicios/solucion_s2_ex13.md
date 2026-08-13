@@ -31,9 +31,9 @@ $$\nabla \cdot (\vec{A}\times\vec{B}) = \varepsilon_{ijk}\,\partial_i(A_jB_k)
 En el primer término renombramos los índices mudos $j\leftrightarrow k$ y reordenamos el símbolo mediante sus permutaciones circulares ($\varepsilon_{kij} = \varepsilon_{ijk}$):
 
 $$\varepsilon_{ijk}A_j\partial_i B_k = \varepsilon_{kij}A_j\partial_i B_k
-= \varepsilon_{ijk}\partial_i A_j\,B_k\cdot(-1)\;\Longrightarrow\; \text{reordenando:}$$
+= \varepsilon_{ijk}\partial_i A_j\,B_k\cdot(-1)$$
 
-Procedemos con cuidado. En el segundo término, $\varepsilon_{ijk}\partial_i A_j$ es, por definición, la componente $k$-ésima del rotacional:
+En el segundo término, $\varepsilon_{ijk}\partial_i A_j$ es, por definición, la componente $k$-ésima del rotacional:
 
 $$\varepsilon_{kij}\partial_i A_j = (\nabla\times\vec{A})_k,$$
 

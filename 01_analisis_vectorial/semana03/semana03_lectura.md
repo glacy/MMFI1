@@ -15,12 +15,6 @@ downloads:
     title: semana03_lectura.md
   - file: ./semana03_lectura.pdf
     title: semana03_lectura.pdf
-#   - file: ./superficie_normal.asy
-#     title: superficie_normal.asy
-#   - file: ./campo_vectorial_curva.asy
-#     title: campo_vectorial_curva.asy
-#   - file: ./ley_ampere.asy
-#     title: ley_ampere.asy
 ---
 
 :::{aside} [Sheila Widnall](https://es.wikipedia.org/wiki/Sheila_Widnall)
@@ -111,7 +105,7 @@ manera que
 $$\Rightarrow W=\int_0^2 \left(\frac{1}{4}x^3-\frac{1}{32}x^5 \right)dx=\frac{2}{3}.$$
 
 
-:::{figure} ./../images/campo_vectorial_curva.png
+:::{figure} ./../images/campo_vectorial_curva.svg
 :alt: grafico del problema
 :width: 500px
 :align: center
@@ -169,7 +163,7 @@ $$\iint_S \vec{F}\cdot d\vec{S}= \iint_S \vec{F}\cdot \hat{n}dS,$$
 donde $d\vec{S}=\hat{n}dS$ es el vector diferencial de superficie, con
 $\hat{n}$ el vector normal unitario a la superficie, como se muestra en la [Figura %s](#fig-superficie_normal).
 
-```{figure} ./../images/superficie_normal.png
+```{figure} ./../images/superficie_normal.svg
 :width: 400px
 :label: fig-superficie_normal
 :alt: Vector normal a una superficie en un punto

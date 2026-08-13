@@ -16,7 +16,22 @@ tags:
   - ley-gauss
   - conduccion-calor
 subject: Cálculo y análisis vectorial - Semana 3
-keywords: []
+keywords:
+  - teorema-de-gauss
+  - teorema-de-stokes
+  - teorema-de-green
+  - integrales-de-linea
+  - integrales-de-superficie
+  - integrales-de-volumen
+  - vorticidad
+  - circulacion
+  - maxwell
+  - ley-de-gauss
+  - ecuacion-de-continuidad
+  - conduccion-de-calor
+  - electromagnetismo
+  - mecanica-de-fluidos
+  - transferencia-de-calor
 # downloads:
 #   - file: ./semana3-practica.md
 #     title: semana3-practica.md

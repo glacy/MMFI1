@@ -32,6 +32,18 @@
 | s2_ex9 | Potencial esféricamente simétrico | ✓ | ✓ | ✓ | Gradiente, Coordenadas esféricas, Electromagnetismo |
 | s2_ex10 | Flujo axial simétrico | - | ✓ | ✓ | Divergencia, Rotacional, Mecánica de fluidos |
 | s2_ex11 | Vectores base en coordenadas esféricas | ✓ | - | - | Vectores base, Factores de escala, Ortogonalidad |
+| s2_ex12 | Identidad del rotacional de un producto cruz | - | ✓ | - | Rotacional, Identidades vectoriales, Producto cruz |
+| s2_ex13 | Divergencia de un producto cruz | - | ✓ | - | Divergencia, Identidades vectoriales, Levi-Civita |
+
+---
+
+## Estado de los Ejercicios
+
+| Ejercicio | Estado |
+|-----------|--------|
+| s2_ex1–s2_ex4, s2_ex6, s2_ex7, s2_ex10–s2_ex13 | Activos en `semana02_practica.md` |
+| s2_ex5, s2_ex9 | Comentados en `semana02_practica.md` |
+| s2_ex8 | Archivo existente, no referenciado en el práctico |
 
 ---
 
@@ -112,6 +124,16 @@
 - **Habilidades**: Operador nabla generalizado, cálculo en coordenadas curvilíneas
 - **Conceptos clave**: Divergencia cilíndrica, Rotacional cilíndrico, Factores de escala
 
+#### s2_ex12: Identidad del rotacional de un producto cruz
+- **Cobertura**: Demostración de $\nabla \times (\vec{A}\times\vec{B})$ con Levi-Civita
+- **Habilidades**: Simbología de Levi-Civita, convención de suma de Einstein, manipulación algebraica
+- **Conceptos clave**: Rotacional, Producto cruz, Símbolo de Levi-Civita, Identidades vectoriales
+
+#### s2_ex13: Divergencia de un producto cruz
+- **Cobertura**: Demostración de $\nabla \cdot (\vec{A}\times\vec{B})$ con Levi-Civita
+- **Habilidades**: Simbología de Levi-Civita, permutación cíclica, convención de suma
+- **Conceptos clave**: Divergencia, Producto cruz, Símbolo de Levi-Civita, Identidades vectoriales
+
 ---
 
 ### Objetivo 3: Aplicaciones físicas
@@ -156,8 +178,10 @@ Ejercicio  │  s2_ex8     │    ✓         │     -       │     -      │
 Ejercicio  │  s2_ex9     │    ✓         │     ✓       │     ✓      │
 Ejercicio  │  s2_ex10    │    -         │     ✓       │     ✓      │
 Ejercicio  │  s2_ex11    │    ✓         │     -       │     -      │
+Ejercicio  │  s2_ex12    │    -         │     ✓       │     -      │
+Ejercicio  │  s2_ex13    │    -         │     ✓       │     -      │
                           └─────────────┴─────────────┴─────────────
-                            Total: 5      Total: 8      Total: 4
+                            Total: 5      Total: 10     Total: 4
 ```
 
 ---
@@ -226,10 +250,10 @@ Ejercicio  │  s2_ex11    │    ✓         │     -       │     -      │
 
 ## Conclusión
 
-Los 11 ejercicios de la semana 2 proporcionan una cobertura **completa y equilibrada** de los tres objetivos de aprendizaje:
+Los 13 ejercicios de la semana 2 proporcionan una cobertura **completa y equilibrada** de los tres objetivos de aprendizaje:
 
-1. **Objetivo 1 (4 ejercicios)**: Cubre transformaciones, vectores base y factores de escala en múltiples sistemas
-2. **Objetivo 2 (8 ejercicios)**: Cubre todos los operadores del nabla en diversos sistemas de coordenadas
+1. **Objetivo 1 (5 ejercicios)**: Cubre transformaciones, vectores base y factores de escala en múltiples sistemas
+2. **Objetivo 2 (10 ejercicios)**: Cubre todos los operadores del nabla en diversos sistemas de coordenadas, incluidas las identidades vectoriales con Levi-Civita (s2_ex12, s2_ex13)
 3. **Objetivo 3 (4 ejercicios)**: Aplica conceptos a problemas físicos reales en diferentes dominios
 
 La progresión va desde conceptos fundamentales (identidades, factores de escala) hasta aplicaciones prácticas (flujo, campos eléctricos), asegurando una comprensión profunda del análisis vectorial en coordenadas curvilíneas.

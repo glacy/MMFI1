@@ -28,6 +28,15 @@
 
 ---
 
+## Estado de los Ejercicios
+
+| Ejercicio | Estado |
+|-----------|--------|
+| s3_ex1–s3_ex5, s3_ex7, s3_ex9 | Activos en `semana03_practica.md` |
+| s3_ex6 | Archivo existente, no referenciado en el práctico |
+
+---
+
 ## Desglose Detallado por Objetivo
 
 ### Objetivo 1: Interpretar y enunciar los teoremas integrales
@@ -207,7 +216,7 @@ Ejercicio  │  s3_ex9      │     ✓       │     ✓       │     ✓     
 
 ## Conclusión
 
-Los 8 ejercicios de la semana 3 proporcionan una cobertura **completa y equilibrada** de los tres objetivos de aprendizaje:
+Los 8 ejercicios de la semana 3 (7 activos en el práctico y s3_ex6 disponible como archivo) proporcionan una cobertura **completa y equilibrada** de los tres objetivos de aprendizaje:
 
 1. **Objetivo 1 (8 ejercicios)**: Todos los ejercicios enuncian o verifican los teoremas de Stokes, Green y Gauss.
 2. **Objetivo 2 (8 ejercicios)**: Transforman integrales de línea, superficie y volumen para simplificar cálculos.
