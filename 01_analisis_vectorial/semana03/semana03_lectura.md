@@ -376,12 +376,12 @@ Flujo a través de una superficie. Imagen generada con [Inkscape](https://inksca
 Físicamente, el término $\nabla \cdot \vec{V}$ es el flujo neto por
 unidad de volumen.
 
-```{figure} ./../images/gauss_E.png
+<!-- ```{figure} ./../images/gauss_E.png
 :label: fig-gauss_E
 :alt: Superficie gaussiana encerrando una distribución de carga
 :align: center
 Superficie gaussiana para la aplicación del teorema de la divergencia. Imagen generada con [Inkscape](https://inkscape.org/).
-```
+``` -->
 
 :::{note} Ley de Gauss: la divergencia aplicada al electromagnetismo
 
