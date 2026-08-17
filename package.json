@@ -1,0 +1,9 @@
+{
+    "packageManager": "pnpm@11.20.0",
+    "dependencies": {
+        "mystmd": "^1.0.0"
+    },
+    "scripts": {
+        "vercel-build": "myst build --html && cp -r _build/html/* . || true"
+    }
+}
