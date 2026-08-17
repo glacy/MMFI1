@@ -13,16 +13,17 @@ tags:
   - calculo
   - demostracion
 subject: Cálculo y análisis vectorial - Semana 2
-keywords: []
-# downloads:
-#   - file: ./semana2-practica.md
-#     title: semana2-practica.md
-#   - file: ./semana2-practica.pdf
-#     title: semana2-practica.pdf
-# abstract: asdsdasdadasdasdasda
-# kernelspec:
-#   name: python3
-#   display_name: "Python 3"
+keywords:
+  - gradiente
+  - divergencia
+  - rotacional
+  - laplaciano
+  - coordenadas-curvilineas
+  - coordenadas-esfericas
+  - coordenadas-cilindricas
+  - identidades-vectoriales
+  - electromagnetismo
+  - mecanica-de-fluidos
 ---
 
 :::{hint} Instrucciones
@@ -97,6 +98,24 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 
 ```
 ````
+
+````{exercise}
+:label: s2_ex13
+
+```{include} ./ejercicios/s2_ex13.md
+
+```
+````
+
+````{solution} s2_ex13
+:label: solucion-s2_ex13
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s2_ex13.md
+
+```
+````
+
 
 
 ````{exercise}

@@ -9,8 +9,11 @@ project:
     - title: Semana 2
       children:
         - file: ./01_analisis_vectorial/semana02/semana02_lectura.md
-        - file: ./01_analisis_vectorial/semana02/semana02_practica.md
-        - file: ./01_analisis_vectorial/semana02/ejercicios/identidad_rotacional_producto_cruz.md
+        - file: ./01_analisis_vectorial/semana02/semana02_practica.md 
+    - title: Semana 3
+      children:
+        - file: ./01_analisis_vectorial/semana03/semana03_lectura.md
+        - file: ./01_analisis_vectorial/semana03/semana03_practica.md
   title: MMFI1
   github: https://github.com/glacy/MMFI1
   jupyter: binder

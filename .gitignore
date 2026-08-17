@@ -9,6 +9,7 @@ __pycache__/
 .venv/
 env/
 .env
+.env.local
 .conda/
 
 # Jupyter notebooks
@@ -17,3 +18,9 @@ env/
 # OS generated files
 .DS_Store
 .vercel
+
+evolutia/
+venv/
+storage/
+scripts/
+node_modules/

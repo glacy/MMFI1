@@ -26,6 +26,12 @@
 
 ---
 
+## Estado de los Ejercicios
+
+Todos los ejercicios (s1_ex1–s1_ex6) están activos en `semana01_practica.md`. No hay ejercicios comentados ni archivos sin referenciar.
+
+---
+
 ## Desglose Detallado por Objetivo
 
 ### Objetivo 1: Operaciones vectoriales fundamentales

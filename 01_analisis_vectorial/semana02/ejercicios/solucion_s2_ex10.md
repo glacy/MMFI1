@@ -1,11 +1,11 @@
 ---
-title Solución Ejercicio 10
-keywords
+title: Solución Ejercicio 10
+keywords:
   - flujo-axial
   - velocidad
   - rotacional
   - coordenadas-cilindricas
-tags
+tags:
   - flujo-axial
   - velocidad
   - rotacional

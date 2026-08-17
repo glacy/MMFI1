@@ -1,7 +1,7 @@
 :::{note} Cálculo del volumen de un toroide en coordenadas curvilíneas (cilíndricas)
 :class:dropdown
 
-```{figure} ./toroide.png
+```{figure} ./../images/toroide.png
 :label: fig-toroide
 :alt: representación de un toroide
 :align: center

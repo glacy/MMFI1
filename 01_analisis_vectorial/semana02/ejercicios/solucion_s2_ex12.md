@@ -1,11 +1,11 @@
 ---
-title Solucion Identidad del rotacional de un producto cruz
-keywords
+title: Solución Identidad del rotacional de un producto cruz
+keywords:
   - rotacional
   - producto-cruz
   - identidad-vectorial
   - nabla
-tags
+tags:
   - rotacional
   - identidades-vectoriales
   - calculo-vectorial
