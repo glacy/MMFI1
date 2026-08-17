@@ -21,3 +21,6 @@ env/
 
 evolutia/
 venv/
+storage/
+scripts/
+node_modules/
