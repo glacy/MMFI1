@@ -14,6 +14,12 @@ project:
       children:
         - file: ./01_analisis_vectorial/semana03/semana03_lectura.md
         - file: ./01_analisis_vectorial/semana03/semana03_practica.md
+    - title: Semana 4
+      children:
+        - file: ./02_numeros_complejos/semana04/semana04_lectura.md
+        - file: ./02_numeros_complejos/semana04/semana04_practica.md
+    - file: ./proyecto/2026/proyecto.md
+      hidden: true
   title: MMFI1
   github: https://github.com/glacy/MMFI1
   jupyter: binder
@@ -59,6 +65,11 @@ site:
       url: https://tecdigital.tec.ac.cr/dotlrn
     - title: MyST
       url: https://mystmd.org/guide/quickstart
+  nav:
+    - title: Proyecto
+      children:
+      - title: Instrucciones
+        url: /proyecto
   # domains:
   #   - glacy-mmfi1.curve.space
   template: book-theme
