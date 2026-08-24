@@ -65,11 +65,11 @@ site:
       url: https://tecdigital.tec.ac.cr/dotlrn
     - title: MyST
       url: https://mystmd.org/guide/quickstart
-  # nav:
-  #   - title: Proyecto
-  #     children:
-  #     - title: Instrucciones
-  #       url: /proyecto
+  nav:
+    - title: Proyecto
+      children:
+      - title: Instrucciones
+        url: /proyecto
   # domains:
   #   - glacy-mmfi1.curve.space
   template: book-theme
