@@ -32,7 +32,7 @@ A través de la investigación y el trabajo colaborativo, se espera que los equi
 -   **fomentar el trabajo en equipo y la responsabilidad compartida**: al trabajar en equipo, aprenderán
     a dividir tareas, gestionar tiempos, y asumir la responsabilidad por la calidad del trabajo grupal.
 
-Los equipos deberán estar conformados por un **máximo de tres (3)
+Los equipos deberán estar conformados por un **máximo de cuatro (4)
 personas**. El trabajo debe ser **original** y cumplir con las normas académicas
 del Instituto Tecnológico.
 
