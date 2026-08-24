@@ -12,7 +12,7 @@ tags:
   - demostracion
 ---
 
-**1. $(x+iy)^3 = -1$$
+**1. $(x+iy)^3 = -1$**
 
 Buscamos las raíces cúbicas de $-1$. Escribimos $-1$ en forma polar o de Euler:
 $$-1 = 1 \cdot e^{i\pi} = e^{i(\pi + 2k\pi)}, \quad k \in \mathbb{Z}$$
@@ -39,7 +39,7 @@ $$z \in \left\{ -1, \quad \frac{1}{2} + i\frac{\sqrt{3}}{2}, \quad \frac{1}{2} -
 
 ---
 
-**2. $(x+iy)^3 = 0$$
+**2. $(x+iy)^3 = 0$**
 
 El único número complejo elevado a una potencia que da cero es el cero mismo.
 $$x+iy = 0$$
@@ -49,7 +49,7 @@ $$x = 0, \quad y = 0$$
 
 ---
 
-**3. $|x+iy| = y - ix$$**
+**3. $|x+iy| = y - ix$**
 
 La parte izquierda de la ecuación, $|x+iy|$, es el módulo de $z$, que es por definición un **número real no negativo**.
 La parte derecha, $y - ix$, es un **número complejo** general.
@@ -73,7 +73,7 @@ $$x = 0, \quad y \ge 0$$
 
 ---
 
-**4. $z^2 = 2 + 2i\sqrt{3}$$**
+**4. $z^2 = 2 + 2i\sqrt{3}$**
 
 Primero pasamos el lado derecho a forma polar para extraer la raíz cuadrada.
 Módulo:

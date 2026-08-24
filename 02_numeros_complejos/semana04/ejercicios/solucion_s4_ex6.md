@@ -40,17 +40,16 @@ Separamos los términos que no tienen $i$ (parte real) de los que sí lo tienen 
 $$1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \cdots = \sum_{n=0}^{\infty} (-1)^n \frac{\theta^{2n}}{(2n)!}$$
 
 Esta es exactamente la serie de Taylor del **coseno**. Por lo tanto:
-$$\text{Re}(e^{i\theta}) = \cos\theta$$
+$$\Re(e^{i\theta}) = \cos\theta$$
 
 **Parte Imaginaria (términos impares de $n$, factorizando $i$):**
 $$i\left( \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots \right) = i \sum_{n=0}^{\infty} (-1)^n \frac{\theta^{2n+1}}{(2n+1)!}$$
 
 La expresión dentro del paréntesis es exactamente la serie de Taylor del **seno**. Por lo tanto:
-$$\text{Im}(e^{i\theta}) = i \sin\theta$$
+$$\Im(e^{i\theta}) = i \sin\theta$$
 
-**Conclusión**
 Combinando la parte real y la parte imaginaria:
 $$e^{i\theta} = \underbrace{\left( 1 - \frac{\theta^2}{2!} + \frac{\theta^4}{4!} - \cdots \right)}_{\cos\theta} + i\underbrace{\left( \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots \right)}_{\sin\theta}$$
 
 Se demuestra así que:
-$$e^{i\theta} = \cos\theta + i\sin\theta$$
+$$\boxed{e^{i\theta} = \cos\theta + i\sin\theta}$$

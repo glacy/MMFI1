@@ -14,7 +14,7 @@ Para cada caso, procederemos racionalizando el denominador o simplificando algeb
 
 ---
 
-**1. $z^{-1} = \frac{1}{z}$**
+**1. $z^{-1} = \displaystyle \frac{1}{z}$**
 
 $$z^{-1} = \frac{1}{x+iy}$$
 
@@ -29,7 +29,7 @@ $$z^{-1} = \frac{x}{x^2+y^2} - i \frac{y}{x^2+y^2}$$
 
 ---
 
-**2. $\frac{1}{z^2}$**
+**2. $\displaystyle  \frac{1}{z^2}$**
 
 Primero calculamos $z^2$:
 $$z^2 = (x+iy)^2 = x^2 + 2ixy + i^2 y^2 = (x^2 - y^2) + i(2xy)$$
@@ -51,7 +51,7 @@ $$\frac{1}{z^2} = \frac{x^2 - y^2}{(x^2+y^2)^2} - i \frac{2xy}{(x^2+y^2)^2}$$
 
 ---
 
-**3. $\frac{z}{\bar{z}}$$
+**3. $ \displaystyle  \frac{z}{\bar{z}}$**
 
 Sustituimos $z = x+iy$ y $\bar{z} = x-iy$:
 $$\frac{z}{\bar{z}} = \frac{x+iy}{x-iy}$$
@@ -69,7 +69,7 @@ $$\frac{z}{\bar{z}} = \frac{x^2 - y^2}{x^2+y^2} + i \frac{2xy}{x^2+y^2}$$
 
 ---
 
-**4. $\frac{1}{z-i}$$
+**4. $\displaystyle  \frac{1}{z-i}$**
 
 Sustituimos $z = x+iy$:
 $$\frac{1}{z-i} = \frac{1}{x + iy - i} = \frac{1}{x + i(y-1)}$$
