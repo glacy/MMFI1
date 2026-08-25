@@ -26,7 +26,7 @@ análisis de señales y la compresión de datos, con aplicaciones que van
 desde la compresión de imágenes (como JPEG 2000) hasta el análisis de
 señales en biomedicina.
 
-```{figure} ./Ingrid_Daubechies.jpg
+```{figure} ./../images/Ingrid_Daubechies.jpg
 :label: fig-Ingrid_Daubechies.jpg
 :alt: retrato de Dra. Ingrid Daubechies
 :align: center
@@ -312,21 +312,8 @@ Propiedades de las funciones hiperbólicas complejas
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 :::{seealso} Referencias
 
 @boas2006mathematical [Cap. 2 "Complex Numbers", pág. 64-71]
-
-
 
 :::
