@@ -51,7 +51,7 @@ En esta etapa, cada equipo deberá **definir claramente el método matemático y
 Realizar el "Registro" del equipo y tema ingresando al siguiente [**documento de Excel**](https://estudianteccr-my.sharepoint.com/:x:/g/personal/prof_glacy_estudiantec_cr/IQC1f43BXxKtSLZEC-leh3aRAbo5Mk6xsjy3L9kintweipM?e=MlnQWa). **Se debe ingresar con credenciales en el dominio \@estudiantec.cr**.
 :::
 
-### Instrucciones
+## Instrucciones
 
 1. **Selección del método matemático y fenómeno físico/ingenieril**
 
@@ -76,7 +76,7 @@ Realizar el "Registro" del equipo y tema ingresando al siguiente [**documento de
    - Formular un **objetivo general** que describa qué se quiere lograr con el proyecto.  
    - Definir de **2 a 3 objetivos específicos**, orientados a aspectos concretos del análisis, incluyendo la implementación o aplicación del método matemático seleccionado.
 
-### Aspectos formales
+## Aspectos formales
 
 - ✒️ La redacción debe ocupar entre **3 y 4 páginas** en el informe.  
 - 📊 Se recomienda usar figuras o esquemas simples para ilustrar el sistema físico y el método matemático.  
@@ -87,7 +87,7 @@ Realizar el "Registro" del equipo y tema ingresando al siguiente [**documento de
     evaluaciones en el [tecDigital](https://tecdigital.tec.ac.cr/dotlrn/classes/IF/IF3602/S-2-2026.CA.IF3602.1/evaluation/tda-ce-estudiante/tda-index?loc=1)**.
 
 
-### Rúbrica de evaluación
+## Rúbrica de evaluación
 
 | Criterio | Sobresaliente (120%) | Excelente (100%) | Bueno (85%) | Básico (70%) | Insuficiente (≤50%) |
 |----------|----------------------|-----------------|-------------|--------------|---------------------|
@@ -103,7 +103,7 @@ Realizar el "Registro" del equipo y tema ingresando al siguiente [**documento de
 
 En esta etapa, cada equipo deberá **desarrollar el marco teórico del informe** que explique los fundamentos matemáticos y físicos necesarios para comprender el problema de investigación y el método matemático seleccionado.
 
-### Instrucciones
+## Instrucciones
 
 1. **Introducción al problema físico/ingenieril**  
      Explicar el fenómeno elegido.  
@@ -124,7 +124,7 @@ En esta etapa, cada equipo deberá **desarrollar el marco teórico del informe**
      - Explicar herramientas de software pertinentes (ejemplo: ANSYS, COMSOL, OpenFOAM, MATLAB PDE Toolbox, FEniCS, FiPy, FreeFEM).  
      - No es necesario entrar en detalle del código fuente, pero sí mostrar cómo el método matemático se implementa en práctica.
 
-### Aspectos formales
+## Aspectos formales
 
    - 🔣 Uso de expresiones matemáticas claras, preferiblemente en notación LaTeX.  
    - 📔 Referencias bibliográficas adecuadas (artículos, libros de texto, manuales de software, documentación técnica).  
@@ -135,7 +135,7 @@ En esta etapa, cada equipo deberá **desarrollar el marco teórico del informe**
     evaluaciones en el [tecDigital](https://tecdigital.tec.ac.cr/dotlrn/classes/IF/IF3602/S-2-2026.CA.IF3602.1/evaluation/tda-ce-estudiante/tda-index?loc=1).
     
 
-### Rúbrica de evaluación
+## Rúbrica de evaluación
 
 | Criterio | Sobresaliente (120%) | Excelente (100%) | Bueno (85%) | Básico (70%) | Insuficiente (≤50%) |
 |----------|----------------------|-----------------|-------------|--------------|---------------------|
@@ -151,7 +151,7 @@ En esta etapa, cada equipo deberá **desarrollar el marco teórico del informe**
 
 En esta etapa, cada equipo deberá **mostrar cómo se resuelve o se ilustra el problema estudiado** utilizando el método matemático seleccionado y herramientas computacionales. El objetivo es **demostrar, mediante un ejemplo, simulación o aplicación práctica, cómo se puede analizar el problema con métodos matemáticos avanzados**.
 
-### Instrucciones
+## Instrucciones
 
 1. **Demostración del método matemático**
    - **Opción A: Implementación desde cero** (valorado como sobresaliente)  
@@ -178,7 +178,7 @@ En esta etapa, cada equipo deberá **mostrar cómo se resuelve o se ilustra el p
      - ¿Cuáles son las ventajas y limitaciones del método matemático para este problema específico?
 
 
-### Aspectos formales
+## Aspectos formales
 - ✒️ Los resultados deben presentarse en un capítulo de **4 a 6 páginas** dentro del informe.  
 - 📊 Todas las gráficas deben tener títulos, etiquetas en los ejes y unidades físicas.  
 - 💻 Si se utiliza software, incluir capturas de pantalla o esquemas del flujo de trabajo seguido (ejemplo: configuración de geometría, malla, condiciones de frontera, parámetros del solver).  
@@ -188,7 +188,7 @@ En esta etapa, cada equipo deberá **mostrar cómo se resuelve o se ilustra el p
     evaluaciones en el [tecDigital](https://tecdigital.tec.ac.cr/dotlrn/classes/IF/IF3602/S-2-2026.CA.IF3602.1/evaluation/tda-ce-estudiante/tda-index?loc=1).
 
 
-### Rúbrica de evaluación
+## Rúbrica de evaluación
 
 | Criterio | Sobresaliente (120%) | Excelente (100%) | Bueno (85%) | Básico (70%) | Insuficiente (≤50%) |
 |----------|----------------------|-----------------|-------------|--------------|---------------------|
@@ -204,8 +204,7 @@ En esta etapa, cada equipo deberá **mostrar cómo se resuelve o se ilustra el p
 
 La Etapa 4 consiste en **elaborar un video explicativo que presente los resultados del proyecto**, mostrando el conocimiento adquirido y la capacidad de comunicarlo de manera efectiva.
 
-
-### Instrucciones
+## Instrucciones 
 
 Cada equipo deberá:
 
@@ -215,7 +214,7 @@ Cada equipo deberá:
 - Gestionar adecuadamente el **tiempo asignado** para el video y asegurar que todos los miembros del equipo participen activamente en la narración o presentación.
 - Destacar al menos una aplicación relevante del método matemático y tema investigado en física o ingeniería, evidenciando la relación entre la teoría numérica y la práctica.
 
-### Aspectos formales
+## Aspectos formales
 
 - 📆 Fecha de entrega: viernes 20 de noviembre 2026 (SEMANA 16).
 - 📒 Formato de entrega: archivo de video en formato .mp4 a través del módulo de evaluaciones en el [tecDigital](https://tecdigital.tec.ac.cr/dotlrn/classes/IF/IF3602/S-2-2026.CA.IF3602.1/evaluation/tda-ce-estudiante/tda-index?loc=1).
@@ -223,7 +222,7 @@ Cada equipo deberá:
 - 🎥 El video debe tener buena calidad de audio y video, con narración clara y bien audible.
 
 
-### Rúbrica de evaluación
+## Rúbrica de evaluación
 
 | Criterio | Sobresaliente (120%) | Excelente (100%) | Bueno (85%) | Básico (70%) | Insuficiente (≤50%) |
 |----------|----------------------|-----------------|-------------|--------------|---------------------|

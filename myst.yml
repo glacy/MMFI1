@@ -18,7 +18,13 @@ project:
       children:
         - file: ./02_numeros_complejos/semana04/semana04_lectura.md
         - file: ./02_numeros_complejos/semana04/semana04_practica.md
+    - title: Semana 5
+      children:
+        - file: ./02_numeros_complejos/semana05/semana05_lectura.md
+        - file: ./02_numeros_complejos/semana05/semana05_practica.md
     - file: ./proyecto/2026/proyecto.md
+      hidden: true
+    - file: ./tareas/2026/tarea1/tarea1_2026.md
       hidden: true
   title: MMFI1
   github: https://github.com/glacy/MMFI1
@@ -70,6 +76,10 @@ site:
       children:
       - title: Instrucciones
         url: /proyecto
+    - title: Tareas
+      children:
+      - title: Tarea 1
+        url: /tarea1-2026
   # domains:
   #   - glacy-mmfi1.curve.space
   template: book-theme
