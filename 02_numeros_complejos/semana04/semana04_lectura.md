@@ -11,14 +11,10 @@ exports:
     template: curvenote
     output: ./semana04_lectura.pdf
 downloads:
-  # - file: ./semana04_lectura.md
-  #   title: semana04_lectura.md
-  # - file: ./semana04_lectura.pdf
-  #   title: semana04_lectura.pdf
-  # - file: ./coordenadas_polares.asy
-  #   title: coordenadas_polares.asy
-  # - file: ./conjugado_complejo.asy
-  #   title: conjugado_complejo.asy
+  - file: ./semana04_lectura.md
+    title: semana04_lectura.md
+  - file: ./semana04_lectura.pdf
+    title: semana04_lectura.pdf
 ---
 
 :::{aside} [Jennifer Doudna](https://es.wikipedia.org/wiki/Jennifer_Doudn )
