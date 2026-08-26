@@ -1,31 +1,4 @@
-## Solución del Ejercicio 2
-
-### Parte 1: Calcular los factores de escala $h_\rho$, $h_\phi$, $h_z$
-
-En coordenadas cilíndricas $(\rho,\phi,z)$, las relaciones con las coordenadas cartesianas son:
-$$x = \rho\cos\phi, \quad y = \rho\sin\phi, \quad z = z.$$
-
-El vector de posición es:
-$$\vec{r} = \rho\cos\phi\,\hat{\iota} + \rho\sin\phi\,\hat{\jmath} + z\,\hat{\kappa}.$$
-
-Los factores de escala se calculan como $h_i = \left|\frac{\partial \vec{r}}{\partial u_i}\right|$:
-
-Para $\rho$:
-$$\frac{\partial \vec{r}}{\partial \rho} = \cos\phi\,\hat{\iota} + \sin\phi\,\hat{\jmath}$$
-$$h_\rho = \left|\frac{\partial \vec{r}}{\partial \rho}\right| = \sqrt{\cos^2\phi + \sin^2\phi} = 1.$$
-
-Para $\phi$:
-$$\frac{\partial \vec{r}}{\partial \phi} = -\rho\sin\phi\,\hat{\iota} + \rho\cos\phi\,\hat{\jmath}$$
-$$h_\phi = \left|\frac{\partial \vec{r}}{\partial \phi}\right| = \sqrt{\rho^2\sin^2\phi + \rho^2\cos^2\phi} = \sqrt{\rho^2(\sin^2\phi + \cos^2\phi)} = \rho.$$
-
-Para $z$:
-$$\frac{\partial \vec{r}}{\partial z} = \hat{\kappa}$$
-$$h_z = \left|\frac{\partial \vec{r}}{\partial z}\right| = 1.$$
-
-Por lo tanto, los factores de escala son:
-$$h_\rho = 1, \quad h_\phi = \rho, \quad h_z = 1.$$
-
-### Parte 2: Determinar el flujo magnético total $\Phi_B$
+**Determinar el flujo magnético total $\Phi_B$**
 
 El flujo magnético a través de una superficie $S$ está dado por:
 $$\Phi_B = \iint_S \vec{B} \cdot d\vec{S},$$
@@ -55,7 +28,7 @@ $$= 2\times10^{-4} \times 0.08 \times \ln(1.5)$$
 $$= 1.6\times10^{-5} \times 0.4055 \text{ Wb}$$
 $$\approx 6.49\times10^{-6}\text{ Wb}.$$
 
-### Parte 3: Verificar la ley de Ampère usando el teorema de Stokes
+ Parte 3: Verificar la ley de Ampère usando el teorema de Stokes
 
 El teorema de Stokes establece que:
 $$\oint_C \vec{B} \cdot d\vec{l} = \iint_S (\nabla \times \vec{B}) \cdot d\vec{S}.$$
@@ -94,7 +67,7 @@ $$\oint_C \vec{B} \cdot d\vec{l} = \mu_0 N_1 I_1 = \mu_0 I_{\text{enc}},$$
 
 lo cual verifica la ley de Ampère para este sistema.
 
-### Parte 4: Calcular la fem inducida en la bobina secundaria
+ Parte 4: Calcular la fem inducida en la bobina secundaria
 
 La fem inducida $\mathcal{E}$ en la bobina secundaria está dada por la ley de Faraday:
 $$\mathcal{E} = -N_2\frac{d\Phi_B}{dt},$$

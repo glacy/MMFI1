@@ -1,6 +1,5 @@
-## Solución del Ejercicio 1
 
-### Parte 1: Calcular el torque ejercido sobre el impulsor respecto al origen
+ Parte 1: Calcular el torque ejercido sobre el impulsor respecto al origen
 
 El torque (o momento) de una fuerza $\vec{F}$ respecto al origen se define como:
 $$\vec{\tau} = \vec{r} \times \vec{F},$$
@@ -35,24 +34,29 @@ $$\vec{\tau} = \vec{r} \times \vec{F}_{\text{arrastre}} = (1\hat{\iota}+1\hat{\j
 $$= \begin{vmatrix} \hat{\iota} & \hat{\jmath} & \hat{\kappa} \\ 1 & 1 & 2 \\ -60 & 30 & 50 \end{vmatrix}.$$
 
 Calculando el determinante:
-$$\vec{\tau} = \hat{\iota}[(1)(50) - (2)(30)] - \hat{\jmath}[(1)(50) - (2)(-60)] + \hat{\kappa}[(1)(30) - (1)(-60)]$$
-$$= \hat{\iota}(50 - 60) - \hat{\jmath}(50 + 120) + \hat{\kappa}(30 + 60)$$
-$$= -10\hat{\iota} - 170\hat{\jmath} + 90\hat{\kappa}\text{ N·m}.$$
+:::{math}
+\begin{align*}
+\vec{\tau} &= \hat{\iota}[(1)(50) - (2)(30)] - \hat{\jmath}[(1)(50) - (2)(-60)] + \hat{\kappa}[(1)(30) - (1)(-60)]\\
+&= \hat{\iota}(50 - 60) - \hat{\jmath}(50 + 120) + \hat{\kappa}(30 + 60)\\
+&= -10\hat{\iota} - 170\hat{\jmath} + 90\hat{\kappa}\text{ N}
+cdot \text{m}.
+\end{align*}
+:::
 
-### Parte 2: Determinar la potencia mecánica requerida
+ Parte 2: Determinar la potencia mecánica requerida
 
 La potencia mecánica $P$ requerida para mantener el impulsor girando a velocidad constante está dada por:
 $$P = \vec{\tau} \cdot \vec{\omega},$$
 donde $\vec{\tau}$ es el torque y $\vec{\omega}$ es la velocidad angular.
 
-Ya calculamos $\vec{\tau} = -10\hat{\iota} - 170\hat{\jmath} + 90\hat{\kappa}\text{ N·m}$ y $\vec{\omega} = 10\hat{\kappa}\text{ rad/s}$.
+Ya calculamos $\vec{\tau} = -10\hat{\iota} - 170\hat{\jmath} + 90\hat{\kappa}\text{ N}\cdot \text{m}$ y $\vec{\omega} = 10\hat{\kappa}\text{ rad/s}$.
 
 Calculando el producto punto:
 $$P = (-10\hat{\iota} - 170\hat{\jmath} + 90\hat{\kappa}) \cdot (10\hat{\kappa}) = (-10)(0) + (-170)(0) + (90)(10) = 900\text{ W}.$$
 
 Por lo tanto, se requieren $900\text{ W}$ de potencia mecánica para mantener el impulsor girando a velocidad constante.
 
-### Parte 3: Calcular el volumen de fluido desplazado por el impulsor
+ Parte 3: Calcular el volumen de fluido desplazado por el impulsor
 
 El volumen de un paralelepípedo con vectores de aristas $\vec{a}$, $\vec{b}$ y $\vec{c}$ está dado por el producto triple escalar:
 $$V = \vec{a} \cdot (\vec{b} \times \vec{c}).$$

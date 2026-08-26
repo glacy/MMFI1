@@ -9,14 +9,14 @@ keywords: [funciones, potencias, raíces, trigonométricas, hiperbólicas]
 exports:
   - format: pdf
     template: curvenote
-    output: ./semana5_lectura.pdf
-downloads:
-  - file: ./semana5_lectura.md
-    title: semana5_lectura.md
-  - file: ./semana5_lectura.pdf
-    title: semana5_lectura.pdf
-  - file: ./ejemplo_cubica.asy
-    title: ejemplo_cubica.asy
+    output: ./semana05_lectura.pdf
+# downloads:
+#   - file: ./semana5_lectura.md
+#     title: semana5_lectura.md
+#   - file: ./semana5_lectura.pdf
+#     title: semana5_lectura.pdf
+#   - file: ./ejemplo_cubica.asy
+#     title: ejemplo_cubica.asy
 ---
 
 :::{aside} [Ingrid Daubechies](https://es.wikipedia.org/wiki/Ingrid_Daubechies)

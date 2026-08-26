@@ -80,22 +80,24 @@ donde $\mu_0=4\pi\times10^{-7}\text{ H/m}$ es la permeabilidad del vacío.
 
 ## Ejercicio 3
 
-Un sistema de refrigeración para un servidor de alta potencia utiliza un disipador de calor con geometría cilíndrica de radio $R=0.03\text{ m}$ y altura $H=0.1\text{ m}$. La temperatura en el disipador varía según la posición en coordenadas cilíndricas $(\rho,\phi,z)$ como
+Un sistema de refrigeración para un servidor de alta potencia utiliza un disipador de calor con geometría cilíndrica de radio $R=0,03\text{ m}$ y altura $H=0,1\text{ m}$. El servidor genera calor uniformemente dentro del disipador con una tasa volumétrica $q_{\text{gen}}=5\times10^7\text{ W/m}^3$ debido al funcionamiento de los procesadores.
 
-$$T(\rho,z)=T_0 + \Delta T\left(1-\frac{\rho^2}{R^2}\right)\cos\left(\frac{\pi z}{H}\right),$$
+En estado estacionario, la temperatura en el disipador varía según la posición en coordenadas cilíndricas $(\rho,\phi,z)$ como
 
-donde $T_0=300\text{ K}$ es la temperatura de la base y $\Delta T=50\text{ K}$.
+$$T(\rho,z)=T_{\text{base}} + \frac{q_{\text{gen}}}{4k}(R^2-\rho^2),$$
+
+donde $T_{\text{base}}=300\text{ K}$ es la temperatura de la base del disipador (que se mantiene constante mediante refrigeración líquida) y $k=200\text{ W/(m·K)}$ es la conductividad térmica del material del disipador (aluminio).
 
 El flujo de calor $\vec{q}$ está relacionado con el gradiente de temperatura por la ley de Fourier:
 $$\vec{q} = -k\nabla T,$$
-donde $k=200\text{ W/(m·K)}$ es la conductividad térmica del material del disipador.
 
-- Calcule el gradiente de temperatura $\nabla T$ en coordenadas cilíndricas.
+y en estado estacionario se satisface la ecuación de Poisson:
+$$\nabla\cdot(k\nabla T) + q_{\text{gen}} = 0.$$
+
+- Calcule el gradiente de temperatura $\nabla T$ en coordenadas cilíndricas y verifique que apunta desde el interior del disipador hacia la superficie lateral.
 - Determine el flujo de calor $\vec{q}$ en un punto $P$ localizado en $\rho=R/2$, $\phi=\pi/4$, $z=H/2$.
-- Use el teorema de la divergencia para calcular la tasa total de flujo de calor que sale del disipador a través de su superficie lateral, la base y la parte superior.
-- Calcule la tasa de generación de calor interna $Q_{\text{gen}}$ requerida para mantener esta distribución de temperatura estacionaria, usando la ecuación de Poisson del calor:
-$$\nabla\cdot(k\nabla T) + q_{\text{gen}} = 0,$$
-donde $q_{\text{gen}}$ es la tasa de generación de calor por unidad de volumen.
+- Use el teorema de la divergencia para calcular la tasa total de flujo de calor que sale del disipador a través de su superficie lateral.
+- Verifique que el flujo total de calor que sale del disipador es igual al calor generado internamente, confirmando el balance energético en estado estacionario.
 
 ---
 
