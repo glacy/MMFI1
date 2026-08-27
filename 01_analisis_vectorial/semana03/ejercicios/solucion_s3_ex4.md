@@ -51,7 +51,7 @@ $$\iint_D (\nabla\times\vec{F})\cdot\hat{n}\,dS = 2\iint_D dS = 2\cdot \pi(2)^2 
 
 ---
 
-** Comparación e interpretación**
+**Comparación e interpretación**
 
 $$\oint_C \vec{F}\cdot d\vec{r} = 8\pi = \iint_D (\nabla\times\vec{F})\cdot\hat{n}\,dS,$$
 

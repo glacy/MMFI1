@@ -50,7 +50,7 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 
 ```{include} ./ejercicios/solucion_s5_ex2.md
 
-``}
+```
 ````
 
 ````{exercise}
@@ -117,6 +117,41 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 :class: dropdown
 
 ```{include} ./ejercicios/solucion_s5_ex6.md
+
+```
+````
+
+````{exercise}
+:label: s5_ex7
+
+```{include} ./ejercicios/s5_ex7.md
+
+```
+````
+
+````{solution} s5_ex7
+:label: solucion-s5_ex7
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s5_ex7.md
+
+```
+````
+
+
+````{exercise}
+:label: s5_ex8
+
+```{include} ./ejercicios/s5_ex8.md
+
+```
+````
+
+````{solution} s5_ex8
+:label: solucion-s5_ex8
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s5_ex8.md
 
 ```
 ````
