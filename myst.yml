@@ -18,6 +18,10 @@ project:
       children:
         - file: ./02_numeros_complejos/semana04/semana04_lectura.md
         - file: ./02_numeros_complejos/semana04/semana04_practica.md
+    - title: Semana 5
+      children:
+        - file: ./02_numeros_complejos/semana05/semana05_lectura.md
+        - file: ./02_numeros_complejos/semana05/semana05_practica.md
     - file: ./proyecto/2026/proyecto.md
       hidden: true
     - file: ./tareas/2026/tarea1/tarea1_2026.md

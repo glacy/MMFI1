@@ -57,24 +57,6 @@ El poder de estas funciones reside en que permiten una descripción más complet
 muchos fenómenos físicos que involucran ondas, resonancia, circuitos, dinámica
 de fluidos, entre otros. Mientras que en los números reales muchas operaciones están limitadas o requieren casos por separado, en el plano complejo, las identidades de Euler y las propiedades de la exponencial unifican trigonometría, geometría y álgebra en un solo lenguaje coherente.
 
-```{note} Señal modulada en amplitud (AM)
-
-En telecomunicaciones, transmitir una señal directamente es ineficiente. Una técnica común es la **modulación**, donde una señal de baja frecuencia (información) se impone sobre una onda de alta frecuencia (portadora).
-
-Considera una señal de
-información $m(t)$, que es una señal de banda base (por ejemplo, una
-señal de audio). Esta señal se modula en amplitud (AM) utilizando una
-portadora de frecuencia $f_c$, dando lugar a una señal modulada
-$$s(t)=[A+m(t)]\cos(2\pi f_c t).$$
-
-En lugar de trabajar directamente con $s(t)$, es común utilizar la
-*representación compleja de la señal*, $S(t)$. La señal modulada se
-puede expresar en términos de su envolvente compleja
-$$s(t)=\Re \{S(t)e^{2\pi i f_c t}  \},$$ donde $$S(t)=A+m(t).$$
-
-Esta formulación compleja simplifica enormemente el diseño de filtros y demoduladores.
-```
-
 ## Potencias complejas
 
 La operación de elevar un número complejo a una potencia entera es una extensión directa de la multiplicación. Dado un número complejo $z=re^{i\theta}$, donde $r$ es el módulo y
