@@ -64,7 +64,6 @@ $$-2\frac{\omega \kappa}{c} \delta = -1$$
 Despejamos $\delta$:
 $$\delta = \frac{c}{2\omega \kappa}$$
 
-**Resultado:**
 La profundidad de penetración está dada por:
 $$\delta = \frac{c}{2\omega \kappa}$$
 

@@ -24,8 +24,9 @@ $$B = -\frac{\sigma}{\omega \epsilon_0}$$
 De manera que el radicando se expresa como un número complejo en forma rectangular:
 $$\tilde{n}^2 = A + iB$$
 
-Buscamos la raíz cuadrada de este número complejo. Sea $\tilde{n} = n + i\kappa$, donde $n$ es la parte real (índice de refracción) y $\kappa$ es la parte imaginaria (coeficiente de extinción).
-Elevamos al cuadrado la expresión propuesta:
+Buscamos la raíz cuadrada de este número complejo. Como $\tilde{n} = n + i\kappa$, donde $n$ es la parte real (índice de refracción) y $\kappa$ es la parte imaginaria (coeficiente de extinción).
+
+Elevamos al cuadrado:
 $$(n + i\kappa)^2 = n^2 + 2in\kappa - \kappa^2 = (n^2 - \kappa^2) + i(2n\kappa)$$
 
 Igualamos esto con la expresión original $A + iB$:
@@ -55,14 +56,12 @@ $$X = \frac{4A \pm \sqrt{16A^2 + 16B^2}}{8}$$
 $$X = \frac{4A \pm 4\sqrt{A^2 + B^2}}{8}$$
 $$X = \frac{A \pm \sqrt{A^2 + B^2}}{2}$$
 
-Dado que $X = n^2$ debe ser no negativo, y sabemos que $\sqrt{A^2+B^2} \ge |A|$, el término con el signo negativo podría ser negativo si $A < 0$ (aunque $\epsilon_r$ es generalmente positivo). El término con el signo positivo siempre es positivo. Por lo tanto, seleccionamos la solución positiva:
+Dado que $X = n^2$ debe ser no negativo, tomamos el término con el signo positivo, de manera que
 $$n^2 = \frac{A + \sqrt{A^2 + B^2}}{2}$$
 
 Finalmente, despejamos $n$:
 $$n = \sqrt{\frac{A + \sqrt{A^2 + B^2}}{2}}$$
 
-Sustituyendo de vuelta los valores originales $A = \epsilon_r$ y $B = -\frac{\sigma}{\omega \epsilon_0}$ (notando que $B^2 = (\frac{\sigma}{\omega \epsilon_0})^2$):
+Sustituyendo de vuelta los valores originales $A = \epsilon_r$ y $B = -\frac{\sigma}{\omega \epsilon_0}$:
 
-$$n = \left[\frac{\epsilon_r + \sqrt{\epsilon_r^2 + \frac{\sigma^2}{\omega^2 \epsilon_0^2}}}{2}\right]^{1/2}$$
-
-Lo cual demuestra la expresión solicitada.
+$$n=\displaystyle \left[\frac{\epsilon_r}{2}+\sqrt{\frac{\epsilon_r^2}{4}+\frac{\sigma^2}{\omega^2\epsilon_0^2}}\right]^{1/2}.$$

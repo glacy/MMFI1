@@ -23,6 +23,7 @@ Este documento detalla la relación entre los ejercicios prácticos de la semana
 | **s5_ex6** | | ✅ | ✅ | Circuito RLC: separar partes real/imag de la impedancia (Resistencia/Reactancia). |
 | **s5_ex7** | ✅ | | ✅ | Demostración algebraica del índice de refracción complejo (separación parte real/imag). |
 | **s5_ex8** | | ✅ | ✅ | Cálculo de profundidad de penetración (aplicación de decaimiento exponencial). |
+| **s5_ex9** | | ✅ | ✅ | Aplicación en líneas de transmisión: cálculo de voltaje usando $\cosh$ complejo. |
 
 ---
 
@@ -48,6 +49,7 @@ Este objetivo es crucial para la intuición de ingeniería: extraer significado 
 *   **Ejercicio 6 (s5_ex6):** Requiere separar la impedancia $Z = R + iX$ para interpretar $R$ (parte real) como resistencia (disipación) y $X$ (parte imaginaria) como reactancia (almacenamiento de energía inductiva/capacitiva). Cumple explícitamente el objetivo de distinguir resistencia/reactancia.
 *   **Ejercicio 7 (s5_ex7):** La demostración en sí misma separa explícitamente la componente de refracción $n$ (parte real de la raíz) de la componente de absorción $\kappa$ (parte imaginaria), reforzando la interpretación física del índice complejo.
 *   **Ejercicio 8 (s5_ex8):** Conecta el coeficiente de atenuación $\kappa$ (parte imaginaria) con una magnitud física medible: la profundidad de penetración $\delta$.
+*   **Ejercicio 9 (s5_ex9):** Aplica directamente la función coseno hiperbólica compleja (como se menciona en la lectura) para calcular voltaje en una línea de transmisión, reforzando la conexión entre matemáticas complejas e ingeniería eléctrica.
 
 ---
 

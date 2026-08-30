@@ -24,7 +24,7 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 
 ```{include} ./ejercicios/s5_ex1.md
 
-``}
+```
 ````
 
 ````{solution} s5_ex1
@@ -54,23 +54,6 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ````
 
 ````{exercise}
-:label: s5_ex3
-
-```{include} ./ejercicios/s5_ex3.md
-
-```
-````
-
-````{solution} s5_ex3
-:label: solucion-s5_ex3
-:class: dropdown
-
-```{include} ./ejercicios/solucion_s5_ex3.md
-
-```
-````
-
-````{exercise}
 :label: s5_ex4
 
 ```{include} ./ejercicios/s5_ex4.md
@@ -87,19 +70,20 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```
 ````
 
-````{exercise}
-:label: s5_ex5
 
-```{include} ./ejercicios/s5_ex5.md
+````{exercise}
+:label: s5_ex9
+
+```{include} ./ejercicios/s5_ex9.md
 
 ```
 ````
 
-````{solution} s5_ex5
-:label: solucion-s5_ex5
+````{solution} s5_ex9
+:label: solucion-s5_ex9
 :class: dropdown
 
-```{include} ./ejercicios/solucion_s5_ex5.md
+```{include} ./ejercicios/solucion_s5_ex9.md
 
 ```
 ````
@@ -122,22 +106,40 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ````
 
 ````{exercise}
-:label: s5_ex7
+:label: s5_ex3
 
-```{include} ./ejercicios/s5_ex7.md
+```{include} ./ejercicios/s5_ex3.md
 
 ```
 ````
 
-````{solution} s5_ex7
-:label: solucion-s5_ex7
+````{solution} s5_ex3
+:label: solucion-s5_ex3
 :class: dropdown
 
-```{include} ./ejercicios/solucion_s5_ex7.md
+```{include} ./ejercicios/solucion_s5_ex3.md
 
 ```
 ````
 
+
+
+````{exercise}
+:label: s5_ex5
+
+```{include} ./ejercicios/s5_ex5.md
+
+```
+````
+
+````{solution} s5_ex5
+:label: solucion-s5_ex5
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s5_ex5.md
+
+```
+````
 
 ````{exercise}
 :label: s5_ex8
@@ -155,3 +157,25 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 
 ```
 ````
+
+
+
+
+````{exercise}
+:label: s5_ex7
+
+```{include} ./ejercicios/s5_ex7.md
+
+```
+````
+
+````{solution} s5_ex7
+:label: solucion-s5_ex7
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s5_ex7.md
+
+```
+````
+
+

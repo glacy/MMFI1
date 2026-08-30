@@ -10,19 +10,19 @@ exports:
   - format: pdf
     template: curvenote
     output: ./semana05_lectura.pdf
-# downloads:
-#   - file: ./semana5_lectura.md
-#     title: semana5_lectura.md
-#   - file: ./semana5_lectura.pdf
-#     title: semana5_lectura.pdf
+downloads:
+  - file: ./semana05_lectura.md
+    title: semana05_lectura.md
+  - file: ./semana05_lectura.pdf
+    title: semana05_lectura.pdf
 #   - file: ./ejemplo_cubica.asy
 #     title: ejemplo_cubica.asy
 ---
 
 :::{aside} [Lene Vestergaard Hau](https://es.wikipedia.org/wiki/Lene_Hau)
-es una física danesa reconocida mundialmente por sus experimentos pioneros en óptica cuántica. Su logro más científico impactante fue lograr detener completamente un pulso de luz y luego reiniciarlo, manipulando así la interacción luz-materia de una manera nunca antes vista.
+es una física danesa reconocida mundialmente por sus experimentos pioneros en óptica cuántica. Su logro científico más impactante fue lograr detener completamente un pulso de luz y luego reiniciarlo, manipulando así la interacción luz-materia de una manera nunca antes vista.
 
-Su investigación se fundamenta en el uso de condensados de Bose-Einstein, un estado de la materia que ocurre a temperaturas cercanas al cero absoluto. En el contexto de los números complejos y las funciones exponenciales, el trabajo de Hau es de suma relevancia. Logra manipular dramáticamente el **índice de refracción complejo** de un medio ($\tilde{n} = n + i\kappa$). Mediante la 'transparencia electromagnéticamente inducida' (EIT), crea ventanas espectrales donde el medio se vuelve transparente a una frecuencia específica mientras mantiene un índice de refracción muy alto. Actualmente es profesora de Física Aplicada y de Física en la Universidad de Harvard.
+Su investigación se fundamenta en el uso de condensados de Bose-Einstein, un estado de la materia que ocurre a temperaturas cercanas al cero absoluto. Manipulando dramáticamente el **índice de refracción complejo** de un medio ($\tilde{n} = n + i\kappa$); mediante la 'transparencia electromagnéticamente inducida' (EIT), crea ventanas espectrales donde el medio se vuelve transparente a una frecuencia específica mientras mantiene un índice de refracción muy alto. Actualmente es profesora de Física Aplicada y de Física en la Universidad de Harvard.
 
 ```{figure} ./../images/Lene_Hau.png
 :label: fig-Lene_Hau.jpg
@@ -260,8 +260,6 @@ Calculemos $\sin \left(\frac{\pi}{2}+i\ln 2 \right)$ y $\cos i$.
     =&\frac{5}{4}
 \end{aligned}
 :::
-
-Note que el resultado es real y mayor que 1, algo imposible para el seno de un ángulo real.
 
 ---
 
