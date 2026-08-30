@@ -17,6 +17,7 @@ downloads:
     title: semana05_lectura.pdf
 #   - file: ./ejemplo_cubica.asy
 #     title: ejemplo_cubica.asy
+date: 2026-08-30
 ---
 
 :::{aside} [Lene Vestergaard Hau](https://es.wikipedia.org/wiki/Lene_Hau)
