@@ -13,10 +13,6 @@
 - **URL principal**: https://mmfi-1.vercel.app
 - **Automático**: Cada push a `main` (se despliega a producción con `vercel --prod`)
 
-### Preview deployments
-- **Rama release/2025**: https://mmfi-1-git-release-2025-gerardo-s-projects-0ef7eb80.vercel.app
-- **Cualquier push a main**: https://mmfi-1-[hash]-gerardo-s-projects-0ef7eb80.vercel.app
-
 ## Flujo de trabajo recomendado
 
 ### Desarrollo en main

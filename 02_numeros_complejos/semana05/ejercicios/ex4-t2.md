@@ -60,16 +60,3 @@ Definimos:
 
 ---
 
-### Preguntas orientadas al uso de funciones reales
-
-a) Si $n''\neq 0$, ¿cómo se modifica la condición de $\theta_B$?  
-b) Discute el comportamiento de $\cosh(\alpha)$ y $\sinh(\alpha)$ para $\alpha\gg 1$ y su efecto en la transmisión.  
-c) Calcula $\phi(\omega)$ para $\phi(\omega)=\pi/2$ y comenta el significado físico en términos de interferencia.
-
----
-
-### Objetivos del ejercicio
-
-- **Aplicar** identidades trigonométricas e hiperbólicas para separar y analizar partes reales e imaginarias.  
-- **Usar** funciones inversas (logaritmo, arcotangente) para obtener parámetros ópticos a partir de mediciones.  
-- **Interpretar** el significado físico de $\phi(\omega)$ y $\alpha(\omega)$ en términos de fase y atenuación.

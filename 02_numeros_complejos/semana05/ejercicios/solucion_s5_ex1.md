@@ -83,8 +83,9 @@ $$z_k = e^{i\pi(1+4k)/10}, \quad k=0,1,2,3,4$$
 **6. $\sqrt[3]{2i-2}$**
 
 Primero convertimos $-2+2i$ a forma polar.
-Módulo: $r = \sqrt{(-2)^2 + 2^2} = \sqrt{8} = 2\sqrt{2}$.
-Argumento: Está en el segundo cuadrante. $\tan\theta = -1 \implies \theta = 3\pi/4$.
+
+- Módulo: $r = \sqrt{(-2)^2 + 2^2} = \sqrt{8} = 2\sqrt{2}$.
+- Argumento: Está en el segundo cuadrante. $\tan\theta = -1 \implies \theta = 3\pi/4$.
 
 $$-2+2i = 2\sqrt{2} e^{i(3\pi/4 + 2k\pi)}$$
 

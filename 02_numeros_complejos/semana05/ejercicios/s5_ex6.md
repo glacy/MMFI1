@@ -25,4 +25,4 @@ como impedancia total.
 
 - Encuentre la expresión para la corriente $I(t) = \frac{V(t)}{Z(\omega)}$.
 - Exprese $I(t)$ en términos de amplitud y fase: $I(t)=|I|e^{i(\omega t + \phi)}$.
-- Calcule $|I|$ y $\phi$ si $R=10\,\Omega$, $L=0.1\,\mathrm{H}$, $C=100\,\mu\mathrm{F}$, $\omega = 100\,\mathrm{rad/s}$ y $V_0=120\,\mathrm{V}$.
+- Calcule $|I|$ y $\phi$ si $R=10\,\Omega$, $L=0,1\,\mathrm{H}$, $C=100\,\mu\mathrm{F}$, $\omega = 100\,\mathrm{rad/s}$ y $V_0=120\,\mathrm{V}$.

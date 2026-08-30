@@ -16,11 +16,16 @@ $$\cosh z = \frac{e^z + e^{-z}}{2}$$
 
 $$\cosh(2\pi i) = \frac{e^{2\pi i} + e^{-2\pi i}}{2}$$
 
-Por la Fórmula de Euler, $e^{2\pi i} = \cos(2\pi) + i\sin(2\pi) = 1$. Similarmente, $e^{-2\pi i} = 1$.
+Por la Fórmula de Euler, $$e^{2\pi i} = \cos(2\pi) + i\sin(2\pi) = 1$$ Similarmente, $$e^{-2\pi i} = 1$$
+
+Por lo tanto, 
 
 $$\cosh(2\pi i) = \frac{1 + 1}{2} = 1$$
 
-*(Nota: También sabemos que $\cosh(ix) = \cos x$. Entonces $\cosh(2\pi i) = \cos(2\pi) = 1$.)*
+---
+
+También sabemos que $\cosh(ix) = \cos x$. Entonces $$\cosh(2\pi i) = \cos(2\pi) = 1$$
+
 
 ---
 
@@ -35,18 +40,15 @@ $\cosh(ix) = \cos x$
 
 Por lo tanto:
 $$\tanh\left(\frac{3\pi i}{4}\right) = \frac{\sinh\left(\frac{3\pi i}{4}\right)}{\cosh\left(\frac{3\pi i}{4}\right)} = \frac{i\sin\left(\frac{3\pi}{4}\right)}{\cos\left(\frac{3\pi}{4}\right)} = i \tan\left(\frac{3\pi}{4}\right)$$
-
-Calculamos el valor trigonométrico:
-$\frac{3\pi}{4}$ está en el segundo cuadrante. $\tan(3\pi/4) = \tan(\pi - \pi/4) = -\tan(\pi/4) = -1$.
-
+Por lo tanto,
 $$\tanh\left(\frac{3\pi i}{4}\right) = i(-1) = -i$$
 
 ---
 
-**3. $\sinh (\ln 2 +\frac{i \pi}{3})$$
+**3. $\sinh (\ln 2 +\frac{i \pi}{3})$**
 
 Separamos la parte real e imaginaria: $z = x + iy$ con $x = \ln 2$ e $y = \pi/3$.
-Usamos la identidad (probada en el Ejercicio 4):
+Usamos la identidad
 $$\sinh(x+iy) = \sinh x \cos y + i \cosh x \sin y$$
 
 Calculamos los componentes:

@@ -30,6 +30,8 @@ $\cosh x = \frac{e^x + e^{-x}}{2}$
 Sustituyendo:
 $$\sinh(x+iy) = \sinh x \cos y + i \cosh x \sin y$$
 
+---
+
 **Demostración para $\cosh(x+iy)$**
 
 Usamos la definición de coseno hiperbólico:
@@ -45,7 +47,3 @@ $$= \frac{(e^x + e^{-x})\cos y + i(e^x - e^{-x})\sin y}{2}$$
 Usando las definiciones de $\sinh x$ y $\cosh x$:
 $$= \cosh x \cos y + i \sinh x \sin y$$
 
-**Conclusión**
-Se ha demostrado que:
-$$\sinh(x+iy) = \sinh x\,\cos y + i\,\cosh x\,\sin y$$
-$$\cosh(x+iy) = \cosh x\,\cos y + i\,\sinh x\,\sin y$$

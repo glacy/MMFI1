@@ -10,36 +10,36 @@ exports:
   - format: pdf
     template: curvenote
     output: ./semana05_lectura.pdf
-# downloads:
-#   - file: ./semana5_lectura.md
-#     title: semana5_lectura.md
-#   - file: ./semana5_lectura.pdf
-#     title: semana5_lectura.pdf
+downloads:
+  - file: ./semana05_lectura.md
+    title: semana05_lectura.md
+  - file: ./semana05_lectura.pdf
+    title: semana05_lectura.pdf
 #   - file: ./ejemplo_cubica.asy
 #     title: ejemplo_cubica.asy
 ---
 
-:::{aside} [Ingrid Daubechies](https://es.wikipedia.org/wiki/Ingrid_Daubechies)
-es una matemática y
-física belga. Ha realizado importantes aportaciones en el campo del
-análisis de señales y la compresión de datos, con aplicaciones que van
-desde la compresión de imágenes (como JPEG 2000) hasta el análisis de
-señales en biomedicina.
+:::{aside} [Lene Vestergaard Hau](https://es.wikipedia.org/wiki/Lene_Hau)
+es una física danesa reconocida mundialmente por sus experimentos pioneros en óptica cuántica. Su logro científico más impactante fue lograr detener completamente un pulso de luz y luego reiniciarlo, manipulando así la interacción luz-materia de una manera nunca antes vista.
 
-```{figure} ./../images/Ingrid_Daubechies.jpg
-:label: fig-Ingrid_Daubechies.jpg
-:alt: retrato de Dra. Ingrid Daubechies
+Su investigación se fundamenta en el uso de condensados de Bose-Einstein, un estado de la materia que ocurre a temperaturas cercanas al cero absoluto. Manipulando dramáticamente el **índice de refracción complejo** de un medio ($\tilde{n} = n + i\kappa$); mediante la 'transparencia electromagnéticamente inducida' (EIT), crea ventanas espectrales donde el medio se vuelve transparente a una frecuencia específica mientras mantiene un índice de refracción muy alto. Actualmente es profesora de Física Aplicada y de Física en la Universidad de Harvard.
+
+```{figure} ./../images/Lene_Hau.png
+:label: fig-Lene_Hau.jpg
+:alt: retrato de Dra. Lene Vestergaard Hau
 :align: center
-Dra. Ingrid Daubechies (1954 - )
+Lene Vestergaard Hau (1959 - ). Foto: (Photo courtesy of Justin Ide/Harvard News Office) ([Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3AProfessor_Lene_Hau_in_her_laboratory_at_Harvard.jpg), Public domain).
 ```
 :::
 
 ```{note} Objetivos
 Al completar esta lección, serás capaz de
 
-1. **Definir y clasificar** las principales funciones de números complejos (potencias, raíces, exponenciales, logarítmicas, trigonométricas e hiperbólicas, y sus inversas), identificando sus dominios de analiticidad, periodicidad y ramificaciones.
+1. **Definir y clasificar funciones complejas elementales** (exponencial, trigonométricas, hiperbólicas, logaritmos), identificando sus propiedades de periodicidad, ramificación y dominios de analiticidad.
 
-2. **Resolver problemas** donde las funciones complejas simplifican la formulación matemática.
+2. **Modelar fenómenos físicos y de ingeniería** aplicando funciones complejas a la propagación de ondas en medios absorbentes (índice de refracción complejo) y al análisis de circuitos eléctricos (impedancia).
+
+3. **Interpretar físicamente las soluciones complejas**, distinguiendo el rol de la parte real e imaginaria en magnitudes como atenuación/fase y resistencia/reactancia.
 ```
 
 +++ { "part": "abstract" }
@@ -201,6 +201,29 @@ Aquí es donde vemos la magia de $e^z$:
 :::
 
 
+## Logaritmo de un número complejo
+
+Si la función exponencial $e^z$ mapea el plano complejo en todo el plano (excepto el origen), su inversa, el logaritmo natural $\ln z$, nos permite recuperar el exponente original. Dado que la exponencial es periódica en la parte imaginaria ($e^{i\theta} = e^{i(\theta + 2k\pi)}$), el logaritmo complejo es una función **multivaluada**.
+
+Para $z \neq 0$, definimos el logaritmo complejo como:
+$$\ln z = \ln |z| + i \arg z$$
+
+Recordando que el argumento es multivaluado, $\arg z = \theta + 2k\pi$ (para $k \in \mathbb{Z}$), tenemos la expresión completa:
+$$\ln z = \ln |z| + i(\theta + 2k\pi), \quad k \in \mathbb{Z}$$
+
+*   $\ln |z|$ es el logaritmo real estándar del módulo (parte real).
+*   $i(\theta + 2k\pi)$ es la parte imaginaria, que nos da la fase (argumento) del número.
+
+Para obtener una función univaluada (una "rama" única), restringimos el argumento al intervalo principal, generalmente $(-\pi, \pi]$. Esto define el **logaritmo principal**, denotado a menudo como $\text{Log } z$.
+
+:::{note} Fase de una onda
+
+En procesamiento de señales, extraer el logaritmo de un número complejo $A = |A|e^{i\phi}$ nos permite separar amplitud y fase explícitamente:
+$$\ln A = \ln |A| + i\phi$$
+
+Esta descomposición es útil en el análisis de sistemas lineales invariantes en el tiempo (LTI), donde la respuesta en frecuencia afecta la magnitud y la fase de la señal de manera distinta.
+:::
+
 ## Funciones trigonométricas
 
 Las funciones trigonométricas en el plano complejo se definen a partir de la exponencial, lo que nos permite calcular senos y cosenos de números que no son ángulos reales. Dado que
@@ -237,8 +260,6 @@ Calculemos $\sin \left(\frac{\pi}{2}+i\ln 2 \right)$ y $\cos i$.
     =&\frac{5}{4}
 \end{aligned}
 :::
-
-Note que el resultado es real y mayor que 1, algo imposible para el seno de un ángulo real.
 
 ---
 
@@ -289,11 +310,13 @@ Para argumentos complejos generales $z = x + iy$, las definiciones se extienden 
 \end{aligned}
 :::
 
-:::{note} Ejemplos de funciones hiperbólicas
+:::{note} Aplicación: Líneas de transmisión
 
-$$\sinh (1+i) = -i \sin (i(1+i)) = -i \sin (-1+i)$$
-
-$$\cosh (i) = \cos (i \cdot i) = \cos(-1) = \cos(1) \approx 0.540$$
+En ingeniería eléctrica, el voltaje $V(z)$ y la corriente $I(z)$ en una línea de transmisión de longitud $z$ se modelan usando funciones hiperbólicas complejas. Si $V_0$ es el voltaje en la entrada, el voltaje a una distancia $z$ es:
+$$V(z) = V_0 \cosh(\gamma z)$$
+donde $\gamma = \alpha + i\beta$ es la **constante de propagación compleja**.
+*   $\beta$ (parte real del exponente en $\cosh$) está relacionada con la velocidad de onda.
+*   $\alpha$ causa la atenuación (decaimiento exponencial) de la señal a lo largo del cable.
 :::
 
 
