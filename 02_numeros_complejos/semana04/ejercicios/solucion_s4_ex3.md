@@ -43,10 +43,10 @@ $$\frac{1}{z^2} = \frac{(x^2 - y^2) - i(2xy)}{(x^2 - y^2)^2 + (2xy)^2}$$
 Simplificando el denominador (que es $|z|^4 = (x^2+y^2)^2$):
 $$(x^2 - y^2)^2 + (2xy)^2 = x^4 - 2x^2y^2 + y^4 + 4x^2y^2 = x^4 + 2x^2y^2 + y^4 = (x^2 + y^2)^2$$
 
-Por lo tanto:
+De manera que
 $$\frac{1}{z^2} = \frac{(x^2 - y^2) - i(2xy)}{(x^2+y^2)^2}$$
 
-O写成:
+Por lo tanto
 $$\frac{1}{z^2} = \frac{x^2 - y^2}{(x^2+y^2)^2} - i \frac{2xy}{(x^2+y^2)^2}$$
 
 ---
