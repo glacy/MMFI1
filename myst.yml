@@ -133,8 +133,8 @@ site:
       url: https://tecdigital.tec.ac.cr/dotlrn
     - title: Google Colab
       url: https://colab.research.google.com/?authuser=0#create=true
-    - title: MyST
-      url: https://mystmd.org/guide/quickstart
+    # - title: MyST
+    #   url: https://mystmd.org/guide/quickstart
   # parts:
   #   footer: footer.md
   nav:
