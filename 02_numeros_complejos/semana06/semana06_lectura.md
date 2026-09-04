@@ -7,9 +7,9 @@ tags: [numeros_complejos, logaritmo, trigonometricas-inversas, hiperbolicas-inve
 subject: Variable compleja - Semana 6
 keywords: [funciones, logaritmo, trigonométricas, hiperbólicas, inversas]
 exports:
- - format: pdf
-   template: curvenote
-   output: ./semana6_lectura.pdf
+  - format: pdf
+    template: curvenote
+    output: ./semana6_lectura.pdf
 downloads:
   - file: ./semana6_lectura.md
     title: semana6_lectura.md
@@ -30,7 +30,7 @@ desarrollo de nuevas tecnologías de imagen médica.
 :label: fig-naomi_HALAS-lg.jpg
 :alt: retrato de Dra. Naomi Halas
 :align: center
-Dra. Naomi Halas (xxxxx - )
+Dra. Naomi Halas (1955 - )
 ```
 :::
 
@@ -39,11 +39,13 @@ Al completar esta lección, serás capaz de
 1. **Analizar la definición y propiedades fundamentales** del logaritmo complejo y de las funciones inversas trigonométricas e hiperbólicas en el plano complejo, destacando su multivaluación y regiones de ramificación.
 
 2. **Visualizar mediante gráficas y representaciones geométricas** las distintas ramas de funciones multivaluadas, interpretando su significado físico y matemático.
+
+3. **Aplicar el formalismo de funciones multivaluadas** en problemas de física e ingeniería (óptica, circuitos y mecánica cuántica), comprendiendo la elección de ramas principales (branch cuts) para obtener soluciones físicas consistentes.
 ```
 
-+++ { "part": "abstract" }  
++++ { "part": "abstract" }
 
-Las funciones logarítmica y exponencial de variable compleja, junto con las inversas de las funciones trigonométricas e hiperbólicas, son herramientas clave en física e ingeniería. Permiten describir oscilaciones, propagación de ondas y fenómenos de crecimiento o decaimiento, facilitando el cálculo de amplitudes, fases y modos de sistemas dinámicos, circuitos y estructuras vibrantes.
+Las funciones logarítmica y exponencial de variable compleja, junto con las inversas de las funciones trigonométricas e hiperbólicas, son herramientas clave en física e ingeniería. Permiten describir oscilaciones, propagación de ondas y fenómenos de crecimiento o decaimiento, facilitando el cálculo de amplitudes, fases y modos de sistemas dinámicos, circuitos y estructuras vibrantes. Este estudio profundiza en la naturaleza **multivaluada** de estas funciones, un concepto central en el análisis complejo que requiere el manejo de cortes de rama (branch cuts) para asegurar soluciones físicas consistentes.
 
 +++
 
@@ -62,7 +64,7 @@ tres tipos de funciones que amplían y complementan las anteriores: las
 funciones logarítmicas, trigonométricas inversas e hiperbólicas
 inversas.
 
-# Logarítmos 
+# Logaritmos
 
 La función logarítmica es la inversa natural de la función exponencial y
 juega un papel crucial en la solución de ecuaciones diferenciales y en
@@ -74,7 +76,7 @@ $$\text{Log} (z)=\text{Log} (re^{i\theta})=\ln r +i\theta=\ln |z| + i\arg (z),$$
 Análogamente, se puede escribir que $$z=e^w,$$ donde
 $$w=\ln |z| + i\arg (z).$$
 
-Para todo número complejo $z \neq 0$ 
+Para todo número complejo $z \neq 0$
 
 :::{math}
 \begin{aligned}
@@ -83,17 +85,16 @@ Para todo número complejo $z \neq 0$
 \end{aligned}
 :::
 
-es decir, la función logartimo "separa" la información sobre el módulo y
+es decir, la función logaritmo "separa" la información sobre el módulo y
 el argumento de un número complejo.
 
 Debido a la periodicidad del argumento $\arg (z)$, el **logaritmo
 complejo es una función multivaluada**. El valor principal del logaritmo
-se obtiene restringiendo el argumento al intervalo $(−\pi,\pi]$.\
-Note que en el dominio complejo, es posible calcular el logarítmo de un
+se obtiene restringiendo el argumento al intervalo $(−\pi,\pi]$.
+Note que en el dominio complejo, es posible calcular el logaritmo de un
 número (real) negativo.
 
 :::{note} Ejemplo
-
 Para el número $z=i+1$, $r=\sqrt{2}$ y $\theta=\pi/4\pm 2n\pi$,
 entonces
 $$\text{Log} (i+1)=\ln ( \sqrt{2}) + i \left( \frac{\pi}{4}\pm 2n\pi\right)$$
@@ -104,14 +105,14 @@ Considere el número $z=-2=(-2,0)$:
 $$\text{Log} (-2)=\ln (2) + i \left( \pi\pm 2n\pi\right)$$
 :::
 
-## Propiedades de la función logarítmo
+## Propiedades de la función logaritmo
 
--   Logartimo de un producto: $$\text{Log} (z_1 z_2)=\text{Log} (z_1)+\text{Log} (z_2)$$
+-   Logaritmo de un producto: $$\text{Log} (z_1 z_2)=\text{Log} (z_1)+\text{Log} (z_2)$$
 
--   Logartimo de un cociente:
+-   Logaritmo de un cociente:
     $$\text{Log} \left(\frac{z_1}{z_2} \right)=\text{Log} (z_1)-\text{Log} (z_2)$$
 
--   Logartimo de una potencia: $$\text{Log} (z^n)=n\text{Log} (z)$$
+-   Logaritmo de una potencia: $$\text{Log} (z^n)=n\text{Log} (z)$$
 
 -   Relación con la exponencial:
     $$\text{Log} (e^z)=z+2k\pi i, \quad k\in \mathbb{Z}$$
@@ -119,11 +120,11 @@ $$\text{Log} (-2)=\ln (2) + i \left( \pi\pm 2n\pi\right)$$
 
 :::{note} Función logarítmica compleja en análisis de impedancia
 
-En análisis de circuitos de corriente alterna, el voltaje puede representarse como  
+En análisis de circuitos de corriente alterna, el voltaje puede representarse como
 $$
 V(t) = V_0 e^{i(\omega t + \phi)}.
 $$
-Para obtener la fase $\phi$ a partir de $V(t)$, se utiliza $\phi = \Im (\text{Log} V(t))$.  
+Para obtener la fase $\phi$ a partir de $V(t)$, se utiliza $\phi = \Im (\text{Log} V(t))$.
 :::
 
 
@@ -151,23 +152,23 @@ Un branch cut es una línea o curva en el plano complejo que conecta puntos de r
 
 :::{note} [Ondas evanescentes](https://es.wikipedia.org/wiki/Onda_evanescente)
 
-En física e ingeniería, las **ecuaciones de ondas** describen la propagación de perturbaciones (sonido, electromagnetismo, elasticidad) en diferentes medios.  
+En física e ingeniería, las **ecuaciones de ondas** describen la propagación de perturbaciones (sonido, electromagnetismo, elasticidad) en diferentes medios.
 
-En 2D, la ecuación de onda homogénea para un campo escalar $u(x,y,t)$ es  
+En 2D, la ecuación de onda homogénea para un campo escalar $u(x,y,t)$ es
 
 $$
 \nabla^2 u - \frac{1}{c^2}\frac{\partial^2 u}{\partial t^2} = 0,
 $$
 
-donde $c$ es la velocidad de propagación.  
+donde $c$ es la velocidad de propagación.
 
-Si buscamos soluciones armónicas en el tiempo del tipo  
+Si buscamos soluciones armónicas en el tiempo del tipo
 
 $$
 u(x,y,t) = U(x,y) e^{-i\omega t},
 $$
 
-la ecuación se transforma en la **ecuación de Helmholtz**:  
+la ecuación se transforma en la **ecuación de Helmholtz**:
 
 $$
 \nabla^2 U + k^2 U = 0,
@@ -175,7 +176,7 @@ $$
 
 con $k = \omega/c$ el número de onda.
 
-La [función de Green](https://es.wikipedia.org/wiki/Funci%C3%B3n_de_Green) $G(z)$ para esta ecuación en el plano complejo aparece al resolver  
+La [función de Green](https://es.wikipedia.org/wiki/Funci%C3%B3n_de_Green) $G(z)$ para esta ecuación en el plano complejo aparece al resolver
 
 $$
 \nabla^2 G + k^2 G = \delta(x)\delta(y),
@@ -183,13 +184,13 @@ $$
 
 donde la delta representa una fuente puntual en el origen.
 
-Usando coordenadas complejas $z = x + iy$, la distancia radial al punto fuente es  
+Usando coordenadas complejas $z = x + iy$, la distancia radial al punto fuente es
 
 $$
 r^2 = x^2 + y^2 = z\,\bar{z}.
 $$
 
-Para fuentes en geometrías especiales, como **guías de ondas** o **medios estratificados**, la variable $z$ se transforma y aparece una forma generalizada  
+Para fuentes en geometrías especiales, como **guías de ondas** o **medios estratificados**, la variable $z$ se transforma y aparece una forma generalizada
 
 $$
 G(z) = \sqrt{z^2 - a^2},
@@ -206,17 +207,17 @@ donde $a$ representa una distancia característica, por ejemplo:
 ---
 
 
-Consideremos  
+Consideremos
 $$
 G(z)=\sqrt{z^2-a^2} = \exp\!\Big(\tfrac{1}{2}\text{Log}(z^2-a^2)\Big),
 $$
-donde $\text{Log}$ denota la función logaritmo complejo (multivaluada).  
+donde $\text{Log}$ denota la función logaritmo complejo (multivaluada).
 
 Los puntos donde el argumento del logaritmo se anula o se comporta singularmente son puntos de ramificación. Resolviendo
 $$
 z^2-a^2=0 \quad\Longrightarrow\quad z=\pm a.
 $$
-Además, en el plano de Riemann compacto el punto $z=\infty$ actúa también como punto de ramificación.  
+Además, en el plano de Riemann compacto el punto $z=\infty$ actúa también como punto de ramificación.
 Por tanto, los puntos de ramificación finitos son
 $$
 z=+a,\qquad z=-a,
@@ -235,7 +236,7 @@ $$
 \arg (z^2-a^2)\in(-\pi,\pi],\qquad \sqrt{z^2-a^2}=\exp\!\Big(\tfrac{1}{2}\text{Log}(z^2-a^2)\Big)
 $$
 
-- Para $z$ reales y $|z|>a$ se obtiene $\sqrt{z^2-a^2}$ real.  
+- Para $z$ reales y $|z|>a$ se obtiene $\sqrt{z^2-a^2}$ real.
 - Para $z$ en $-a<z<a$ (sobre el corte) la función presenta la discontinuidad de salto entre ramas.
 
 
@@ -246,12 +247,12 @@ Si $z$ es un número de onda o una variable espectral (típico en funciones de G
 - Los puntos $z=\pm a$ son **umbrales** o transiciones:
   - $|z|>a$: $z^2-a^2>0$, $\sqrt{z^2-a^2}$ real → **modos propagantes**.
   - $|z|<a$: $z^2-a^2<0$, $\sqrt{z^2-a^2}$ imaginario → **modos evanescentes**.
-- El *branch cut* $[-a,a]$ separa las regiones propagante y evanescente.  
+- El *branch cut* $[-a,a]$ separa las regiones propagante y evanescente.
 - La elección de la rama principal fija la convención física (p.ej. solución de radiación saliente).
 
 ---
 
-Los puntos $z=\pm a$ se conocen como [_puntos de ramificación_](https://es.wikipedia.org/wiki/Punto_de_ramificaci%C3%B3n) porque allí el argumento del radical se anula y la función cambia de hoja al rodearlos. 
+Los puntos $z=\pm a$ se conocen como [_puntos de ramificación_](https://es.wikipedia.org/wiki/Punto_de_ramificaci%C3%B3n) porque allí el argumento del radical se anula y la función cambia de hoja al rodearlos.
 
 :::
 # Potencias
@@ -286,7 +287,7 @@ $$z=\arcsin w=\sin^{-1} w \qquad \mbox{si } \quad w=\sin z.$$
 
 $$z=\arccos 2, \qquad \mbox{\'o} \qquad \cos z =2,$$
 
-$$\displaystyle \frac{e^{iz}+e^{-iz}}{2}=2.$$ 
+$$\displaystyle \frac{e^{iz}+e^{-iz}}{2}=2.$$
 
 Sea $u=e^{iz}$. Entonces $e^{-iz}=u^{-1}$, de donde se obtiene
 $$\displaystyle \frac{u+u^{-1}}{2}=2,$$
@@ -304,7 +305,7 @@ $$z=\arccos 2=2n\pi \pm i\ln (2+\sqrt{3})$$
 
 
 Las funciones trigonométricas inversas en el dominio complejo se
-definien explícitamente como: 
+definen explícitamente como:
 
 :::{math}
 \begin{aligned}
@@ -324,7 +325,7 @@ propagación de ondas y la transmisión de señales pueden expresarse en
 términos de funciones hiperbólicas inversas.
 
 Las funciones hiperbólicas inversas para un número complejo $z$ se
-definen como: 
+definen como:
 
 :::{math}
 \begin{aligned}
@@ -343,10 +344,10 @@ el tiempo propio y el tiempo coordenado.
 
 :::{note} Relaciones de las derivadas de funciones hiperbólicas inversas
 
-| Función                    | Expresión de la derivada | 
+| Función                    | Expresión de la derivada |
 |----------------------------|--------------------------|
-| $\sinh^{-1}(z)$  | $\displaystyle \frac{1}{\sqrt{z^2+1}}$| 
-| $\cosh^{-1}(z)$  | $\displaystyle \frac{1}{\sqrt{z^2-1}}$| 
+| $\sinh^{-1}(z)$  | $\displaystyle \frac{1}{\sqrt{z^2+1}}$|
+| $\cosh^{-1}(z)$  | $\displaystyle \frac{1}{\sqrt{z^2-1}}$|
 | $\tanh^{-1}(z)$  | $\displaystyle \frac{1}{1-z^2}$       |
 
 :::

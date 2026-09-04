@@ -22,6 +22,10 @@ project:
       children:
         - file: ./02_numeros_complejos/semana05/semana05_lectura.md
         - file: ./02_numeros_complejos/semana05/semana05_practica.md
+    - title: Semana 6
+      children:
+        - file: ./02_numeros_complejos/semana06/semana06_lectura.md
+        - file: ./02_numeros_complejos/semana06/semana06_practica.md
     - file: ./proyecto/2026/proyecto.md
       hidden: true
     - file: ./tareas/2026/tarea1/tarea1_2026.md
