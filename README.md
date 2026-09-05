@@ -22,7 +22,7 @@ El curso cubre 5 unidades principales:
    - Productos entre vectores, productos triples
    - Diferenciación de vectores, coordenadas curvilíneas
    - Operador nabla
-   - Teoremas de Green, Stokes y Gauss
+   - Teoremas Integrales: Green, Stokes y Gauss
 
 2. **Números y funciones complejas**
    - Introducción a números complejos
