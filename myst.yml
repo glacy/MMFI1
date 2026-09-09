@@ -25,6 +25,7 @@ project:
     - title: Semana 6
       children:
         - file: ./02_numeros_complejos/semana06/semana06_lectura.md
+        - file: ./02_numeros_complejos/graficas_funciones_complejas.md
         - file: ./02_numeros_complejos/semana06/semana06_practica.md
     - file: ./proyecto/2026/proyecto.md
       hidden: true
@@ -35,6 +36,7 @@ project:
   jupyter: 
     binder:
       repo: https://github.com/glacy/MMFI1
+      ref: dev
   description: Material didáctico del IF3602
   short_title: ""
   keywords: [matemáticas, física, ingeniería]

@@ -14,7 +14,7 @@ env/
 
 # Jupyter notebooks
 .ipynb_checkpoints/
-
+02_numeros_complejos/graficas_funciones_complejas.ipynb
 # OS generated files
 .DS_Store
 .vercel
