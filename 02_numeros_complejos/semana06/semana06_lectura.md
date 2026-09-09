@@ -52,14 +52,7 @@ $$
 e^{z+2\pi i}=e^z,
 $$
 
-de modo que muchos valores distintos de $z$ producen el mismo $e^z$. Deshacer la exponencial, entonces, **no tiene una respuesta única**, y esa ambigüedad se propagará a todo lo que construyamos encima: potencias, arcosenos, arcosenos hiperbólicos...
-
-Esta semana sigue una sola ruta, en cuatro pasos:
-
-1. **Construir el logaritmo complejo** y distinguir entre el logaritmo multivaluado ($\ln z$) y su rama principal ($\text{Log } z$).
-2. **Entender la geometría de la multivaluación**: puntos de ramificación, cortes de rama y superficies de Riemann.
-3. **Usar el logaritmo como ladrillo** para construir potencias complejas y todas las funciones inversas (trigonométricas e hiperbólicas).
-4. **Cobrar el pago físico**: ver cómo la elección de una rama del logaritmo separa modos propagantes de modos evanescentes en una onda.
+de modo que muchos valores distintos de $z$ producen el mismo $e^z$. Deshacer la exponencial, entonces, **no tiene una respuesta única**, y esa ambigüedad se propagará a todo lo que construyamos encima: potencias, arcosenos, arcosenos hiperbólicos.
 
 # El logaritmo: deshacer la exponencial
 
@@ -98,7 +91,7 @@ La estructura del logaritmo es una "descomposición": separa la información de 
 \end{aligned}
 :::
 
-Dos consecuencias inmediatas, ambas con sabor físico:
+Dos consecuencias inmediatas:
 
 - El logaritmo existe para **todo** $z\neq 0$: en el dominio complejo, $\ln(-2)$ sí tiene valor.
 - Extraer la **fase** de una señal compleja es tomar la parte imaginaria de su logaritmo.
@@ -133,18 +126,7 @@ Las reglas clásicas del logaritmo sobreviven en el plano complejo, con un matiz
 -   Logaritmo de una potencia: $\ln (z^n)=n\ln (z)$
 -   Relación con la exponencial: $e^{\ln z}=z$ y $\ln (e^z)=z+2k\pi i$
 
-:::{attention} Las identidades valen "salvo $2\pi i$"
 
-Como $\ln$ es multivaluado, estas reglas se interpretan **entre conjuntos de valores**: cada lado produce el mismo conjunto. Pero la **rama principal puede fallar**, porque la suma de dos argumentos puede salirse del intervalo $(-\pi,\pi]$. Por ejemplo,
-
-$$
-\text{Log}(-1)+\text{Log}(-1)=i\pi+i\pi=2\pi i,
-\qquad\text{pero}\qquad
-\text{Log}\big((-1)(-1)\big)=\text{Log}(1)=0.
-$$
-
-La diferencia es exactamente un múltiplo de $2\pi i$. Al programar o al resolver, conviene verificar que los argumentos se mantengan en la rama elegida.
-:::
 
 :::{note} Extraer la fase: análisis de impedancia
 
@@ -157,15 +139,36 @@ $$
 Para recuperar la fase $\phi$ basta tomar el logaritmo y quedarse con la parte imaginaria:
 
 $$
-\phi = \Im\big(\ln V(t)\big) = \omega t+\phi \pmod{2\pi}.
+\theta = \Im\big(\ln V(t)\big) = \omega t+\phi \pmod{2\pi}.
 $$
 
-Esta es la operación `np.angle` o `atan2` que usarán en laboratorio y procesamiento de señales: es, literalmente, una rama del logaritmo complejo.
 :::
 
 ## La geometría de la multivaluación: ramas y cortes
 
 ¿Por qué el logaritmo es multivaluado? La respuesta es geométrica. Imaginen caminar en el plano $z$ dando una vuelta completa alrededor del origen: el argumento varía continuamente y regresa al punto de partida, pero habiendo acumulado $+2\pi$. Como $\Im(\ln z)=\arg z$, **el valor del logaritmo subió un "piso"**: de $\text{Log}\,z$ a $\text{Log}\,z+2\pi i$. El logaritmo vive, en realidad, sobre una escalera helicoidal de pisos apilados: la [superficie de Riemann](https://es.wikipedia.org/wiki/Superficie_de_Riemann) del logaritmo, donde cada "hoja" o piso corresponde a un valor de $k$.
+
+
+```{figure} ./../images/re_ln.png
+:label: fig-re_ln.png
+:alt: Gráficos de la parte real de logaritmo
+:align: center
+Parte real del logaritmo .
+```
+
+```{figure} ./../images/im_ln.png
+:label: fig-im_ln.png
+:alt: Gráfico de la parte imaginaria de logaritmo
+:align: center
+Parte imaginaria del logaritmo.
+```
+
+```{figure} ./../images/riemann_gradiente.png
+:label: fig-riemman_gradiente.png
+:alt: Superficie de Riemman de logaritmo
+:align: center
+Superficie de Riemman del logaritmo.
+```
 
 Para trabajar en el plano (una sola hoja) necesitamos dos herramientas:
 
@@ -175,7 +178,7 @@ Para trabajar en el plano (una sola hoja) necesitamos dos herramientas:
 :::{attention} Tabla de referencia: puntos de ramificación de las funciones de esta semana
 :class: dropdown
 
-La siguiente tabla resume, para consultar durante toda la lección, dónde se ramifica cada función que construiremos y dónde aparecen en la física:
+La siguiente tabla resume, dónde se ramifica cada función que construiremos y dónde aparecen en la física:
 
 | Función $f(z)$            | Puntos de ramificación          | Corte de rama típico                  | Aplicaciones en física e ingeniería                              |
 |-----------------------------|----------------------------------|---------------------------------------|------------------------------------------------------------------|
@@ -188,10 +191,9 @@ La siguiente tabla resume, para consultar durante toda la lección, dónde se ra
 | $ \sinh^{-1}(z) $            | $ z = \pm i, \infty $          | $ i[-\infty,-1] \cup i[1,\infty) $   | Propagación en medios dispersivos, relatividad                    |
 | $ \cosh^{-1}(z) $            | $ z = \pm 1, \infty $          | $ (-\infty,1] $                      | Termodinámica, física estadística                    |
 
-Nótese el patrón que se repetirá toda la semana: **las ramificaciones nacen de los $\ln$ y las $\sqrt{\ }$ que quedan dentro de cada fórmula**.
+Nóte que **las ramificaciones nacen de los $\ln$ y las $\sqrt{\ }$ que quedan dentro de cada fórmula**.
 :::
 
-Con el logaritmo construido y su multivaluación bajo control, estamos listos para usarlo como material de construcción.
 
 # Potencias complejas: el logaritmo trabajando
 
@@ -203,7 +205,7 @@ $$
 
 Si $\ln a$ toma varios valores, $a^b$ también: las potencias complejas **heredan** la multivaluación del logaritmo (salvo cuando $b$ es entero, caso en el que todos los valores coinciden).
 
-:::{note} Ejemplo: $i^i$ es un número real
+:::{note} Ejemplo: $i^{-2i}$ es un número real
 
 Calculemos primero $\ln i = i\left(\frac{\pi}{2}+2k\pi\right)$. Entonces
 
@@ -211,10 +213,10 @@ $$
 i^{-2i}=e^{-2i\,\ln i}
 =e^{-2i\cdot i(\pi/2+2k\pi)}
 =e^{\pi+4k\pi}
-=e^\pi,\; e^{5\pi},\; e^{-3\pi},\;\ldots
+=e^\pi,\; e^{5\pi},\; e^{9\pi},\;\ldots
 $$
 
-Todos los valores son **reales y positivos** — un resultado que sorprende a primera vista: dos números imaginarios producen infinitos valores reales. El valor principal es $i^{-2i}=e^{-\pi/2\cdot(-4)}$... cuidado: con la rama principal, $i^{-2i}=e^{\pi}$.
+Todos los valores son **reales y positivos** — un resultado que sorprende a primera vista: dos números imaginarios producen infinitos valores reales.
 :::
 
 # Funciones trigonométricas inversas: el mismo ladrillo
