@@ -12,7 +12,11 @@ kernelspec:
   name: python3
 ---
 
-## Gráficas de funciones complejas 
+En esta página se presentan gráficas de funciones de variable compleja ($\sin z$, $\cos z$, $\exp z$, $\log z$, entre otras) generadas con Python, usando NumPy y Matplotlib. Cada gráfica va acompañada del código que la produce, organizado en celdas ejecutables.
+
+```{note}
+Las celdas de código son interactivas: puede ejecutarlas y modificarlas directamente en el navegador con el botón de ejecución en vivo ( 🚀 ), o bien ejecutarlas localmente con Jupyter.
+```
 
 ### $\sin (z)$
 
@@ -52,6 +56,51 @@ plt.subplot(1, 2, 2)
 plt.contourf(X, Y, np.imag(sin_Z), levels=50, cmap='RdYlBu')
 plt.colorbar()
 plt.title(r"Parte imaginaria de  $\sin(z)$")
+plt.xlabel(r'$\Re(z)$')
+plt.ylabel(r'$\Im (z)$')
+
+plt.tight_layout()
+plt.show()
+```
+
+### $\cos (z)$
+
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: AW-kNTPM4ld9
+outputId: 0caeebcb-8abf-4621-94e9-3cf2be272cda
+---
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definir una malla en el plano complejo
+x = np.linspace(-2, 2, 400)
+y = np.linspace(-2, 2, 400)
+X, Y = np.meshgrid(x, y)
+Z = X + 1j * Y
+
+# Calcular cos(z) en cada punto de la malla
+cos_Z = np.cos(Z)
+
+# Graficar las partes real e imaginaria de cos(z)
+plt.figure(figsize=(14, 6))
+
+# Parte real de cos(z)
+plt.subplot(1, 2, 1)
+plt.contourf(X, Y, np.real(sin_Z), levels=50, cmap='RdYlBu')
+plt.colorbar()
+plt.title(r"Parte real de $\cos(z)$")
+plt.xlabel(r'$\Re(z)$')
+plt.ylabel(r'$\Im (z)$')
+
+# Parte imaginaria de cos(Z)
+plt.subplot(1, 2, 2)
+plt.contourf(X, Y, np.imag(sin_Z), levels=50, cmap='RdYlBu')
+plt.colorbar()
+plt.title(r"Parte imaginaria de  $\cos(z)$")
 plt.xlabel(r'$\Re(z)$')
 plt.ylabel(r'$\Im (z)$')
 
