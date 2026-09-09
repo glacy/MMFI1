@@ -15,7 +15,20 @@ exports:
 #     title: semana06_lectura.md
 #   - file: ./semana06_lectura.pdf
 #     title: semana06_lectura.pdf
+kernelspec:
+  name: python3
+  display_name: Python 3
 ---
+
+```{code-cell} python
+:linenos:
+:emphasize-lines: 2,3
+:class: dropdown
+hello = "hello"
+there = "there"
+phrase = f"{hello}, {there}!"
+print(phrase)
+```
 
 :::{aside} [Ana María Cetto](https://es.wikipedia.org/wiki/Ana_Mar%C3%ADa_Cetto)
 
@@ -175,7 +188,7 @@ Para trabajar en el plano (una sola hoja) necesitamos dos herramientas:
 - Un **punto de ramificación**: un punto alrededor del cual una vuelta cambia el valor de la función. Para $\ln z$ (y para $\sqrt{z}$ y $z^\alpha$ no entero) es $z=0$, además de $z=\infty$.
 - Un **corte de rama** (*branch cut*): una curva que "cortamos" del dominio para impedir rodear el punto de ramificación, de modo que sobre la región restante la función sea univaluada. La elección estándar para $\ln z$ es el eje real negativo $(-\infty,0]$, que es justamente donde la rama principal "salta" de $+i\pi$ a $-i\pi$.
 
-:::{attention} Tabla de referencia: puntos de ramificación de las funciones de esta semana
+:::{attention} Puntos de ramificación de las funciones de esta semana
 :class: dropdown
 
 La siguiente tabla resume, dónde se ramifica cada función que construiremos y dónde aparecen en la física:
@@ -369,6 +382,26 @@ más el punto $z=\infty$ en el plano de Riemann compacto. Para hacer $G(z)$ univ
 - $|z|<a$: $z^2-a^2<0$ y $\sqrt{z^2-a^2}$ es **imaginario** → la amplitud decae exponencialmente sin propagar energía: la **onda evanescente** ([ver en Wikipedia](https://es.wikipedia.org/wiki/Onda_evanescente)).
 
 El corte de rama $[-a,a]$ no es un artificio de cálculo: **es la frontera física entre los dos regímenes**, y elegir la rama principal equivale a imponer la convención física correcta (la solución de radiación saliente). Lo que en la sección de logaritmos era un salto de $2\pi i$ en un plano complejo, aquí se manifiesta como la transición entre una onda que viaja y una que se apaga.
+
+:::{seealso} Referencias técnicas
+
+@morse1953methods [Parte I, Cap. 7]: funciones de Green para la ecuación de onda/Helmholtz; construcción de soluciones con fuentes puntuales y el papel de las funciones multivaluadas.
+
+@sommerfeld1949partial: formulación clásica de la condición de radiación, la convención física que fija la rama correcta (ondas salientes) en los problemas de difracción.
+
+@jackson1999classical [Cap. 8 "Waveguides, Resonant Cavities, and Optical Fibers"]: modos por debajo de la frecuencia de corte en guías de onda; allí $k^2 - k_c^2$ cambia de signo y la raíz cuadrada pasa de real (propagante) a imaginaria (evanescente).
+
+@pozar2012microwave [Cap. 3 "Transmission Lines and Waveguides"]: tratamiento de los modos evanescentes en guías desde la perspectiva de ingeniería de microondas.
+
+@felsen1973radiation: puntos de ramificación, cortes de rama y caminos de descenso más pronunciado en las representaciones espectrales de campos de onda; el tratamiento técnico más completo del tema.
+
+@chew1995waves: elección sistemática de la rama correcta en las integrales de Sommerfeld y en las funciones de Green en dominio espectral para medios estratificados.
+
+@born1999principles: la onda evanescente en la reflexión interna total, el ejemplo óptico más conocido del régimen $|z|<a$.
+
+@ablowitz2003complex: análisis matemático riguroso de funciones multivaluadas, cortes de rama y superficies de Riemann, con aplicaciones a ecuaciones diferenciales.
+
+:::
 
 # Resumen: el mapa de la semana
 

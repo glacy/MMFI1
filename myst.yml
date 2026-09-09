@@ -32,7 +32,9 @@ project:
       hidden: true
   title: MMFI1
   github: https://github.com/glacy/MMFI1
-  jupyter: binder
+  jupyter: 
+    binder:
+      repo: https://github.com/glacy/MMFI1
   description: Material didáctico del IF3602
   short_title: ""
   keywords: [matemáticas, física, ingeniería]
