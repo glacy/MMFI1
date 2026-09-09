@@ -2,26 +2,26 @@ version: 1
 project:
   toc:
     - file: programa-curso.md
-    - title: Semana 1
-      children:
-        - file: ./01_analisis_vectorial/semana01/semana01_lectura.md
-        - file: ./01_analisis_vectorial/semana01/semana01_practica.md
-    - title: Semana 2
-      children:
-        - file: ./01_analisis_vectorial/semana02/semana02_lectura.md
-        - file: ./01_analisis_vectorial/semana02/semana02_practica.md 
-    - title: Semana 3
-      children:
-        - file: ./01_analisis_vectorial/semana03/semana03_lectura.md
-        - file: ./01_analisis_vectorial/semana03/semana03_practica.md
-    - title: Semana 4
-      children:
-        - file: ./02_numeros_complejos/semana04/semana04_lectura.md
-        - file: ./02_numeros_complejos/semana04/semana04_practica.md
-    - title: Semana 5
-      children:
-        - file: ./02_numeros_complejos/semana05/semana05_lectura.md
-        - file: ./02_numeros_complejos/semana05/semana05_practica.md
+    # - title: Semana 1
+    #   children:
+    #     - file: ./01_analisis_vectorial/semana01/semana01_lectura.md
+    #     - file: ./01_analisis_vectorial/semana01/semana01_practica.md
+    # - title: Semana 2
+    #   children:
+    #     - file: ./01_analisis_vectorial/semana02/semana02_lectura.md
+    #     - file: ./01_analisis_vectorial/semana02/semana02_practica.md 
+    # - title: Semana 3
+    #   children:
+    #     - file: ./01_analisis_vectorial/semana03/semana03_lectura.md
+    #     - file: ./01_analisis_vectorial/semana03/semana03_practica.md
+    # - title: Semana 4
+    #   children:
+    #     - file: ./02_numeros_complejos/semana04/semana04_lectura.md
+    #     - file: ./02_numeros_complejos/semana04/semana04_practica.md
+    # - title: Semana 5
+    #   children:
+    #     - file: ./02_numeros_complejos/semana05/semana05_lectura.md
+    #     - file: ./02_numeros_complejos/semana05/semana05_practica.md
     - title: Semana 6
       children:
         - file: ./02_numeros_complejos/semana06/semana06_lectura.md

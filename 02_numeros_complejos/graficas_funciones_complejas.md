@@ -1,18 +1,29 @@
 ---
-jupyter:
-  jupytext:
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.16.7
-  kernelspec:
-    display_name: venv (3.12.8.final.0)
-    language: python
-    name: python3
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.16.7
+kernelspec:
+  display_name: venv (3.12.8.final.0)
+  language: python
+  name: python3
 ---
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 607} id="AW-kNTPM4ld9" outputId="0caeebcb-8abf-4621-94e9-3cf2be272cda"
+## Gráficas de funciones complejas 
+
+### $\sin (z)$
+
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: AW-kNTPM4ld9
+outputId: 0caeebcb-8abf-4621-94e9-3cf2be272cda
+---
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -48,7 +59,16 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 607} id="WYLZG6f7M-gj" outputId="c2aefee0-de16-4903-bc37-d8cd8fb0f2fe"
+### $\sin (z)$  (3D)
+
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: WYLZG6f7M-gj
+outputId: c2aefee0-de16-4903-bc37-d8cd8fb0f2fe
+---
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -85,7 +105,16 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 607} id="CTsJu3cWAzdX" outputId="d2975767-45bc-4e79-9c5a-a5f0223b11fa"
+### $\sinh (z)$  (contorno)
+
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: CTsJu3cWAzdX
+outputId: d2975767-45bc-4e79-9c5a-a5f0223b11fa
+---
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -121,7 +150,16 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 607} id="5cNWQSFaBoFk" outputId="e3ddb3a7-bed7-4cf9-9a49-72b29fee8dff"
+### $\sinh^{-1}(z)$
+
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: 5cNWQSFaBoFk
+outputId: e3ddb3a7-bed7-4cf9-9a49-72b29fee8dff
+---
 # Calcular sinh^(-1)(z) en cada punto de la malla
 arcsinh_Z = np.arcsinh(Z)
 
@@ -148,7 +186,16 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 607} id="A1XH72yyGcR3" outputId="cf16b3c0-04c5-489a-bb21-e857d7b1cb2e"
+### $\cosh^{-1}(z)$
+
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: A1XH72yyGcR3
+outputId: cf16b3c0-04c5-489a-bb21-e857d7b1cb2e
+---
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -184,7 +231,16 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 607} id="q5HFQcWadkHf" outputId="f3a2d1ed-05ce-4d20-a188-18ab2fea1826"
+### $\ln(z)$
+
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: q5HFQcWadkHf
+outputId: f3a2d1ed-05ce-4d20-a188-18ab2fea1826
+---
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -201,19 +257,19 @@ log_Z = np.log(Z)
 # Graficar las partes real e imaginaria de ln(z)
 plt.figure(figsize=(14, 6))
 
-# Parte real de sinh(z)
+# Parte real de ln(z)
 plt.subplot(1, 2, 1)
 plt.contourf(X, Y, np.real(log_Z), levels=50, cmap='RdYlBu')
 plt.colorbar()
-plt.title(r"Parte real de $\log (z)$")
+plt.title(r"Parte real de $\ln (z)$")
 plt.xlabel(r'$\Re(z)$')
 plt.ylabel(r'$\Im (z)$')
 
-# Parte imaginaria de sinh(Z)
+# Parte imaginaria de ln(Z)
 plt.subplot(1, 2, 2)
 plt.contourf(X, Y, np.imag(log_Z), levels=50, cmap='RdYlBu')
 plt.colorbar()
-plt.title(r"Parte imaginaria de  $\log (z)$")
+plt.title(r"Parte imaginaria de  $\ln (z)$")
 plt.xlabel(r'$\Re (z)$')
 plt.ylabel(r'$\Im (z)$')
 
@@ -221,43 +277,16 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 607} id="oN3oO8_LFG87" outputId="5f620d50-610d-4234-9de8-53f2461c6af1"
-import numpy as np
-import matplotlib.pyplot as plt
+### $\ln(z)$ (3D)
 
-# Definir una malla en el plano complejo
-x = np.linspace(-2, 2, 400)
-y = np.linspace(-2, 2, 400)
-X, Y = np.meshgrid(x, y)
-Z = X + 1j * Y
-
-# Calcular tanh^(-1)(z) en cada punto de la malla
-sqrt_Z = np.sqrt(Z)
-
-# Graficar las partes real e imaginaria de sqrt(Z)
-plt.figure(figsize=(14, 6))
-
-# Parte real de sqrt(Z)
-plt.subplot(1, 2, 1)
-plt.contourf(X, Y, np.real(sqrt_Z), levels=50, cmap='RdYlBu')
-plt.colorbar()
-plt.title(r"Parte real de $\sqrt{z}$")
-plt.xlabel(r'$\Re(z)$')
-plt.ylabel(r'$\Im (z)$')
-
-# Parte imaginaria de sinh^(-1)(Z)
-plt.subplot(1, 2, 2)
-plt.contourf(X, Y, np.imag(sqrt_Z), levels=50, cmap='RdYlBu')
-plt.colorbar()
-plt.title(r"parte imaginaria de of $\sqrt{z}$")
-plt.xlabel(r'$\Re(z)$')
-plt.ylabel(r'$\Im (z)$')
-
-plt.tight_layout()
-plt.show()
-```
-
-```python colab={"base_uri": "https://localhost:8080/", "height": 607} id="wSjxQpOui_Zh" outputId="27c805ad-ffcb-430e-a4c0-3220c3f52957"
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: wSjxQpOui_Zh
+outputId: 27c805ad-ffcb-430e-a4c0-3220c3f52957
+---
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -294,9 +323,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-## Superficie de Riemann
+### $\ln(z)$ (superficie de Riemann)
 
-```python
+```{code-cell}
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -365,7 +394,59 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 607} id="uuqIaGKuFdLJ" outputId="7ed1fa56-2835-43f6-e092-648d54d98ebd"
+### $\sqrt(z)$
+
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: oN3oO8_LFG87
+outputId: 5f620d50-610d-4234-9de8-53f2461c6af1
+---
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definir una malla en el plano complejo
+x = np.linspace(-2, 2, 400)
+y = np.linspace(-2, 2, 400)
+X, Y = np.meshgrid(x, y)
+Z = X + 1j * Y
+
+# Calcular sqrt(z) en cada punto de la malla
+sqrt_Z = np.sqrt(Z)
+
+# Graficar las partes real e imaginaria de sqrt(Z)
+plt.figure(figsize=(14, 6))
+
+# Parte real de sqrt(Z)
+plt.subplot(1, 2, 1)
+plt.contourf(X, Y, np.real(sqrt_Z), levels=50, cmap='RdYlBu')
+plt.colorbar()
+plt.title(r"Parte real de $\sqrt{z}$")
+plt.xlabel(r'$\Re(z)$')
+plt.ylabel(r'$\Im (z)$')
+
+# Parte imaginaria de sinh^(-1)(Z)
+plt.subplot(1, 2, 2)
+plt.contourf(X, Y, np.imag(sqrt_Z), levels=50, cmap='RdYlBu')
+plt.colorbar()
+plt.title(r"parte imaginaria de of $\sqrt{z}$")
+plt.xlabel(r'$\Re(z)$')
+plt.ylabel(r'$\Im (z)$')
+
+plt.tight_layout()
+plt.show()
+```
+
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: uuqIaGKuFdLJ
+outputId: 7ed1fa56-2835-43f6-e092-648d54d98ebd
+---
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -400,7 +481,14 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 607} id="mWOJB0-mHowa" outputId="cfd550fd-011b-40e3-a52e-d6abe997449b"
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: mWOJB0-mHowa
+outputId: cfd550fd-011b-40e3-a52e-d6abe997449b
+---
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -435,9 +523,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-## Función de Green
+## Función de Green $\sqrt{z^2-a^2}$
 
-```python
+```{code-cell}
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -454,7 +542,7 @@ W = np.sqrt(Z**2 - a**2)
 
 # Datos para gráficas
 mod_W = np.abs(W)
-phase_W = np.angle2(W)
+phase_W = np.angle(W)
 
 # Gráfica 3D: Módulo
 fig = plt.figure(figsize=(14, 6))
@@ -478,7 +566,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python
+```{code-cell}
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -517,7 +605,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python
+```{code-cell}
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -579,7 +667,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-```python
+```{code-cell}
 # Versión interactiva de G(z) con plotly: la figura se puede girar,
 # hacer zoom y ver desde distintos ángulos con el ratón
 import numpy as np
@@ -621,7 +709,7 @@ fig.update_layout(
 fig.show()
 ```
 
-```python
+```{code-cell}
 # Versión interactiva de la superficie de Riemann de G(z) con plotly:
 # dos hojas G_k(z) = (-1)^k G(z) que se conectan a través del corte [-a, a]
 import numpy as np
