@@ -22,13 +22,21 @@ project:
       children:
         - file: ./02_numeros_complejos/semana05/semana05_lectura.md
         - file: ./02_numeros_complejos/semana05/semana05_practica.md
+    - title: Semana 6
+      children:
+        - file: ./02_numeros_complejos/semana06/semana06_lectura.md
+        - file: ./02_numeros_complejos/graficas_funciones_complejas.md
+        - file: ./02_numeros_complejos/semana06/semana06_practica.md
     - file: ./proyecto/2026/proyecto.md
       hidden: true
     - file: ./tareas/2026/tarea1/tarea1_2026.md
       hidden: true
   title: MMFI1
   github: https://github.com/glacy/MMFI1
-  jupyter: binder
+  jupyter: 
+    binder:
+      repo: https://github.com/glacy/MMFI1
+      ref: dev
   description: Material didáctico del IF3602
   short_title: ""
   keywords: [matemáticas, física, ingeniería]
@@ -52,8 +60,6 @@ project:
     - id: Licenciatura en Ingeniería Física, Escuela de Física
       name: Licenciatura en Ingeniería Física, Escuela de Física
   open_access: true
-  # id: a7oQQocM3jAjAuctG9ns
-  # remote: a7oQQocM3jAjAuctG9ns
   # references:
   #   scipy: https://docs.scipy.org/doc/scipy/  
   #   sympy: https://docs.sympy.org/latest/
@@ -64,7 +70,6 @@ site:
   options:
     logo: site_logo.svg
     logo_dark: site_logo_dark.svg
-    # favicon: favicon.ico
     search: true
   actions:
     - title: tecDigital

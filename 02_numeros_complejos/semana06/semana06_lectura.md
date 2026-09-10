@@ -5,355 +5,379 @@ short_title: Funciones de variable compleja (II)
 author: " "
 tags: [numeros_complejos, logaritmo, trigonometricas-inversas, hiperbolicas-inversas]
 subject: Variable compleja - Semana 6
-keywords: [funciones, logaritmo, trigonométricas, hiperbólicas, inversas]
+keywords: [funciones, logaritmo, multivaluación, ramas, trigonométricas, hiperbólicas, inversas]
 exports:
- - format: pdf
-   template: curvenote
-   output: ./semana6_lectura.pdf
-downloads:
-  - file: ./semana6_lectura.md
-    title: semana6_lectura.md
-  - file: ./semana6_lectura.pdf
-    title: semana6_lectura.pdf
+  - format: pdf
+    template: curvenote
+    output: ./semana06_lectura.pdf
+# downloads:
+#   - file: ./semana06_lectura.md
+#     title: semana06_lectura.md
+#   - file: ./semana06_lectura.pdf
+#     title: semana06_lectura.pdf
+kernelspec:
+  name: python3
+  display_name: Python 3
 ---
 
-:::{aside} [Naomi Halas](https://en.wikipedia.org/wiki/Naomi_Halas)
-es profesora en la Universidad de Rice y una
-pionera en el campo de la nanotecnología. Reconocida por su trabajo en
-el desarrollo de nanopartículas de oro con propiedades ópticas únicas.
-Sus investigaciones sobre plasmones han abierto nuevas posibilidades en
-el control de la luz a escalas nanométricas, con aplicaciones que
-incluyen la mejora de la eficiencia de las células solares y el
-desarrollo de nuevas tecnologías de imagen médica.
+:::{aside} [Ana María Cetto](https://es.wikipedia.org/wiki/Ana_Mar%C3%ADa_Cetto)
 
-```{figure} ./naomi_HALAS-lg.jpeg
-:label: fig-naomi_HALAS-lg.jpg
-:alt: retrato de Dra. Naomi Halas
+Física teórica mexicana, Investigadora Titular del Instituto de Física de la UNAM y profesora de la Facultad de Ciencias, figura central de la física latinoamericana contemporánea tanto por su producción científica como por su liderazgo internacional. Su línea central son los fundamentos de la mecánica cuántica y la electrodinámica estocástica lineal. Primera latinoamericana Secretaria General del Consejo Internacional para la Ciencia (ICSU, 2002); vicepresidenta fundadora de TWOWS (mujeres en ciencia para el mundo en desarrollo); presidenta fundadora de Latindex (1997), el sistema de revistas científicas iberoamericanas; promotora del Museo de la Luz de la UNAM y del Año Internacional de la Luz 2015; presidenta del Comité Directivo Mundial de Ciencia Abierta de la UNESCO (2023); presidenta de la Sociedad Mexicana de Física (2021–2023).
+```{figure} ./../images/Ana_Maria_Cetto.png
+:label: fig-Ana_Maria_Cetto.png
+:alt: retrato de Dra. Ana María Cetto
 :align: center
-Dra. Naomi Halas (xxxxx - )
+Ana María Cetto (1946 - ). Foto: The Official CTBTO Photostream ([Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3AAna_Maria_Cetto.jpg), CC BY 2.0).
 ```
 :::
 
 ```{note} Objetivos
 Al completar esta lección, serás capaz de
-1. **Analizar la definición y propiedades fundamentales** del logaritmo complejo y de las funciones inversas trigonométricas e hiperbólicas en el plano complejo, destacando su multivaluación y regiones de ramificación.
 
-2. **Visualizar mediante gráficas y representaciones geométricas** las distintas ramas de funciones multivaluadas, interpretando su significado físico y matemático.
+1. **Construir y usar el logaritmo complejo**, distinguiendo el logaritmo multivaluado ($\ln$) de su rama principal ($\text{Log}$), y aplicarlo para extraer módulo, fase, potencias e inversas de funciones.
+
+2. **Interpretar geométricamente la multivaluación** en términos de puntos de ramificación, cortes de rama (branch cuts) y superficies de Riemann, visualizando las distintas ramas de una función.
+
+3. **Elegir ramas con criterio físico** en problemas de óptica, circuitos y ondas, obteniendo soluciones consistentes (por ejemplo, distinguir modos propagantes de modos evanescentes).
 ```
 
-+++ { "part": "abstract" }  
++++ { "part": "abstract" }
 
-Las funciones logarítmica y exponencial de variable compleja, junto con las inversas de las funciones trigonométricas e hiperbólicas, son herramientas clave en física e ingeniería. Permiten describir oscilaciones, propagación de ondas y fenómenos de crecimiento o decaimiento, facilitando el cálculo de amplitudes, fases y modos de sistemas dinámicos, circuitos y estructuras vibrantes.
+En la semana anterior construimos las funciones elementales de variable compleja a partir de un solo ingrediente, la exponencial $e^z$. Esta semana atacamos la pregunta inversa: **¿cómo se "deshace" la exponencial?** La respuesta es un único ladrillo, el **logaritmo complejo**, y un único obstáculo, su naturaleza **multivaluada**. Con ese ladrillo levantaremos todo lo demás: las potencias complejas $a^b$, las funciones trigonométricas inversas y las hiperbólicas inversas, que resultan ser todas "logaritmos disfrazados". Cerramos con una aplicación donde la elección de la rama del logaritmo decide un resultado físico real: separar modos **propagantes** de modos **evanescentes** en la propagación de ondas.
 
 +++
 
+En la semana 5 estudiamos las funciones elementales del plano complejo: la exponencial $e^z$ y, con ella, las trigonométricas ($\sin z$, $\cos z$, $\tan z$), las hiperbólicas ($\sinh z$, $\cosh z$, ...) y las potencias y raíces. Vimos también, por primera vez, el logaritmo de un número complejo.
 
+Ahora invertimos el punto de vista. En cálculo de variable real, $\ln x$ "deshace" a $e^x$: es su función inversa. ¿Funciona lo mismo en el plano complejo? La respuesta es **no tan rápido**: la exponencial compleja es periódica,
 
-Anteriormente, exploramos las funciones elementales de números
-complejos, como las potencias y raíces, la función exponencial, así como
-las funciones trigonométricas e hiperbólicas. Estas funciones son
-fundamentales para el análisis y resolución de problemas en diversos
-campos de la física y la ingeniería, ofreciendo una herramienta poderosa
-para modelar fenómenos oscilatorios, la propagación de ondas y otras
-aplicaciones clave.
+$$
+e^{z+2\pi i}=e^z,
+$$
 
-Continuaremos el estudio de las funciones complejas, enfocándonos en
-tres tipos de funciones que amplían y complementan las anteriores: las
-funciones logarítmicas, trigonométricas inversas e hiperbólicas
-inversas.
+de modo que muchos valores distintos de $z$ producen el mismo $e^z$. Deshacer la exponencial, entonces, **no tiene una respuesta única**, y esa ambigüedad se propagará a todo lo que construyamos encima: potencias, arcosenos, arcosenos hiperbólicos.
 
-# Logarítmos 
+# El logaritmo: deshacer la exponencial
 
-La función logarítmica es la inversa natural de la función exponencial y
-juega un papel crucial en la solución de ecuaciones diferenciales y en
-el análisis de sistemas dinámicos, especialmente en el dominio de la
-frecuencia.
+Busquemos explícitamente la inversa de $e^z$: dado $z\neq 0$, queremos todos los $w$ tales que $e^w=z$. Escribamos $z=re^{i\theta}$ en forma polar y $w=u+iv$; entonces
 
-Si $z=re^{i\theta}$ ($z\neq 0$), entonces
-$$\text{Log} (z)=\text{Log} (re^{i\theta})=\ln r +i\theta=\ln |z| + i\arg (z),$$
-Análogamente, se puede escribir que $$z=e^w,$$ donde
-$$w=\ln |z| + i\arg (z).$$
+$$
+e^w=e^{u}e^{iv}=re^{i\theta}
+\quad\Longrightarrow\quad
+u=\ln r,\qquad v=\theta+2k\pi,\quad k\in\mathbb{Z}.
+$$
 
-Para todo número complejo $z \neq 0$ 
+La parte real es única, pero la parte imaginaria está definida **salvo múltiplos de $2\pi$**: cada vuelta completa alrededor del origen reproduce el mismo $z$. Definimos así el **logaritmo complejo multivaluado**,
+
+$$
+\ln z=\ln|z|+i(\theta+2k\pi)=\ln|z|+i\arg z,\qquad k\in\mathbb{Z},
+$$
+
+y su **rama principal**, restringiendo el argumento al intervalo $(-\pi,\pi]$:
+
+$$
+\text{Log }z=\ln|z|+i\,\text{Arg }z,\qquad \text{Arg }z\in(-\pi,\pi].
+$$
+
+:::{note} Convención de notación
+
+- $\ln z$: logaritmo **multivaluado** (un conjunto de valores).
+- $\text{Log }z$: **rama principal** (un solo valor, con $-\pi<\text{Arg }z\le\pi$).
+:::
+
+La estructura del logaritmo es una "descomposición": separa la información de módulo y fase de cualquier número complejo,
 
 :::{math}
 \begin{aligned}
-    \Re (\text{Log} (z))=& \ln (|z|),\\
-    \Im (\text{Log} (z))=&\arg{z};
+    \Re\left(\ln z\right)= \ln |z|,\\
+    \Im\left(\ln z\right)=\arg z.
 \end{aligned}
 :::
 
-es decir, la función logartimo "separa" la información sobre el módulo y
-el argumento de un número complejo.
+Dos consecuencias inmediatas:
 
-Debido a la periodicidad del argumento $\arg (z)$, el **logaritmo
-complejo es una función multivaluada**. El valor principal del logaritmo
-se obtiene restringiendo el argumento al intervalo $(−\pi,\pi]$.\
-Note que en el dominio complejo, es posible calcular el logarítmo de un
-número (real) negativo.
+- El logaritmo existe para **todo** $z\neq 0$: en el dominio complejo, $\ln(-2)$ sí tiene valor.
+- Extraer la **fase** de una señal compleja es tomar la parte imaginaria de su logaritmo.
 
-:::{note} Ejemplo
+:::{note} Ejemplo: dos logaritmos concretos
 
-Para el número $z=i+1$, $r=\sqrt{2}$ y $\theta=\pi/4\pm 2n\pi$,
-entonces
-$$\text{Log} (i+1)=\ln ( \sqrt{2}) + i \left( \frac{\pi}{4}\pm 2n\pi\right)$$
+Para $z=1+i$: $r=\sqrt{2}$ y $\theta=\pi/4$, de donde
 
----
+$$
+\ln(1+i)=\frac{1}{2}\ln 2+i\left(\frac{\pi}{4}+2k\pi\right),
+\qquad
+\text{Log}(1+i)=\frac{1}{2}\ln 2+i\frac{\pi}{4}.
+$$
 
-Considere el número $z=-2=(-2,0)$:
-$$\text{Log} (-2)=\ln (2) + i \left( \pi\pm 2n\pi\right)$$
+Para $z=-2$, que en polar es $2e^{i\pi}$:
+
+$$
+\ln(-2)=\ln 2+i\left(\pi+2k\pi\right),
+\qquad
+\text{Log}(-2)=\ln 2+i\pi.
+$$
+
+El valor principal $\text{Log}(-2)=\ln 2+i\pi$ condensa la información completa: magnitud $\ln 2$ y fase $\pi$ (el número apunta "hacia la izquierda").
 :::
 
-## Propiedades de la función logarítmo
+## Propiedades 
 
--   Logartimo de un producto: $$\text{Log} (z_1 z_2)=\text{Log} (z_1)+\text{Log} (z_2)$$
+Las reglas clásicas del logaritmo sobreviven en el plano complejo, con un matiz:
 
--   Logartimo de un cociente:
-    $$\text{Log} \left(\frac{z_1}{z_2} \right)=\text{Log} (z_1)-\text{Log} (z_2)$$
-
--   Logartimo de una potencia: $$\text{Log} (z^n)=n\text{Log} (z)$$
-
--   Relación con la exponencial:
-    $$\text{Log} (e^z)=z+2k\pi i, \quad k\in \mathbb{Z}$$
+-   Logaritmo de un producto: $\ln (z_1 z_2)=\ln (z_1)+\ln (z_2)$
+-   Logaritmo de un cociente: $\ln \left(\dfrac{z_1}{z_2} \right)=\ln (z_1)-\ln (z_2)$
+-   Logaritmo de una potencia: $\ln (z^n)=n\ln (z)$
+-   Relación con la exponencial: $e^{\ln z}=z$ y $\ln (e^z)=z+2k\pi i$
 
 
-:::{note} Función logarítmica compleja en análisis de impedancia
 
-En análisis de circuitos de corriente alterna, el voltaje puede representarse como  
+:::{note} Extraer la fase: análisis de impedancia
+
+En circuitos de corriente alterna, el voltaje se representa como un fasor
+
 $$
-V(t) = V_0 e^{i(\omega t + \phi)}.
+V = V_0 e^{i(\omega t + \phi)}.
 $$
-Para obtener la fase $\phi$ a partir de $V(t)$, se utiliza $\phi = \Im (\text{Log} V(t))$.  
+
+Para recuperar la fase $\theta$ basta tomar el logaritmo y quedarse con la parte imaginaria:
+
+$$
+\theta = \Im\big(\ln V(t)\big) = \omega t+\phi \pmod{2\pi}.
+$$
+
 :::
 
+## La geometría de la multivaluación: ramas y cortes
 
-En el análisis complejo, una función multivaluada es aquella que, para un mismo valor de la variable compleja $z$, puede tomar más de un valor. Este comportamiento suele originarse en procesos de inversión de funciones o en funciones definidas mediante integrales con dominios múltiples.
+¿Por qué el logaritmo es multivaluado? La respuesta es geométrica. Imaginen caminar en el plano $z$ dando una vuelta completa alrededor del origen: el argumento varía continuamente y regresa al punto de partida, pero habiendo acumulado $+2\pi$. Como $\Im(\ln z)=\arg z$, **el valor del logaritmo subió un "piso"**: de $\text{Log}\,z$ a $\text{Log}\,z+2\pi i$. El logaritmo vive, en realidad, sobre una escalera helicoidal de pisos apilados: la [superficie de Riemann](https://es.wikipedia.org/wiki/Superficie_de_Riemann) del logaritmo, donde cada "hoja" o piso corresponde a un valor de $k$.
 
-:::{attention} Funciones multivaluadas
+
+```{figure} ./../images/re_ln.png
+:label: fig-re_ln.png
+:alt: Gráficos de la parte real de logaritmo
+:align: center
+Parte real del logaritmo .
+```
+
+```{figure} ./../images/im_ln.png
+:label: fig-im_ln.png
+:alt: Gráfico de la parte imaginaria de logaritmo
+:align: center
+Parte imaginaria del logaritmo.
+```
+
+```{figure} ./../images/riemann_gradiente.png
+:label: fig-riemman_gradiente.png
+:alt: Superficie de Riemman de logaritmo
+:align: center
+Superficie de Riemann del logaritmo.
+```
+
+Para trabajar en el plano (una sola hoja) necesitamos dos herramientas:
+
+- Un **punto de ramificación**: un punto alrededor del cual una vuelta cambia el valor de la función. Para $\ln z$ (y para $\sqrt{z}$ y $z^\alpha$ no entero) es $z=0$, además de $z=\infty$.
+- Un **corte de rama** (*branch cut*): una curva que "cortamos" del dominio para impedir rodear el punto de ramificación, de modo que sobre la región restante la función sea univaluada. La elección estándar para $\ln z$ es el eje real negativo $(-\infty,0]$, que es justamente donde la rama principal "salta" de $+i\pi$ a $-i\pi$.
+
+:::{attention} Puntos de ramificación de las funciones de esta semana
 :class: dropdown
-Para manejar la multivaluación, se introduce el concepto de [superficie de Riemann](https://es.wikipedia.org/wiki/Superficie_de_Riemann), donde cada "hoja" de la superficie representa un valor posible de la función. Aun así, en muchas aplicaciones prácticas, se necesita trabajar con una sola rama de la función para evitar ambigüedades.
 
-Un branch cut es una línea o curva en el plano complejo que conecta puntos de ramificación (branch points) y que sirve para "cortar" el dominio de la función, de modo que sobre la región restante la función sea de valor único (single-valued).
+La siguiente tabla resume, dónde se ramifica cada función que construiremos y dónde aparecen en la física:
 
 | Función $f(z)$            | Puntos de ramificación          | Corte de rama típico                  | Aplicaciones en física e ingeniería                              |
 |-----------------------------|----------------------------------|---------------------------------------|------------------------------------------------------------------|
-| $ \sqrt{z} $               | $ z = 0, \infty $              | Eje real negativo $ (-\infty, 0] $   | Potenciales en 2D, soluciones en elasticidad y flujo de fluidos   |
-| $ \log(z) $                | $ z = 0, \infty $              | Eje real negativo $ (-\infty, 0] $   | Análisis de circuitos, óptica, mecánica cuántica                  |
+| $ \sqrt{z} $               | $ z = 0, \infty $              | Eje real negativo $ (-\infty, 0] $   | Potenciales en 2D, elasticidad, flujo de fluidos   |
+| $ \ln(z) $                | $ z = 0, \infty $              | Eje real negativo $ (-\infty, 0] $   | Circuitos, óptica, mecánica cuántica                  |
 | $ z^\alpha $ ($\alpha \notin \mathbb{Z}$) | $ z = 0, \infty $  | Eje real negativo $ (-\infty, 0] $   | Propagación de ondas, ecuaciones diferenciales                    |
 | $ \arcsin(z) $             | $ z = \pm 1, \infty $          | $ (-\infty,-1] \cup [1,\infty) $     | Vibraciones, análisis estructural, transformaciones conformes     |
 | $ \arccos(z) $             | $ z = \pm 1, \infty $          | $ (-\infty,-1] \cup [1,\infty) $     | Fenómenos oscilatorios, teoría de control                         |
-| $ \arctan(z) $             | $ z = \pm i, \infty $          | $ i[-\infty,-1] \cup i[1,\infty] $   | Procesamiento de señales, telecomunicaciones                      |
-| $ \sinh^{-1}(z) $            | $ z = \pm i, \infty $          | $ i[-\infty,-1] \cup i[1,\infty] $   | Propagación en medios dispersivos, relatividad                    |
-| $ \cosh^{-1}(z) $            | $ z = \pm 1, \infty $          | $ (-\infty,1] $                      | Termodinámica, problemas en física estadística                    |
+| $ \arctan(z) $             | $ z = \pm i, \infty $          | $ i[-\infty,-1] \cup i[1,\infty) $   | Procesamiento de señales, telecomunicaciones                      |
+| $ \sinh^{-1}(z) $            | $ z = \pm i, \infty $          | $ i[-\infty,-1] \cup i[1,\infty) $   | Propagación en medios dispersivos, relatividad                    |
+| $ \cosh^{-1}(z) $            | $ z = \pm 1, \infty $          | $ (-\infty,1] $                      | Termodinámica, física estadística                    |
 
-
+Nóte que **las ramificaciones nacen de los $\ln$ y las $\sqrt{\ }$ que quedan dentro de cada fórmula**.
 :::
 
-:::{note} [Ondas evanescentes](https://es.wikipedia.org/wiki/Onda_evanescente)
 
-En física e ingeniería, las **ecuaciones de ondas** describen la propagación de perturbaciones (sonido, electromagnetismo, elasticidad) en diferentes medios.  
+# Potencias complejas: el logaritmo trabajando
 
-En 2D, la ecuación de onda homogénea para un campo escalar $u(x,y,t)$ es  
+¿Qué significa $a^b$ cuando $a$ y $b$ son complejos? La definición se apoya por completo en el logaritmo:
+
+$$
+a^b=e^{b\ln a}.
+$$
+
+Si $\ln a$ toma varios valores, $a^b$ también: las potencias complejas **heredan** la multivaluación del logaritmo (salvo cuando $b$ es entero, caso en el que todos los valores coinciden).
+
+:::{note} Ejemplo: $i^{-2i}$ es un número real
+
+Calculemos primero $\ln i = i\left(\frac{\pi}{2}+2k\pi\right)$. Entonces
+
+$$
+i^{-2i}=e^{-2i\,\ln i}
+=e^{-2i\cdot i(\pi/2+2k\pi)}
+=e^{\pi+4k\pi}
+=e^\pi,\; e^{5\pi},\; e^{9\pi},\;\ldots
+$$
+
+Todos los valores son **reales y positivos**.
+:::
+
+# Funciones trigonométricas inversas: el mismo ladrillo
+
+En la semana 5 definimos, por ejemplo, $\cos z=\dfrac{e^{iz}+e^{-iz}}{2}$: para cada $z$ de entrada, la fórmula produce un número $w=\cos z$. La función inversa recorre el camino contrario:
+
+$$
+z=\cos^{-1} w=\arccos w \qquad \text{si}\quad w=\cos z,
+$$
+
+y de la misma forma $\arcsin w$, $\arctan w$, etc. Estas funciones son esenciales para recuperar **ángulos de fase** en el plano complejo, con aplicaciones en mecánica cuántica y teoría de control, donde la respuesta de sistemas oscilatorios exige reconstruir fases a partir de amplitudes.
+
+¿Cómo se calcula una inversa compleja? No hay tabla ni calculadora que baste: hay que **resolver la ecuación**. Y al hacerlo aparece, una y otra vez, el mismo patrón de tres pasos:
+
+1. Sustituir $u=e^{iz}$ (o $u=e^{z}$).
+2. Obtener una **ecuación cuadrática** en $u$.
+3. Despejar $u$ y aplicar el **logaritmo**.
+
+:::{note} Ejemplo patrón: $\arccos 2$
+
+Busquemos $z$ tal que $\cos z=2$ — imposible en los reales, donde $\cos$ está entre $-1$ y $1$, pero perfectamente posible en el plano complejo:
+
+$$
+\frac{e^{iz}+e^{-iz}}{2}=2.
+$$
+
+Con $u=e^{iz}$ (y por tanto $e^{-iz}=u^{-1}$):
+
+$$
+\frac{u+u^{-1}}{2}=2
+\;\Longrightarrow\;
+u^2-4u+1=0
+\;\Longrightarrow\;
+u=e^{iz}=2\pm\sqrt{3}.
+$$
+
+Aplicando logaritmo a ambos lados:
+
+$$
+iz=\text{Log}(2\pm\sqrt{3})+2k\pi i=\pm\ln(2+\sqrt{3})+2k\pi i,
+$$
+
+$$
+\boxed{\;z=\arccos 2=\pm i\ln(2+\sqrt{3})+2k\pi\;}
+$$
+
+El resultado es **completamente imaginario** (salvo los múltiplos de $2\pi$): el arcocoseno de 2 existe y vive en el eje imaginario. Nótese además que ya apareció la multivaluación por partida doble: por el $2k\pi$ del logaritmo y por el $\pm$ de la raíz cuadrada.
+:::
+
+Repitiendo el patrón anterior (sustituir, resolver la cuadrática, tomar logaritmo) se obtienen las fórmulas generales, válidas para $z$ complejo:
+
+:::{math}
+:label: eq-inversas-trig
+\begin{aligned}
+    \sin^{-1}(z)=&-i\ln\left(iz+\sqrt{1-z^2}\right),\\
+    \cos^{-1}(z)=&-i\ln\left(z+i\sqrt{1-z^2}\right),\\
+    \tan^{-1}(z)=&\displaystyle \frac{i}{2}\ln \left (\frac{i+z}{i-z}\right),\quad z\neq \pm i,\\
+    \cot^{-1}(z)=&\displaystyle -\frac{i}{2}\ln \left (\frac{z+i}{z-i}\right),\quad z\neq \pm i,\\
+    \sec^{-1}(z)=&-i\ln \left(\frac{1+\sqrt{1-z^2}}{z} \right),\\
+    \csc^{-1}(z)=&-i\ln \left(\frac{1+\sqrt{z^2-1}}{z} \right).
+\end{aligned}
+:::
+
+Nótese de {eq}`eq-inversas-trig` que **todas son logaritmos con una raíz cuadrada dentro**. Eso explica dos cosas a la vez:
+
+- Son **multivaluadas**, por partida doble: el $\ln$ aporta los saltos de $2\pi$ y la $\sqrt{\ }$ aporta un signo $\pm$.
+- Sus **puntos de ramificación** ocurren donde las raíces se anulan ($z=\pm 1$ para $\arcsin$ y $\arccos$) o donde el argumento del logaritmo se anula o diverge ($z=\pm i$ para $\arctan$), tal como anticipa la tabla de referencia.
+
+# Funciones hiperbólicas inversas
+
+Las soluciones de ecuaciones diferenciales que describen propagación de ondas y transmisión de señales se expresan frecuentemente en términos de funciones hiperbólicas inversas. Su construcción es el mismo patrón de la sección anterior, pero con una simplificación: como las hiperbólicas se escriben con $e^{\pm z}$ (sin el $i$ de las trigonométricas), las fórmulas resultan ser **logaritmos sin factores $\pm i$**:
+
+:::{math}
+:label: eq-inversas-hip
+\begin{aligned}
+    \sinh^{-1}(z)=&\ln\left(z+\sqrt{z^2+1}\right),\\
+    \cosh^{-1}(z)=&\ln\left(z+\sqrt{z^2-1}\right),\\
+    \tanh^{-1}(z)=&\displaystyle \frac{1}{2}\ln \left (\frac{1+z}{1-z}\right).
+\end{aligned}
+:::
+
+Nuevamente, cada fórmula esconde un logaritmo y una raíz, de modo que la multivaluación y los puntos de ramificación ($z=\pm i$ o $z=\pm 1$, según la función) siguen el patrón de la tabla de referencia.
+
+
+
+:::{note} Derivadas de las funciones hiperbólicas inversas
+
+| Función                    | Expresión de la derivada |
+|----------------------------|--------------------------|
+| $\sinh^{-1}(z)$  | $\displaystyle \frac{1}{\sqrt{z^2+1}}$|
+| $\cosh^{-1}(z)$  | $\displaystyle \frac{1}{\sqrt{z^2-1}}$|
+| $\tanh^{-1}(z)$  | $\displaystyle \frac{1}{1-z^2}$       |
+
+Las derivadas son racionales o radicales "sencillas": al derivar, el logaritmo desaparece. Por eso estas funciones aparecen con tanta frecuencia como antiderivadas al integrar ecuaciones de onda y de calor.
+:::
+
+# Aplicación integradora: del corte de rama a la onda evanescente
+
+En física e ingeniería, las **ecuaciones de ondas** describen la propagación de perturbaciones (sonido, electromagnetismo, elasticidad). En 2D, la ecuación de onda homogénea para un campo escalar $u(x,y,t)$ es
 
 $$
 \nabla^2 u - \frac{1}{c^2}\frac{\partial^2 u}{\partial t^2} = 0,
 $$
 
-donde $c$ es la velocidad de propagación.  
-
-Si buscamos soluciones armónicas en el tiempo del tipo  
-
-$$
-u(x,y,t) = U(x,y) e^{-i\omega t},
-$$
-
-la ecuación se transforma en la **ecuación de Helmholtz**:  
+donde $c$ es la velocidad de propagación. Si buscamos soluciones armónicas en el tiempo, $u(x,y,t)=U(x,y)e^{-i\omega t}$, la ecuación se transforma en la **ecuación de Helmholtz**:
 
 $$
 \nabla^2 U + k^2 U = 0,
+\qquad k=\omega/c.
 $$
 
-con $k = \omega/c$ el número de onda.
-
-La [función de Green](https://es.wikipedia.org/wiki/Funci%C3%B3n_de_Green) $G(z)$ para esta ecuación en el plano complejo aparece al resolver  
+La respuesta a una fuente puntual se describe con la [función de Green](https://es.wikipedia.org/wiki/Funci%C3%B3n_de_Green), que resuelve
 
 $$
-\nabla^2 G + k^2 G = \delta(x)\delta(y),
+\nabla^2 G + k^2 G = \delta(x)\delta(y).
 $$
 
-donde la delta representa una fuente puntual en el origen.
-
-Usando coordenadas complejas $z = x + iy$, la distancia radial al punto fuente es  
+Para geometrías especiales — [guías de ondas](https://es.wikipedia.org/wiki/Gu%C3%ADa_de_onda), medios estratificados, arreglos de fuentes — la solución se escribe en términos de la variable compleja como una forma generalizada
 
 $$
-r^2 = x^2 + y^2 = z\,\bar{z}.
+G(z)=\sqrt{z^2-a^2},
 $$
 
-Para fuentes en geometrías especiales, como **guías de ondas** o **medios estratificados**, la variable $z$ se transforma y aparece una forma generalizada  
+donde $a$ es una distancia característica (la separación entre fuentes, el borde de la guía, o el umbral entre propagación y no-propagación):
+
+![](./../images/green.png)
+
+Analicemos $G(z)$. Primero la escribimos en términos del logaritmo:
 
 $$
-G(z) = \sqrt{z^2 - a^2},
+G(z)=\sqrt{z^2-a^2}=\exp\!\Big(\tfrac{1}{2}\ln\big(z^2-a^2\big)\Big).
 $$
 
-donde $a$ representa una distancia característica, por ejemplo:
-- la distancia entre dos fuentes,
-- el borde de una [guía de ondas](https://es.wikipedia.org/wiki/Gu%C3%ADa_de_onda),
-- el límite entre regiones con propagación y regiones evanescentes.
+**¿Dónde se ramifica?** Donde el argumento del logaritmo se anula:
 
-
-![](./green.png)
-
----
-
-
-Consideremos  
 $$
-G(z)=\sqrt{z^2-a^2} = \exp\!\Big(\tfrac{1}{2}\text{Log}(z^2-a^2)\Big),
-$$
-donde $\text{Log}$ denota la función logaritmo complejo (multivaluada).  
-
-Los puntos donde el argumento del logaritmo se anula o se comporta singularmente son puntos de ramificación. Resolviendo
-$$
-z^2-a^2=0 \quad\Longrightarrow\quad z=\pm a.
-$$
-Además, en el plano de Riemann compacto el punto $z=\infty$ actúa también como punto de ramificación.  
-Por tanto, los puntos de ramificación finitos son
-$$
-z=+a,\qquad z=-a,
-$$
-y se añade $z=\infty$ como ramificación en el infinito.
-
----
-
-
-Para hacer $G(z)$ monovaluada sobre una región conectada, se introduce un *branch cut* (corte de rama) que conecte los puntos de ramificación. La elección estándar y conveniente es el segmento real que une $-a$ y $+a$:
-$$
-\text{branch cut: } [-a,a]\subset\mathbb{R}.
-$$
-Con este corte se define la *rama principal* tomando
-$$
-\arg (z^2-a^2)\in(-\pi,\pi],\qquad \sqrt{z^2-a^2}=\exp\!\Big(\tfrac{1}{2}\text{Log}(z^2-a^2)\Big)
+z^2-a^2=0 \quad\Longrightarrow\quad z=\pm a,
 $$
 
-- Para $z$ reales y $|z|>a$ se obtiene $\sqrt{z^2-a^2}$ real.  
-- Para $z$ en $-a<z<a$ (sobre el corte) la función presenta la discontinuidad de salto entre ramas.
+más el punto $z=\infty$ en el plano de Riemann compacto. Para hacer $G(z)$ univaluada elegimos el **corte de rama** que une los dos puntos de ramificación: el segmento real $[-a,a]$, y definimos la rama principal con $\arg(z^2-a^2)\in(-\pi,\pi]$.
 
+**¿Qué significa físicamente?** Si $z$ es un número de onda o una variable espectral — el papel típico de $z$ en las funciones de Green — los puntos $z=\pm a$ marcan un **umbral** entre dos regímenes:
 
----
+- $|z|>a$: $z^2-a^2>0$ y $\sqrt{z^2-a^2}$ es **real** → la onda **propaga** (modos propagantes).
+- $|z|<a$: $z^2-a^2<0$ y $\sqrt{z^2-a^2}$ es **imaginario** → la amplitud decae exponencialmente sin propagar energía: la **onda evanescente** ([ver en Wikipedia](https://es.wikipedia.org/wiki/Onda_evanescente)).
 
-Si $z$ es un número de onda o una variable espectral (típico en funciones de Green), entonces:
-
-- Los puntos $z=\pm a$ son **umbrales** o transiciones:
-  - $|z|>a$: $z^2-a^2>0$, $\sqrt{z^2-a^2}$ real → **modos propagantes**.
-  - $|z|<a$: $z^2-a^2<0$, $\sqrt{z^2-a^2}$ imaginario → **modos evanescentes**.
-- El *branch cut* $[-a,a]$ separa las regiones propagante y evanescente.  
-- La elección de la rama principal fija la convención física (p.ej. solución de radiación saliente).
-
----
-
-Los puntos $z=\pm a$ se conocen como [_puntos de ramificación_](https://es.wikipedia.org/wiki/Punto_de_ramificaci%C3%B3n) porque allí el argumento del radical se anula y la función cambia de hoja al rodearlos. 
-
-:::
-# Potencias
-
-Si $a$ y $b$ son números complejos, $$a^b=e^{b\ln a}$$
-
-:::{note} Ejemplo
-
-$$i^{-2i}=e^{-2i\ln i}=e^{-2i\cdot i(\pi/2\pm2n\pi)}=e^{\pi\pm4n\pi}=e^\pi,e^{5\pi},e^{-3\pi},\ldots$$
-:::
-
-# Funciones trigonométricas inversas
-
-Las funciones trigonométricas inversas, tales como el arcoseno,
-arcocoseno y arcotangente, son esenciales para determinar ángulos en el
-plano complejo y resolver ecuaciones que involucran relaciones
-trigonométricas. En física, estas funciones son de particular
-importancia en la mecánica cuántica y en la teoría de control, donde los
-ángulos de fase y las respuestas de sistemas oscilatorios requieren un
-análisis detallado.
-
-Anteriormente definimos, por ejemplo que
-$$w=\cos z= \frac{e^{iz}+e^{-iz}}{2},$$ es decir, para cada número
-complejo $z$, la expresión anterior define el número complejo $w$. Se
-define el coseno inverso o el arcocoseno de $w$
-$$z=\cos^{-1} w=\arccos w \qquad \text{si } \quad w=\cos z.$$
-
-Análogamente,
-$$z=\arcsin w=\sin^{-1} w \qquad \mbox{si } \quad w=\sin z.$$
-
-:::{note} Ejemplo
-
-$$z=\arccos 2, \qquad \mbox{\'o} \qquad \cos z =2,$$
-
-$$\displaystyle \frac{e^{iz}+e^{-iz}}{2}=2.$$ 
-
-Sea $u=e^{iz}$. Entonces $e^{-iz}=u^{-1}$, de donde se obtiene
-$$\displaystyle \frac{u+u^{-1}}{2}=2,$$
-
-de donde
-
-$$u^2-4u+1=0 \Rightarrow u=e^{iz}=2\pm\sqrt{3}.$$
-
-Aplicando logaritmo a ambos lados
-$$iz=\text{Log} (2\pm\sqrt{3})=\pm\ln (2+\sqrt{3})+2in\pi$$
-
-$$z=\arccos 2=2n\pi \pm i\ln (2+\sqrt{3})$$
-:::
+El corte de rama $[-a,a]$ no es un artificio de cálculo: **es la frontera física entre los dos regímenes**, y elegir la rama principal equivale a imponer la convención física correcta (la solución de radiación saliente). Lo que en la sección de logaritmos era un salto de $2\pi i$ en un plano complejo, aquí se manifiesta como la transición entre una onda que viaja y una que se apaga.
 
 
 
-Las funciones trigonométricas inversas en el dominio complejo se
-definien explícitamente como: 
-
-:::{math}
-\begin{aligned}
-    \sin^{-1}(z)=&-i\ln(iz+\sqrt{1-z^2})\\
-    \cos^{-1}(z)=&-i\ln(z+i\sqrt{1-z^2})\\
-    \tan^{-1}(z)=&\displaystyle \frac{i}{2}\ln \left (\frac{i+z}{i-z}\right),\quad z\neq \pm i\\
-    \cot^{-1}(z)=&\displaystyle -\frac{i}{2}\ln \left (\frac{z+i}{z-i}\right),\quad z\neq \pm i \\
-    \sec^{-1}(z)=&-i\ln \left(\frac{1+\sqrt{1-z^2}}{z} \right)\\
-    \csc^{-1}(z)=&-i\ln \left(\frac{1+\sqrt{z^2-1}}{z} \right)
-\end{aligned}
-:::
-
-# Funciones hiperbólicas inversas
-
-Las soluciones de ciertas ecuaciones diferenciales que describen la
-propagación de ondas y la transmisión de señales pueden expresarse en
-términos de funciones hiperbólicas inversas.
-
-Las funciones hiperbólicas inversas para un número complejo $z$ se
-definen como: 
-
-:::{math}
-\begin{aligned}
-    \sinh^{-1}(z)=&-\ln(z+\sqrt{z^2+1}),\\
-    \cosh^{-1}(z)=&\ln(z+\sqrt{z^2-1}),\\
-    \tanh^{-1}(z)=&\displaystyle \frac{1}{2}\ln \left (\frac{1+z}{1-z}\right).
-\end{aligned}
-:::
-
-En ingeniería, la función arctangente hiperbólico se usa en la solución
-de problemas de transferencia de calor en medios seminfinitos. En
-física, la función arcoseno hiperbólico aparece en la descripción del
-movimiento relativista de partículas, especialmente en la relación entre
-el tiempo propio y el tiempo coordenado.
-
-
-:::{note} Relaciones de las derivadas de funciones hiperbólicas inversas
-
-| Función                    | Expresión de la derivada | 
-|----------------------------|--------------------------|
-| $\sinh^{-1}(z)$  | $\displaystyle \frac{1}{\sqrt{z^2+1}}$| 
-| $\cosh^{-1}(z)$  | $\displaystyle \frac{1}{\sqrt{z^2-1}}$| 
-| $\tanh^{-1}(z)$  | $\displaystyle \frac{1}{1-z^2}$       |
-
-:::
 
 :::{seealso} Referencias
 
 @boas2006mathematical [Cap. 2 "Complex Numbers", pág. 72-81]
 
+:::
 
+:::{note} Transparencia: uso de inteligencia artificial
+
+Esta lección fue preparada con asistencia de un modelo de lenguaje (GLM, Z.ai) para la reorganización pedagógica del hilo conductor, la verificación de fórmulas y notación, y la corrección de erratas. Todo el contenido fue revisado, verificado y aprobado por el docente del curso, quien asume la responsabilidad académica del material.
 :::
