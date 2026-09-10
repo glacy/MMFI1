@@ -25,7 +25,7 @@ $$|z\bar{z}| = |z|^2$$
 
 ---
 
-**2. $|(1+2i)^3|$$
+**2. $|(1+2i)^3|$**
 
 Usamos la propiedad del módulo para potencias: $|z^n| = |z|^n$.
 Primero calculamos el módulo de la base $z = 1+2i$:
@@ -35,12 +35,11 @@ Ahora elevamos a la tercera potencia:
 $$|(1+2i)^3| = (\sqrt{5})^3$$
 $$= 5^{3/2} = \sqrt{125} = 5\sqrt{5}$$
 
-**Resultado:**
-$$|(1+2i)^3| = 5\sqrt{5}$$
+
 
 ---
 
-**3. $\left|\frac{3i}{i-\sqrt{3}}\right|$$
+**3. $\left|\frac{3i}{i-\sqrt{3}}\right|$**
 
 Usamos la propiedad del módulo para divisiones: $\left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}$.
 Calculamos el módulo del numerador:
@@ -57,7 +56,7 @@ $$\left|\frac{3i}{i-\sqrt{3}}\right| = \frac{3}{2}$$
 
 ---
 
-**4. $\left|\left(\frac{1+i}{1-i}\right)^5\right|$$
+**4. $\left|\left(\frac{1+i}{1-i}\right)^5\right|$**
 
 Primero usamos la propiedad del módulo para potencias: $|z^5| = |z|^5$.
 Sea $z = \frac{1+i}{1-i}$. Necesitamos $|z|$.
