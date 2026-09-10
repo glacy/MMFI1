@@ -20,16 +20,6 @@ kernelspec:
   display_name: Python 3
 ---
 
-```{code-cell} python
-:linenos:
-:emphasize-lines: 2,3
-:class: dropdown
-hello = "hello"
-there = "there"
-phrase = f"{hello}, {there}!"
-print(phrase)
-```
-
 :::{aside} [Ana María Cetto](https://es.wikipedia.org/wiki/Ana_Mar%C3%ADa_Cetto)
 
 Física teórica mexicana, Investigadora Titular del Instituto de Física de la UNAM y profesora de la Facultad de Ciencias, figura central de la física latinoamericana contemporánea tanto por su producción científica como por su liderazgo internacional. Su línea central son los fundamentos de la mecánica cuántica y la electrodinámica estocástica lineal. Primera latinoamericana Secretaria General del Consejo Internacional para la Ciencia (ICSU, 2002); vicepresidenta fundadora de TWOWS (mujeres en ciencia para el mundo en desarrollo); presidenta fundadora de Latindex (1997), el sistema de revistas científicas iberoamericanas; promotora del Museo de la Luz de la UNAM y del Año Internacional de la Luz 2015; presidenta del Comité Directivo Mundial de Ciencia Abierta de la UNESCO (2023); presidenta de la Sociedad Mexicana de Física (2021–2023).
@@ -149,7 +139,7 @@ $$
 V = V_0 e^{i(\omega t + \phi)}.
 $$
 
-Para recuperar la fase $\phi$ basta tomar el logaritmo y quedarse con la parte imaginaria:
+Para recuperar la fase $\theta$ basta tomar el logaritmo y quedarse con la parte imaginaria:
 
 $$
 \theta = \Im\big(\ln V(t)\big) = \omega t+\phi \pmod{2\pi}.
@@ -180,7 +170,7 @@ Parte imaginaria del logaritmo.
 :label: fig-riemman_gradiente.png
 :alt: Superficie de Riemman de logaritmo
 :align: center
-Superficie de Riemman del logaritmo.
+Superficie de Riemann del logaritmo.
 ```
 
 Para trabajar en el plano (una sola hoja) necesitamos dos herramientas:
@@ -229,7 +219,7 @@ i^{-2i}=e^{-2i\,\ln i}
 =e^\pi,\; e^{5\pi},\; e^{9\pi},\;\ldots
 $$
 
-Todos los valores son **reales y positivos** — un resultado que sorprende a primera vista: dos números imaginarios producen infinitos valores reales.
+Todos los valores son **reales y positivos**.
 :::
 
 # Funciones trigonométricas inversas: el mismo ladrillo
@@ -293,12 +283,12 @@ Repitiendo el patrón anterior (sustituir, resolver la cuadrática, tomar logari
 \end{aligned}
 :::
 
-Miren las fórmulas {eq}`eq-inversas-trig` con los ojos de esta semana: **todas son logaritmos con una raíz cuadrada dentro**. Eso explica dos cosas a la vez:
+Nótese de {eq}`eq-inversas-trig` que **todas son logaritmos con una raíz cuadrada dentro**. Eso explica dos cosas a la vez:
 
 - Son **multivaluadas**, por partida doble: el $\ln$ aporta los saltos de $2\pi$ y la $\sqrt{\ }$ aporta un signo $\pm$.
 - Sus **puntos de ramificación** ocurren donde las raíces se anulan ($z=\pm 1$ para $\arcsin$ y $\arccos$) o donde el argumento del logaritmo se anula o diverge ($z=\pm i$ para $\arctan$), tal como anticipa la tabla de referencia.
 
-# Funciones hiperbólicas inversas: logaritmos a secas
+# Funciones hiperbólicas inversas
 
 Las soluciones de ecuaciones diferenciales que describen propagación de ondas y transmisión de señales se expresan frecuentemente en términos de funciones hiperbólicas inversas. Su construcción es el mismo patrón de la sección anterior, pero con una simplificación: como las hiperbólicas se escriben con $e^{\pm z}$ (sin el $i$ de las trigonométricas), las fórmulas resultan ser **logaritmos sin factores $\pm i$**:
 
@@ -313,10 +303,7 @@ Las soluciones de ecuaciones diferenciales que describen propagación de ondas y
 
 Nuevamente, cada fórmula esconde un logaritmo y una raíz, de modo que la multivaluación y los puntos de ramificación ($z=\pm i$ o $z=\pm 1$, según la función) siguen el patrón de la tabla de referencia.
 
-Dos aplicaciones donde aparecen de manera natural:
 
-- **Relatividad especial:** la *rapidez* (velocidad adimensional) $\phi=\tanh^{-1}(v/c)$ convierte la composición no lineal de velocidades relativistas en una simple suma de rapideces: $\phi=\phi_1+\phi_2$.
-- **Transferencia de calor:** $\tanh^{-1}$ y $\cosh^{-1}$ aparecen al resolver problemas de conducción en medios seminfinitos y perfiles de temperatura estacionarios.
 
 :::{note} Derivadas de las funciones hiperbólicas inversas
 
@@ -330,8 +317,6 @@ Las derivadas son racionales o radicales "sencillas": al derivar, el logaritmo d
 :::
 
 # Aplicación integradora: del corte de rama a la onda evanescente
-
-Cerramos la semana donde todo se junta: un problema físico cuya solución **depende de elegir bien la rama del logaritmo**.
 
 En física e ingeniería, las **ecuaciones de ondas** describen la propagación de perturbaciones (sonido, electromagnetismo, elasticidad). En 2D, la ecuación de onda homogénea para un campo escalar $u(x,y,t)$ es
 
@@ -362,7 +347,7 @@ donde $a$ es una distancia característica (la separación entre fuentes, el bor
 
 ![](./../images/green.png)
 
-Analicemos $G(z)$ con las herramientas de esta semana. Primero la escribimos en términos del logaritmo:
+Analicemos $G(z)$. Primero la escribimos en términos del logaritmo:
 
 $$
 G(z)=\sqrt{z^2-a^2}=\exp\!\Big(\tfrac{1}{2}\ln\big(z^2-a^2\big)\Big).
@@ -383,33 +368,8 @@ más el punto $z=\infty$ en el plano de Riemann compacto. Para hacer $G(z)$ univ
 
 El corte de rama $[-a,a]$ no es un artificio de cálculo: **es la frontera física entre los dos regímenes**, y elegir la rama principal equivale a imponer la convención física correcta (la solución de radiación saliente). Lo que en la sección de logaritmos era un salto de $2\pi i$ en un plano complejo, aquí se manifiesta como la transición entre una onda que viaja y una que se apaga.
 
-:::{seealso} Referencias técnicas
 
-@morse1953methods [Parte I, Cap. 7]: funciones de Green para la ecuación de onda/Helmholtz; construcción de soluciones con fuentes puntuales y el papel de las funciones multivaluadas.
 
-@sommerfeld1949partial: formulación clásica de la condición de radiación, la convención física que fija la rama correcta (ondas salientes) en los problemas de difracción.
-
-@jackson1999classical [Cap. 8 "Waveguides, Resonant Cavities, and Optical Fibers"]: modos por debajo de la frecuencia de corte en guías de onda; allí $k^2 - k_c^2$ cambia de signo y la raíz cuadrada pasa de real (propagante) a imaginaria (evanescente).
-
-@pozar2012microwave [Cap. 3 "Transmission Lines and Waveguides"]: tratamiento de los modos evanescentes en guías desde la perspectiva de ingeniería de microondas.
-
-@felsen1973radiation: puntos de ramificación, cortes de rama y caminos de descenso más pronunciado en las representaciones espectrales de campos de onda; el tratamiento técnico más completo del tema.
-
-@chew1995waves: elección sistemática de la rama correcta en las integrales de Sommerfeld y en las funciones de Green en dominio espectral para medios estratificados.
-
-@born1999principles: la onda evanescente en la reflexión interna total, el ejemplo óptico más conocido del régimen $|z|<a$.
-
-@ablowitz2003complex: análisis matemático riguroso de funciones multivaluadas, cortes de rama y superficies de Riemann, con aplicaciones a ecuaciones diferenciales.
-
-:::
-
-# Resumen: el mapa de la semana
-
-- Toda la semana responde a una pregunta: **¿cómo se deshace $e^z$?** La respuesta es el logaritmo $\ln z=\ln|z|+i\arg z$, multivaluado por la periodicidad $2\pi i$ de la exponencial.
-- La **rama principal** $\text{Log}\,z$ (con $\text{Arg}\,z\in(-\pi,\pi]$) convierte al logaritmo en función univaluada; las reglas algebraicas del logaritmo valen entre conjuntos de valores, pero la rama principal puede fallar en múltiplos de $2\pi i$.
-- La multivaluación es un fenómeno **geométrico**: rodear un punto de ramificación cambia de "piso" en la superficie de Riemann; un **corte de rama** mantiene la función univaluada.
-- Las **potencias complejas** $a^b=e^{b\ln a}$ y **todas las inversas** (trigonométricas e hiperbólicas) se construyen con el mismo patrón: sustituir $u=e^{(\cdot)}$, resolver una cuadrática y aplicar logaritmo. Todas son logaritmos disfrazados y heredan sus ramificaciones.
-- En la **aplicación final**, la elección de rama de $\sqrt{z^2-a^2}$ decide la física: modos propagantes ($|z|>a$) frente a modos evanescentes ($|z|<a$).
 
 :::{seealso} Referencias
 
