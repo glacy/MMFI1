@@ -60,8 +60,6 @@ project:
     - id: Licenciatura en Ingeniería Física, Escuela de Física
       name: Licenciatura en Ingeniería Física, Escuela de Física
   open_access: true
-  # id: a7oQQocM3jAjAuctG9ns
-  # remote: a7oQQocM3jAjAuctG9ns
   # references:
   #   scipy: https://docs.scipy.org/doc/scipy/  
   #   sympy: https://docs.sympy.org/latest/
@@ -72,7 +70,6 @@ site:
   options:
     logo: site_logo.svg
     logo_dark: site_logo_dark.svg
-    # favicon: favicon.ico
     search: true
   actions:
     - title: tecDigital
