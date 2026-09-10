@@ -1,11 +1,4 @@
 ---
-title: Gráficas de funciones de variable compleja 
-description: Gráficas de funciones de variable compleja 
-short_title: Gráficas de funciones de variable compleja 
-author: " "
-tags: [numeros_complejos, logaritmo, trigonometricas-inversas, hiperbolicas-inversas, python]
-subject: Variable compleja - Semana 6
-keywords: [funciones, logaritmo, multivaluación, ramas, trigonométricas, hiperbólicas, inversas]
 jupytext:
   formats: ipynb,md:myst
   text_representation:
@@ -17,10 +10,6 @@ kernelspec:
   display_name: venv (3.12.8.final.0)
   language: python
   name: python3
-downloads:
-    - file: ./graficas_funciones_complejas.ipynb
-    - title: graficas_funciones_complejas.ipynb
-
 ---
 
 En esta página se presentan gráficas de funciones de variable compleja ($\sin z$, $\cos z$, $\exp z$, $\log z$, entre otras) generadas con Python, usando NumPy y Matplotlib. Cada gráfica va acompañada del código que la produce, organizado en celdas ejecutables.
