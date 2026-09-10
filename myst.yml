@@ -27,6 +27,10 @@ project:
         - file: ./02_numeros_complejos/semana06/semana06_lectura.md
         - file: ./02_numeros_complejos/graficas_funciones_complejas.md
         - file: ./02_numeros_complejos/semana06/semana06_practica.md
+    - title: Semana 7
+      children:
+        - file: ./02_numeros_complejos/semana07/semana07_lectura.md
+        - file: ./02_numeros_complejos/semana07/semana07_practica.md
     - file: ./proyecto/2026/proyecto.md
       hidden: true
     - file: ./tareas/2026/tarea1/tarea1_2026.md
