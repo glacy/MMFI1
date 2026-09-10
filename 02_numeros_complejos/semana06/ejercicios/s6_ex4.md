@@ -9,8 +9,6 @@ tags:
 objetivos: []
 ---
 
-Boas, Chapter 2, Section 15, pag. 79
-
 Calcule los valores de las siguientes funciones hiperbólicas inversas para argumentos complejos:
 
 - $\cosh^{-1}(2)$

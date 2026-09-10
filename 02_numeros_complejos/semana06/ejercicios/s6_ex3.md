@@ -9,8 +9,6 @@ tags:
 objetivos: []
 ---
 
-Boas, Chapter 2, Section 15, pag. 77
-
 Calcule los valores de las siguientes funciones trigonométricas inversas para argumentos complejos. Encuentre todos los valores posibles (multivaluación).
 
 - $\arcsin(2)$

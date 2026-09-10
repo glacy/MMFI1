@@ -12,7 +12,7 @@ tags:
 objetivos: []
 ---
 
-Aplicación: Ondas evanescentes y Branch Cuts
+Ondas evanescentes y Branch Cuts
 
 En física de ondas, la función de Green $G(z) = \sqrt{z^2 - a^2}$ describe la transición entre modos propagantes y evanescentes en una guía de onda.
 

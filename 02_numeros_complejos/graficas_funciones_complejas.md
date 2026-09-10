@@ -1,4 +1,11 @@
 ---
+title: Gráficas de funciones de variable compleja 
+description: Gráficas de funciones de variable compleja 
+short_title: Gráficas de funciones de variable compleja 
+author: " "
+tags: [numeros_complejos, logaritmo, trigonometricas-inversas, hiperbolicas-inversas, python]
+subject: Variable compleja - Semana 6
+keywords: [funciones, logaritmo, multivaluación, ramas, trigonométricas, hiperbólicas, inversas]
 jupytext:
   formats: ipynb,md:myst
   text_representation:
@@ -10,6 +17,10 @@ kernelspec:
   display_name: venv (3.12.8.final.0)
   language: python
   name: python3
+downloads:
+    - file: ./graficas_funciones_complejas.ipynb
+    - title: graficas_funciones_complejas.ipynb
+
 ---
 
 En esta página se presentan gráficas de funciones de variable compleja ($\sin z$, $\cos z$, $\exp z$, $\log z$, entre otras) generadas con Python, usando NumPy y Matplotlib. Cada gráfica va acompañada del código que la produce, organizado en celdas ejecutables.
@@ -17,6 +28,7 @@ En esta página se presentan gráficas de funciones de variable compleja ($\sin 
 ```{note}
 Las celdas de código son interactivas: puede ejecutarlas y modificarlas directamente en el navegador con el botón de ejecución en vivo ( 🚀 ), o bien ejecutarlas localmente con Jupyter.
 ```
+
 
 ### $\sin (z)$
 
@@ -40,10 +52,10 @@ Z = X + 1j * Y
 # Calcular sin(z) en cada punto de la malla
 sin_Z = np.sin(Z)
 
-# Graficar las partes real e imaginaria de sinh(z)
+# Graficar las partes real e imaginaria de sin(z)
 plt.figure(figsize=(14, 6))
 
-# Parte real de sinh(z)
+# Parte real de sin(z)
 plt.subplot(1, 2, 1)
 plt.contourf(X, Y, np.real(sin_Z), levels=50, cmap='RdYlBu')
 plt.colorbar()
@@ -56,51 +68,6 @@ plt.subplot(1, 2, 2)
 plt.contourf(X, Y, np.imag(sin_Z), levels=50, cmap='RdYlBu')
 plt.colorbar()
 plt.title(r"Parte imaginaria de  $\sin(z)$")
-plt.xlabel(r'$\Re(z)$')
-plt.ylabel(r'$\Im (z)$')
-
-plt.tight_layout()
-plt.show()
-```
-
-### $\cos (z)$
-
-```{code-cell}
----
-colab:
-  base_uri: https://localhost:8080/
-  height: 607
-id: AW-kNTPM4ld9
-outputId: 0caeebcb-8abf-4621-94e9-3cf2be272cda
----
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Definir una malla en el plano complejo
-x = np.linspace(-2, 2, 400)
-y = np.linspace(-2, 2, 400)
-X, Y = np.meshgrid(x, y)
-Z = X + 1j * Y
-
-# Calcular cos(z) en cada punto de la malla
-cos_Z = np.cos(Z)
-
-# Graficar las partes real e imaginaria de cos(z)
-plt.figure(figsize=(14, 6))
-
-# Parte real de cos(z)
-plt.subplot(1, 2, 1)
-plt.contourf(X, Y, np.real(sin_Z), levels=50, cmap='RdYlBu')
-plt.colorbar()
-plt.title(r"Parte real de $\cos(z)$")
-plt.xlabel(r'$\Re(z)$')
-plt.ylabel(r'$\Im (z)$')
-
-# Parte imaginaria de cos(Z)
-plt.subplot(1, 2, 2)
-plt.contourf(X, Y, np.imag(sin_Z), levels=50, cmap='RdYlBu')
-plt.colorbar()
-plt.title(r"Parte imaginaria de  $\cos(z)$")
 plt.xlabel(r'$\Re(z)$')
 plt.ylabel(r'$\Im (z)$')
 
@@ -149,6 +116,51 @@ ax2.set_title(r"Parte imaginaria de $\sin z$")
 ax2.set_xlabel(r'$\Re (z)$')
 ax2.set_ylabel(r'$\Im (z)$')
 #ax2.set_zlabel(r'$\Im (\sin (z))$')
+
+plt.tight_layout()
+plt.show()
+```
+
+### $\cos (z)$
+
+```{code-cell}
+---
+colab:
+  base_uri: https://localhost:8080/
+  height: 607
+id: AW-kNTPM4ld9
+outputId: 0caeebcb-8abf-4621-94e9-3cf2be272cda
+---
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definir una malla en el plano complejo
+x = np.linspace(-2, 2, 400)
+y = np.linspace(-2, 2, 400)
+X, Y = np.meshgrid(x, y)
+Z = X + 1j * Y
+
+# Calcular cos(z) en cada punto de la malla
+cos_Z = np.cos(Z)
+
+# Graficar las partes real e imaginaria de cos(z)
+plt.figure(figsize=(14, 6))
+
+# Parte real de cos(z)
+plt.subplot(1, 2, 1)
+plt.contourf(X, Y, np.real(cos_Z), levels=50, cmap='RdYlBu')
+plt.colorbar()
+plt.title(r"Parte real de $\cos(z)$")
+plt.xlabel(r'$\Re(z)$')
+plt.ylabel(r'$\Im (z)$')
+
+# Parte imaginaria de cos(Z)
+plt.subplot(1, 2, 2)
+plt.contourf(X, Y, np.imag(cos_Z), levels=50, cmap='RdYlBu')
+plt.colorbar()
+plt.title(r"Parte imaginaria de  $\cos(z)$")
+plt.xlabel(r'$\Re(z)$')
+plt.ylabel(r'$\Im (z)$')
 
 plt.tight_layout()
 plt.show()
@@ -488,91 +500,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-```{code-cell}
----
-colab:
-  base_uri: https://localhost:8080/
-  height: 607
-id: uuqIaGKuFdLJ
-outputId: 7ed1fa56-2835-43f6-e092-648d54d98ebd
----
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-
-# Definir una malla en el plano complejo
-x = np.linspace(-2, 2, 400)
-y = np.linspace(-2, 2, 400)
-X, Y = np.meshgrid(x, y)
-Z = X + 1j * Y
-
-# Calcular sqrt(z) en cada punto de la malla
-sqrt_Z = np.sqrt(Z)
-
-# Crear figura para graficar en 3D
-fig = plt.figure(figsize=(14, 6))
-
-# Parte real de sqrt(Z)
-ax1 = fig.add_subplot(1, 2, 1, projection='3d')
-ax1.plot_surface(X, Y, np.real(sqrt_Z), cmap='RdYlBu', edgecolor='none')
-ax1.set_title(r"Parte real de $\sqrt{z}$")
-ax1.set_xlabel(r'$\Re (z)$')
-ax1.set_ylabel(r'$\Im (z)$')
-
-# Parte imaginaria de sqrt(Z)
-ax2 = fig.add_subplot(1, 2, 2, projection='3d')
-ax2.plot_surface(X, Y, np.imag(sqrt_Z), cmap='RdYlBu', edgecolor='none')
-ax2.set_title(r"Parte imaginaria de $\sqrt{z}$")
-ax2.set_xlabel(r'$\Re (z)$')
-ax2.set_ylabel(r'$\Im (z)$')
-
-plt.tight_layout()
-plt.show()
-```
-
-```{code-cell}
----
-colab:
-  base_uri: https://localhost:8080/
-  height: 607
-id: mWOJB0-mHowa
-outputId: cfd550fd-011b-40e3-a52e-d6abe997449b
----
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-
-# Definir una malla en el plano complejo
-x = np.linspace(-2, 2, 400)
-y = np.linspace(-2, 2, 400)
-X, Y = np.meshgrid(x, y)
-Z = X + 1j * Y
-
-# Calcular log(z) en cada punto de la malla
-log_Z = np.log(Z)
-
-# Crear figura para graficar en 3D
-fig = plt.figure(figsize=(14, 6))
-
-# Parte real de log(Z)
-ax1 = fig.add_subplot(1, 2, 1, projection='3d')
-ax1.plot_surface(X, Y, np.real(log_Z), cmap='RdYlBu', edgecolor='none')
-ax1.set_title(r"Parte real de $\log z$")
-ax1.set_xlabel(r'$\Re (z)$')
-ax1.set_ylabel(r'$\Im (z)$')
-
-# Parte imaginaria de log(Z)
-ax2 = fig.add_subplot(1, 2, 2, projection='3d')
-ax2.plot_surface(X, Y, np.imag(log_Z), cmap='RdYlBu', edgecolor='none')
-ax2.set_title(r"Parte imaginaria de $\log z$")
-ax2.set_xlabel(r'$\Re (z)$')
-ax2.set_ylabel(r'$\Im (z)$')
-
-plt.tight_layout()
-plt.show()
-```
-
 ## Función de Green $\sqrt{z^2-a^2}$
+
+### Módulo y fase
 
 ```{code-cell}
 import numpy as np
@@ -615,6 +545,8 @@ plt.tight_layout()
 plt.show()
 ```
 
+### Parte real e imaginaria (3D)
+
 ```{code-cell}
 import numpy as np
 import matplotlib.pyplot as plt
@@ -654,67 +586,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-```{code-cell}
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Definir una malla en el plano complejo
-x = np.linspace(-2, 2, 400)
-y = np.linspace(-2, 2, 400)
-X, Y = np.meshgrid(x, y)
-Z = X + 1j * Y
-
-# Función de Green con corte de rama en [-1, 1]
-a = 1
-G_Z = np.sqrt(Z - a) * np.sqrt(Z + a)
-arg_Z = np.angle(Z)
-
-# Superficie de Riemann de G(z): las dos hojas G_k(z) = (-1)^k G(z)
-fig_riemann_g = plt.figure(figsize=(12, 10))
-ax_riemann_g = fig_riemann_g.add_subplot(111, projection='3d')
-
-# Hojas: k = 0, 1
-branches = np.array([0, 1])
-num_branches = len(branches)
-
-# Colormap continuo: el color transita suavemente de una hoja a la otra
-cmap_obj = plt.cm.viridis
-frac_arg = (arg_Z + np.pi) / (2 * np.pi)
-
-for k in branches:
-    # La hoja k corresponde a la rama G_k(z) = (-1)^k G(z)
-    G_k = ((-1) ** k) * G_Z
-
-    # Altura de la superficie: parte imaginaria de la rama k
-    # (sobre el corte [-a, a] las hojas se conectan: +sqrt(a^2-x^2) y -sqrt(a^2-x^2))
-    Z_plot = np.imag(G_k)
-
-    # Posición de color continua: cada hoja ocupa un tramo del colormap
-    color_pos = (k + frac_arg) / num_branches
-    facecolors = cmap_obj(color_pos)
-
-    # Graficar la superficie de esta hoja con transición de color continua
-    ax_riemann_g.plot_surface(X, Y, Z_plot,
-                              facecolors=facecolors, shade=False,
-                              linewidth=0, antialiased=False,
-                              rstride=10, cstride=10)
-
-ax_riemann_g.set_title(r"Superficie de Riemann de $G(z)=\sqrt{z^2-a^2}$", fontsize=16)
-ax_riemann_g.set_xlabel(r'$\Re (z)$', fontsize=12)
-ax_riemann_g.set_ylabel(r'$\Im (z)$', fontsize=12)
-ax_riemann_g.set_zlabel(r'$\Im (G_k)$', fontsize=12)
-
-# Barra de colores continua: las marcas indican la hoja k al centro de cada tramo
-sm = plt.cm.ScalarMappable(cmap=cmap_obj, norm=plt.Normalize(vmin=0, vmax=1))
-sm.set_array([])
-tick_pos = [(k + 0.5) / num_branches for k in branches]
-cbar = fig_riemann_g.colorbar(sm, ax=ax_riemann_g, shrink=0.6, aspect=20, pad=0.1, ticks=tick_pos)
-cbar.ax.set_yticklabels([str(k) for k in branches])
-cbar.set_label(r'Hoja $k$ de $G(z)$', fontsize=12)
-
-plt.tight_layout()
-plt.show()
-```
+### Ramas $k = 0, 1$ (plotly)
 
 ```{code-cell}
 # Versión interactiva de G(z) con plotly: la figura se puede girar,
@@ -757,6 +629,8 @@ fig.update_layout(
 )
 fig.show()
 ```
+
+### Superficie de Riemann (plotly)
 
 ```{code-cell}
 # Versión interactiva de la superficie de Riemann de G(z) con plotly:
