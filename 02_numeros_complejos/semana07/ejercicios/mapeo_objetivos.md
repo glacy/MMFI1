@@ -21,6 +21,7 @@ Este documento detalla la relación entre los ejercicios prácticos de la semana
 | **s7_ex4** | | ✅ | | Identificación del teorema aplicable en integrales cerradas: singularidades dentro/fuera del contorno. |
 | **s7_ex5** | | ✅ | | Aplicación sistemática de la fórmula integral de Cauchy y su versión para derivadas. |
 | **s7_ex6** | | ✅ | ✅ | Aplicación física: integral real $1/(x^2+4)$ por contornos (con estimación ML) y relaciones de Kramers-Kronig. |
+| **s7_ex7** | | | ✅ | Aplicación física: potencial complejo en flujo irrotacional 2D (Arfken 6.2.10); Cauchy-Riemann ⇒ $df/dz = V_x-iV_y$, $\nabla\cdot\mathbf{V}=0$, $\nabla\times\mathbf{V}=0$. |
 
 ---
 
@@ -43,6 +44,7 @@ Este objetivo evalúa el reconocimiento de cuándo la estructura reemplaza al c�
 #### Objetivo 3: Aplicar la teoría a problemas físicos
 Este objetivo conecta la analiticidad con la física de materiales y señales.
 *   **Ejercicio 6 (s7_ex6):** Es la aplicación integradora de la semana: (a) cálculo de una integral real clásica cerrando con semicírculo, con justificación completa del arco; (b) argumento causalidad ⇒ analiticidad ⇒ Kramers-Kronig, con su consecuencia experimental (reconstruir dispersión a partir de absorción).
+*   **Ejercicio 7 (s7_ex7):** Aplicación al flujo irrotacional 2D: el potencial complejo empaqueta el campo de velocidad ($df/dz = V_x-iV_y$) y las ecuaciones de Cauchy-Riemann implican la ecuación de Laplace para $u$ y $v$ (sin fuentes ni sumideros) y flujo irrotacional. Conecta directamente con la sección "La física escondida en Cauchy-Riemann" de la lectura.
 
 ---
 
@@ -52,3 +54,4 @@ El diseño de la práctica de la semana 7 cumple integralmente con los objetivos
 *   Los ejercicios **s7_ex1 a s7_ex3** desarrollan el Objetivo 1 (cálculo directo por parametrización) y transitan hacia el Objetivo 2 al confrontar casos analíticos y no analíticos.
 *   Los ejercicios **s7_ex4 y s7_ex5** consolidan el Objetivo 2: selección y aplicación correcta de los teoremas de Cauchy.
 *   El ejercicio **s7_ex6** cubre el Objetivo 3, llevando el método de contornos a una integral real y a las relaciones de dispersión que rigen la respuesta causal de materiales y circuitos.
+*   El ejercicio **s7_ex7** extiende el Objetivo 3 a la hidrodinámica plana: usa las condiciones de Cauchy-Riemann (Objetivo 1 de la lectura actualizada) para demostrar las propiedades estructurales del flujo ideal generado por un potencial complejo.

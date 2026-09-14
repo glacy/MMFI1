@@ -119,3 +119,20 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 
 ```
 ````
+
+````{exercise}
+:label: s7_ex7
+
+```{include} ./ejercicios/s7_ex7.md
+
+```
+````
+
+````{solution} s7_ex7
+:label: solucion-s7_ex7
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s7_ex7.md
+
+```
+````

@@ -5,7 +5,7 @@ short_title: Integrales de contorno
 author: " "
 tags: [numeros_complejos, integracion, contornos, cauchy]
 subject: Variable compleja - Semana 7
-keywords: [integrales de contorno, independencia del camino, Cauchy-Goursat, fórmula integral de Cauchy, Kramers-Kronig]
+keywords: [condiciones de Cauchy-Riemann, analiticidad, integrales de contorno, independencia del camino, Cauchy-Goursat, fórmula integral de Cauchy, Kramers-Kronig]
 exports:
   - format: pdf
     template: curvenote
@@ -15,41 +15,108 @@ exports:
 #     title: semana07_lectura.md
 #   - file: ./semana07_lectura.pdf
 #     title: semana07_lectura.pdf
-kernelspec:
-  name: python3
-  display_name: Python 3
 ---
 
-:::{aside} [Naomi Halas](https://es.wikipedia.org/wiki/Naomi_Halas)
+:::{aside} [Diana Trujillo](https://es.wikipedia.org/wiki/Diana_Trujillo)
 
-Física y nanotecnóloga estadounidense, pionera de la [nanofotónica](https://es.wikipedia.org/wiki/Nanofot%C3%B3nica) y creadora de las *nanocáscaras* (nanoshells): partículas metálicas dieléctricas cuyas [resonancias de plasmón](https://es.wikipedia.org/wiki/Plasm%C3%B3n) se sintonizan a voluntad para absorber o emitir luz. Su trabajo se apoya, de manera esencial, en el análisis complejo: la respuesta óptica de un material se describe con funciones de susceptibilidad $\chi(\omega)$ analíticas en el semiplano superior, cuyas partes real e imaginaria quedan ligadas por relaciones de dispersión — consecuencia directa de la fórmula integral de Cauchy. Es profesora en la Universidad Rice, miembro de la Academia Nacional de Ciencias de EE. UU. y fundadora de empresas que llevan su tecnología del laboratorio a la terapia fototérmica del cáncer y la detección de contaminantes.
-```{figure} ./../images/naomi_HALAS-lg.jpeg
-:label: fig-naomi_HALAS-lg.jpeg
-:alt: retrato de Dra. Naomi Halas
+Ingeniera aeroespacial colombiana del [Laboratorio de Propulsión a Chorro](https://es.wikipedia.org/wiki/Laboratorio_de_Propulsi%C3%B3n_a_Reacci%C3%B3n) (JPL) de la NASA, donde lidera el equipo de ingeniería a cargo del **brazo robótico del rover Perseverance**: el mecanismo que colecta y sella en la superficie marciana los tubos de muestra de roca — el sistema de almacenamiento de muestras más complejo jamás enviado a otro planeta. Su trayectoria personal es una lección en sí misma: emigró de Cali a los 17 años sin hablar inglés y con solo 300 dólares, trabajó como ama de llaves mientras estudiaba, pasó por el Miami Dade College y se graduó como ingeniera aeroespacial en la Universidad de Maryland (2007); fue la primera mujer migrante hispana admitida en la Academia de la NASA. Antes de Perseverance desarrolló la herramienta de eliminación de polvo y los sistemas de muestreo del rover Curiosity. El 18 de febrero de 2021 fue la narradora de la **primera transmisión en vivo y en español de un aterrizaje planetario** en la historia de la NASA (*Juntos Perseveramos*); ese año Colombia la condecoró con la Cruz de Plata de la [Orden de Boyacá](https://es.wikipedia.org/wiki/Orden_de_Boyac%C3%A1). Mentora de la fraternidad Brooke Owens, dedica su voz a inspirar a jóvenes de América Latina hacia las carreras científicas y de ingeniería.
+```{figure} ./../images/Diana_Trujillo.png
+:label: fig-Diana_Trujillo.png
+:alt: retrato de Dra. Diana Trujillo
 :align: center
-Naomi J. Halas (1958 - ). Foto: cortesía de la Universidad Rice.
+Diana Trujillo (1981 - ). Foto: NASA on The Commons ([Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3ADiana_Trujillo_%2829795849390%29.jpg), No restrictions).
 ```
 :::
 
 ```{note} Objetivos
 Al completar esta lección, serás capaz de
 
-1. **Parametrizar curvas y contornos** en el plano complejo y **calcular integrales de contorno** directamente a partir de su definición, interpretando la integral como una suma de aportes diferenciales $f(z)\,dz$.
+1. **Formular la derivada compleja y las condiciones de Cauchy–Riemann**, y usarlas para decidir en qué regiones una función es analítica, interpretando la analiticidad como la "licencia" que habilita toda la teoría de integración.
 
-2. **Aplicar los teoremas centrales de la teoría de Cauchy** — independencia del camino, Cauchy-Goursat, fórmula integral de Cauchy y su versión para derivadas — para evaluar integrales cerradas sin parametrizar nada.
+2. **Parametrizar curvas y contornos** en el plano complejo y **calcular integrales de contorno** directamente a partir de su definición, interpretando la integral como una suma de aportes diferenciales $f(z)\,dz$.
 
-3. **Conectar la analiticidad con la física**: evaluar integrales reales por métodos de contorno y deducir las relaciones de dispersión de Kramers–Kronig, donde la causalidad de una respuesta física se traduce en analiticidad en el semiplano superior.
+3. **Aplicar los teoremas centrales de la teoría de Cauchy** — independencia del camino, Cauchy-Goursat, fórmula integral de Cauchy y su versión para derivadas — para evaluar integrales cerradas sin parametrizar nada.
+
+4. **Conectar la analiticidad con la física**: evaluar integrales reales por métodos de contorno, leer las ecuaciones de Cauchy–Riemann como la ecuación de Laplace en 2D, y deducir las relaciones de dispersión de Kramers–Kronig, donde la causalidad de una respuesta física se traduce en analiticidad en el semiplano superior.
 ```
 
 +++ { "part": "abstract" }
 
-Durante seis semanas construimos el plano complejo: números, funciones elementales, logaritmos multivaluados y cortes de rama. Esta semana le enseñamos al plano complejo a **integrar**. El resultado es una de las historias más sorprendentes de la matemática aplicada: si una función es analítica, su integral de contorno casi no depende del camino que elijamos; si el camino es cerrado, la integral vale **cero**; y si no vale cero, es porque la función esconde una singularidad dentro del contorno. Toda la información está en las singularidades. De esa idea nacen la fórmula integral de Cauchy — que reconstruye los valores de una función dentro de una región a partir de sus valores en la frontera — y sus aplicaciones que van desde el cálculo de integrales reales imposibles hasta las relaciones de dispersión que gobiernan la óptica de materiales reales.
+Durante las semanas pasadas construimos el plano complejo: números, funciones elementales, logaritmos multivaluados y cortes de rama. Esta semana le enseñamos al plano complejo a **derivar y a integrar**. Primero fijamos la moneda de todo lo que sigue: la **analiticidad**, certificada por las **condiciones de Cauchy–Riemann**. Con esa licencia en mano, el resultado es una de las historias más sorprendentes de la matemática aplicada: si una función es analítica, su integral de contorno casi no depende del camino que elijamos; si el camino es cerrado, la integral vale **cero**; y si no vale cero, es porque la función esconde una singularidad dentro del contorno. Toda la información está en las singularidades. De esa idea nacen la fórmula integral de Cauchy — que reconstruye los valores de una función dentro de una región a partir de sus valores en la frontera — y sus aplicaciones que van desde el cálculo de integrales reales imposibles hasta las relaciones de dispersión que gobiernan la óptica de materiales reales.
 
 +++
 
-En las semanas 4, 5 y 6 estudiamos los números complejos, sus funciones elementales y la estructura de las funciones multivaluadas. Aprendimos a **derivar**: una función es analítica donde cumple las ecuaciones de Cauchy-Riemann. Ahora llega el turno de **integrar**.
+En las semanas 4, 5 y 6 estudiamos los números complejos, sus funciones elementales y la estructura de las funciones multivaluadas. Ahora llega el turno del cálculo diferencial e integral complejo.
 
-La pregunta que guía esta semana es doble. Primero, la operativa: ¿qué significa $\int f(z)\,dz$ cuando $z$ recorre una curva del plano? Segundo, la estructural: ¿de qué depende el resultado? En variable real, $\int_a^b f(x)\,dx$ depende solo de los extremos — es el teorema fundamental del cálculo. Veremos que en el plano complejo esta propiedad es **excepcional, no general**: sobrevive solo para funciones analíticas, y su extensión a contornos cerrados (el teorema de Cauchy-Goursat) es la puerta de entrada a toda la teoría de aplicaciones.
+La pregunta que guía esta semana es triple. Primero, la fundacional: ¿qué significa **derivar** cuando $z$ puede aproximarse a un punto desde *cualquier dirección* del plano? Su respuesta — las condiciones de Cauchy–Riemann — define la propiedad central del curso: la **analiticidad**. Segundo, la operativa: ¿qué significa $\int f(z)\,dz$ cuando $z$ recorre una curva del plano? Tercero, la estructural: ¿de qué depende el resultado? En variable real, $\int_a^b f(x)\,dx$ depende solo de los extremos — es el teorema fundamental del cálculo. Veremos que en el plano complejo esta propiedad es **excepcional, no general**: sobrevive solo para funciones analíticas, y su extensión a contornos cerrados (el teorema de Cauchy-Goursat) es la puerta de entrada a toda la teoría de aplicaciones.
+
+# Derivar en el plano complejo: las condiciones de Cauchy–Riemann
+
+En variable real, derivar en $x_0$ exige que exista un único límite de $\frac{f(x)-f(x_0)}{x-x_0}$ — con solo dos direcciones posibles de aproximación: izquierda y derecha. En el plano complejo, la misma definición formal esconde una exigencia mucho más severa:
+
+$$
+f'(z_0)=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0},
+$$
+
+porque ahora $z$ puede llegar a $z_0$ **desde infinitas direcciones** (arriba, abajo, en espiral, tangencialmente...). El límite debe dar **el mismo número sea cual sea el camino**. Que esto sea posible es la excepción, no la regla — y las funciones que lo logran tienen propiedades extraordinarias.
+
+![Distintas aproximaciones a $z_0$](./../images/limite_complejo.svg 'Distintas aproximaciones a $z_0$')
+
+Escribamos $f=u+iv$ con $u$, $v$ funciones reales de $(x,y)$ y evaluemos el límite por dos caminos ortogonales. **Horizontal** ($h$ real, $z=z_0+h$): la derivada parcial respecto a $x$,
+
+$$
+f'_x = \frac{\partial f}{\partial x} = u_x + i\,v_x.
+$$
+
+**Vertical** ($h$ real, $z=z_0+ih$): el denominador es $ih$, de modo que
+
+$$
+f'_y = \frac{1}{i}\frac{\partial f}{\partial y} = -i(u_y+i\,v_y) = v_y - i\,u_y.
+$$
+
+Si la derivada compleja existe, ambos resultados deben coincidir. Igualando partes reales e imaginarias ($f'_x=f'_y$) obtenemos las **condiciones de Cauchy–Riemann**:
+
+:::{math}
+:label: eq-cr
+u_x = v_y,
+\qquad
+u_y = -v_x.
+:::
+
+Son dos ecuaciones acopladas para las partes real e imaginaria: no basta que $u$ y $v$ sean diferenciables por separado; deben estar **entretejidas**. Ese acoplamiento es exactamente lo que el límite en "todas las direcciones" exige.
+
+:::{note} Analiticidad: definición y teorema práctico
+
+- $f$ es **diferenciable en $z_0$** si el límite anterior existe en ese punto.
+- $f$ es **analítica** (u [holomorfa](https://es.wikipedia.org/wiki/Funci%C3%B3n_holomorfa)) en un **dominio abierto** $\Omega$ si es diferenciable en *todos* sus puntos. La analiticidad es una propiedad de regiones, no de puntos aislados.
+
+**Teorema (versión práctica).** Si $u$ y $v$ tienen derivadas parciales primeras **continuas** en una vecindad y satisfacen {eq}`eq-cr` en $z_0$, entonces $f$ es diferenciable en $z_0$. Si {eq}`eq-cr` vale en todo $\Omega$, $f$ es analítica en $\Omega$. (Las condiciones de Cauchy–Riemann son necesarias; junto con la continuidad de las parciales, también suficientes.)
+:::
+
+:::{note} Ejemplos: quién tiene la licencia y quién no
+
+**$f(z)=z^2$:** $u=x^2-y^2$, $v=2xy$. Entonces $u_x=2x=v_y$ y $u_y=-2y=-v_x$: cumple {eq}`eq-cr` en todo el plano → **analítica en todo el plano** (función *entera*). Lo mismo vale para todo polinomio, y para $e^z$, $\sin z$, $\cos z$, $\sinh z$, $\cosh z$: todas enteras.
+
+**$f(z)=\bar z=x-iy$:** $u=x$, $v=-y$. Entonces $u_x=1$ y $v_y=-1$: viola {eq}`eq-cr` en **cada** punto del plano → no analítica en ningún lado. (La verificarán en detalle en la práctica: es la función que rompe la independencia del camino.)
+
+**$f(z)=|z|^2=x^2+y^2$:** $u=x^2+y^2$, $v=0$. Cauchy–Riemann exige $2x=0$ y $2y=0$: solo se cumplen en $z=0$. La función es diferenciable en **un único punto**, pero no analítica en ningún dominio: un recordatorio de que analiticidad requiere una *vecindad* completa.
+
+**$f(z)=1/z$ y las ramas de la semana 6:** $\frac{1}{z}$ cumple Cauchy–Riemann en todo el plano **excepto en $z=0$**: es analítica en el plano pinchado, y $z=0$ es su **singularidad**. Igual con las ramas de $\ln z$ y $\sqrt{z}$: son analíticas exactamente en el plano *cortado* de la semana 6. Los cortes de rama resultan ser, en este lenguaje, las fronteras del dominio de analiticidad.
+:::
+
+## La física escondida en Cauchy–Riemann
+
+El acoplamiento de {eq}`eq-cr` tiene consecuencias físicas inmediatas. Derivando la primera ecuación respecto a $x$, la segunda respecto a $y$, y sumando:
+
+$$
+\nabla^2 u = u_{xx}+u_{yy} = v_{yx} - v_{xy} = 0,
+$$
+
+y análogamente $\nabla^2 v=0$: **las partes real e imaginaria de una función analítica son armónicas** — resuelven la ecuación de Laplace en 2D. Además, los gradientes $\nabla u=(u_x,u_y)$ y $\nabla v=(v_x,v_y)$ son ortogonales — usando {eq}`eq-cr`, su producto punto vale $u_xv_x+u_yv_y = v_yv_x + (-v_x)v_y = 0$ —: las familias de curvas de nivel $u=\text{const}$ y $v=\text{const}$ se cortan **en ángulo recto**.
+
+Esta es la razón por la que las funciones analíticas son el lenguaje natural de los problemas planos de potencial: si $\Omega(z)=\phi(x,y)+i\psi(x,y)$ es analítica, entonces $\phi$ puede leerse como **potencial electrostático** (o velocidad potencial) y $\psi$ como su **función de corriente** asociada; sus curvas de nivel — equipotenciales y líneas de campo — forman retículas ortogonales listas para usar. Revisaremos este punto al final de la lección, al hablar de funciones de Green.
+
+Con la licencia de analiticidad definida, ya podemos integrar.
 
 # Caminos, curvas y contornos
 
@@ -143,7 +210,7 @@ $$
 donde usamos $e^{i\pi/2}=i$. No sorprende: $e^z$ es analítica en todo el plano (dominio simplemente conexo) y tiene antiderivada.
 :::
 
-La independencia del camino tiene un contrapunto inmediato: si una función **no** tiene antiderivada en el dominio, sus integrales **sí** dependen del camino. Es el caso de $\bar z = x - iy$: no es analítica (falla las ecuaciones de Cauchy-Riemann, como verificarán en la práctica), y su integral de $0$ a $1+i$ cambia si se va por el segmento recto o por el camino en L. La analiticidad no es un detalle técnico: es lo que decide si el teorema fundamental aplica.
+La independencia del camino tiene un contrapunto inmediato: si una función **no** tiene antiderivada en el dominio, sus integrales **sí** dependen del camino. Es el caso de $\bar z = x - iy$: no es analítica (falla las ecuaciones de Cauchy-Riemann {eq}`eq-cr`, como verificarán en la práctica), y su integral de $0$ a $1+i$ cambia si se va por el segmento recto o por el camino en L. La analiticidad no es un detalle técnico: es lo que decide si el teorema fundamental aplica.
 
 Y hay un caso intermedio fascinante: $f(z) = 1/z$ tiene antiderivada ($\ln z$), pero $\ln z$ es **multivaluada**. Por eso $1/z$ es integrable sin problema por caminos abiertos que no crucen el corte de rama, mientras que toda vuelta cerrada alrededor del origen acumula el $2\pi i$ del ejemplo anterior. El corte de rama de la semana 6 es, desde el punto de vista integral, la frontera más allá de la cual el teorema fundamental deja de aplicar con la rama elegida.
 
@@ -213,6 +280,7 @@ Ni una sola parametrización. Todo el trabajo lo hizo la estructura: única sing
 
 | Resultado | Enunciado | Requisito |
 |---|---|---|
+| Cauchy–Riemann | $u_x=v_y$, $\;u_y=-v_x$ | $f=u+iv$ diferenciable ⇒ analítica si parciales continuas |
 | Teorema fundamental | $\int_C f\,dz = F(z_2)-F(z_1)$ | $F'=f$, dominio simplemente conexo |
 | Cauchy-Goursat | $\oint_C f\,dz = 0$ | $f$ analítica dentro y sobre $C$ |
 | Deformación de contornos | $\oint_{C_1} f\,dz = \oint_{C_2} f\,dz$ | no cruzar singularidades |
@@ -295,7 +363,7 @@ vale $2\pi i$ **para cualquier radio $\rho>0$**: es invariante de escala y de po
 
 @ablowitz2003complex [Cap. 2-3: integrales de contorno y aplicaciones]
 
-@arfken2005mathematical [Cap. 11 "Complex Variable Theory", sección de integración]
+@arfken2005mathematical [Cap. 6.2 "CAUCHY–RIEMANN CONDITIONS", pág. 413-]
 
 :::
 
