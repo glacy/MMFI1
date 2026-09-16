@@ -10,14 +10,11 @@ exports:
   - format: pdf
     template: curvenote
     output: ./semana06_lectura.pdf
-# downloads:
-#   - file: ./semana06_lectura.md
-#     title: semana06_lectura.md
-#   - file: ./semana06_lectura.pdf
-#     title: semana06_lectura.pdf
-kernelspec:
-  name: python3
-  display_name: Python 3
+downloads:
+  - file: ./semana06_lectura.md
+    title: semana06_lectura.md
+  - file: ./semana06_lectura.pdf
+    title: semana06_lectura.pdf
 ---
 
 :::{aside} [Ana María Cetto](https://es.wikipedia.org/wiki/Ana_Mar%C3%ADa_Cetto)
