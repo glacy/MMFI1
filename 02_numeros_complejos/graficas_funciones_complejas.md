@@ -11,7 +11,7 @@ kernelspec:
   language: python
   name: python3
 downloads:
-  - file: 02_numeros_complejos/graficas_funciones_complejas.ipynb
+  - file: ./02_numeros_complejos/graficas_funciones_complejas.ipynb
   - title: graficas_funciones_complejas.ipynb
 ---
 
