@@ -41,7 +41,7 @@ exports:
 - Resuelva de forma razonada cada uno de los siguientes ejercicios.
 - Use esquemas y dibujos si lo considera necesario.
 - Debe incluir los cálculos y procedimientos que le llevan a su respuesta.
-- **Fecha de entrega**: viernes 11 de setiembre 2026 (SEMANA 6).
+- **Fecha de entrega**: lunes 14 de setiembre 2026 (SEMANA 7).
 - **Formato de entrega**: documento en formato .pdf a través del módulo de
     evaluaciones en el [tecDigital](https://tecdigital.tec.ac.cr/dotlrn/classes/IF/IF3602/S-2-2026.CA.IF3602.1/evaluation/tda-ce-estudiante/tda-index?loc=1).
 :::
@@ -70,15 +70,13 @@ donde $\vec{\tau}$ es el torque y $\vec{\omega}$ es la velocidad angular.
 $$\vec{a}=(0,3\,\text{ m})\hat{\iota}, \; \vec{b}=(0,4 \,\text{ m})\hat{\jmath} \quad\text{y}\quad \vec{c}=(0,2  \,\text{ m})\hat{\kappa}$$
 
 
-<!-- ````{solution} ex1-t1-2026
-:label: solution-ex1-t1-2026
-:class: dropdown 
+
 
 ```{include} ./solucion_ex1_t1_2026.md
 
 ```
 
-```` -->
+
 
 ## Ejercicio 2 [35 puntos]
 
@@ -99,15 +97,13 @@ $$\mathcal{E} = -N_2\frac{d\Phi_B}{dt},$$
 donde $N_2$ es el número de vueltas de la bobina secundaria y $\Phi_B$ es el flujo magnético a través de cada vuelta.
 
 
-<!-- ````{solution} ex2-t1-2026
-:label: solution-ex2-t1-2026
-:class: dropdown 
+
 
 ```{include} ./solucion_ex2_t1_2026.md
 
 ```
 
-```` -->
+
 
 
 
@@ -135,12 +131,8 @@ $$\nabla\cdot(k\nabla T) + q_{\text{gen}} = 0.$$
 
 
 
-<!-- ````{solution} ex3-t1-2026
-:label: solution-ex3-t1-2026
-:class: dropdown 
+
 
 ```{include} ./solucion_ex3_t1_2026.md
 
 ```
-
-```` -->
