@@ -1,5 +1,5 @@
 ---
-title: Integrales de contorno (borrador)
+title: Integrales de contorno
 description: Integrales de contorno
 short_title: Integrales de contorno
 author: " "
