@@ -19,7 +19,7 @@ kernelspec:
   name: python3
 ---
 
-En esta página se presentan gráficas de funciones de variable compleja ($\sin z$, $\cos z$, $\exp z$, $\log z$, entre otras) generadas con Python, usando NumPy y Matplotlib. Cada gráfica va acompañada del código que la produce, organizado en celdas ejecutables.
+En esta página se presentan gráficas de funciones de variable compleja ($\sin z$, $\cos z$, $\exp z$, $\log z$, entre otras) generadas con Python, usando NumPy y Matplotlib, así como plotly. Cada gráfica va acompañada del código que la produce, organizado en celdas ejecutables.
 
 ```{note}
 Las celdas de código son interactivas: puede ejecutarlas y modificarlas directamente en el navegador con el botón de ejecución en vivo ( 🚀 ), o bien ejecutarlas localmente con Jupyter.

@@ -27,7 +27,7 @@ project:
         - file: ./02_numeros_complejos/semana06/semana06_lectura.md
         - file: ./02_numeros_complejos/graficas_funciones_complejas.md
         - file: ./02_numeros_complejos/semana06/semana06_practica.md
-    - title: Semana 7 (borrador)
+    - title: Semana 7 
       children:
         - file: ./02_numeros_complejos/semana07/semana07_lectura.md
         - file: ./02_numeros_complejos/semana07/semana07_practica.md

@@ -38,7 +38,7 @@ La integral no "ve" singularidades externas: solo cuenta lo encerrado.
 
 ---
 
-**(d)** La única singularidad es $z_0 = \pi/2$, con $\pi/2 \approx 1.571 < 3$: está **dentro**. Escribimos el integrando como $\dfrac{f(z)}{(z-z_0)^{n+1}}$ con $f(z) = \cos z$ y $n+1 = 2 \Rightarrow n=1$. La versión para **derivadas** de la fórmula integral de Cauchy da:
+**(d)** La única singularidad es $z_0 = \pi/2$, con $\pi/2 \approx 1,571 < 3$: está **dentro**. Escribimos el integrando como $\dfrac{f(z)}{(z-z_0)^{n+1}}$ con $f(z) = \cos z$ y $n+1 = 2 \Rightarrow n=1$. La versión para **derivadas** de la fórmula integral de Cauchy da:
 
 $$
 \oint_C \frac{\cos z}{(z-\pi/2)^2}\,dz = \frac{2\pi i}{1!}\,f'(\pi/2) = 2\pi i\,\big(-\sin(\pi/2)\big) = -2\pi i.

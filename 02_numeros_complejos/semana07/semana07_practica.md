@@ -103,7 +103,7 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```
 ````
 
-````{exercise}
+<!-- ````{exercise}
 :label: s7_ex6
 
 ```{include} ./ejercicios/s7_ex6.md
@@ -118,7 +118,7 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```{include} ./ejercicios/solucion_s7_ex6.md
 
 ```
-````
+```` -->
 
 ````{exercise}
 :label: s7_ex7
