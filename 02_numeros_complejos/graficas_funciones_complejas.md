@@ -1,4 +1,11 @@
 ---
+title: Gráficas de funciones de variable compleja 
+description: Gráficas de funciones de variable compleja 
+short_title: Gráficas de funciones de variable compleja 
+author: " "
+tags: [numeros_complejos, logaritmo, trigonometricas-inversas, hiperbolicas-inversas]
+subject: Variable compleja - Semana 6
+keywords: [funciones, logaritmo, multivaluación, ramas, trigonométricas, hiperbólicas, inversas]
 jupytext:
   formats: ipynb,md:myst
   text_representation:
@@ -22,7 +29,7 @@ En esta página se presentan gráficas de funciones de variable compleja ($\sin 
 ```{note}
 Las celdas de código son interactivas: puede ejecutarlas y modificarlas directamente en el navegador con el botón de ejecución en vivo ( 🚀 ), o bien ejecutarlas localmente con Jupyter.
 ```
-
+## Grásfcas de funciones de variable compleja
 
 ### $\sin (z)$
 

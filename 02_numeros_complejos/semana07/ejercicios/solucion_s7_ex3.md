@@ -27,7 +27,7 @@ $$
 Ambos coinciden, como debía ser. Evaluando con $e^{i\pi/2} = i$:
 
 $$
-e^{1+i\pi/2} - 1 = e\cdot e^{i\pi/2} - 1 = ie - 1 \;=\; \boxed{-1 + e\,i} \;\approx\; -1 + 2.718\,i.
+e^{1+i\pi/2} - 1 = e\cdot e^{i\pi/2} - 1 = ie - 1 \;=\; \boxed{-1 + e\,i} \;\approx\; -1 + 2,718\,i.
 $$
 
 ---
