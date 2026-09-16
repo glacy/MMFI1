@@ -37,7 +37,6 @@ Al completar esta lección, serás capaz de
 
 3. **Aplicar los teoremas centrales de la teoría de Cauchy** — independencia del camino, Cauchy-Goursat, fórmula integral de Cauchy y su versión para derivadas — para evaluar integrales cerradas sin parametrizar nada.
 
-4. **Conectar la analiticidad con la física**: evaluar integrales reales por métodos de contorno, leer las ecuaciones de Cauchy–Riemann como la ecuación de Laplace en 2D, y deducir las relaciones de dispersión de Kramers–Kronig, donde la causalidad de una respuesta física se traduce en analiticidad en el semiplano superior.
 ```
 
 +++ { "part": "abstract" }
