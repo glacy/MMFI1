@@ -1,5 +1,5 @@
 ---
-title: Integrales de contorno
+title: Integrales de contorno (borrador)
 description: Integrales de contorno
 short_title: Integrales de contorno
 author: " "
@@ -48,7 +48,7 @@ Durante las semanas pasadas construimos el plano complejo: números, funciones e
 
 En las semanas 4, 5 y 6 estudiamos los números complejos, sus funciones elementales y la estructura de las funciones multivaluadas. Ahora llega el turno del cálculo diferencial e integral complejo.
 
-La pregunta que guía esta semana es triple. Primero, la fundacional: ¿qué significa **derivar** cuando $z$ puede aproximarse a un punto desde *cualquier dirección* del plano? Su respuesta — las condiciones de Cauchy–Riemann — define la propiedad central del curso: la **analiticidad**. Segundo, la operativa: ¿qué significa $\int f(z)\,dz$ cuando $z$ recorre una curva del plano? Tercero, la estructural: ¿de qué depende el resultado? En variable real, $\int_a^b f(x)\,dx$ depende solo de los extremos — es el teorema fundamental del cálculo. Veremos que en el plano complejo esta propiedad es **excepcional, no general**: sobrevive solo para funciones analíticas, y su extensión a contornos cerrados (el teorema de Cauchy-Goursat) es la puerta de entrada a toda la teoría de aplicaciones.
+La pregunta que guía esta semana es triple. Primero, la fundacional: ¿qué significa **derivar** cuando $z$ puede aproximarse a un punto desde *cualquier dirección* del plano? Su respuesta — las condiciones de Cauchy–Riemann — define la propiedad central: la **analiticidad**. Segundo, la operativa: ¿qué significa $\int f(z)\,dz$ cuando $z$ recorre una curva del plano? Tercero, la estructural: ¿de qué depende el resultado? En variable real, $\int_a^b f(x)\,dx$ depende solo de los extremos — es el teorema fundamental del cálculo. Veremos que en el plano complejo esta propiedad es **excepcional, no general**: sobrevive solo para funciones analíticas, y su extensión a contornos cerrados (el teorema de Cauchy-Goursat) es la puerta de entrada a toda la teoría de aplicaciones.
 
 # Derivar en el plano complejo: las condiciones de Cauchy–Riemann
 
@@ -60,7 +60,12 @@ $$
 
 porque ahora $z$ puede llegar a $z_0$ **desde infinitas direcciones** (arriba, abajo, en espiral, tangencialmente...). El límite debe dar **el mismo número sea cual sea el camino**. Que esto sea posible es la excepción, no la regla — y las funciones que lo logran tienen propiedades extraordinarias.
 
-![Distintas aproximaciones a $z_0$](./../images/limite_complejo.svg 'Distintas aproximaciones a $z_0$')
+```{figure} ./../images/limite_complejo.svg
+:label: fig-limite_complejo.svg
+:alt: Distintas aproximaciones a $z_0$
+:align: center
+Distintas aproximaciones a $z_0$.
+```
 
 Escribamos $f=u+iv$ con $u$, $v$ funciones reales de $(x,y)$ y evaluemos el límite por dos caminos ortogonales. **Horizontal** ($h$ real, $z=z_0+h$): la derivada parcial respecto a $x$,
 
@@ -74,7 +79,7 @@ $$
 f'_y = \frac{1}{i}\frac{\partial f}{\partial y} = -i(u_y+i\,v_y) = v_y - i\,u_y.
 $$
 
-Si la derivada compleja existe, ambos resultados deben coincidir. Igualando partes reales e imaginarias ($f'_x=f'_y$) obtenemos las **condiciones de Cauchy–Riemann**:
+Si la derivada compleja existe, ambos resultados deben coincidir. Igualando partes reales e imaginarias ($f'_x=f'_y$) obtenemos las **[condiciones de Cauchy–Riemann](https://es.wikipedia.org/wiki/Ecuaciones_de_Cauchy-Riemann)**:
 
 :::{math}
 :label: eq-cr
@@ -95,13 +100,21 @@ Son dos ecuaciones acopladas para las partes real e imaginaria: no basta que $u$
 
 :::{note} Ejemplos: quién tiene la licencia y quién no
 
-**$f(z)=z^2$:** $u=x^2-y^2$, $v=2xy$. Entonces $u_x=2x=v_y$ y $u_y=-2y=-v_x$: cumple {eq}`eq-cr` en todo el plano → **analítica en todo el plano** (función *entera*). Lo mismo vale para todo polinomio, y para $e^z$, $\sin z$, $\cos z$, $\sinh z$, $\cosh z$: todas enteras.
+- **$f(z)=z^2$:** 
 
-**$f(z)=\bar z=x-iy$:** $u=x$, $v=-y$. Entonces $u_x=1$ y $v_y=-1$: viola {eq}`eq-cr` en **cada** punto del plano → no analítica en ningún lado. (La verificarán en detalle en la práctica: es la función que rompe la independencia del camino.)
+Para este caso, $u=x^2-y^2$, $v=2xy$. Entonces $u_x=2x=v_y$ y $u_y=-2y=-v_x$: cumple {eq}`eq-cr` en todo el plano → **analítica en todo el plano** (función *entera*). Lo mismo vale para todo polinomio, y para $e^z$, $\sin z$, $\cos z$, $\sinh z$, $\cosh z$: todas enteras.
 
-**$f(z)=|z|^2=x^2+y^2$:** $u=x^2+y^2$, $v=0$. Cauchy–Riemann exige $2x=0$ y $2y=0$: solo se cumplen en $z=0$. La función es diferenciable en **un único punto**, pero no analítica en ningún dominio: un recordatorio de que analiticidad requiere una *vecindad* completa.
+- **$f(z)=\bar z=x-iy$:** 
 
-**$f(z)=1/z$ y las ramas de la semana 6:** $\frac{1}{z}$ cumple Cauchy–Riemann en todo el plano **excepto en $z=0$**: es analítica en el plano pinchado, y $z=0$ es su **singularidad**. Igual con las ramas de $\ln z$ y $\sqrt{z}$: son analíticas exactamente en el plano *cortado* de la semana 6. Los cortes de rama resultan ser, en este lenguaje, las fronteras del dominio de analiticidad.
+En este caso $u=x$, $v=-y$. Entonces $u_x=1$ y $v_y=-1$: viola {eq}`eq-cr` en **cada** punto del plano → no analítica en ningún lado. 
+
+- **$f(z)=|z|^2=x^2+y^2$:**
+
+Para esta función, $u=x^2+y^2$, $v=0$. Cauchy–Riemann exige $2x=0$ y $2y=0$: solo se cumplen en $z=0$. La función es diferenciable en **un único punto**, pero no analítica en ningún dominio: un recordatorio de que analiticidad requiere una *vecindad* completa.
+
+- **$f(z)=1/z$:** 
+
+$\frac{1}{z}$ cumple Cauchy–Riemann en todo el plano **excepto en $z=0$**: es analítica en el plano "pinchado" (y sus ramas), y $z=0$ es su **singularidad**. Igual con las ramas de $\ln z$ y $\sqrt{z}$: son analíticas exactamente en el plano *cortado* (rama principal). Los cortes de rama resultan ser, en este lenguaje, las fronteras del dominio de analiticidad.
 :::
 
 ## La física escondida en Cauchy–Riemann
@@ -128,7 +141,7 @@ $$
 
 con $x(t)$, $y(t)$ derivables y $z'(t)\neq 0$ (curva **suave**); si la curva es suave por tramos la llamamos **contorno**. La orientación importa: recorrer $z(t)$ de $a$ a $b$ o de $b$ a $a$ son caminos distintos, y ya anticipamos que sus integrales diferirán en un signo.
 
-:::{note} Caminos que usaremos todo el semestre
+:::{note} Algunos caminos "típicos"
 
 - **Segmento recto** de $z_1$ a $z_2$: $\;z(t) = z_1 + (z_2-z_1)\,t$, $t\in[0,1]$.
 - **Circunferencia** de centro $z_0$ y radio $r$: $\;z(t) = z_0 + r e^{it}$, $t\in[0,2\pi]$. El sentido de crecimiento de $t$ es **antihorario**: es la **orientación positiva**.
@@ -151,7 +164,7 @@ $$
 \qquad f = u + iv,
 $$
 
-pero la fórmula paramétrica {eq}`eq-def integral` es casi siempre la más cómoda: **parametrizar y calcular**.
+pero la fórmula paramétrica {eq}`eq-def-integral` es casi siempre la más cómoda: **parametrizar y calcular**.
 
 La definición hereda las propiedades esperables:
 
@@ -191,17 +204,25 @@ $$
 **sea cual sea el camino** (siempre que permanezca en $\Omega$). El dominio debe ser **simplemente conexo**: sin agujeros.
 :::
 
+```{figure} ./../images/contorno_cerrado.svg
+:label: fig-contorno_cerrado.svg
+:alt: Un contorno cerrado $C$ en una región simple conectada $\Omega$
+:align: center
+Un contorno cerrado $C$ en una región simplemente conexa $\Omega$.
+```
+
+
 :::{note} Ejemplo: dos caminos, un solo resultado
 
 Calculemos $\displaystyle\int_C e^z\,dz$ de $0$ a $1 + i\pi/2$.
 
-*Camino recto*: $z(t) = t(1+i\pi/2)$, $t\in[0,1]$:
+- *Camino recto*: $z(t) = t(1+i\pi/2)$, $t\in[0,1]$:
 
 $$
 \int_0^1 e^{t(1+i\pi/2)}\,(1+i\pi/2)\,dt = e^{1+i\pi/2} - e^0.
 $$
 
-*Camino en L* (de $0$ a $1$, luego de $1$ a $1+i\pi/2$): se obtiene, tras dos integrales elementales, el mismo valor. En ambos casos:
+- *Camino en L* (de $0$ a $1$, luego de $1$ a $1+i\pi/2$): se obtiene, tras dos integrales elementales, el mismo valor. En ambos casos:
 
 $$
 \int_C e^z\,dz = e^{1+i\pi/2} - 1 = ie - 1,
@@ -210,9 +231,9 @@ $$
 donde usamos $e^{i\pi/2}=i$. No sorprende: $e^z$ es analítica en todo el plano (dominio simplemente conexo) y tiene antiderivada.
 :::
 
-La independencia del camino tiene un contrapunto inmediato: si una función **no** tiene antiderivada en el dominio, sus integrales **sí** dependen del camino. Es el caso de $\bar z = x - iy$: no es analítica (falla las ecuaciones de Cauchy-Riemann {eq}`eq-cr`, como verificarán en la práctica), y su integral de $0$ a $1+i$ cambia si se va por el segmento recto o por el camino en L. La analiticidad no es un detalle técnico: es lo que decide si el teorema fundamental aplica.
+La independencia del camino tiene un contrapunto inmediato: si una función **no** tiene antiderivada en el dominio, sus integrales **sí** dependen del camino. Es el caso de $\bar z = x - iy$: no es analítica (falla las ecuaciones de Cauchy-Riemann {eq}`eq-cr`), y su integral de $0$ a $1+i$ cambia si se va por el segmento recto o por el "*camino en L*". La analiticidad no es un detalle técnico: es lo que decide si el teorema fundamental aplica.
 
-Y hay un caso intermedio fascinante: $f(z) = 1/z$ tiene antiderivada ($\ln z$), pero $\ln z$ es **multivaluada**. Por eso $1/z$ es integrable sin problema por caminos abiertos que no crucen el corte de rama, mientras que toda vuelta cerrada alrededor del origen acumula el $2\pi i$ del ejemplo anterior. El corte de rama de la semana 6 es, desde el punto de vista integral, la frontera más allá de la cual el teorema fundamental deja de aplicar con la rama elegida.
+Y hay un caso intermedio fascinante: $f(z) = 1/z$ tiene antiderivada ($\ln z$), pero $\ln z$ es **multivaluada**. Por eso $1/z$ es integrable sin problema por caminos abiertos que no crucen el corte de rama, mientras que toda vuelta cerrada alrededor del origen acumula el $2\pi i$ del ejemplo anterior. El corte de rama es, desde el punto de vista integral, la frontera más allá de la cual el teorema fundamental deja de aplicar con la rama elegida.
 
 # El teorema de Cauchy-Goursat
 
@@ -241,9 +262,16 @@ $$
 ambos recorridos en el mismo sentido. En dominios con agujeros (multiplemente conexos), la integral sobre el contorno exterior es igual a la **suma** de las integrales sobre los contornos interiores. En particular: el contorno puede deformarse con total libertad, **siempre que no se cruce una singularidad**. El valor de la integral solo registra qué singularidades encierra.
 :::
 
+```{figure} ./../images/Cauchy_Goursat.svg
+:label: fig-Cauchy_Goursat.svg
+:alt: Contornos de Cauchy-Goursat
+:align: center
+Contornos de Cauchy- Goursat.
+```
+
 # La fórmula integral de Cauchy
 
-Este es el resultado central de la semana, y uno de los más profundos del análisis matemático. Si $f$ es analítica en una región que contiene al contorno cerrado $C$ y su interior, y $z_0$ es un punto interior a $C$, entonces
+Este es el resultado central y uno de los más profundos del análisis matemático. Si $f$ es analítica en una región que contiene al contorno cerrado $C$ y su interior, y $z_0$ es un punto interior a $C$, entonces
 
 :::{math}
 :label: eq-cif
@@ -323,48 +351,13 @@ $$
 \boxed{\;\int_{-\infty}^{\infty} \frac{dx}{1+x^2} = \pi\;}
 $$
 
-(Consistente con el valor conocido $\pi$, pues $\int \frac{dx}{1+x^2} = \arctan x$.) La parte de la semana que viene — los **residuos** — automatiza el paso 1; pero la maquinaria conceptual es exactamente la de esta semana: singularidad encerrada + fórmula de Cauchy + arco que desaparece.
-
-## Relaciones de dispersión: Kramers–Kronig
-
-La segunda aplicación es la que convierte la analiticidad en física de materiales. Cualquier sistema **causal** — que no responde antes del estímulo — tiene una función de respuesta $\chi(\omega)$ (susceptibilidad eléctrica, índice de refracción, impedancia de un circuito) que es **analítica en el semiplano superior** $\Im\omega > 0$: físicamente, un polo con $\Im\omega>0$ haría crecer la respuesta en el tiempo, violando la causalidad (damping requiere $\Im\omega\le 0$).
-
-Si $\chi$ es analítica en el semiplano superior y decae suficientemente lejos, la fórmula integral de Cauchy {eq}`eq-cif` aplicada al semiplano (el "contorno" es el eje real cerrado con un semicírculo infinito) produce, separando partes reales e imaginarias, las **relaciones de Kramers–Kronig**:
-
-:::{math}
-:label: eq-kk
-\begin{aligned}
-\Re\,\chi(\omega_0) &= \frac{1}{\pi}\,\mathcal{P}\!\int_{-\infty}^{\infty} \frac{\Im\,\chi(\omega)}{\omega-\omega_0}\,d\omega,\\
-\Im\,\chi(\omega_0) &= -\frac{1}{\pi}\,\mathcal{P}\!\int_{-\infty}^{\infty} \frac{\Re\,\chi(\omega)}{\omega-\omega_0}\,d\omega,
-\end{aligned}
-:::
-
-donde $\mathcal{P}$ denota valor principal. La lectura física es potente:
-
-- **Conocer la absorción es conocer la dispersión**: la parte imaginaria de $\chi$ (absorción, pérdida) determina la parte real (velocidad de fase, reactancia) en *todas* las frecuencias, y viceversa.
-- **Medir menos, saber más**: en espectroscopía óptica basta medir, por ejemplo, la absorbancia en un rango para reconstruir el índice de refracción — método estándar en plasmonía, semiconductores y diseño de metamateriales.
-- **Causalidad es verificable**: si un modelo de material propuesto viola {eq}`eq-kk`, el modelo responde antes del estímulo: no es físico.
-
-Es la misma lógica de la fórmula de Cauchy en su forma extrema: la frontera (el eje real, donde se mide) codifica todo el semiplano (la respuesta completa).
-
-## Potenciales en 2D y funciones de Green
-
-Cerramos conectando con la semana 6. La integral madre
-
-$$
-\oint_{|z-z_0|=\rho} \frac{dz}{z-z_0} = 2\pi i
-$$
-
-vale $2\pi i$ **para cualquier radio $\rho>0$**: es invariante de escala y de posición. Eso es exactamente el comportamiento de una [función delta](https://es.wikipedia.org/wiki/Delta_de_Dirac) bidimensional: $\frac{1}{\pi}\,\frac{z-z_0}{|z-z_0|^2}$ (cuya parte "dz" da el $2\pi i$) es la delta compleja, y el potencial logarítmico $\ln|z-z_0|$ de la semana 6 es su antiderivada radial. La fórmula integral de Cauchy {eq}`eq-cif` no es entonces una fórmula aislada, sino la afirmación de que **el valor en el centro es el promedio (complejo, ponderado) de la frontera**, con la delta como núcleo de reconstrucción. Este es el mecanismo detrás de las funciones de Green de la ecuación de Laplace en 2D — y la antesala natural de la teoría de residuos de la próxima semana, donde el $2\pi i$ se convertirá en la firma sistemática de cada singularidad.
 
 :::{seealso} Referencias
+@arfken2005mathematical [Cap. 6.2 - 6.4 "FUNCTIONS OF A COMPLEX VARIABLE I", pág. 413-430]
 
-@boas2006mathematical [Cap. 14 "Complex Integration", pág. 331-357]
+@boas2006mathematical [Cap. 14 "Functions of a Complex Variable", pág. 666-678]
 
-@ablowitz2003complex [Cap. 2-3: integrales de contorno y aplicaciones]
-
-@arfken2005mathematical [Cap. 6.2 "CAUCHY–RIEMANN CONDITIONS", pág. 413-]
-
+@riley2006mathematical [Cao. 24 "Complex variables", pág. 824-830]
 :::
 
 :::{note} Transparencia: uso de inteligencia artificial
