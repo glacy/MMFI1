@@ -10,16 +10,16 @@ exports:
   - format: pdf
     template: curvenote
     output: ./semana07_lectura.pdf
-# downloads:
-#   - file: ./semana07_lectura.md
-#     title: semana07_lectura.md
-#   - file: ./semana07_lectura.pdf
-#     title: semana07_lectura.pdf
+downloads:
+  - file: ./semana07_lectura.md
+    title: semana07_lectura.md
+  - file: ./semana07_lectura.pdf
+    title: semana07_lectura.pdf
 ---
 
 :::{aside} [Diana Trujillo](https://es.wikipedia.org/wiki/Diana_Trujillo)
 
-Ingeniera aeroespacial colombiana del [Laboratorio de Propulsión a Chorro](https://es.wikipedia.org/wiki/Laboratorio_de_Propulsi%C3%B3n_a_Reacci%C3%B3n) (JPL) de la NASA, donde lidera el equipo de ingeniería a cargo del **brazo robótico del rover Perseverance**: el mecanismo que colecta y sella en la superficie marciana los tubos de muestra de roca — el sistema de almacenamiento de muestras más complejo jamás enviado a otro planeta. Su trayectoria personal es una lección en sí misma: emigró de Cali a los 17 años sin hablar inglés y con solo 300 dólares, trabajó como ama de llaves mientras estudiaba, pasó por el Miami Dade College y se graduó como ingeniera aeroespacial en la Universidad de Maryland (2007); fue la primera mujer migrante hispana admitida en la Academia de la NASA. Antes de Perseverance desarrolló la herramienta de eliminación de polvo y los sistemas de muestreo del rover Curiosity. El 18 de febrero de 2021 fue la narradora de la **primera transmisión en vivo y en español de un aterrizaje planetario** en la historia de la NASA (*Juntos Perseveramos*); ese año Colombia la condecoró con la Cruz de Plata de la [Orden de Boyacá](https://es.wikipedia.org/wiki/Orden_de_Boyac%C3%A1). Mentora de la fraternidad Brooke Owens, dedica su voz a inspirar a jóvenes de América Latina hacia las carreras científicas y de ingeniería.
+Ingeniera aeroespacial colombiana del [Laboratorio de Propulsión a Chorro](https://es.wikipedia.org/wiki/Laboratorio_de_Propulsi%C3%B3n_a_Reacci%C3%B3n) (JPL) de la NASA, donde lideró el equipo de ingeniería a cargo del **brazo robótico del rover Perseverance**: el mecanismo que colecta y sella en la superficie marciana los tubos de muestra de roca — el sistema de almacenamiento de muestras más complejo jamás enviado a otro planeta. Su trayectoria personal es una lección en sí misma: emigró de Cali a los 17 años sin hablar inglés y con solo 300 dólares, trabajó como ama de llaves mientras estudiaba, pasó por el Miami Dade College y se graduó como ingeniera aeroespacial en la Universidad de Maryland (2007); fue la primera mujer migrante hispana admitida en la Academia de la NASA. Antes de Perseverance desarrolló la herramienta de eliminación de polvo y los sistemas de muestreo del rover Curiosity. El 18 de febrero de 2021 fue la narradora de la **primera transmisión en vivo y en español de un aterrizaje planetario** en la historia de la NASA (*Juntos Perseveramos*); ese año Colombia la condecoró con la Cruz de Plata de la [Orden de Boyacá](https://es.wikipedia.org/wiki/Orden_de_Boyac%C3%A1). Mentora de la fraternidad Brooke Owens, dedica su voz a inspirar a jóvenes de América Latina hacia las carreras científicas y de ingeniería.
 ```{figure} ./../images/Diana_Trujillo.png
 :label: fig-Diana_Trujillo.png
 :alt: retrato de Dra. Diana Trujillo
