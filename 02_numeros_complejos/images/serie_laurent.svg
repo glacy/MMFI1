@@ -1,0 +1,21 @@
+<svg width="420" height="420" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="420" height="420" fill="white"/>
+  <line x1="25" y1="210" x2="402" y2="210" stroke="#999999" stroke-width="1.2"/>
+  <line x1="210" y1="25" x2="210" y2="395" stroke="#999999" stroke-width="1.2"/>
+  <polygon points="402,210 393,206 393,214" fill="#999999"/>
+  <polygon points="210,25 206,34 214,34" fill="#999999"/>
+  <text x="386" y="230" font-family="serif" font-style="italic" font-size="17" fill="#444444">Re z</text>
+  <text x="220" y="38" font-family="serif" font-style="italic" font-size="17" fill="#444444">Im z</text>
+  <circle cx="210" cy="210" r="70" fill="#e8eefc" fill-opacity="0.55" stroke="none"/>
+  <circle cx="210" cy="210" r="70" fill="none" stroke="#333333" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="210" cy="210" r="150" fill="none" stroke="#333333" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="210" cy="210" r="3.5" fill="#c0392b"/>
+  <text x="218" y="230" font-family="serif" font-style="italic" font-size="18" fill="#c0392b">z&#8320;</text>
+  <line x1="210" y1="210" x2="259" y2="260" stroke="#c0392b" stroke-width="1.3"/>
+  <line x1="210" y1="210" x2="316" y2="316" stroke="#2c3e50" stroke-width="1.3"/>
+  <text x="234" y="246" font-family="serif" font-style="italic" font-size="16" fill="#c0392b">r</text>
+  <text x="276" y="286" font-family="serif" font-style="italic" font-size="16" fill="#2c3e50">R</text>
+  <circle cx="285" cy="130" r="4" fill="#1a6b3c"/>
+  <text x="296" y="128" font-family="serif" font-style="italic" font-size="18" fill="#1a6b3c">z</text>
+  <text x="318" y="120" font-family="serif" font-size="14" fill="#777777">anillo de convergencia</text>
+</svg>
