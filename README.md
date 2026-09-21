@@ -2,7 +2,7 @@
 
 Repositorio del curso IF3602, Instituto Tecnológico de Costa Rica.
 
-[![Sitio en producción](https://img.shields.io/badge/sitio-mmf--1.vercel.app-black?style=flat-square&logo=vercel)](https://mmfi-1.vercel.app/)
+[![Sitio en producción](https://img.shields.io/badge/sitio-mmfi--1.vercel.app-black?style=flat-square&logo=vercel)](https://mmfi-1.vercel.app/)
 
 ## Descripción del curso
 
