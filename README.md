@@ -2,6 +2,8 @@
 
 Repositorio del curso IF3602, Instituto Tecnológico de Costa Rica.
 
+[![Sitio en producción](https://img.shields.io/badge/sitio-mmf--1.vercel.app-black?style=flat-square&logo=vercel)](https://mmfi-1.vercel.app/)
+
 ## Descripción del curso
 
 Métodos Matemáticos para Física e Ingeniería I proporciona conocimientos en diversas técnicas y métodos matemáticos avanzados para abordar problemas de física e ingeniería. El curso tiene como requisito MA2105 Ecuaciones Diferenciales.
