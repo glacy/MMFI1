@@ -67,7 +67,7 @@ exports:
 ```
 
 
-```{include} ./solucion_ex2_e1.md
+```{include} ./solucion_ex3_e1.md
 
 ```
 
