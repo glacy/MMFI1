@@ -37,7 +37,6 @@ Al completar esta lección, serás capaz de
 
 3. **Evaluar integrales reales** — racionales, trigonométricas y de tipo Fourier — mediante el método de contornos, y **deducir las relaciones de dispersión de Kramers–Kronig**, que ligan absorción y refracción de todo material causal.
 
-4. **Usar transformaciones conformes** para trasladar problemas planos de potencial (electrostática, flujo de fluidos, conducción de calor) de dominios complicados a dominios donde la solución es trivial.
 ```
 
 +++ { "part": "abstract" }
@@ -82,7 +81,42 @@ donde $C$ es cualquier contorno cerrado dentro del anillo que rodea una vez a $z
 Anillo de convergencia $r < |z - z_0| < R$ de una serie de Laurent: la función es analítica en el anillo, no necesariamente en el "agujero".
 ```
 
-Dos observaciones antes de usar el teorema. Primero, la serie de Laurent **generaliza** a Taylor: si no hay agujero ($r=0$), no hay potencias negativas y recuperamos la serie de Taylor. Segundo, la parte principal $\sum b_n (z-z_0)^{-n}$ es la firma de la singularidad: describe *exactamente* el comportamiento explosivo cerca de $z_0$, y no existe en el mundo de Taylor. En la práctica casi nunca se calculan los coeficientes con la integral de {eq}`eq-laurent`: se combinan **series geométricas y series conocidas** ($e^z$, $\sin z$, ...) en cada anillo, como muestra el siguiente ejemplo.
+Dos observaciones antes de usar el teorema. Primero, la serie de Laurent **generaliza** a Taylor: si no hay agujero ($r=0$), no hay potencias negativas y recuperamos la serie de Taylor. Segundo, la parte principal $\sum b_n (z-z_0)^{-n}$ es la firma de la singularidad: describe *exactamente* el comportamiento explosivo cerca de $z_0$, y no existe en el mundo de Taylor.
+
+Hay una tercera observación, y es la bisagra con la semana anterior: la fórmula de los coeficientes en {eq}`eq-laurent` tiene *exactamente* la estructura de la **fórmula integral de Cauchy para derivadas** de la semana 7,
+
+$$
+f^{(n)}(z_0) = \frac{n!}{2\pi i}\oint_C \frac{f(z)}{(z - z_0)^{n+1}}\,dz,
+\qquad n = 0, 1, 2, \dots
+$$
+
+La de Cauchy exigía $f$ analítica *dentro y sobre* $C$, y devolvía derivadas; la de Laurent pide analiticidad solo en el anillo, y devuelve coeficientes de una expansión con potencias de todo signo. Si el centro $z_0$ resulta ser un punto regular de $f$ — el caso $r = 0$ de la primera observación — la unicidad de las expansiones en potencias fuerza $c_n = f^{(n)}(z_0)/n!$ para $n \ge 0$ (y $c_n = 0$ para $n < 0$): la fórmula de los coeficientes de Laurent se convierte, término a término, en la fórmula integral de Cauchy. Dicho de otro modo: **el teorema de Laurent es la fórmula integral de Cauchy reescrita para dominios con agujeros**, y de hecho su demostración la utiliza — se parte la integral del anillo en dos contornos y cada trozo se expande como serie geométrica, con la técnica de la semana 7.
+
+La conexión también apunta hacia adelante. Tómese la fórmula integral de Cauchy en su forma más desnuda, $n = 0$:
+
+$$
+f(z_0) = \frac{1}{2\pi i}\oint_C \frac{f(z)}{z - z_0}\,dz.
+$$
+
+El integrando $\frac{f(z)}{z - z_0}$ tiene en $z_0$ un polo simple, y la integral captura justo el coeficiente de $(z - z_0)^{-1}$ en su serie de Laurent: sin decirlo, la fórmula integral de Cauchy ya era una máquina de extraer ese coeficiente. Esta semana no haremos más que afilar esa lectura: cuando el contorno rodea puntos donde $f$ deja de ser analítica, la integral cerrada sigue devolviendo un único número — ese coeficiente, que llamaremos **residuo** — y el teorema del residuo aparecerá como lo que es: la prolongación natural de Cauchy al caso con singularidades.
+
+## Series geométricas y convergencia: la herramienta del oficio
+
+Toda esta semana descansa en una identidad elemental que sobrevive intacta al salto a $\mathbb{C}$: la **serie geométrica**
+
+$$
+\frac{1}{1-w} = 1 + w + w^2 + \cdots = \sum_{n=0}^{\infty} w^n
+\qquad (|w| < 1),
+$$
+
+y su versión para $|w| > 1$, dividendo y divisor entre $w$:
+
+$$
+\frac{1}{1-w} = -\frac{1}{w}\,\frac{1}{1 - 1/w} = -\sum_{n=1}^{\infty} w^{-n}
+\qquad (|w| > 1).
+$$
+
+El criterio del cociente explica la estructura de la convergencia: una serie de potencias $\sum a_n (z-z_0)^n$ converge absolutamente dentro de un disco $|z - z_0| < R$ y diverge fuera de él (en la frontera, nada se garantiza en general); aplicado a la parte principal de una serie de Laurent, el mismo criterio produce un radio interior $r$, y la serie completa converge en el **anillo** $r < |z - z_0| < R$ que enuncia el teorema. La consecuencia práctica es la regla de oro del cálculo de estas series: para expandir una fracción como $\frac{1}{z-a}$ hay que **fabricar un $w$ con $|w|<1$** — reescribir $\frac{1}{z-a} = -\frac1a \frac{1}{1 - z/a}$ si $|z| < |a|$, o $\frac{1}{z-a} = \frac{1}{z}\frac{1}{1 - a/z}$ si $|z| > |a|$ — y la reescritura elegida es la que *decide* en qué región converge la expansión. De ahí que en la práctica casi nunca se calculen los coeficientes con la integral de {eq}`eq-laurent`: se combinan **series geométricas y series conocidas** ($e^z$, $\sin z$, ...) en cada anillo, como muestra el siguiente ejemplo.
 
 :::{note} Ejemplo: una función, tres series distintas
 
@@ -477,11 +511,13 @@ mapea círculos del plano $z$ en perfiles del plano $\zeta$: el círculo que pas
 :::
 
 :::{seealso} Referencias
-@arfken2005mathematical [Cap. 6.1 - 6.5 "FUNCTIONS OF A COMPLEX VARIABLE II", pág. 425-465]
+@arfken2005mathematical [Cap. 6.5 - 6.8 "FUNCTIONS OF A COMPLEX VARIABLE I", pág. 430-454]
 
-@boas2006mathematical [Cap. 14 "Functions of a Complex Variable", pág. 678-695]
+@arfken2005mathematical [Cap. 7.1 - 7.2 "FUNCTIONS OF A COMPLEX VARIABLE II", pág. 455-489]
 
-@riley2006mathematical [Cap. 24 "Complex variables", pág. 830-860]
+@boas2006mathematical [Cap. 14.4 - 14.11 "Functions of a Complex Variable", pág. 678-721]
+
+@riley2006mathematical [Cap. 24.3 - 24.13 "Complex variables", pág. 830-867]
 :::
 
 :::{note} Transparencia: uso de inteligencia artificial
