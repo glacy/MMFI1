@@ -29,7 +29,7 @@ downloads:
 
 ````
 
-<!-- ````{solution} ex1_e1
+````{solution} ex1_e1
 :label: solucion-ex1_e1
 :class: dropdown
 
@@ -37,31 +37,13 @@ downloads:
 ```{include} ./solucion_ex1_e1.md
 
 ```
-```` -->
-
-
-
-<!-- 
-## Ejercicio 2 [50 puntos]
-````{exercise} 2
-:label: ex2_e1
-
-```{include} ./ex2_e1.md
-
-```
-
 ````
- ````{solution} ex2_e1
-:label: solucion-ex2_e1
-:class: dropdown
 
 
-```{include} ./solucion_ex2_e1.md
 
-```
-```` -->
 
 ## Ejercicio 2 [50 puntos]
+
 ````{exercise} 2
 :label: ex3_e1
 
@@ -71,7 +53,7 @@ downloads:
 
 ````
 
-<!-- ````{solution} ex3_e1
+````{solution} ex3_e1
 :label: solucion-ex3_e1
 :class: dropdown
 
@@ -79,5 +61,5 @@ downloads:
 ```{include} ./solucion_ex3_e1.md
 
 ```
-```` -->
+````
 

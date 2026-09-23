@@ -1,6 +1,5 @@
 ---
 tags: [analisis-vectorial, operador-nabla, rotacional, producto-vectorial, producto-escalar, magnetostatica, dipolo-magnetico]
-subject: IF3602 - Métodos Matemáticos para Física e Ingeniería I
 ---
 
 El potencial vectorial $\vec{A}$ de un dipolo magnético, con momento dipolar $\vec{m}$ constante, está dado por

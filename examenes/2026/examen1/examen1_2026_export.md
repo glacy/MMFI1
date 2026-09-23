@@ -49,16 +49,10 @@ exports:
 ```
 
 
-<!-- 
-````{solution} ex1_e1
-:label: solucion-ex1_e1
-:class: dropdown
-
-
 ```{include} ./solucion_ex1_e1.md
 
 ```
-```` -->
+
 
 ```{raw} latex
 \newpage
@@ -73,12 +67,7 @@ exports:
 ```
 
 
-<!-- ````{solution} ex2_e1
-:label: solucion-ex2_e1
-:class: dropdown
-
-
 ```{include} ./solucion_ex2_e1.md
 
 ```
-```` -->
+

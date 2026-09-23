@@ -1,5 +1,5 @@
 :::{hint} Instrucciones
-<!-- :class: dropdown -->
+:class: dropdown
 
 - Dispone de 1,5 horas para realizar el  examen, **individualmente**.
 - Debe mostrar la cédula de identidad o carnet universitario cuando se le solicite.

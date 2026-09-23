@@ -17,9 +17,6 @@ kernelspec:
   display_name: venv (3.12.8.final.0)
   language: python
   name: python3
-downloads:
-  - file: ./02_numeros_complejos/graficas_funciones_complejas.ipynb
-  - title: graficas_funciones_complejas.ipynb
 ---
 
 ## Gráficas de funciones de variable compleja
