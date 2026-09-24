@@ -15,6 +15,7 @@ downloads:
     title: semana08_lectura.md
   - file: ./semana08_lectura.pdf
     title: semana08_lectura.pdf
+  - file: ./laurent_tres_series.ipynb
 ---
 
 :::{aside} [Chien-Shiung Wu](https://es.wikipedia.org/wiki/Chien-Shiung_Wu)
@@ -175,6 +176,18 @@ $$
 ![Fase $\mathrm{Arg}\, f(z)$ y anillos de convergencia](./../images/fase_anillos.png 'Fase $\mathrm{Arg}\, f(z)$ y anillos de convergencia')
 
 ![Errores de cada serie por región](./../images/errores_series_laurent.png 'Módulo de $f(z)$')
+
+
+
+
+
+````{warning .simple .dropdown  icon=false open=false} ✍️ Código de las imágenes
+
+```{literalinclude} laurent_tres_series.py
+
+```
+
+````
 
 :::
 
@@ -460,5 +473,5 @@ La receta para $k>0$ exige cerrar en el semiplano **superior** (donde $e^{ikz}$ 
 
 :::{note} Transparencia: uso de inteligencia artificial
 
-Esta lección fue preparada con asistencia de un modelo de lenguaje (GLM, Z.ai) para la reorganización pedagógica del hilo conductor, la verificación de fórmulas y notación, y la corrección de erratas. Todo el contenido fue revisado, verificado y aprobado por el docente del curso, quien asume la responsabilidad académica del material.
+Esta lección fue preparada con asistencia de un modelo de lenguaje (GLM, Z.ai) para la reorganización pedagógica del hilo conductor, la verificación de fórmulas y notación, y la corrección de erratas. Así mismo para la generación de cógigo para la visualización de ejemplos. Todo el contenido fue revisado, verificado y aprobado por el docente del curso, quien asume la responsabilidad académica del material.
 :::
