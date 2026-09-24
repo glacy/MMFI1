@@ -103,19 +103,5 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```
 ````
 
-````{exercise}
-:label: s8_ex6
 
-```{include} ./ejercicios/s8_ex6.md
 
-```
-````
-
-````{solution} s8_ex6
-:label: solucion-s8_ex6
-:class: dropdown
-
-```{include} ./ejercicios/solucion_s8_ex6.md
-
-```
-````

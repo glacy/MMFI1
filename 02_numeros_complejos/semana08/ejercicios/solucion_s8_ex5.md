@@ -80,6 +80,3 @@ $$
 I = 2\pi i\left(-\frac{i}{8}\right) = \boxed{\;\frac{\pi}{4}\;}
 $$
 
-**Chequeo de sanidad:** el integrando es positivo y su integral debe ser real y positiva ✓. (Además, $x^4+4 = (x^2-2x+2)(x^2+2x+2)$ permite verificar con logaritmos y arctangentes: el resultado coincide.)
-
-**Nota:** el resultado general $\int_{-\infty}^{\infty} \frac{dx}{x^4+a^4} = \frac{\pi}{a^{3}\sqrt{2}}$ se obtiene por el mismo método — un cambio de escala $x = a\,u$ lo reduce al caso clásico $\int du/(u^4+1) = \pi/\sqrt{2}$; para $a = \sqrt{2}$ ambos coinciden.

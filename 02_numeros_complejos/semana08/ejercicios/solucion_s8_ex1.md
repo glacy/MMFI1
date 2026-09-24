@@ -17,7 +17,7 @@ $$
 \frac{1}{(z-1)(z-2)} = \frac{A}{z-1} + \frac{B}{z-2}.
 $$
 
-Cubriendo el denominador y evaluando en $z=1$ y $z=2$: $A = \frac{1}{1-2} = -1$, $B = \frac{1}{2-1} = 1$. Entonces
+de donde $A = \frac{1}{1-2} = -1$, $B = \frac{1}{2-1} = 1$. Entonces
 
 $$
 f(z) = \frac{1}{z-2} - \frac{1}{z-1}.
@@ -25,7 +25,7 @@ $$
 
 ---
 
-**(b) Series de Laurent por región.** Todo el trabajo se reduce a reconocer **series geométricas**: $\frac{1}{1-q} = \sum_{n\ge 0} q^n$ cuando $|q|<1$.
+**(b) Series de Laurent por región.** 
 
 *Región $|z| < 1$.* Aquí $|z|<1$ y $|z/2|<1$:
 
