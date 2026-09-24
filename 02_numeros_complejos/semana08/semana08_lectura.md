@@ -5,7 +5,7 @@ short_title: Residuos
 author: " "
 tags: [numeros_complejos, laurent, singularidades, residuos, kramers-kronig, mapeos-conformes]
 subject: Variable compleja - Semana 8
-keywords: [serie de Laurent, singularidades, residuos, integrales reales, relaciones de dispersión, Kramers-Kronig, transformaciones conformes, Joukowski]
+keywords: [serie de Laurent, singularidades, residuos, integrales reales]
 exports:
   - format: pdf
     template: curvenote
@@ -19,7 +19,7 @@ exports:
 
 :::{aside} [Chien-Shiung Wu](https://es.wikipedia.org/wiki/Chien-Shiung_Wu)
 
-Física experimental sinoestadounidense (1912–1997), conocida como la **primera dama de la física** y la *Madame Curie* de China. Formada en la Universidad Nacional Central (Nankín), obtuvo su doctorado en Berkeley en el laboratorio de Ernest Lawrence; incorporada al [Proyecto Manhattan](https://es.wikipedia.org/wiki/Proyecto_Manhattan), perfeccionó el método de difusión gaseosa para el enriquecimiento de uranio e identificó el xenón-135 — producto de fisión — como el **veneno neutrónico** que detenía a los primeros reactores. Ya como profesora de la Universidad Columbia se convirtió en la autoridad mundial en la [desintegración beta](https://es.wikipedia.org/wiki/Desintegraci%C3%B3n_beta): sus mediciones verificaron la teoría de Fermi y, en 1956, su célebre experimento con cobalto-60 enfriado a temperaturas criogénicas refutó el principio de [paridad](https://es.wikipedia.org/wiki/Paridad_(f%C3%ADsica)), confirmando la propuesta de Lee y Yang — que recibieron el Nobel de 1957, mientras el experimento decisivo llevaba su firma: uno de los agravios más citados de la historia del premio. Primera mujer en presidir la American Physical Society (1975), recibió la Medalla Nacional de Ciencia y el primer Premio Wolf de Física (1978). Las **resonancias nucleares** — los picos en las secciones eficaces de captura neutrónica que medía con precisión extrema — son, en el lenguaje moderno, **polos de la matriz de dispersión** en el plano complejo de la energía: la parte real del polo fija la energía de resonancia y la parte imaginaria su ancho $\Gamma$.
+Física experimental sinoestadounidense (1912–1997), conocida como la **primera dama de la física** y la *Madame Curie* de China. Formada en la Universidad Nacional Central (Nankín), obtuvo su doctorado en Berkeley en el laboratorio de Ernest Lawrence; incorporada al [Proyecto Manhattan](https://es.wikipedia.org/wiki/Proyecto_Manhattan), perfeccionó el método de difusión gaseosa para el enriquecimiento de uranio e identificó el xenón-135 — producto de fisión — como el **veneno neutrónico** que detenía a los primeros reactores. Ya como profesora de la Universidad Columbia se convirtió en la autoridad mundial en la [desintegración beta](https://es.wikipedia.org/wiki/Desintegraci%C3%B3n_beta): sus mediciones verificaron la teoría de Fermi y, en 1956, su célebre experimento con cobalto-60 enfriado a temperaturas criogénicas refutó el principio de [paridad](https://es.wikipedia.org/wiki/Paridad_(f%C3%ADsica)), confirmando la propuesta de Lee y Yang — que recibieron el Nobel de 1957, mientras el experimento decisivo llevaba su firma: uno de los agravios más citados de la historia del premio. Primera mujer en presidir la American Physical Society (1975), recibió la Medalla Nacional de Ciencia y el primer Premio Wolf de Física (1978). Las **resonancias nucleares** — los picos en las secciones eficaces de captura neutrónica que medía con precisión extrema — son, en el lenguaje moderno — **polos de la matriz de dispersión** en el plano complejo de la energía: la parte real del polo fija la energía de resonancia y la parte imaginaria su ancho $\Gamma$.
 
 ```{figure} ./../images/Chien-Shiung-Wu.png
 :label: fig-Chien_Shiung_Wu
@@ -36,7 +36,7 @@ Al completar esta lección, serás capaz de
 
 2. **Calcular residuos** con las fórmulas prácticas (incluyendo polos de orden superior) y **aplicar el teorema del residuo** para evaluar integrales cerradas sin parametrizar nada.
 
-3. **Evaluar integrales reales** — racionales, trigonométricas y de tipo Fourier — mediante el método de contornos, y **deducir las relaciones de dispersión de Kramers–Kronig**, que ligan absorción y refracción de todo material causal.
+3. **Evaluar integrales reales** — racionales, trigonométricas y de tipo Fourier — mediante el método de contornos.
 
 ```
 
@@ -209,7 +209,7 @@ Un polo de orden 1 se llama **simple**.
 > - $\frac{1}{(z^2+1)^2}$ (polos **dobles** en $\pm i$);
 > - $\tan z = \frac{\sin z}{\cos z}$ tiene polos simples en $z = \frac{\pi}{2} + k\pi$, donde $\cos z$ se anula.
 
-- **Esencial:** la parte principal es **infinita** (infinitas potencias negativas). Ejemplo paradigmático:
+- **Esencial:** la parte principal es **infinita** (infinitas potencias negativas). 
 
 $$
 e^{1/z} = 1 + \frac{1}{z} + \frac{1}{2!\,z^2} + \frac{1}{3!\,z^3} + \cdots
