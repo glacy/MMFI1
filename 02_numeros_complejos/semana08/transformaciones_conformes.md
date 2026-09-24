@@ -56,7 +56,7 @@ Un mapeo conforme deforma la retícula, pero las curvas imagen se cortan con el 
 :::{note} Los mapeos elementales
 
 - **Afines** $w = az + b$ ($a \neq 0$): rotación ($\arg a$), homotecia ($|a|$) y traslación ($b$). Conforman todo el plano.
-- **Inversión** $w = 1/z$: el mapeo no trivial más simple. Intercambia el interior y el exterior del círculo unitario, y convierte **rectas en círculos** que pasan por el origen (y viceversa). Es la llave que traduce problemas con fronteras circulares a problemas con fronteras rectas.
+- **Inversión** $w = 1/z$: el mapeo no trivial más simple. Intercambia el interior y el exterior del círculo unitario, y convierte **rectas que no pasan por el origen** en círculos que pasan por el origen; las rectas que pasan por el origen se conservan (y viceversa). Es la llave que traduce problemas con fronteras circulares a problemas con fronteras rectas.
 - **Potencias** $w = z^\alpha$ ($\alpha > 0$): multiplican ángulos por $\alpha$. Un sector de ángulo $\theta$ se convierte en uno de ángulo $\alpha\theta$: la herramienta para "abrir" o "cerrar" esquinas — un cuadrante ($\pi/2$) se endereza a semiplano con $\alpha = 2$.
 - **Exponencial** $w = e^z$: convierte la banda horizontal $0 < \Im z < 2\pi$ en el plano pinchado; útil para regiones tipo "franja" o "canal".
 - **Transformaciones de Möbius** $w = \frac{az+b}{cz+d}$ ($ad - bc \neq 0$): llevan círculos en círculos (contando rectas como círculos de radio infinito) y permiten colocar tres puntos frontera donde se desee.
