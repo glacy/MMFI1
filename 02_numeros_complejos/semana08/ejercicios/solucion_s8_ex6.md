@@ -48,7 +48,7 @@ En el límite, el segmento $[-R,R]$ es la integral real completa, y tomando part
 $$
 \int_{-\infty}^{\infty} \frac{\cos(3x)}{x^2+4}\,dx = \frac{\pi\,e^{-6}}{2}
 \;\Longrightarrow\;
-\boxed{\;J = \frac{\pi\,e^{-6}}{4} \approx 3.9\times 10^{-4}.\;}
+\boxed{\;J = \frac{\pi\,e^{-6}}{4} \approx 1.95\times 10^{-3}.\;}
 $$
 
 ---
@@ -57,4 +57,4 @@ $$
 
 ---
 
-**(c)** El factor $e^{-ka}$ decae **exponencialmente** con la frecuencia: para $k \gg 1/a$ la integral es despreciable. La interpretación física: las componentes de alta frecuencia de la fuente no logran "ver" más allá de la longitud de apantallamiento $a$; el medio actúa como un **filtro pasa-bajos** cuya respuesta decae con $e^{-ka}$ — es el mismo factor que aparece en el potencial apantallado de Yukawa/Poisson y en la solución del problema de calor en semiespacio. Todas las singularidades (polos) viven en el semiplano complejo inferior desplazado $z = \pm ia$, y es exactamente su posición la que fabrica ese decaimiento exponencial en la respuesta real: la estructura analítica en el plano complejo codifica el comportamiento físico en el eje real.
+**(c)** El factor $e^{-ka}$ decae **exponencialmente** con la frecuencia: para $k \gg 1/a$ la integral es despreciable. La interpretación física: las componentes de alta frecuencia de la fuente no logran "ver" más allá de la longitud de apantallamiento $a$; el medio actúa como un **filtro pasa-bajos** cuya respuesta decae con $e^{-ka}$ — es el mismo factor que aparece en el potencial apantallado de Yukawa/Poisson y en la solución del problema de calor en semiespacio. Los polos están en $z=\pm ia$, uno en cada semiplano; para $k>0$ se usa el del semiplano superior $z=ia$, y es su distancia $a$ al eje real la que fabrica ese decaimiento exponencial en la respuesta real: la estructura analítica en el plano complejo codifica el comportamiento físico en el eje real.

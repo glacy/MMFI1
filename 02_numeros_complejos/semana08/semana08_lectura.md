@@ -25,7 +25,7 @@ Física experimental sinoestadounidense (1912–1997), conocida como la **primer
 :label: fig-Chien_Shiung_Wu
 :alt: retrato de Dra. Chien-Shiung Wu
 :align: center
-Chien-Shiung Wu (1912 - 1977). Foto: Lynn Gilbert ([Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3AChien-Shiung_Wu_%C2%A9Lynn_Gilbert.jpg), CC BY-SA 4.0).
+Chien-Shiung Wu (1912 - 1997). Foto: Lynn Gilbert ([Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3AChien-Shiung_Wu_%C2%A9Lynn_Gilbert.jpg), CC BY-SA 4.0).
 ```
 :::
 
