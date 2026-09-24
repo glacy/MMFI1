@@ -10,11 +10,11 @@ exports:
   - format: pdf
     template: curvenote
     output: ./semana08_lectura.pdf
-# downloads:
-#   - file: ./semana08_lectura.md
-#     title: semana08_lectura.md
-#   - file: ./semana08_lectura.pdf
-#     title: semana08_lectura.pdf
+downloads:
+  - file: ./semana08_lectura.md
+    title: semana08_lectura.md
+  - file: ./semana08_lectura.pdf
+    title: semana08_lectura.pdf
 ---
 
 :::{aside} [Chien-Shiung Wu](https://es.wikipedia.org/wiki/Chien-Shiung_Wu)
