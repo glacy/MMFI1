@@ -48,7 +48,7 @@ En el límite, el segmento $[-R,R]$ es la integral real completa, y tomando part
 $$
 \int_{-\infty}^{\infty} \frac{\cos(3x)}{x^2+4}\,dx = \frac{\pi\,e^{-6}}{2}
 \;\Longrightarrow\;
-\boxed{\;J = \frac{\pi\,e^{-6}}{4} \approx 3.9\times 10^{-4}.\;}
+\boxed{\;J = \frac{\pi\,e^{-6}}{4} \approx 1.95\times 10^{-3}.\;}
 $$
 
 ---
