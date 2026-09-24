@@ -1,0 +1,40 @@
+<svg width="560" height="360" viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg">
+  <rect width="560" height="360" fill="white"/>
+  <g stroke="#b9c4d6" stroke-width="1.1">
+    <line x1="60" y1="80" x2="60" y2="240"/>
+    <line x1="100" y1="80" x2="100" y2="240"/>
+    <line x1="140" y1="80" x2="140" y2="240"/>
+    <line x1="180" y1="80" x2="180" y2="240"/>
+    <line x1="60" y1="80" x2="180" y2="80"/>
+    <line x1="60" y1="120" x2="180" y2="120"/>
+    <line x1="60" y1="160" x2="180" y2="160"/>
+    <line x1="60" y1="200" x2="180" y2="200"/>
+    <line x1="60" y1="240" x2="180" y2="240"/>
+  </g>
+  <line x1="120" y1="160" x2="180" y2="160" stroke="#c0392b" stroke-width="2.4"/>
+  <line x1="140" y1="140" x2="140" y2="200" stroke="#1a6b3c" stroke-width="2.4"/>
+  <path d="M 140 160 Q 146 152 152 149" fill="none" stroke="#444444" stroke-width="1.4"/>
+  <text x="158" y="148" font-family="serif" font-style="italic" font-size="15" fill="#444444">&#952;</text>
+  <text x="102" y="266" font-family="serif" font-style="italic" font-size="18" fill="#333333">plano z</text>
+  <line x1="222" y1="160" x2="312" y2="160" stroke="#333333" stroke-width="1.8"/>
+  <polygon points="318,160 306,154 306,166" fill="#333333"/>
+  <text x="228" y="146" font-family="serif" font-style="italic" font-size="18" fill="#333333">w = f(z)</text>
+  <g stroke="#b9c4d6" stroke-width="1.1" fill="none">
+    <path d="M 352 96 C 380 96 470 104 500 116"/>
+    <path d="M 352 134 C 382 134 468 140 502 154"/>
+    <path d="M 350 172 C 384 172 466 176 504 192"/>
+    <path d="M 348 210 C 384 212 464 214 504 230"/>
+    <path d="M 346 248 C 384 252 462 250 502 268"/>
+    <path d="M 354 94 C 350 142 348 200 346 246"/>
+    <path d="M 398 100 C 392 146 388 202 384 250"/>
+    <path d="M 442 106 C 436 148 432 202 428 252"/>
+    <path d="M 482 112 C 478 150 476 200 474 256"/>
+    <path d="M 506 118 C 506 154 508 206 510 266"/>
+  </g>
+  <path d="M 376 190 C 392 184 412 184 428 190" fill="none" stroke="#c0392b" stroke-width="2.4"/>
+  <path d="M 412 150 C 406 166 402 178 402 194 C 402 212 406 226 412 240" fill="none" stroke="#1a6b3c" stroke-width="2.4"/>
+  <path d="M 402 194 A 24 24 0 0 1 424 182" fill="none" stroke="#444444" stroke-width="1.4"/>
+  <text x="428" y="176" font-family="serif" font-style="italic" font-size="15" fill="#444444">&#952;</text>
+  <text x="404" y="294" font-family="serif" font-style="italic" font-size="18" fill="#333333">plano w</text>
+  <text x="170" y="330" font-family="serif" font-size="14" fill="#777777">los &#225;ngulos se conservan donde f&#8242;(z) &#8800; 0</text>
+</svg>

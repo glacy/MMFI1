@@ -9,6 +9,8 @@ pnpm install          # pnpm 11.20.0
 myst build --html     # genera _build/html/ (única verificación necesaria)
 ```
 
+**Importante:** NO ejecutar `myst build` por cuenta propia. Tras editar contenido, señalar al usuario que conviene correr el build y dejar que él lo ejecute.
+
 ## Convenciones
 
 - Todo el contenido en español.
