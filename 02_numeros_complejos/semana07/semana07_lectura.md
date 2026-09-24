@@ -314,9 +314,6 @@ Ni una sola parametrización. Todo el trabajo lo hizo la estructura: única sing
 | Deformación de contornos | $\oint_{C_1} f\,dz = \oint_{C_2} f\,dz$ | no cruzar singularidades |
 | Fórmula integral de Cauchy | $f(z_0) = \frac{1}{2\pi i}\oint_C \frac{f(z)}{z-z_0}\,dz$ | $z_0$ interior, $f$ analítica |
 | Derivadas bajo la integral | $f^{(n)}(z_0) = \frac{n!}{2\pi i}\oint_C \frac{f(z)}{(z-z_0)^{n+1}}\,dz$ | idem |
-| Estimación ML | $\left\|\oint_C f\,dz\right\| \le M\cdot L$ | $\|f\|\le M$ en $C$, longitud $L$ |
-
-La estimación ML merece una mención aparte: es la herramienta para mostrar que una integral **tiende a cero** — como haremos con el arco de semicírculo en la aplicación siguiente.
 :::
 
 
