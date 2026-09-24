@@ -3,7 +3,7 @@ title: Residuos
 description: Residuos 
 short_title: Residuos 
 author: " "
-tags: [numeros_complejos, laurent, singularidades, residuos, kramers-kronig, mapeos-conformes]
+tags: [numeros_complejos, laurent, singularidades, residuos]
 subject: Variable compleja - Semana 8
 keywords: [serie de Laurent, singularidades, residuos, integrales reales]
 exports:
@@ -20,7 +20,7 @@ downloads:
 
 :::{aside} [Chien-Shiung Wu](https://es.wikipedia.org/wiki/Chien-Shiung_Wu)
 
-Física experimental sinoestadounidense (1912–1997), conocida como la **primera dama de la física** y la *Madame Curie* de China. Formada en la Universidad Nacional Central (Nankín), obtuvo su doctorado en Berkeley en el laboratorio de Ernest Lawrence; incorporada al [Proyecto Manhattan](https://es.wikipedia.org/wiki/Proyecto_Manhattan), perfeccionó el método de difusión gaseosa para el enriquecimiento de uranio e identificó el xenón-135 — producto de fisión — como el **veneno neutrónico** que detenía a los primeros reactores. Ya como profesora de la Universidad Columbia se convirtió en la autoridad mundial en la [desintegración beta](https://es.wikipedia.org/wiki/Desintegraci%C3%B3n_beta): sus mediciones verificaron la teoría de Fermi y, en 1956, su célebre experimento con cobalto-60 enfriado a temperaturas criogénicas refutó el principio de [paridad](https://es.wikipedia.org/wiki/Paridad_(f%C3%ADsica)), confirmando la propuesta de Lee y Yang — que recibieron el Nobel de 1957, mientras el experimento decisivo llevaba su firma: uno de los agravios más citados de la historia del premio. Primera mujer en presidir la American Physical Society (1975), recibió la Medalla Nacional de Ciencia y el primer Premio Wolf de Física (1978). Las **resonancias nucleares** — los picos en las secciones eficaces de captura neutrónica que medía con precisión extrema — son, en el lenguaje moderno — **polos de la matriz de dispersión** en el plano complejo de la energía: la parte real del polo fija la energía de resonancia y la parte imaginaria su ancho $\Gamma$.
+Física experimental sinoestadounidense (1912–1997), conocida como la **primera dama de la física** y la *Madame Curie* de China. Formada en la Universidad Nacional Central (Nankín), obtuvo su doctorado en Berkeley en el laboratorio de Ernest Lawrence; incorporada al [Proyecto Manhattan](https://es.wikipedia.org/wiki/Proyecto_Manhattan), perfeccionó el método de difusión gaseosa para el enriquecimiento de uranio e identificó el xenón-135 — producto de fisión — como el **veneno neutrónico** que detenía a los primeros reactores. Ya como profesora de la Universidad Columbia se convirtió en la autoridad mundial en la [desintegración beta](https://es.wikipedia.org/wiki/Desintegraci%C3%B3n_beta): sus mediciones verificaron la teoría de Fermi y, en 1956, su célebre experimento con cobalto-60 enfriado a temperaturas criogénicas refutó el principio de [paridad](https://es.wikipedia.org/wiki/Paridad_(f%C3%ADsica)), confirmando la propuesta de Lee y Yang — que recibieron el Nobel de 1957, mientras el experimento decisivo llevaba su firma: uno de los agravios más citados de la historia del premio. Primera mujer en presidir la American Physical Society (1975), recibió la Medalla Nacional de Ciencia y el primer Premio Wolf de Física (1978). Las **resonancias nucleares** — los picos en las secciones eficaces de captura neutrónica que medía con precisión extrema — son, en el lenguaje moderno, **polos de la matriz de dispersión** en el plano complejo de la energía: la parte real del polo fija la energía de resonancia y la parte imaginaria su ancho $\Gamma$.
 
 ```{figure} ./../images/Chien-Shiung-Wu.png
 :label: fig-Chien_Shiung_Wu
@@ -43,7 +43,7 @@ Al completar esta lección, serás capaz de
 
 +++ { "part": "abstract" }
 
-La semana anterior establecimos la regla de oro: si $f$ es analítica dentro de un contorno cerrado, su integral vale cero; si no vale cero, es porque el contorno encierra **singularidades**. Esta semana hacemos el movimiento inverso: en lugar de evitar las singularidades, las **estudiamos con lupa**. La lupa es la **serie de Laurent** — una expansión en potencias positivas *y negativas* que convierte cada singularidad en un objeto clasificable — y su coeficiente más valioso, el **residuo**, destila toda la información que un contorno puede leer de una singularidad en un solo número. Con el teorema del residuo, las integrales reales que resisten toda antiderivada caen en cascada; con la analiticidad en el semiplano superior, la **causalidad** se traduce en las relaciones de **Kramers–Kronig**, que gobiernan la óptica de materiales reales; y con **transformaciones conformes** aprendemos a deformar problemas completos de potencial en el plano — esquinas en semiplanos, círculos en perfiles de ala — sin más esfuerzo que el de componer con una función analítica.
+La semana anterior establecimos la regla de oro: si $f$ es analítica dentro de un contorno cerrado, su integral vale cero; si no vale cero, es porque el contorno encierra **singularidades**. Esta semana hacemos el movimiento inverso: en lugar de evitar las singularidades, las **estudiamos con lupa**. Partimos de la **serie geométrica** y de la mirada de Arfken — una función analítica es **una sola entidad**, y cada serie en potencias la muestra solo dentro de su círculo de convergencia — para construir la **serie de Laurent**: la expansión en potencias positivas *y negativas* que describe el comportamiento cerca de una singularidad y la clasifica (removible, polo, esencial). De su lectura nace el **residuo**, el coeficiente que destila en un solo número toda la información que un contorno puede extraer de una singularidad; el **teorema del residuo** — la fórmula integral de Cauchy reescrita para dominios con agujeros — convierte las integrales cerradas en álgebra y hace caer en cascada las integrales reales que resisten toda antiderivada: las **racionales** se cierran con un semicírculo en el semiplano superior, las **trigonométricas** viven sobre la circunferencia unitaria y las de **tipo Fourier** aprovechan el lema de Jordan, siempre con la estimación ML desvaneciendo el arco. Los polos dejan de ser defectos del dominio y revelan su verdadera identidad física: resonancias.
 
 +++
 
@@ -442,7 +442,7 @@ $$
 Esta es la **transformada de Fourier del potencial de un alambre cargado en 2D** y el núcleo del problema de Poisson bidimensional: el mismo resultado gobierna campos apantallados, soluciones de la ecuación de calor y filtros pasa-bajos. Fíjense en la física del resultado: el decaimiento exponencial $e^{-ka}$ no era visible en el integrando — lo produjo el residuo en $z = ia$, un punto *complejo*. Las singularidades en el semiplano complejo codifican la estructura de la solución real.
 :::
 
-La receta para $k>0$ exige cerrar en el semiplano **superior** (donde $e^{ikz}$ decae); para $k<0$ se cierra en el inferior y el sentido de recorrido invierte el signo. Esa asimetría — la misma integral con $+k$ o $-k$ se evalúa en semiplanos distintos — es exactamente la que, combinada con la causalidad, produce las relaciones de la sección siguiente.
+La receta para $k>0$ exige cerrar en el semiplano **superior** (donde $e^{ikz}$ decae); para $k<0$ se cierra en el inferior y el sentido de recorrido invierte el signo. Esa asimetría — la misma integral con $+k$ o $-k$ se evalúa en semiplanos distintos — es la semilla de un resultado más profundo: cuando la analiticidad se combina con la causalidad física, produce las relaciones de dispersión de Kramers–Kronig, cuyo desarrollo excede el alcance de esta semana.
 
 
 :::{attention} Resumen de la semana
@@ -453,7 +453,7 @@ La receta para $k>0$ exige cerrar en el semiplano **superior** (donde $e^{ikz}$ 
 | Serie de Laurent | $f = \sum_{n=-\infty}^{\infty} c_n (z-z_0)^n$ en un anillo | describir $f$ cerca de singularidades |
 | Singularidad removible | parte principal nula | se "repara" redefiniendo $f(z_0)$ |
 | Polo de orden $m$ | parte principal finita, $b_m \neq 0$ | $\lim (z-z_0)^m f$ existe y $\neq 0$ |
-| Singularidad esencial | infinitas potencias negativas | valores densos en $\mathbb{C}$ (Casorati–Weierstrass) |
+| Singularidad esencial | infinitas potencias negativas | comportamiento salvaje cerca de $z_0$ |
 | Residuo | $\operatorname{Res} f = b_{-1}$ | único dato que un contorno lee de un polo |
 | Fórmulas prácticas | {eq}`eq-res-simple` – {eq}`eq-res-orden-m` | cálculo algebraico de residuos |
 | Teorema del residuo | $\oint_C f\,dz = 2\pi i \sum \operatorname{Res}$ | integrales cerradas sin parametrizar |
