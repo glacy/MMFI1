@@ -415,7 +415,7 @@ I(k) = \int_{-\infty}^{\infty} f(x)\, e^{ikx}\,dx,
 \qquad k > 0,
 $$
 
-donde $f$ es racional, sin polos reales, y decae lo suficiente en el infinito. La clave es el **lema de Jordan**: en el semicírculo superior, $|e^{ikz}| = e^{-k\,\Im z} \le 1$ con decaimiento *exponencial* cerca del eje real, lo que mata el aporte del arco incluso cuando $f$ decae apenas como $1/z$. El resultado es sorprendente:
+donde $f$ es racional, sin polos reales, y decae lo suficiente en el infinito. La clave es el **lema de Jordan**: en el semicírculo superior, $|e^{ikz}| = e^{-k\,\Im z} \le 1$ con decaimiento *exponencial* cerca del eje real, lo que mata el aporte del arco incluso cuando $f$ decae apenas como $1/z$. 
 
 :::{note} Ejemplo: el núcleo de Poisson
 
@@ -446,7 +446,6 @@ La receta para $k>0$ exige cerrar en el semiplano **superior** (donde $e^{ikz}$ 
 
 
 :::{attention} Resumen de la semana
-:class: dropdown
 
 | Concepto | Enunciado | Uso |
 |---|---|---|
