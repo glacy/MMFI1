@@ -59,16 +59,5 @@ $$
 (\nabla\times\mathbf{V})_z = \frac{\partial V_y}{\partial x} - \frac{\partial V_x}{\partial y} = u_{yx} - u_{xy} = 0,
 $$
 
-de nuevo por la igualdad de las parciales mixtas. Más directamente: $\mathbf{V}=\nabla u$ es un gradiente, y el rotacional de un gradiente se anula **identitariamente** ($\nabla\times\nabla u = \mathbf{0}$); esta parte ni siquiera requiere analiticidad, solo diferenciabilidad suficiente. La división del trabajo queda así: **(c) es gratis por ser $\mathbf{V}$ un gradiente; (b) es la que paga la analiticidad.**
+de nuevo por la igualdad de las parciales mixtas. Más directamente: $\mathbf{V}=\nabla u$ es un gradiente, y el rotacional de un gradiente se anula **identitariamente** ($\nabla\times\nabla u = \mathbf{0}$);
 
----
-
-**Comentario: el potencial complejo como generador de flujos.** Del mismo argumento de (b) sigue que $v$ también es armónica ($\nabla^2 v = 0$), y las curvas de nivel de $u$ y $v$ son ortogonales (sección *"La física escondida en Cauchy-Riemann"* de la lectura). Además, sobre una curva de nivel de $v$ ($v=\text{const}$):
-
-$$
-dv = v_x\,dx + v_y\,dy = 0
-\;\Longrightarrow\;
-\frac{dy}{dx} = -\frac{v_x}{v_y} = \frac{u_y}{u_x} = \frac{V_y}{V_x},
-$$
-
-de modo que las curvas $v=\text{const}$ son tangentes a $\mathbf{V}$: son las **líneas de corriente** — de ahí el nombre de $v$. Cada función analítica genera, entonces, un flujo ideal completo: $f(z)=z$ da un flujo uniforme, $f(z)=z^2$ un flujo en una esquina de 90°, y $f(z)=1/z$ el flujo alrededor de un cilindro. Un solo teorema — Cauchy-Riemann — convierte el análisis complejo en el lenguaje natural de la hidrodinámica plana.
