@@ -4,25 +4,25 @@ description: Espacios vectoriales
 short_title: Espacios vectoriales
 author: " "
 tags: [espacios_vectoriales, espacio, vectores, expansión, ortogonalidad]
-subject: Espacios vectoriales - Semana 8
+subject: Espacios vectoriales - Semana 9
 keywords: [espacio, vectores, expansión, ortogonalidad]
 exports:
- - format: pdf
-   template: curvenote
-   output: ./semana8_lectura.pdf
+  - format: pdf
+    template: curvenote
+    output: ./semana09_lectura.pdf
 downloads:
-  - file: ./semana8_lectura.md
-    title: semana8_lectura.md
-  - file: ./semana8_lectura.pdf
-    title: semana8_lectura.pdf
+  - file: ./semana09_lectura.md
+    title: semana09_lectura.md
+  - file: ./semana09_lectura.pdf
+    title: semana09_lectura.pdf
 ---
 
 :::{aside} [Donna Strickland](https://es.wikipedia.org/wiki/Donna_Strickland)
 
 es una ingeniera física canadiense que recibió el Premio Nobel de Física en 2018 por su trabajo en la generación de pulsos ópticos ultracortos de alta intensidad, conocido como ``amplificación de pulso de chirp" (CPA). Este trabajo tiene aplicaciones directas en la óptica cuántica y en tecnologías como la cirugía lásers. Las matemáticas detrás de la óptica cuántica y la manipulación de pulsos de luz involucran la representación de estados de luz en espacios vectoriales complejos.
 
-```{figure} ./DonnaStrickland_635x953.jpg
-:label: fig-DonnaStrickland.jpg
+```{figure} ./../images/DonnaStrickland_635x953.jpg
+:label: fig-DonnaStrickland
 :alt: retrato de Dra. Donna Strickland
 :align: center
 Dra. Donna Strickland (1959 - )
