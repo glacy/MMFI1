@@ -1,401 +1,421 @@
 ---
-title: Operadores hermíticos
-description: Operadores hermíticos
-short_title: Operadores hermíticos
+title: Operadores lineales
+description: Espacios vectoriales
+short_title: Operadores lineales
 author: " "
-tags: [espacios_vectoriales, operador, hermítico, valores, propios]
+tags: [espacios_vectoriales, operador, ortogonalización, Gram-Schmidt, descomposición, identidad]
 subject: Espacios vectoriales - Semana 9
-keywords: [operador, hermítico, valores, propios]
+keywords: [operador, ortogonalización, Gram-Schmidt, descomposición, identidad]
 exports:
  - format: pdf
    template: curvenote
-   output: ./semana10_lectura.pdf
+   output: ./semana9_lectura.pdf
 downloads:
-  - file: ./semana10_lectura.md
-    title: semana10_lectura.md
-  - file: ./semana10_lectura.pdf
-    title: semana10_lectura.pdf
+  - file: ./semana9_lectura.md
+    title: semana9_lectura.md
+  - file: ./semana9_lectura.pdf
+    title: semana9_lectura.pdf
 ---
 
-:::{aside} [Ana María Rey](https://es.wikipedia.org/wiki/Ana_Mar%C3%ADa_Rey)
-es una física teórica colombiana reconocida internacionalmente por sus aportes al campo de la **física cuántica de muchos cuerpos** y la **computación cuántica**. Investigadora en el *JILA* (University of Colorado Boulder) y el *National Institute of Standards and Technology (NIST)*, Rey ha desarrollado modelos teóricos que describen la dinámica cuántica de átomos ultrafríos y redes ópticas, donde los operadores Hermíticos y las descomposiciones espectrales son esenciales para caracterizar los observables y las interacciones. 
+:::{aside} [Sarah Kaiser](https://www.sckaiser.com/)
 
-Su trabajo ha sido fundamental para conectar los conceptos matemáticos de los **espacios de Hilbert**, los **operadores auto-adjuntos** y los **valores propios** con experimentos reales en **simuladores cuánticos** y **relojes atómicos** de precisión. En 2019 recibió la *Medalla Maria Goeppert Mayer* de la American Physical Society por su liderazgo en este campo.
+es una física e ingeniera reconocida por su trabajo en óptica cuántica y computación cuántica. Se ha especializado en el diseño de sistemas cuánticos fotónicos y en el desarrollo de herramientas de software para la simulación y el control de experimentos cuánticos. Kaiser ha colaborado con empresas tecnológicas y comunidades de código abierto para promover la accesibilidad y el uso de tecnologías cuánticas emergentes.
 
-```{figure} ./Ana-Maria-Rey.jpg
-:label: fig-Ana-Maria-Rey.jpg
-:alt: retrato de Dra. Ana Maria Rey
+Además de su investigación técnica, es conocida por su labor en divulgación científica y educación, buscando acercar la computación cuántica a estudiantes, ingenieros y científicos de diferentes disciplinas. Ha contribuido con proyectos de Q# (el lenguaje cuántico de Microsoft) y participa activamente en talleres y conferencias para promover la adopción de herramientas cuánticas en la ingeniería moderna.
+
+```{figure} ./Sarah_Kaiser.jpg
+:label: fig-Sarah_Kaiser.jpg
+:alt: retrato de Dra. Sarah Kaiser
 :align: center
-[Dra. Ana Maria Rey (1970 - )](https://womeninscienceweadmire.icfo.eu/wiswa-2/ana-maria-rey/)
-
+Dra. Sarah Kaiser (1985 - )
 ```
-
 :::
-
-
-
 
 ```{note} Objetivos
 Al completar esta lección, serás capaz de
-1. **Definir y distinguir** entre operadores adjuntos y operadores auto-adjuntos (Hermíticos), identificando su papel en la formulación de observables físicos dentro del espacio de Hilbert.
+1. Aplicar el algoritmo de Gram–Schmidt para generar bases ortonormales a partir de conjuntos de vectores linealmente independientes en espacios de Hilbert finito-dimensionales.
 
-2. **Aplicar la notación de Dirac** para expresar operadores lineales, productos internos y proyecciones, interpretando su significado físico y matemático en el contexto de la mecánica cuántica.
+2. Interpretar el significado físico y matemático de los operadores de proyección y de la descomposición de la identidad en una base ortonormal.
 
-3. **Analizar y realizar la descomposición espectral** de un operador Hermítico, relacionando sus autovalores y autovectores con los posibles resultados de medición y las probabilidades asociadas a los estados cuánticos.
+3. Construir operadores de proyección sobre estados cuánticos y utilizarlos para calcular probabilidades de medición.
+
+4. Emplear la descomposición de la identidad para expresar operadores lineales y estados cuánticos en diferentes representaciones.
 
 ```
 
-+++ {"part": "abstract"}
++++ { "part": "abstract" }  
 
-En la mecánica cuántica, los operadores adjuntos y auto-adjuntos desempeñan un papel fundamental en la descripción matemática de las observables físicas.El adjunto de un operador describe la acción conjugada respecto al producto interno, manteniendo la estructura del espacio de Hilbert.  
+En el marco de la mecánica cuántica, los espacios vectoriales, y en particular los espacios de Hilbert, proporcionan la estructura matemática esencial para describir estados y observables. La ortonormalización de Gram–Schmidt permite construir bases ortonormales a partir de conjuntos linealmente independientes, lo que facilita la representación de estados cuánticos y operadores en forma simple y computacionalmente eficiente. Sobre estas bases, los operadores de proyección actúan como herramientas clave para extraer componentes de estados en direcciones específicas, desempeñando un papel fundamental en la formulación del postulado de medición y en el cálculo de probabilidades de resultados experimentales. La descomposición de la identidad en una base ortonormal expresa al operador identidad como la suma de proyectores sobre cada vector base, lo que posibilita la expansión de cualquier estado o operador en términos de estos elementos, simplificando cálculos como el de valores esperados y la evolución temporal de sistemas cuánticos.
 
-Un operador se dice auto-adjunto (o Hermítico) si cumple $\mathcal{A} = \mathcal{A}^\dagger$. Estos operadores poseen autovalores reales y un conjunto completo de autovectores ortogonales, lo que permite construir bases ortonormales para representar estados cuánticos. En el formalismo de Dirac, los observables medibles —como posición, momento, espín o energía— están asociados precisamente a operadores auto-adjuntos.  
-
-El carácter auto-adjunto de los operadores garantiza que los valores esperados $\langle \psi | \mathcal{A} | \psi \rangle$ sean reales, tal como se requiere para magnitudes físicas. Esta propiedad conecta de manera directa la estructura matemática de los espacios de Hilbert con la interpretación probabilística de la mecánica cuántica, permitiendo formular el proceso de medición como una descomposición espectral del operador Hermítico en sus autovalores y autovectores.  
 +++
 
+En la mecánica cuántica, el estado de un sistema físico se representa mediante un _vector_ en un _espacio de Hilbert_. Los _operadores lineales_ actúan sobre estos vectores para extraer información física o transformar el sistema.  
 
-# Operador adjunto y auto-adjunto (o hermítico) 
+- El operador de _posición_ $\hat{x}$ actúa sobre un estado para darnos la distribución de posiciones.
+- El operador de _momento lineal_ $\hat{p}$ se relaciona con las derivadas espaciales de la función de onda.
+- El _Hamiltoniano_ $\mathcal{H}$ nos dice cómo evoluciona el sistema en el tiempo y cuál es su energía.
 
-Anteriormente vimos que si $\mathcal{L}|\psi\rangle=|\phi\rangle$, en
-general, $\langle \psi |\mathcal{L}\neq \langle \phi |$.
+Por ejemplo, la energía total del sistema se obtiene calculando el _valor esperado_ del Hamiltoniano:
+$$
+E = \langle \psi | \mathcal{H} | \psi \rangle
+$$
 
-En general, si un estado del espacio para un sistema expandido por un
-conjunto completo de estados bases ortogonales
-$\{|\varphi_n\rangle;\;n=1,2,3,\ldots \}$ y se conoce el efecto de un
-operador $\mathcal{A}$ en cualquiera de los estados base
-$|\varphi_n \rangle$
-$$\mathcal{A}|\varphi_n\rangle = \sum_m |\varphi_m \rangle A_{mn},$$ entonces el efecto del operador sobre un estado bra,
-$$\langle \varphi_n | \mathcal{A}=\sum_m A_{nm} \langle \varphi_m|,$$
-donde $A_{mn}=\langle \varphi_m|\mathcal{A}|\varphi_n \rangle$ son los
-elementos matríz del operador $\mathcal{A}$ con respecto a la base
-$\{|\varphi_n\rangle;\;n=1,2,3,\ldots \}$.
+Además, el _postulado de la medición_ en mecánica cuántica nos dice que:
 
-Se define el *operador adjunto* (o *hermítico conjugado*) de
-$\mathcal{A}$, como $\mathcal{A}^\dagger$, de manera que
+1. Los resultados medibles son los _autovalores_ de operadores lineales hermíticos.
+2. Los estados del sistema después de la medición corresponden a sus _autovectores_.
 
-$$\langle \xi | \mathcal{A} | \psi \rangle =\langle \xi |( \mathcal{A} | \psi \rangle)= (\langle  \xi |\mathcal{A}^\dagger )| \psi \rangle = \langle \psi | \mathcal{A}^\dagger |\xi \rangle^*,$$
-de manera que
-$$\text{si } \mathcal{A}|\psi\rangle=|\phi\rangle \text{  entonces  } \langle\psi|\mathcal{A}^\dagger=\langle \phi |.$$
+## Expansiones ortogonales 
 
-Note que este nuevo operador está definido por su acción sobre vectores
-bra.
+Considere el espacio vectorial de las funciones "bien portadas" en un intervalo específico.
 
-Por lo tanto, tomar el conjugado complejo de
-$\langle \xi|\mathcal{A}|\psi \rangle$ equivale a intercambiar el orden
-de los factores y reemplazar el operador por su hermítico conjugado. A
-partir de esta propiedad, es posible determinar el efecto o acción de
-$\mathcal{A}^\dagger$ en un vector ket:
+A partir del concepto de producto interno, es posible elegir una base de
+funciones linealmente independientes $\hat{\phi}_n(x),\, n=0,1,2,\ldots$
+que sean ortonormales
+$$\langle \hat{\phi}_i,\hat{\phi}_j \rangle  =\int_a^b \hat{\phi}_i^*(x)\hat{\phi}_j(x)\rho(x)dx=\delta_{ij}$$
+Si una función se expresa en términos de una *base ortonormal*
+$\hat{\phi}_n(x)$ como
 
 :::{math}
-:label: eq-adj
-\mathcal{A}^\dagger|\varphi_n \rangle = \sum_m |\varphi_m\rangle A^*_{nm}.  
+:label: eq-expansion-serie
+f(x)=\sum_{0}^\infty c_n \hat{\phi}_n,
 :::
-
-A partir de estas relaciones, se tiene que
-$$\langle \varphi_m | \mathcal{A} | \varphi_n \rangle^*=A^*_{mn}=\langle \varphi_n | \mathcal{A}^\dagger | \varphi_m \rangle$$
-
-:::{note} Acción del operador adjunto sobre los estado ket
-Un operador
-$\mathcal{B}$ definido para dos estados ortonormales $|\varphi_1\rangle$
-y $|\varphi_2\rangle$ está dado por
-$$\mathcal{B}|\varphi_1\rangle=2|\varphi_2\rangle \quad \mbox{y} \quad \mathcal{B}|\varphi_2\rangle=i|\varphi_1\rangle.$$
-
-Considere un estado arbitrario de este sistema\
-$$| \chi \rangle=c_1|\varphi_1\rangle + c_2|\varphi_2\rangle,$$ por lo
-que
-$$\langle \chi | \mathcal{B}^\dagger | \varphi_1 \rangle^*= \langle \varphi_1 | \mathcal{B} | \chi\rangle=\ldots=ic_2=i\langle\varphi_2|\chi\rangle,$$
-de manera que
-$$\langle \chi | \mathcal{B}^\dagger | \varphi_1 \rangle =  -i\langle \varphi_2 | \chi \rangle^*=-i\langle \chi | \varphi_2\rangle,$$
-por lo que $$\mathcal{B}^\dagger|\varphi_1\rangle=-i|\varphi_2\rangle$$
-:::
-
-:::{note} Propiedades del operador adjunto 
-Si $a$ es un escalar; $\mathcal{A}$ y
-$\mathcal{B}$ son operadores y $\mathcal{A}^\dagger$ y
-$\mathcal{B}^\dagger$ sus operadores adjuntos, 
-```{math}
-\begin{aligned}
-        (a\mathcal{A})^\dagger=&a^*\mathcal{A}^\dagger \\
-        (\mathcal{A}^\dagger)^\dagger=&\mathcal{A}\\
-        (\mathcal{A}+\mathcal{B})^\dagger=&\mathcal{A}^\dagger+\mathcal{B}^\dagger\\
-        (\mathcal{A}\mathcal{B})^\dagger=&\mathcal{B}^\dagger\mathcal{A}^\dagger \\
-        (\mathcal{A}^n)^\dagger=&(\mathcal{A}^\dagger)^n
-\end{aligned}
+entonces los coeficientes $c_n$ están dado por
+$$c_n=\langle \hat{\phi}_n , f \rangle=\int^b_a \hat{\phi^*}_n (x) f(x) \rho(x) dx$$
+La [Ecuación %s](#eq-expansion-serie) se denomina _expansión en serie de $f$ en la base $\{\hat{\phi}_n\}$_.  
+:::{note} Expansión en serie
+Los primero cuatro *polinomios de Laguerre* son
+$$L_0=1, \quad L_1=1-x, \quad L_2=\frac{2-4x+x^2}{2}, \quad L_3=\frac{6-18x+9x^2-x^3}{6};$$
+los cuales son ortonormales en el rango $0\leq x \leq \infty$.\
+Usando la función de peso $\rho(x)=e^{-x}$, podemos *expandir* la función
+$e^{-x}$ en polinomios de Laguerre:
+$$e^{-x}=\frac{15}{16}-\frac{11}{16}x+\frac{5}{32}x^2-\frac{1}{96}x^3$$
+```{figure} ./expansion_serie.png
+:label: fig-expansion_serie
+:alt: graficas de exp{-x} y su aproximacion
+:align: center
+Expansión en serie de $e^{-x}$, usando los primeros tres polinomios de Laguerre.
 ```
 :::
 
-:::{note} Operador de aniquilación de fotones 
-Al estudiar los campos
-electromagnéticos en el interior de una cavidad diseñada para soportar
-un estado del campo; una base de estados para el campo electromagnético
-está dada por los llamados *estados número*
-$\{|n\rangle,\, n=0,1,2,\ldots\}$, donde el estado $|n\rangle$
-corresponde al estado del campo con $n$ fotones presentes.
 
-El operador
-$$\hat{a}|n\rangle=\sqrt{n}|n-1\rangle, \qquad  \hat{a}|0\rangle=|0\rangle.$$
 
-Si consideramos el efecto de $\hat{a}$ sobre un estado arbitrario
-$$|\psi \rangle=\sum_m^{\infty}|m\rangle \langle m| \psi \rangle,$$
-tenemos que 
+## Ortogonalización de Gram-Schmidt 
+
+La ortogonalización de Gram-Schmidt es un proceso que toma un conjunto
+de vectores linealmente independientes y los convierte en un conjunto de
+vectores ortogonales (o ortonormales, si se normalizan). Este
+procedimiento es especialmente útil en espacios vectoriales con producto
+interno, como los espacios de Hilbert en mecánica cuántica, ya que
+permite construir bases ortogonales a partir de un conjunto de vectores
+arbitrarios.
+
+Si $y_n(x),\, n=0,1,2,\ldots$ forman una base de funciones linealmente
+independientes, pero no ortogonales, para el espacio de Hilbert,
+entonces se puede construir una base ortonormal siguiendo el siguiente
+procedimiento: 
 ```{math}
-\begin{aligned}
-    (\langle n | \hat{a}) | \psi \rangle=& (\langle n | \hat{a}) \sum_{m=0}^{\infty}|m\rangle \langle m| \psi \rangle \\
-    =&  \sum_{m=0}^{\infty} (\langle n | \hat{a}) |m\rangle \langle m| \psi \rangle \\
-    =&  \sum_{m=0}^{\infty} \langle n | (\hat{a} |m\rangle \langle m| \psi \rangle) \\
-    =& \sum_{m=1}^{\infty} \sqrt{m}\langle n|m-1\rangle \langle m| \psi \rangle \\
-    =& \sum_{m=0}^{\infty} \sqrt{m+1}\langle n|m\rangle \langle m+1| \psi \rangle \\
-    =& \sum_{m=0}^{\infty} \sqrt{m+1}\delta_{nm} \langle m+1| \psi \rangle \\
-    =&\left\{\sqrt{n+1} \langle n+1| \right\}|\psi\rangle,
-\end{aligned}
+\begin{align*}
+    \phi_0 = & \,y_0\\
+    \phi_1 = & \,y_1-\phi_0\langle \phi_0|y_1\rangle\\
+    \phi_2 =& \, y_2-\phi_1\langle \phi_1|y_2\rangle-\phi_0\langle \phi_0|y_2\rangle\\
+     \vdots & \,  \\
+    \phi_n =&\, y_n-\phi_{n-1}\langle \phi_{n-1}|y_n\rangle-\ldots-\phi_0\langle \phi_0|y_n\rangle\\
+   \vdots & \, 
+\end{align*}
 ```
 
-de donde
-$$\langle n | \hat{a}=\sqrt{n+1} \langle n+1|.$$
-:::
+Este algoritmo se conoce como *ortogonalización de Gram-Schmidt*; en
+honor los matemáticos Jørgen Pedersen Gram y Erhard Schmidt.\
+Cada $\phi_{n}$ es ortogonal a sus predecesoras
+$\phi_{i},\, i=0,1,2,\ldots ,n-1$.
 
-## Operadores Hermíticos
-
-Un operador lineal, $\mathcal{H}$, se dice *auto adjunto* (o
-*hermítico*) si $$\mathcal{H}^\dagger=\mathcal{H}.$$
-
-Los operadores auto-adjuntos son cruciales en mecánica cuántica porque
-sus valores propios son reales, lo que permite interpretarlos como
-observables físicos. Ejemplos de operadores auto-adjuntos son el
-operador de posición y el operador de momento.
-
-Si $\mathcal{A}$ es hermítico
-$$\langle \psi | \mathcal{A}|\phi \rangle^* = \langle \phi | \mathcal{A}|\psi \rangle,$$
-de donde $$A_{mn}=A^*_{nm}.$$
-
-### Propiedades de los operadores hermíticos
-
-- Si $\mathcal{H}_1$ y $\mathcal{H}_2$ son hermíticos, $r_1 \mathcal{H}_1+r_2\mathcal{H}_2$ es
-hermítico solo si $r_1$ y $r_2$ son reales.
-
-- $\mathcal{H}_1 \mathcal{H}_2$ es hermítico solo si
-$\mathcal{H}_1 \mathcal{H}_2=\mathcal{H}_2 \mathcal{H}_1$, es decir, si
-$[\mathcal{H}_1, \mathcal{H}_2]=0$.
+:::{note} Ortogonalización de Gram-Schmidt
 
 
-## Operadores unitarios 
-
-Un operador $\mathcal{U}$ se dice *unitario* si
-$$\mathcal{U}^\dagger=\mathcal{U}^{-1},$$ donde $\mathcal{U}^{-1}$ es el
-*operador inverso* de $\mathcal{U}$, es decir,
-$$\mathcal{U}^{-1} \mathcal{U}= \mathcal{U} \mathcal{U}^{-1}=\mathcal{I};$$
-donde $\mathcal{I}$ es el *operador identidad*
-$$\mathcal{I}| \psi \rangle=| \psi \rangle$$
-
-Los operadores unitarios son útiles en la Física pues permiten describir
-transformaciones entre bases ortogonales. Representan transformaciones
-que no cambian las longitudes ni los ángulos en el espacio de Hilbert,
-como rotaciones, traslaciones temporales o cambios de base en la
-mecánica cuántica.
-
-Si $|\psi\rangle$ es un estado normalizado a la unidad,
-$\langle \psi|\psi\rangle=1$. El estado
-$|\phi\rangle=\mathcal{U}|\psi\rangle$ también estará normalizado a la
+Partiendo del conjunto de funciones linealmente independientes
+$$y_n(x)=x^n,\, n=0,1,2,\ldots;$$ podemos construir (tres) funciones
+ortogonales en el rango $-1<x<1$; tomando una función de peso igual a la
 unidad:
-$$\langle \phi|\phi\rangle=\langle \psi|\mathcal{U}^\dagger\mathcal{U}|\psi\rangle=\langle \psi|\mathcal{I}|\psi\rangle=\langle \psi|\psi\rangle=1;$$
-es decir, los operadores unitarios mapean estados normalizados en
-estados normalizados.
+$$\phi_0=y_0=1, \quad \langle \phi_0 | \phi_0 \rangle^{1/2}=\left(\int^1_{-1}1\times 1 du\right)^{1/2}=\sqrt{2}$$
 
-:::{note} Relación entre operadores unitarios y hermíticos
-Cualquier
-operador unitario $\mathcal{U}$ puede escribirse de la forma
-$$\mathcal{U} = e^{-i\mathcal{A}},$$ donde $\mathcal{A}$ es hermítico.
+$$\Rightarrow \hat{\phi}_0=\frac{\phi_0}{\sqrt{2}}=\sqrt{\frac{1}{2}}.$$
+
+$$\phi_1=x-\hat{\phi}_0\langle \hat{\phi}_0 | y_1 \rangle, \quad \langle \hat{\phi}_0 | y_1 \rangle=0,$$
+
+$$\Rightarrow \hat{\phi}_1=\phi_1 \langle \phi_1 | \phi_1 \rangle^{-1/2}=x\left(\int^1_{-1}u\times u du\right)^{-1/2}=\sqrt{\frac{3}{2}}x$$
+ ```{math} 
+ \begin{align*}
+\phi_2=&x^2-\hat{\phi}_1\langle \hat{\phi}_1 | x^2 \rangle-\hat{\phi}_0\langle \hat{\phi}_0 | x^2 \rangle\\
+=&x^2-0-\frac{1}{3}
+\end{align*}
+```
+
+ ```{math}
+ \begin{align*}
+\Rightarrow \hat{\phi}_2=\phi_2 \langle \phi_2 | \phi_2 \rangle^{-1/2}=&\left(x^2-\frac{1}{3} \right)\left(\int^1_{-1}\left(u^2-\frac{1}{3}\right)^{2} du\right)^{-1/2}\\
+=&\frac{1}{2}\sqrt{\frac{5}{2}}\left(3x^2-1 \right)
+\end{align*}
+```
+Estas tres funciones son los
+primeros tres *polinomios de Legendre normalizados*.
 :::
 
-<!-- :::{note} "Escenario" de Schrödinger
-Los estados de un sistema cuántico son
-dependientes del tiempo. Un estado del sistema en un instante $t$ se
-relaciona con el estado en un instante $t_0$ por medio de una
-transformación unitaria:
-$$| \psi(t) \rangle=\mathcal{U}(t,t_0)| \psi \rangle(t_0), \qquad \mathcal{U}(t_0,t_0)=I;$$
-tomando la derivada temporal
-$$\frac{\partial}{\partial t}| \psi(t) \rangle=\frac{\partial}{\partial t}\mathcal{U}(t,t_0)| \psi (t_0)\rangle=\frac{\partial}{\partial t}UU^\dagger| \psi (t) \rangle \equiv \frac{1}{i\hbar}H(t) | \psi (t) \rangle,$$
-donde
-$\mathcal{H}=i\hbar \dot{\mathcal{U}}\mathcal{U}^\dagger=\mathcal{H}^\dagger$
-es llamado el *hamiltoniano* u *operador de energía*.
+El proceso de Gram-Shcmidt es una herramienta poderosa para varias
+aplicaciones, como procesamiento, anáilis y manipulación de señales y en
+la solución de sistemas de ecuaciones lineales.\
+En la mecánica cuántica, el proceso de Gram-Schmidt juega un papel
+fundamental en la normalización de las funciones de onda, las cuales
+representan los estados de una partícula en sistemas cuánticos.
 
-La ecuación diferencial resultante se llama *ecuación de Schrödinger.*
-::: -->
+:::{note} Sistema cuántico de dos estados
 
-# Valores y vectores propios (eigenvectors y eigenvalues) 
 
-Puede suceder que para algún operador $\mathcal{A}$, exista un vector
-estado $| \phi \rangle$ con la propiedad que 
-:::{math}
-:label: eq-eigen
-    \mathcal{A}|\phi \rangle = a_\phi |\phi \rangle,
+Dos estados cuánticos _no_ ortogonales de un electrón en un pozo
+cuántico 1D están dados por $$|\psi_1 \rangle=\begin{pmatrix}
+        1 \\1 
+    \end{pmatrix}, \quad  |\psi_2 \rangle=\begin{pmatrix}
+        1 \\0 
+    \end{pmatrix}.$$ Aplicando el proceso de Gram-Schmidt se pueden
+definir dos estados ortogonales $|\phi_1\rangle$ y $|\phi_2\rangle$:
+$$|\phi_1\rangle = |\psi_1\rangle$$ y
+$$|\phi_2\rangle= |\psi_2\rangle -\frac{\langle \psi_2|\phi_1\rangle}{\langle \phi_1|\phi_1\rangle}|\phi_1\rangle.$$
+Calculando los productos internos
+
+```{math}
+  \begin{align*}
+    \langle \psi_2|\phi_1\rangle=&\begin{pmatrix}
+        1 & 0
+    \end{pmatrix} \begin{pmatrix}
+        1\\1
+    \end{pmatrix}=1, \\
+    \langle \phi_1|\phi_1\rangle=&\begin{pmatrix}
+        1 & 1
+    \end{pmatrix} \begin{pmatrix}
+        1\\1
+    \end{pmatrix}=2;
+\end{align*}
+```
+ de donde $$|\phi_2 \rangle=\frac{1}{2}\begin{pmatrix}
+    1 \\ -1
+\end{pmatrix}.$$
+
+Verifique que $\langle \phi_1 | \phi_2 \rangle =0.$
 :::
 
- donde $a_\phi$
-es, en general, un número complejo. En esta situación se dice que el
-estado $|\phi \rangle$ es un *autovector* (o *eigenket* o *vector
-propio*) del operador $\mathcal{A}$ con *autovalor* (o *eigenvalor* o
-*valor propio*) $a_\phi$.
 
-Generalmente se utiliza la notación
-$$\mathcal{A}|a\rangle = a  |a\rangle,$$ en la cual el auto-vector se
-etiqueta según su auto-valor correspondiente.
+## Operadores lineales
 
-El concepto de eigenket se puede extender al de eigenbra:
-$$\langle \phi | \mathcal{A}^\dagger = a^*_\phi \langle \phi |.$$
+Un *operador lineal*, $\mathcal{L}$, es una aplicación (una
+transformación, un mapa, una operación) entre dos espacios vectoriales,
+que preserva las operaciones de adición de vectores y multiplicación por
+un escalar; es decir, si $|A\rangle$ y $|B\rangle$ son vectores de un
+espacio vectorial (de Hilbert) y $a$ y $b$ son escalares
+```{math}
+\begin{align*}
+%\mathcal{L}a|A\rangle=&a\mathcal{L}|A\rangle, \\
+\mathcal{L}(a|A\rangle+b|B\rangle)=&a\mathcal{L}|A\rangle +b\mathcal{L}|B\rangle.
+\end{align*}
+```
+
+Debido a la linealidad, se puede determinar el efecto de un operador
+sobre *cualquier vector* si se conoce el efecto del operador sobre cada
+elemento de una base. Si $\{|\phi_k\rangle;\quad k=1,2,\ldots\}$
+representa una base ortogonal
+$$\mathcal{L}|\phi_n\rangle=\sum_m |\phi_m\rangle \langle \phi_m|(\mathcal{L}|\phi_n\rangle),$$
+
+está caracterizado por el conjunto de números
+$$\langle \phi_m|(\mathcal{L}|\phi_n\rangle)\equiv \langle \phi_m|\mathcal{L}|\phi_n\rangle=L_{mn},$$
+llamados los *elementos matriz* de $\mathcal{L}$ en una base
+particular.\
+Adicionalmente, podemos escribir el efecto de un operador actuando sobre
+un bra $$\langle\phi_n|\mathcal{L}=\sum_m L_{nm}\langle\phi_m|$$
 
 :::{note} Sistemas de *medio espín* (spin half)
-Considere los estados
-de espín $|+\rangle$ y $|-\rangle$, base de un sistema de medio espín y
-que el sistema cuenta con un operador $\mathcal{B}$, con las
+
+Considere los estados de espín $|+\rangle$ y $|-\rangle$ como la base de
+un sistema de medio espín.
+
+Si el sistema cuenta con un operador $\mathcal{A}$, con las
 características 
 ```{math}
-\begin{aligned}
-      \mathcal{B}|+\rangle =&\frac{1}{2}i\hbar |-\rangle, \\
-      \mathcal{B}|-\rangle =&\frac{1}{2}i\hbar |+\rangle.
-\end{aligned}
+  \begin{align*}
+  \mathcal{A}|+\rangle =&\frac{1}{2}i\hbar |-\rangle, \\
+  \mathcal{A}|-\rangle =&-\frac{1}{2}i\hbar |+\rangle.
+\end{align*}
 ```
-Ahora, si un sistema de medio espín se encuentra en el
-estado $$|S\rangle=\frac{1}{\sqrt{2}}[|+\rangle+|-\rangle]$$ entonces
-$$\mathcal{B}|S\rangle=\frac{i\hbar}{2}|S\rangle$$ por lo que el estado
-$|S\rangle$ es un eigenvector de $\mathcal{B}$, con eigenvalor
-$i\hbar/2$.
+Ahora, si un sistema de medio espín se encuentra en el estado $$|S\rangle=\frac{1}{\sqrt{2}}[|+\rangle+|-\rangle]$$ entonces
+$$\mathcal{A}|S\rangle=-\frac{i\hbar}{2\sqrt{2}}[|+\rangle-|-\rangle]=|S^\prime\rangle,$$
+por lo que el estado $|S\rangle$ es mapeado al estado $|S^\prime\rangle$
 :::
 
-Determinar los autovectores y autovalores de un operador $\mathcal{A}$
-suele referirse como resolver el problema de autovalores del operador y
-corresponde con encontrar soluciones a
-[Ecuación %s](#eq-eigen). Si
-el espacio vectorial tiene dimensión finita, esto puede llevarse a cabo
-por medio de métodos matriciales; mientras que si la dimensión del
-espacio es infinita, resolver el problema de autovalores requiere
-resolver una ecuación diferencial.
 
-En mecánica cuántica, los valores propios de un operador auto-adjunto
-representan los posibles resultados de medir la observable asociada a
-ese operador. Es decir, las mediciones de observables (como la energía,
-el momento, o la posición) corresponden a los valores propios de los
-operadores que describen esas observables. Los estados cuánticos
-asociados a esos resultados son los vectores propios.
-
-Si más de un eigenvector tienen el mismo eigenvalor, se dice que el
-eigenvector es *degenerado*.
-
-:::{note} Ecuación de Schrödinger independiente del tiempo
-$$\mathcal{H}\psi=\left[-\frac{\hbar^2}{2m}\nabla^2+V(r) \right]\psi=E\psi$$
-es un problema de autovalores.
-:::
-
-En general, se cumple que
-
-1.  un operador puede no tener auto-estados
-
-2.  los autovalores pueden ser reales o complejos,
-
-3.  un operador puede tener una coleción discreta de autovalores
-    $a_1, a_2,\ldots$ y autovalores asociados
-    $|a_1\rangle, |a_2\rangle, \ldots$,
-
-4.  un operador puede tener un rango continuo de autovalores y
-    autovectores,
-
-5.  un operador puede tener una combinación de autovalores discretos y
-    continuos,
-
-6.  los valores propios de un operador hermítico son reales,
-
-7.  un operador hermítico posee un conjunto ortogonal de funciones
-    propias,
-
-8.  las funciones propias de un operador hermítico forman un conjunto
-    completo.
-
-Al conjunto de todos los autovalores de un operador se le llama el
-*espectro de autovalores del operador*.
-
-Si $\mathcal{A}$ es hermítico y tiene un conjunto completo de
-autoestados $\{|a_n\rangle; n=1,2,3,\ldots\}$, estos autoestados forman
-una base ortonormal del sistema. Esto significa que un estado arbitrario
-$|\psi \rangle$ puede escribirse como
-$$| \psi \rangle = \sum_m | a_n\rangle \langle a_n | \psi \rangle$$
-
-# Notación de Dirac para operadores 
-
-Si $|\psi\rangle$ y $|\phi \rangle$ son estados arbitrarios, se define
-el operador $| \psi \rangle \langle \phi |$ mediante 
+:::{note} Operador actuando sobre un bra 
+Considere un par de vectores
+ortogonales $|\phi_1\rangle$ y $|\phi_2\rangle$ que expanden el espacio
+de Hilbert $\mathcal{H}$ de cierto sistema. El operador $\mathcal{A}$
+tiene el siguiente efecto sobre dichos estado base: 
 ```{math}
-\begin{aligned}
-    (|\phi \rangle \langle \psi |)|\alpha\rangle =& |\phi \rangle \langle\psi | \alpha \rangle \\
-     \langle \alpha |(|\phi \rangle \langle \psi |) =& \langle \alpha | \phi \rangle \langle \psi|
-\end{aligned}
+\begin{align*}
+    \mathcal{A}|\phi_1\rangle=&+3|\phi_1\rangle-4i|\phi_2\rangle\\
+    \mathcal{A}|\phi_2\rangle=&-4i|\phi_1\rangle-3|\phi_2\rangle
+\end{align*}
 ```
+Podemos evaluar $\langle\phi_1|\mathcal{A}$ y
+$\langle\phi_2|\mathcal{A}$ de la siguiente manera: Considere un estado
+arbitrario $|\psi\rangle=a|\phi_1\rangle+b|\phi_2\rangle$, de manera que
 
-:::{note} Operadores de espín de Pauli
-Los tres *operadores de spin de
-Pauli* para un sistema de medio espín, cuyos espacio de estados está
-expandido por los estados base $\{|+\rangle, |-\rangle \}$ están
-definidos, en notación de Dirac mediante 
 ```{math}
-:label: eq-pauli
-\begin{aligned}
-    \hat{\sigma}_x=&|-\rangle \langle+|+|+\rangle \langle-| \\
-    \hat{\sigma}_y=&i|-\rangle \langle+|-i|+\rangle \langle-| \\
-    \hat{\sigma}_z=&|+\rangle \langle+|-|-\rangle \langle-|. 
-\end{aligned}
+\begin{align*}
+    \langle \phi_1 |\mathcal{A}|\psi \rangle=&\langle\phi_1|\{a\mathcal{A}|\phi_1\rangle+b\mathcal{A}|\phi_2\rangle\}\\
+    =&\langle \phi_1 | \{a[3|\phi_1\rangle-4i|\phi_2\rangle]+b[-4i|\phi_1\rangle-3|\phi_2\rangle] \} \\
+    =&3a-4i\\
+    =&3\langle \phi_1 | \psi \rangle-4i\langle \phi_2 | \psi \rangle \\
+    \Rightarrow & \langle \phi_1 |\mathcal{A}=3\langle \phi_1| -4i\langle \phi_2 |.    
+\end{align*}
 ```
-De donde, por ejemplo,
-$$\hat{\sigma}_x |+\rangle = \left[|-\rangle \langle+|+|+\rangle \langle-| \right]|+\rangle=|-\rangle\langle+|+\rangle+|+\rangle \langle -|+\rangle=|-\rangle.$$
-Análogamente, por ejemplo
-$$\langle - |\hat{\sigma}_z=\langle - |\left[|+\rangle \langle+|-|-\rangle \langle-|\right]=\langle-|+\rangle\langle+|-\langle-|-\rangle \langle-|=-\langle-|.$$
+De manera análoga,
+$$\langle \phi_2 |\mathcal{A}=-4i\langle \phi_2| -3\langle \phi_2 |.$$
 :::
 
-## Descomposición espectral de un operador
+### Propiedades de los operadores lineales
 
-Si $\mathcal{A}$ es un operador hermítico con autoestados
-$|a_n\rangle;n=1,2,\ldots$ y correspondientes autovalores
-$a_n; \, n=1,2,\ldots$; de manera que
-$$\mathcal{A}|a_n\rangle=a_n |a_n\rangle$$
-$$\mathcal{A}=\sum_n a_n |a_n\rangle \langle a_n|$$
+-   _Suma de operadores_: A partir de dos operadores lineales
+    $\mathcal{L}_1$ y $\mathcal{L}_2$ se puede formar un nuevo operador
+    lineal como una combinación lineal
+    $$(c_1 \mathcal{L}_1+c_2 \mathcal{L}_2)|A\rangle=c_1 \mathcal{L}_1 |A\rangle+c_2 \mathcal{L}_2|A\rangle.$$
 
-En la mecánica cuántica, si una cierta cantidad observable $Q$ toma
-valores $q_1, q_2, q_2, \ldots$, entonces este observabe es
-representable como un operador Hermítico $\mathcal{Q}$ tal que
+-   _Conmutatividad de la suma_:
+    $$\mathcal{L}_1+\mathcal{L}_2=\mathcal{L}_2+\mathcal{L}_1.$$
 
-1.  los valores propios de $\mathcal{Q}$ son todos los posibles valores
-    $q_1, q_2, q_2, \ldots$,
+-   _Multiplicación de operadores_: La aplicación sucesiva de dos
+    operadores lineales es un operador lineal
+    $$\mathcal{L}_1 (\mathcal{L}_2 | A \rangle)\equiv (\mathcal{L}_1 \mathcal{L}_2)| A \rangle.$$
+    $\mathcal{L}_1 \mathcal{L}_2$ se conoce como el *producto* de
+    $\mathcal{L}_1$ y $\mathcal{L}_2$. En general,
+    $\mathcal{L}_1 \mathcal{L}_2\neq \mathcal{L}_2 \mathcal{L}_1$ por lo
+    tanto el producto de operadores lineales es no conmutativo.
 
-2.  si una medida de $Q$ resulta en $q_n$, el sistema estará el
-    eigen-estado $|q_n\rangle$, donde
-    $$\mathcal{Q}|q_n\rangle=q_n|q_n\rangle$$
+En la mecánica cuántica, esta característica es muy importante y
+conviene definir el *conmutador* de dos operadores
+$$[\mathcal{A},\mathcal{B}]=\mathcal{A}\mathcal{B}-\mathcal{B}\mathcal{A}.$$
 
-3.  los eigen-estados $|q_1\rangle$, $|q_2\rangle$, $\ldots$ forman una
-    base ortonormal completa; por lo que cualquier otro estado del
-    sistema puede escribirse
-    $$|\psi\rangle=|q_1\rangle\langle q_1|\psi \rangle + |q_2\rangle\langle q_2|\psi \rangle +\cdots$$
-
-4.  si el sistema se encuentra en el estado $|\psi \rangle$, la
-    probabilidad de obtener el resultado $q_n$ luego de medir $Q$ está
-    dada por $$|\langle q_n |\psi\rangle|^2$$
-
-Generalmente se le llama *observable* al operador $\mathcal{Q}$.
-
-:::{note} Valor esperado de un observable
- En mecánica cuántica se define el valor
-promedio de un observable $\mathcal{A}$ en un estado cuántico
-$|\Psi\rangle$:
-$$\langle \mathcal{A} \rangle= \langle \Psi | \mathcal{A}|\Psi \rangle$$
+:::{note} Propiedades del conmutador 
+```{math}
+  \begin{align*}
+    [\mathcal{A},\mathcal{B}]=&-[\mathcal{B},\mathcal{A}] \\
+    [\mathcal{A},\mathcal{B}\mathcal{C}]=&[\mathcal{A},\mathcal{B}]C+\mathcal{B}[\mathcal{A},\mathcal{C}]\\
+    [\mathcal{A},\mathcal{B}+\mathcal{C}]=&[\mathcal{A},\mathcal{B}]+[\mathcal{A},\mathcal{C}]\\
+    [\mathcal{A},[\mathcal{B},\mathcal{C}]]+[\mathcal{C},[\mathcal{A},\mathcal{B}]]+[\mathcal{B},[\mathcal{C},\mathcal{A}]]=&0, \qquad (\mbox{identidad de Jacobi})
+\end{align*}
+```
 :::
 
+En la mecánica cuántica, se dice que si dos operadores conmutan,
+entonces la variable dinámica que representa son *observables* medibles
+de forma simultánea.\
+Si $[\mathcal{A},\mathcal{B}]=0$, decimos que los operadores conmutan,
+lo que significa que aplicarlos en distinto orden da el mismo resultado.
+En cambio, si el conmutador no es cero, los operadores no conmutan, lo
+cual es importante en la mecánica cuántica, ya que indica que las
+observables representadas por esos operadores no se pueden medir
+simultáneamente con precisión arbitraria (principio de incertidumbre).
+
+:::{note} Operadores lineales en la mecánica cuántica
+Las variables dinámicas en la mecánica cuántica se pueden asociar con operadores
+lineales actuando en el espacio de estado: 
+```{math}
+\begin{align*}
+    \hat{x}\rightarrow & x,\\ 
+    \hat{p}\rightarrow &(\hbar/i)\nabla,
+\end{align*}
+```
+donde $\hbar=h/2\pi$ y $h=6,626 070 15 \times 10^{-34}\, \text{J/s}$ es la *constante de Planck*.
+:::
+
+:::{note} Cálculo de conmutador 
+
+Para calcular el conmutador $[\hat{x}, \hat{p}]$, consideramos la acción
+de los operadores de posición $\hat{x}$ y de momento $\hat{p}$ sobre una
+función de onda $\psi(x)$:
+
+$$[\hat{x}, \hat{p}] \psi(x) = (\hat{x} \hat{p} - \hat{p} \hat{x}) \psi(x)$$
+
+Primero, calculamos $\hat{x} \hat{p} \psi(x)$:
+$$\hat{x} \hat{p} \psi(x) = \hat{x} \left( -i \hbar \frac{d}{dx} \psi(x) \right) = -i \hbar x \frac{d}{dx} \psi(x)$$
+
+Ahora calculamos $\hat{p} \hat{x} \psi(x)$:
+$$\hat{p} \hat{x} \psi(x) = \hat{p} (x \psi(x)) = -i \hbar \frac{d}{dx} (x \psi(x)) = -i \hbar \left( \psi(x) + x \frac{d}{dx} \psi(x) \right)$$
+
+Restando ambas expresiones:
+$$[\hat{x}, \hat{p}] \psi(x) = -i \hbar x \frac{d}{dx} \psi(x) - \left( -i \hbar (\psi(x) + x \frac{d}{dx} \psi(x)) \right)$$
+$$[\hat{x}, \hat{p}] \psi(x) = i \hbar \psi(x)$$
+
+Por lo tanto, obtenemos el resultado esperado:
+$$[\hat{x}, \hat{p}] = i \hbar$$
+:::
+
+### Descomposición de la identidad en una base ortonormal
+
+Si $\{|\phi_m\rangle\}$ es una base ortonormal de un espacio de Hilbert,
+se conoce como _descomposición de la identidad en la base ortonormal_
+a: $$\mathbb{I} = \sum_m |\phi_m\rangle \langle \phi_m|$$ Esto indica
+que cualquier vector en el espacio puede ser escrito como una
+combinación lineal de los vectores de la base $|\phi_m \rangle$.\
+La expresión $|\phi_m\rangle \langle \phi_m|$ es un tipo especial de
+operador llamado _operador de proyección_. Este operador actúa sobre
+cualquier estado cuántico $|\psi \rangle$ en el espacio de Hilbert y lo
+proyecta sobre el estado $|\phi_m \rangle$. Es decir, al aplicar
+$|\phi_m\rangle \langle \phi_m|$ sobre $|\psi\rangle$ se obtiene
+$$(|\phi_m\rangle \langle \phi_m|)|\psi\rangle =|\phi_m\rangle \langle \phi_m| \psi\rangle,$$
+donde $\langle \phi_m| \psi\rangle$ es el coeficiente de proyección (un
+número complejo) que mide cuanto el estado $|\psi\rangle$ está alineado
+con el estado $|\phi_m\rangle$, y el resultado es un estado que es
+paralelo a $|\phi_m \rangle$, pero escalado por ese coeficiente.\
+En otras palabras, este operador selecciona la componente del estado
+$|\psi\rangle$ que está en la direción de $|\phi_m \rangle$.\
+Estos operadores de proyección se usan frecuentemente en cálculos de
+probabilidades y mediciones. Por ejemplo, si el sistema está en el
+estado $|\phi\rangle$, la probabilidad de encontrar (medir) el sistema
+en el estado $|\phi_m\rangle$ es el cuadrado del valor absoluto de la
+proyección:
+$$\text{Prob}(|\phi_m\rangle)=|\langle \phi_m|\psi \rangle|^2.$$ Esta
+proyección se realiza aplicando el operador
+$|\phi_m \rangle \langle \phi_m|$ sobre el estado $|\psi\rangle$, que
+selecciona la componente en la dirección de $|\phi_m\rangle$.
+
+:::{note} Operador de proyección y probabilidades
+
+Considere de nuevo los estados de espín $|+\rangle$ y $|-\rangle$ como
+la base de un sistema de medio espín.\
+Si el sistema se encuentra en el estado
+$$|\psi \rangle = \alpha |+\rangle + \beta |-\rangle,$$ donde $\alpha$ y
+$\beta$ son números complejos que representan las amplitudes de
+probabilidad del sistema de estar en los estados $|+\rangle$ y
+$|-\rangle$, respectivamente.\
+Se define el operador de proyección sobre el estado $|+\rangle$:
+$$\hat{P}_+=|+\rangle \langle + |,$$
+
+de manera que $$\hat{P}_+ |\psi\rangle=\alpha |+\rangle.$$
+
+La probabilidad de medir el espín en el estado $|+\rangle$ es el valor
+absoluto al cuadrado del coeficiente $\alpha$, que es la amplitud de la
+proyección del estado $|\psi\rangle$ sobre $|+\rangle$. Esto se calcula
+usando el producto interno $\langle + | \psi \rangle$:
+
+$$\text{Prob}(+) = |\langle + | \psi \rangle|^2 = |\alpha|^2$$
+
+Por lo tanto, la probabilidad de que el sistema esté en el estado
+$|+\rangle$ es $|\alpha|^2$.
+:::
 
 
 
 :::{seealso} Referencias
-@cresser [10.3 The Hermitean Adjoint of an Operator, 155-160]
 
-@cresser [10.4 Eigenvalues and Eigenvectors, 160-165]
+@cresser [Chapter 10 Operations on States, pag. 143-155]
 
-@riley2006mathematical [Cap. 17 "Eigenfunction methods for
-differential equations", pág. 559-563]
+@riley2006mathematical [Cap. 18 "Eigenfunction methods for
+differential equations", pág. 554-559]
 
 :::

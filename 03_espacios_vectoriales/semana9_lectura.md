@@ -1,421 +1,419 @@
 ---
-title: Operadores lineales
+title: Espacios vectoriales
 description: Espacios vectoriales
-short_title: Operadores lineales
+short_title: Espacios vectoriales
 author: " "
-tags: [espacios_vectoriales, operador, ortogonalización, Gram-Schmidt, descomposición, identidad]
-subject: Espacios vectoriales - Semana 9
-keywords: [operador, ortogonalización, Gram-Schmidt, descomposición, identidad]
+tags: [espacios_vectoriales, espacio, vectores, expansión, ortogonalidad]
+subject: Espacios vectoriales - Semana 8
+keywords: [espacio, vectores, expansión, ortogonalidad]
 exports:
  - format: pdf
    template: curvenote
-   output: ./semana9_lectura.pdf
+   output: ./semana8_lectura.pdf
 downloads:
-  - file: ./semana9_lectura.md
-    title: semana9_lectura.md
-  - file: ./semana9_lectura.pdf
-    title: semana9_lectura.pdf
+  - file: ./semana8_lectura.md
+    title: semana8_lectura.md
+  - file: ./semana8_lectura.pdf
+    title: semana8_lectura.pdf
 ---
 
-:::{aside} [Sarah Kaiser](https://www.sckaiser.com/)
+:::{aside} [Donna Strickland](https://es.wikipedia.org/wiki/Donna_Strickland)
 
-es una física e ingeniera reconocida por su trabajo en óptica cuántica y computación cuántica. Se ha especializado en el diseño de sistemas cuánticos fotónicos y en el desarrollo de herramientas de software para la simulación y el control de experimentos cuánticos. Kaiser ha colaborado con empresas tecnológicas y comunidades de código abierto para promover la accesibilidad y el uso de tecnologías cuánticas emergentes.
+es una ingeniera física canadiense que recibió el Premio Nobel de Física en 2018 por su trabajo en la generación de pulsos ópticos ultracortos de alta intensidad, conocido como ``amplificación de pulso de chirp" (CPA). Este trabajo tiene aplicaciones directas en la óptica cuántica y en tecnologías como la cirugía lásers. Las matemáticas detrás de la óptica cuántica y la manipulación de pulsos de luz involucran la representación de estados de luz en espacios vectoriales complejos.
 
-Además de su investigación técnica, es conocida por su labor en divulgación científica y educación, buscando acercar la computación cuántica a estudiantes, ingenieros y científicos de diferentes disciplinas. Ha contribuido con proyectos de Q# (el lenguaje cuántico de Microsoft) y participa activamente en talleres y conferencias para promover la adopción de herramientas cuánticas en la ingeniería moderna.
-
-```{figure} ./Sarah_Kaiser.jpg
-:label: fig-Sarah_Kaiser.jpg
-:alt: retrato de Dra. Sarah Kaiser
+```{figure} ./DonnaStrickland_635x953.jpg
+:label: fig-DonnaStrickland.jpg
+:alt: retrato de Dra. Donna Strickland
 :align: center
-Dra. Sarah Kaiser (1985 - )
+Dra. Donna Strickland (1959 - )
 ```
 :::
 
 ```{note} Objetivos
 Al completar esta lección, serás capaz de
-1. Aplicar el algoritmo de Gram–Schmidt para generar bases ortonormales a partir de conjuntos de vectores linealmente independientes en espacios de Hilbert finito-dimensionales.
+1. Definir formalmente un espacio vectorial y reconocer sus axiomas básicos.
 
-2. Interpretar el significado físico y matemático de los operadores de proyección y de la descomposición de la identidad en una base ortonormal.
+2. Explicar el concepto de base y dimensión de un espacio vectorial.
 
-3. Construir operadores de proyección sobre estados cuánticos y utilizarlos para calcular probabilidades de medición.
+3. Explicar el concepto de espacio de Hilbert como una generalización de los espacios vectoriales de dimensión finita, definiendo su estructura a través del producto interno, la norma y la ortogonalidad de funciones.
 
-4. Emplear la descomposición de la identidad para expresar operadores lineales y estados cuánticos en diferentes representaciones.
+4. Aplicar la notación de Dirac para representar estados cuánticos, operadores y probabilidades de transición en mecánica cuántica, interpretando el significado físico de bras, kets y productos internos en este contexto.
+
 
 ```
 
 +++ { "part": "abstract" }  
 
-En el marco de la mecánica cuántica, los espacios vectoriales, y en particular los espacios de Hilbert, proporcionan la estructura matemática esencial para describir estados y observables. La ortonormalización de Gram–Schmidt permite construir bases ortonormales a partir de conjuntos linealmente independientes, lo que facilita la representación de estados cuánticos y operadores en forma simple y computacionalmente eficiente. Sobre estas bases, los operadores de proyección actúan como herramientas clave para extraer componentes de estados en direcciones específicas, desempeñando un papel fundamental en la formulación del postulado de medición y en el cálculo de probabilidades de resultados experimentales. La descomposición de la identidad en una base ortonormal expresa al operador identidad como la suma de proyectores sobre cada vector base, lo que posibilita la expansión de cualquier estado o operador en términos de estos elementos, simplificando cálculos como el de valores esperados y la evolución temporal de sistemas cuánticos.
+Los espacios vectoriales proporcionan un marco unificador para describir fenómenos físicos y sistemas de ingeniería mediante estructuras algebraicas con propiedades lineales bien definidas. Conceptos como bases ortogonales y productos internos permiten representar estados, señales y soluciones de ecuaciones diferenciales en formas matemáticamente convenientes, facilitando el análisis y la simulación. En mecánica cuántica, la notación de Dirac introduce una formulación elegante para expresar estados y observables en espacios de Hilbert, donde la ortogonalidad y la normalización son esenciales para la interpretación probabilística de las mediciones. Estas herramientas, aplicadas a problemas que van desde la teoría cuántica de campos hasta el procesamiento de señales y la robótica, constituyen la base para el modelado y control de sistemas complejos en la ciencia y la ingeniería modernas.
 
 +++
 
-En la mecánica cuántica, el estado de un sistema físico se representa mediante un _vector_ en un _espacio de Hilbert_. Los _operadores lineales_ actúan sobre estos vectores para extraer información física o transformar el sistema.  
 
-- El operador de _posición_ $\hat{x}$ actúa sobre un estado para darnos la distribución de posiciones.
-- El operador de _momento lineal_ $\hat{p}$ se relaciona con las derivadas espaciales de la función de onda.
-- El _Hamiltoniano_ $\mathcal{H}$ nos dice cómo evoluciona el sistema en el tiempo y cuál es su energía.
 
-Por ejemplo, la energía total del sistema se obtiene calculando el _valor esperado_ del Hamiltoniano:
-$$
-E = \langle \psi | \mathcal{H} | \psi \rangle
-$$
+## Espacio vectorial 
 
-Además, el _postulado de la medición_ en mecánica cuántica nos dice que:
+Los [espacios vectoriales]([espacios vectoriales](https://es.wikipedia.org/wiki/Espacio_vectorial)) son una herramienta fundamental en física e
+ingeniería, proporcionando un marco matemático poderoso para modelar y
+resolver problemas complejos en diversas áreas, como la mecánica
+cuántica, el procesamiento de señales, la simulación y la computación
+cuántica o la dinámica de fluidos computacional (CFD).
 
-1. Los resultados medibles son los _autovalores_ de operadores lineales hermíticos.
-2. Los estados del sistema después de la medición corresponden a sus _autovectores_.
+Un espacio vectorial es un marco abstracto que generaliza las nociones
+de [vectores](https://es.wikipedia.org/wiki/Vector). Estos espacios no se limitan a los vectores en
+$\mathbb{R}^n$, sino que también pueden incluir funciones, polinomios y
+otros objetos matemáticos que satisfacen las propiedades vectoriales.
+En álgebra lineal, un espacio vectorial (o también llamado espacio
+lineal) es una estructura algebraica creada a partir de un conjunto no
+vacío, una operación interna (llamada suma, definida para los elementos
+del conjunto) y una operación externa (llamada producto por un escalar,
+definida entre dicho conjunto y otro conjunto, con estructura de
+cuerpo[^1]) que satisface ciertas propiedades fundamentales.
+A los elementos de un espacio vectorial se les llama vectores y a los
+elementos del cuerpo se les conoce como escalares.
 
-## Expansiones ortogonales 
+Formalmente, un espacio vectorial, $V$ sobre un cuerpo $K$ es un par
+$(V, K)$ junto con dos operaciones:
 
-Considere el espacio vectorial de las funciones "bien portadas" en un intervalo específico.
+1.  **Suma de vectores**:
+    $$\text{Si } \mathbf{u}, \, \mathbf{v} \in V \Rightarrow \mathbf{w}=\mathbf{u}+\mathbf{v}\in V.$$
 
-A partir del concepto de producto interno, es posible elegir una base de
-funciones linealmente independientes $\hat{\phi}_n(x),\, n=0,1,2,\ldots$
-que sean ortonormales
-$$\langle \hat{\phi}_i,\hat{\phi}_j \rangle  =\int_a^b \hat{\phi}_i^*(x)\hat{\phi}_j(x)\rho(x)dx=\delta_{ij}$$
-Si una función se expresa en términos de una *base ortonormal*
-$\hat{\phi}_n(x)$ como
+2.  **Multiplicación por un escalar**:
+    $$\text{Si } a\in K \,\text{y } \mathbf{v} \in V \Rightarrow \mathbf{w}=a\cdot\mathbf{u}\in V.$$
 
+Estas operaciones deben satisfacer las siguientes propiedades:
+
+1.  **Cierre bajo adición conmutativa y asociativa**:\
+    Para todo $\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$ se cumple que
+    :::{math}
+    \begin{aligned}
+    \mathbf{u}+\mathbf{v}=& \mathbf{v}+\mathbf{u}\\
+            (\mathbf{u}+\mathbf{v})+\mathbf{w}=& \mathbf{u}+(\mathbf{v}+\mathbf{w})
+    \end{aligned}
+    :::
+
+2.  **Cierre bajo multiplicación asociativa y distributiva por un
+    escalar**:\
+    Para todo $a,b \in K$ y $\mathbf{u},\mathbf{v} \in V$
+    :::{math}
+    \begin{aligned}
+           a\cdot(\mathbf{u}+\mathbf{v})=&a\cdot\mathbf{u}+a\cdot\mathbf{v},\\
+            (a+b)\cdot\mathbf{u}=&a\cdot\mathbf{u}+b\cdot\mathbf{u},\\
+            a\cdot(b\cdot\mathbf{u})=&(ab)\cdot\mathbf{u}.
+    \end{aligned}
+    :::
+
+3.  **Elemento neutro aditivo**:\
+    Existe un vector $\mathbf{0}\in V$ tal que
+    $$\mathbf{v}+\mathbf{0}=\mathbf{v}\, \forall \mathbf{v}\in V.$$
+
+4.  **Elemento neutro multiplicativo**:\
+    Para todo $\mathbf{v}\in V$ $$1\cdot\mathbf{v}=\mathbf{v},$$ donde 1
+    es el elemento neutro de la multiplicación en el cuerpo $K$.
+
+5.  **Elemento inverso aditivo**:\
+    Para cada vector $\mathbf{v}\in V$, existe un $-\mathbf{v} \in V$,
+    tal que $$\mathbf{v}+(-\mathbf{v})=\mathbf{0}.$$
+
+:::{note} Espacio euclideo 
+El conjunto
+$\mathbb{R}^n=\{ (x_1,x_2,\ldots,x_n)|$
+$x_i\in \mathbb{R}, i=1,2,\ldots,n \}$ con las operaciones comunes
+(adición y el producto de un vector por un escalar) define un espacio
+vectorial.
+:::
+
+:::{note} Espacio de funciones 
+El conjunto de todas las funciones
+continuas sobre un intervalo con las operaciones de suma de funciones y
+multiplicación por un escalar es un espacio vectorial.
+:::
+
+:::{note} Espacio de matrices
+El conjunto de todas las matrices de
+tamaño $m\times n$ sobre un cuerpo $K$ con las operaciones de suma de
+matrices y multiplicación por un escalar es un espacio vectorial.
+:::
+
+### Expansión lineal (span) de un conjunto de vectores
+
+Si $\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n \}$ es un espacio
+vectorial $V$, se define el $\text{span}(V)$ como el conjunto de todos
+los vectores que pueden escribirse como una combinación lineal del
+conjunto original, es decir, el conjunto $\mathbf{x}\in V$ tal que
+$$\mathbf{x}=c_1 \cdot\mathbf{v}_1 +c_2 \cdot\mathbf{v}_2+\ldots + c_n \cdot \mathbf{v}_n,
+    \label{eq:span}$$ donde $c_1,c_2,\ldots,c_n$ son escalares
+pertenecientes al cuerpo sobre el cual está definido el espacio
+vectorial.
+
+Si $\mathbf{x}=\mathbf{0}$ para alguna escogencia de
+$c_1, c_2, \ldots, c_n$; es decir
 :::{math}
-:label: eq-expansion-serie
-f(x)=\sum_{0}^\infty c_n \hat{\phi}_n,
-:::
-entonces los coeficientes $c_n$ están dado por
-$$c_n=\langle \hat{\phi}_n , f \rangle=\int^b_a \hat{\phi^*}_n (x) f(x) \rho(x) dx$$
-La [Ecuación %s](#eq-expansion-serie) se denomina _expansión en serie de $f$ en la base $\{\hat{\phi}_n\}$_.  
-:::{note} Expansión en serie
-Los primero cuatro *polinomios de Laguerre* son
-$$L_0=1, \quad L_1=1-x, \quad L_2=\frac{2-4x+x^2}{2}, \quad L_3=\frac{6-18x+9x^2-x^3}{6};$$
-los cuales son ortonormales en el rango $0\leq x \leq \infty$.\
-Usando la función de peso $\rho(x)=e^{-x}$, podemos *expandir* la función
-$e^{-x}$ en polinomios de Laguerre:
-$$e^{-x}=\frac{15}{16}-\frac{11}{16}x+\frac{5}{32}x^2-\frac{1}{96}x^3$$
-```{figure} ./expansion_serie.png
-:label: fig-expansion_serie
-:alt: graficas de exp{-x} y su aproximacion
-:align: center
-Expansión en serie de $e^{-x}$, usando los primeros tres polinomios de Laguerre.
-```
-:::
+:label: eq-span
+\mathbf{x}=c_1 \cdot\mathbf{v}_1 +c_2 \cdot\mathbf{v}_2+\ldots + c_n \cdot \mathbf{v}_n=\mathbf{0}
+::: 
+    
+se dice que los vectores
+$\mathbf{v}_1, \mathbf{v}_2, \ldots ,\mathbf{v}_n$ son *linealmente
+dependientes*. En el caso contrario, es decir, si la [Ecuación %s](#eq-span)
+ no
+se satisface para ninguna escogencia de los coeficientes, se dice que
+los vectores son *linealmente independientes*, y por lo tanto, ningún
+vector del conjunto puede expresarse como una combinación lineal de los
+otros.
 
-
-
-## Ortogonalización de Gram-Schmidt 
-
-La ortogonalización de Gram-Schmidt es un proceso que toma un conjunto
-de vectores linealmente independientes y los convierte en un conjunto de
-vectores ortogonales (o ortonormales, si se normalizan). Este
-procedimiento es especialmente útil en espacios vectoriales con producto
-interno, como los espacios de Hilbert en mecánica cuántica, ya que
-permite construir bases ortogonales a partir de un conjunto de vectores
-arbitrarios.
-
-Si $y_n(x),\, n=0,1,2,\ldots$ forman una base de funciones linealmente
-independientes, pero no ortogonales, para el espacio de Hilbert,
-entonces se puede construir una base ortonormal siguiendo el siguiente
-procedimiento: 
-```{math}
-\begin{align*}
-    \phi_0 = & \,y_0\\
-    \phi_1 = & \,y_1-\phi_0\langle \phi_0|y_1\rangle\\
-    \phi_2 =& \, y_2-\phi_1\langle \phi_1|y_2\rangle-\phi_0\langle \phi_0|y_2\rangle\\
-     \vdots & \,  \\
-    \phi_n =&\, y_n-\phi_{n-1}\langle \phi_{n-1}|y_n\rangle-\ldots-\phi_0\langle \phi_0|y_n\rangle\\
-   \vdots & \, 
-\end{align*}
-```
-
-Este algoritmo se conoce como *ortogonalización de Gram-Schmidt*; en
-honor los matemáticos Jørgen Pedersen Gram y Erhard Schmidt.\
-Cada $\phi_{n}$ es ortogonal a sus predecesoras
-$\phi_{i},\, i=0,1,2,\ldots ,n-1$.
-
-:::{note} Ortogonalización de Gram-Schmidt
-
-
-Partiendo del conjunto de funciones linealmente independientes
-$$y_n(x)=x^n,\, n=0,1,2,\ldots;$$ podemos construir (tres) funciones
-ortogonales en el rango $-1<x<1$; tomando una función de peso igual a la
-unidad:
-$$\phi_0=y_0=1, \quad \langle \phi_0 | \phi_0 \rangle^{1/2}=\left(\int^1_{-1}1\times 1 du\right)^{1/2}=\sqrt{2}$$
-
-$$\Rightarrow \hat{\phi}_0=\frac{\phi_0}{\sqrt{2}}=\sqrt{\frac{1}{2}}.$$
-
-$$\phi_1=x-\hat{\phi}_0\langle \hat{\phi}_0 | y_1 \rangle, \quad \langle \hat{\phi}_0 | y_1 \rangle=0,$$
-
-$$\Rightarrow \hat{\phi}_1=\phi_1 \langle \phi_1 | \phi_1 \rangle^{-1/2}=x\left(\int^1_{-1}u\times u du\right)^{-1/2}=\sqrt{\frac{3}{2}}x$$
- ```{math} 
- \begin{align*}
-\phi_2=&x^2-\hat{\phi}_1\langle \hat{\phi}_1 | x^2 \rangle-\hat{\phi}_0\langle \hat{\phi}_0 | x^2 \rangle\\
-=&x^2-0-\frac{1}{3}
-\end{align*}
-```
-
- ```{math}
- \begin{align*}
-\Rightarrow \hat{\phi}_2=\phi_2 \langle \phi_2 | \phi_2 \rangle^{-1/2}=&\left(x^2-\frac{1}{3} \right)\left(\int^1_{-1}\left(u^2-\frac{1}{3}\right)^{2} du\right)^{-1/2}\\
-=&\frac{1}{2}\sqrt{\frac{5}{2}}\left(3x^2-1 \right)
-\end{align*}
-```
-Estas tres funciones son los
-primeros tres *polinomios de Legendre normalizados*.
+:::{note} span de espacio vectorial 
+Considere los vectores
+$\mathbf{v}_1=(1,0)$ y $\mathbf{v}_2=(0,1)$.
+Cualquier vector $\mathbf{w}=(a,b)$ en $\mathbb{R}^2$ (donde $a$ y $b$
+son números reales) se puede escribir como
+$$\mathbf{w}=a\cdot\mathbf{v}_1 + b\cdot\mathbf{v}_2=a\cdot (1,0)+b\cdot (0,1)=(a,b).$$
+Es decir, $$\text{span}\{\mathbf{v}_1, \mathbf{v}_2 \}=\mathbb{R}^2$$
 :::
 
-El proceso de Gram-Shcmidt es una herramienta poderosa para varias
-aplicaciones, como procesamiento, anáilis y manipulación de señales y en
-la solución de sistemas de ecuaciones lineales.\
-En la mecánica cuántica, el proceso de Gram-Schmidt juega un papel
-fundamental en la normalización de las funciones de onda, las cuales
-representan los estados de una partícula en sistemas cuánticos.
+La **dimensión de un espacio vectorial** es el número máximo de vectores
+linealmente independientes que puede contener, y también es igual al
+número de vectores en cualquier base del espacio.
+Si un conjunto de vectores son linealmente independientes, el span de
+esos vectores define un espacio cuya dimensión es igual al número de
+vectores del conjunto.
 
-:::{note} Sistema cuántico de dos estados
+### Vectores base
 
+Una **base** de un espacio vectorial es un conjunto de vectores
+linealmente independientes y cuyo span cubre todo el espacio. Cada
+vector en el espacio puede expresarse de manera única como combinación
+lineal de los vectores de la base.
+Si $V$ es un espacio vectorial $N$-dimensional, cualquier conjunto de
+$N$ vectores linealmente independientes
+$\mathbf{e}_1,\mathbf{e}_2,\ldots,\mathbf{e}_N$ forman una *base* para
+$V$; en cuyo caso, cualquier elemento $\mathbf{x}$ de $V$ puede
+escribirse como una combinación lineal de
+$\mathbf{e}_1,\mathbf{e}_2,\ldots,\mathbf{e}_N$:
+$$\mathbf{x}=x_1 \cdot \mathbf{e}_1+x_2\cdot \mathbf{e}_2+\ldots +x_N \cdot \mathbf{e}_N = \sum_{i=1}^N x_i \cdot \mathbf{e}_i$$
+Los coeficientes $x_i$ se llaman los *componentes* de $\mathbf{x}$ con
+respecto a la base $\mathbf{e}_i$.
 
-Dos estados cuánticos _no_ ortogonales de un electrón en un pozo
-cuántico 1D están dados por $$|\psi_1 \rangle=\begin{pmatrix}
-        1 \\1 
-    \end{pmatrix}, \quad  |\psi_2 \rangle=\begin{pmatrix}
-        1 \\0 
-    \end{pmatrix}.$$ Aplicando el proceso de Gram-Schmidt se pueden
-definir dos estados ortogonales $|\phi_1\rangle$ y $|\phi_2\rangle$:
-$$|\phi_1\rangle = |\psi_1\rangle$$ y
-$$|\phi_2\rangle= |\psi_2\rangle -\frac{\langle \psi_2|\phi_1\rangle}{\langle \phi_1|\phi_1\rangle}|\phi_1\rangle.$$
-Calculando los productos internos
+:::{note} Base de $\mathbb{R}^2$ (dimensión finita)
+Los vectores
+$\mathbf{v}_1=(1,0)$ y $\mathbf{v}_2=(0,1)$ son una base de
+$\mathbb{R}^2$.
+:::
 
-```{math}
-  \begin{align*}
-    \langle \psi_2|\phi_1\rangle=&\begin{pmatrix}
-        1 & 0
-    \end{pmatrix} \begin{pmatrix}
-        1\\1
-    \end{pmatrix}=1, \\
-    \langle \phi_1|\phi_1\rangle=&\begin{pmatrix}
-        1 & 1
-    \end{pmatrix} \begin{pmatrix}
-        1\\1
-    \end{pmatrix}=2;
-\end{align*}
-```
- de donde $$|\phi_2 \rangle=\frac{1}{2}\begin{pmatrix}
-    1 \\ -1
-\end{pmatrix}.$$
+:::{note} Base de $C([a,b])$ (dimensión infinita)
+Considere el espacio
+de funciones continuas definidas en un intervalo cerrado $[a,b]$:
+$$f: [a,b]\rightarrow \mathbb{R}.$$
 
-Verifique que $\langle \phi_1 | \phi_2 \rangle =0.$
+Este espacio suele denotarse como $C([a,b])$.
+La dimensión de este espacio es infinita; pues no es posible encontrar
+un conjunto finito de funciones $f_1,f_2,\ldots,f_n$ tales que cualquier
+otra función continua en $[a,b]$ pueda ser expresada como una
+combinación lineal de estas $n$ funciones.
+:::
+
+## Producto interno, ortogonalidad y norma 
+
+El **producto interno** es una operación que asocia dos vectores en un
+espacio vectorial con un número (un escalar).
+Un producto interno en $V$ es una función
+$\langle \cdot , \cdot \rangle : V \times V \rightarrow \mathbb{R} \,\text{\'o } \mathbb{C}$
+que asigna a cada par de vectores $\mathbf{u}, \mathbf{v} \in V$ un
+número $\langle \mathbf{u} , \mathbf{v} \rangle$ que satisface
+:::{math}
+\begin{aligned}
+\langle \mathbf{u},\mathbf{v}\rangle =& \langle \mathbf{v},\mathbf{u}\rangle^*=\overline{\langle \mathbf{v},\mathbf{u}\rangle}\\
+\langle \mathbf{u},a \mathbf{v}+b \mathbf{w}\rangle =& a \langle \mathbf{u},\mathbf{v}\rangle + b\langle \mathbf{u},\mathbf{w}\rangle \\
+\langle a \mathbf{u}+b \mathbf{v}, \mathbf{w}\rangle =& a^* \langle \mathbf{u},\mathbf{w}\rangle + b^*\langle \mathbf{v},\mathbf{w}\rangle\\
+\langle a \mathbf{u},b \mathbf{v}\rangle =&a^*b \langle \mathbf{u},\mathbf{v}\rangle
+\end{aligned}
+:::
+
+para todos los vectores $\mathbf{u}, \mathbf{v}, \mathbf{w}\in V$ y
+$a,b$ escalares.
+
+:::{note} Producto punto
+En el espacio euclidiano $\mathbb{R}^n$, el
+producto interno estándar (o producto punto) entre dos vectores
+$\mathbf{u} = (u_1, u_2, \dots, u_n)$ y
+$\mathbf{v} = (v_1, v_2, \dots, v_n)$ se define como:
+$$\langle \mathbf{u}, \mathbf{v} \rangle = \mathbf{u} \cdot \mathbf{v} = u_1 v_1 + u_2 v_2 + \dots + u_n v_n = \sum_{i=1}^n u_i v_i$$
+:::
+
+#### Ortogonalidad
+
+Dos vectores, en un espacio vectorial general, se dice que son
+*ortogonales* si
+
+$$\langle \mathbf{u},\mathbf{v}\rangle =\mathbf{0}.$$
+
+La *norma* de un vector se define como
+$||\mathbf{u}||=\langle \mathbf{u},\mathbf{u}\rangle^{1/2}$. En general,
+$\langle \mathbf{u},\mathbf{u}\rangle$ puede ser negativo o positivo.
+Los espacios donde $\langle \mathbf{u},\mathbf{u}\rangle \geq 0$ se dice
+que tienen *norma semidefinida positiva*.
+Una base de un espacio vectorial $N$-dimensional se dice *ortonormal* si
+$$\langle \hat{\mathbf{e}}_i,\hat{\mathbf{e}}_j\rangle=\delta_{ij},$$
+donde $$\delta_{ij}=\left\{\begin{matrix}
+    1 & \mbox{para } i=j,\\
+    0 & \mbox{para } i\neq j.\
+\end{matrix}
+\right.$$ se denomida la *delta de Kronecker*.
+En dicha base, podemos expresar cualesquiera dos vectores $\mathbf{u}$ y
+$\mathbf{v}$ como
+$$\mathbf{u}=\sum_{i=1}^N a_i\hat{\mathbf{e}}_i \qquad \mbox{y} \qquad \mathbf{v}=\sum_{i=1}^N b_i\hat{\mathbf{e}}_i,$$
+de donde
+$$\langle \hat{\mathbf{e}}_j,\mathbf{u}\rangle = \sum_{i=1}^N \langle \hat{\mathbf{e}}_j,a_i  \hat{\mathbf{e}}_i\rangle= \sum_{i=1}^N a_i \langle\hat{\mathbf{e}}_j,\hat{\mathbf{e}}_i\rangle =a_j.$$
+
+Por lo tanto, es posible expresar el producto interno de $\mathbf{u}$ y
+$\mathbf{v}$ en términos de sus componentes en una base ortonormal:
+:::{math}
+\begin{aligned}
+\langle \mathbf{u},\mathbf{v}\rangle = &\langle a_1\hat{\mathbf{e}}_1+a_2\hat{\mathbf{e}}_2+\ldots + a_N\hat{\mathbf{e}}_N,b_1\hat{\mathbf{e}}_1+b_2\hat{\mathbf{e}}_2+\ldots + b_N\hat{\mathbf{e}}_N \rangle \\
+=& \sum_{i=1}^N a_i^*b_i \langle \hat{\mathbf{e}}_i,\hat{\mathbf{e}}_i\rangle+\sum_{i=1}^N \sum_{j\neq i}^N a_i^*b_i \langle \hat{\mathbf{e}}_i,\hat{\mathbf{e}}_j\rangle \\
+=& \sum_{i=1}^N a_i^*b_i.
+\end{aligned}
+:::
+
+En general, si $\mathbf{e}_1, \mathbf{e}_2,\ldots, \mathbf{e}_N$ no son
+ortogonales, pueden definirse $N^2$ números
+$$G_{ij}=\langle \mathbf{e}_i,\mathbf{e}_j \rangle,$$ de manera que si
+$\mathbf{u}=\displaystyle \sum_{i=1}^N a_i \mathbf{e}_i$ y
+$\mathbf{v}=\displaystyle \sum_{i=1}^N b_i \mathbf{e}_i$
+:::{math}
+\begin{aligned}
+    \langle \mathbf{u},\mathbf{v}\rangle =&\displaystyle \biggl\langle \sum_{i=1}^N a_i \mathbf{e}_i , \sum_{j=1}^N b_j \mathbf{e}_j\biggr\rangle \nonumber \\
+    =& \sum_{i=1}^N \sum_{j=1}^N a_i^*b_j \langle \mathbf{e}_i,\mathbf{e}_j \rangle \nonumber \\
+    =&\sum_{i=1}^N \sum_{j=1}^N a_i^*G_{ij}b_j.
+\end{aligned}
+:::
+
+#### Norma
+
+El producto interno es la base para definir **la norma** de un vector
+$\mathbf{v}$, $\| \mathbf{v} \|$, como
+
+$$\|\mathbf{v}\|^2 = \sqrt{\langle \mathbf{v}, \mathbf{v} \rangle}$$
+
+En aquellos espacios vectoriales donde
+$\langle \mathbf{u},\mathbf{u}\rangle \geq 0$ para todo
+$\mathbf{u}, \mathbf{v} \in V$ se cumplen las siguientes relaciones
+
+1.  *Desigualdad de Schwarz*
+    $$|\langle \mathbf{u}|\mathbf{v}\rangle|\leq ||\mathbf{u} || \, ||\mathbf{v} ||,$$
+    donde la igualdad se cumple en caso que $\mathbf{u}=a \mathbf{v}$.
+
+2.  *Desigualdad triangular*
+    $$||\mathbf{u} +\mathbf{v} || \leq ||\mathbf{u} || + ||\mathbf{v} ||,$$
+
+3.  *Desigualdad de Bessel*
+    $$||\mathbf{u}||^2 \geq \sum_i |\langle \hat{\mathbf{e}}_i|\mathbf{u}\rangle|^2,$$
+    o equivalentemente
+
+    $$|\langle \mathbf{u},\mathbf{u}\rangle| \geq  \sum_i |a_i|^2,$$
+    donde $\hat{\mathbf{e}}_i$ con $i=1,2,\ldots,N$ es una base
+    ortonormal del espacio vectorial $N-$dimensional y $a_i$ son las
+    componentes de $\mathbf{u}$ en dicha base.
+
+4.  *Igualdad del paralelogramo*
+    $$||\mathbf{u}+\mathbf{v}||^2 +||\mathbf{u}-\mathbf{v}||^2= 2(||\mathbf{u}||^2+||\mathbf{v}||^2),$$
+
+## Espacio de Hilbert y notación de Dirac 
+
+Un **espacio de Hilbert**[^2] es una generalización del concepto de
+espacio euclídeo. Esta generalización extiende los métodos del álgebra
+lineal y el cálculo aplicados en el espacio euclídeo de dos dimensiones
+y tres dimensiones a los espacios de dimensión arbitraria, incluyendo
+los espacios de dimensión infinita.
+
+En términos generales, un espacio de Hilbert es un **espacio vectorial
+completo con respecto a un producto interno**.
+
+Considere el espacio de funciones continuas definidas en un intervalo
+cerrado $[a,b]$: $$f: [a,b]\rightarrow \mathbb{R}.$$
+
+Sean $y_n(x)$, $n=0,1,...,\infty$ un conjunto de funciones base, de
+manera que cualquier función "bien portada\" en el intervalo
+$a\leq x\leq b$ puede escribirse como una combinación lineal de dichas
+funciones:
+
+$$f(x)=\sum_{n=0}^\infty c_n y_n(x)$$
+
+Se define el *producto interno* mediante
+$$\langle f|g \rangle=\int_a^b f^*(x)g(x)\rho(x)dx,$$ donde $\rho(x)$ es
+una función real no negativa en el intervalo $a\leq x\leq b$, denominada
+*función de peso*.
+Dos funciones se dicen *ortonormales* (respecto a la función de peso
+$\rho (x)$) en el intervalo $[a,b]$ si
+$$\langle f|g \rangle =\int_a^b f^*(x)g(x)\rho(x)dx=0,$$ y la *norma* de
+la función se define como 
+:::{math}
+\begin{aligned}
+    ||f||^{1/2}=\langle f|f \rangle^{1/2} =&\left[\int_a^b f^*(x)f(x)\rho(x)dx\right]^{1/2} \nonumber \\ 
+    =&\left[\int_a^b |f(x)|^2 \rho(x)dx\right]^{1/2}.
+\end{aligned}
+:::
+
+Es común definir un *función normalizada* como $\hat{f}=f/||f||$, la
+cual tiene norma igual a la unidad.
+Un espacio vectorial infinito-dimensional de funciones, que cuente con
+un producto interno definido, se llama *espacio de Hilbert*.
+La notación $\langle \phi | \psi \rangle$, conocida como ***formalismo
+de Dirac*** (o notación bra-ket)[^3], es la notación estándar de la
+mecánica cuántica para describir estados cuánticos y operaciones sobre
+ellos en un espacio de Hilbert. El término $\langle \phi |$ se denomina
+*bra* y el término $| \psi \rangle$, *ket*.
+
+:::{note} Mecánica cuántica
+En mecánica cuántica, el estado de un
+sistema físico se identifica con un vector (ket) en el espacio de
+Hilbert complejo, $\mathcal{H}$.
+Las observables de un sistema (como la posición, el momento, y la
+energía) se representan por operadores lineales en el espacio de
+Hilbert. Estos operadores actúan sobre los vectores del espacio y sus
+valores esperados se calculan utilizando el producto interno. Por
+ejemplo, el operador Hamiltoniano describe la energía total del sistema.
+
+-   $|\psi\rangle=\begin{pmatrix}
+         1\\0
+         \end{pmatrix}$ puede representar un estado en un espacio de dos
+    dimensiones.
+
+-   $\langle \phi |$ es el conjugado transpuesto de un ket. Representa
+    un elemento del espacio dual del espacio de Hilbert.
+    Por ejemplo, si $|\phi\rangle=\begin{pmatrix}
+         1\\i
+         \end{pmatrix}$ $\langle \phi |=(1\quad -i).$
+
+-   Si $|\psi\rangle$ y $| \phi \rangle$ son estados cuánticos,
+    $\langle \phi | \psi\rangle$ es una medida de la probabilidad de
+    transición del estado $|\psi\rangle$ al $|\phi\rangle$.
 :::
 
 
-## Operadores lineales
 
-Un *operador lineal*, $\mathcal{L}$, es una aplicación (una
-transformación, un mapa, una operación) entre dos espacios vectoriales,
-que preserva las operaciones de adición de vectores y multiplicación por
-un escalar; es decir, si $|A\rangle$ y $|B\rangle$ son vectores de un
-espacio vectorial (de Hilbert) y $a$ y $b$ son escalares
-```{math}
-\begin{align*}
-%\mathcal{L}a|A\rangle=&a\mathcal{L}|A\rangle, \\
-\mathcal{L}(a|A\rangle+b|B\rangle)=&a\mathcal{L}|A\rangle +b\mathcal{L}|B\rangle.
-\end{align*}
-```
+[^1]: un *cuerpo* (o *campo*) es una estructura algebraica que permite
+    realizar operaciones aritméticas fundamentales con propiedades de
+    cierre, conmutatividad, asociatividad, identidad, inversos y
+    distributividad.
+    Ejemplos de cuerpos son los números reales ($\mathbb{R}$), complejos
+    ($\mathbb{C}$), racionales ($\mathbb{Q}$).
 
-Debido a la linealidad, se puede determinar el efecto de un operador
-sobre *cualquier vector* si se conoce el efecto del operador sobre cada
-elemento de una base. Si $\{|\phi_k\rangle;\quad k=1,2,\ldots\}$
-representa una base ortogonal
-$$\mathcal{L}|\phi_n\rangle=\sum_m |\phi_m\rangle \langle \phi_m|(\mathcal{L}|\phi_n\rangle),$$
+[^2]:
+    David Hilbert (1862-1943) fue un matemático alemán, reconocido como
+    uno de los más influyentes del siglo XIX y principios del XX.
+    Hilbert y sus estudiantes proporcionaron partes significativas de la
+    infraestructura matemática necesaria para la mecánica cuántica y la
+    relatividad general.
+    
 
-está caracterizado por el conjunto de números
-$$\langle \phi_m|(\mathcal{L}|\phi_n\rangle)\equiv \langle \phi_m|\mathcal{L}|\phi_n\rangle=L_{mn},$$
-llamados los *elementos matriz* de $\mathcal{L}$ en una base
-particular.\
-Adicionalmente, podemos escribir el efecto de un operador actuando sobre
-un bra $$\langle\phi_n|\mathcal{L}=\sum_m L_{nm}\langle\phi_m|$$
-
-:::{note} Sistemas de *medio espín* (spin half)
-
-Considere los estados de espín $|+\rangle$ y $|-\rangle$ como la base de
-un sistema de medio espín.
-
-Si el sistema cuenta con un operador $\mathcal{A}$, con las
-características 
-```{math}
-  \begin{align*}
-  \mathcal{A}|+\rangle =&\frac{1}{2}i\hbar |-\rangle, \\
-  \mathcal{A}|-\rangle =&-\frac{1}{2}i\hbar |+\rangle.
-\end{align*}
-```
-Ahora, si un sistema de medio espín se encuentra en el estado $$|S\rangle=\frac{1}{\sqrt{2}}[|+\rangle+|-\rangle]$$ entonces
-$$\mathcal{A}|S\rangle=-\frac{i\hbar}{2\sqrt{2}}[|+\rangle-|-\rangle]=|S^\prime\rangle,$$
-por lo que el estado $|S\rangle$ es mapeado al estado $|S^\prime\rangle$
-:::
-
-
-:::{note} Operador actuando sobre un bra 
-Considere un par de vectores
-ortogonales $|\phi_1\rangle$ y $|\phi_2\rangle$ que expanden el espacio
-de Hilbert $\mathcal{H}$ de cierto sistema. El operador $\mathcal{A}$
-tiene el siguiente efecto sobre dichos estado base: 
-```{math}
-\begin{align*}
-    \mathcal{A}|\phi_1\rangle=&+3|\phi_1\rangle-4i|\phi_2\rangle\\
-    \mathcal{A}|\phi_2\rangle=&-4i|\phi_1\rangle-3|\phi_2\rangle
-\end{align*}
-```
-Podemos evaluar $\langle\phi_1|\mathcal{A}$ y
-$\langle\phi_2|\mathcal{A}$ de la siguiente manera: Considere un estado
-arbitrario $|\psi\rangle=a|\phi_1\rangle+b|\phi_2\rangle$, de manera que
-
-```{math}
-\begin{align*}
-    \langle \phi_1 |\mathcal{A}|\psi \rangle=&\langle\phi_1|\{a\mathcal{A}|\phi_1\rangle+b\mathcal{A}|\phi_2\rangle\}\\
-    =&\langle \phi_1 | \{a[3|\phi_1\rangle-4i|\phi_2\rangle]+b[-4i|\phi_1\rangle-3|\phi_2\rangle] \} \\
-    =&3a-4i\\
-    =&3\langle \phi_1 | \psi \rangle-4i\langle \phi_2 | \psi \rangle \\
-    \Rightarrow & \langle \phi_1 |\mathcal{A}=3\langle \phi_1| -4i\langle \phi_2 |.    
-\end{align*}
-```
-De manera análoga,
-$$\langle \phi_2 |\mathcal{A}=-4i\langle \phi_2| -3\langle \phi_2 |.$$
-:::
-
-### Propiedades de los operadores lineales
-
--   _Suma de operadores_: A partir de dos operadores lineales
-    $\mathcal{L}_1$ y $\mathcal{L}_2$ se puede formar un nuevo operador
-    lineal como una combinación lineal
-    $$(c_1 \mathcal{L}_1+c_2 \mathcal{L}_2)|A\rangle=c_1 \mathcal{L}_1 |A\rangle+c_2 \mathcal{L}_2|A\rangle.$$
-
--   _Conmutatividad de la suma_:
-    $$\mathcal{L}_1+\mathcal{L}_2=\mathcal{L}_2+\mathcal{L}_1.$$
-
--   _Multiplicación de operadores_: La aplicación sucesiva de dos
-    operadores lineales es un operador lineal
-    $$\mathcal{L}_1 (\mathcal{L}_2 | A \rangle)\equiv (\mathcal{L}_1 \mathcal{L}_2)| A \rangle.$$
-    $\mathcal{L}_1 \mathcal{L}_2$ se conoce como el *producto* de
-    $\mathcal{L}_1$ y $\mathcal{L}_2$. En general,
-    $\mathcal{L}_1 \mathcal{L}_2\neq \mathcal{L}_2 \mathcal{L}_1$ por lo
-    tanto el producto de operadores lineales es no conmutativo.
-
-En la mecánica cuántica, esta característica es muy importante y
-conviene definir el *conmutador* de dos operadores
-$$[\mathcal{A},\mathcal{B}]=\mathcal{A}\mathcal{B}-\mathcal{B}\mathcal{A}.$$
-
-:::{note} Propiedades del conmutador 
-```{math}
-  \begin{align*}
-    [\mathcal{A},\mathcal{B}]=&-[\mathcal{B},\mathcal{A}] \\
-    [\mathcal{A},\mathcal{B}\mathcal{C}]=&[\mathcal{A},\mathcal{B}]C+\mathcal{B}[\mathcal{A},\mathcal{C}]\\
-    [\mathcal{A},\mathcal{B}+\mathcal{C}]=&[\mathcal{A},\mathcal{B}]+[\mathcal{A},\mathcal{C}]\\
-    [\mathcal{A},[\mathcal{B},\mathcal{C}]]+[\mathcal{C},[\mathcal{A},\mathcal{B}]]+[\mathcal{B},[\mathcal{C},\mathcal{A}]]=&0, \qquad (\mbox{identidad de Jacobi})
-\end{align*}
-```
-:::
-
-En la mecánica cuántica, se dice que si dos operadores conmutan,
-entonces la variable dinámica que representa son *observables* medibles
-de forma simultánea.\
-Si $[\mathcal{A},\mathcal{B}]=0$, decimos que los operadores conmutan,
-lo que significa que aplicarlos en distinto orden da el mismo resultado.
-En cambio, si el conmutador no es cero, los operadores no conmutan, lo
-cual es importante en la mecánica cuántica, ya que indica que las
-observables representadas por esos operadores no se pueden medir
-simultáneamente con precisión arbitraria (principio de incertidumbre).
-
-:::{note} Operadores lineales en la mecánica cuántica
-Las variables dinámicas en la mecánica cuántica se pueden asociar con operadores
-lineales actuando en el espacio de estado: 
-```{math}
-\begin{align*}
-    \hat{x}\rightarrow & x,\\ 
-    \hat{p}\rightarrow &(\hbar/i)\nabla,
-\end{align*}
-```
-donde $\hbar=h/2\pi$ y $h=6,626 070 15 \times 10^{-34}\, \text{J/s}$ es la *constante de Planck*.
-:::
-
-:::{note} Cálculo de conmutador 
-
-Para calcular el conmutador $[\hat{x}, \hat{p}]$, consideramos la acción
-de los operadores de posición $\hat{x}$ y de momento $\hat{p}$ sobre una
-función de onda $\psi(x)$:
-
-$$[\hat{x}, \hat{p}] \psi(x) = (\hat{x} \hat{p} - \hat{p} \hat{x}) \psi(x)$$
-
-Primero, calculamos $\hat{x} \hat{p} \psi(x)$:
-$$\hat{x} \hat{p} \psi(x) = \hat{x} \left( -i \hbar \frac{d}{dx} \psi(x) \right) = -i \hbar x \frac{d}{dx} \psi(x)$$
-
-Ahora calculamos $\hat{p} \hat{x} \psi(x)$:
-$$\hat{p} \hat{x} \psi(x) = \hat{p} (x \psi(x)) = -i \hbar \frac{d}{dx} (x \psi(x)) = -i \hbar \left( \psi(x) + x \frac{d}{dx} \psi(x) \right)$$
-
-Restando ambas expresiones:
-$$[\hat{x}, \hat{p}] \psi(x) = -i \hbar x \frac{d}{dx} \psi(x) - \left( -i \hbar (\psi(x) + x \frac{d}{dx} \psi(x)) \right)$$
-$$[\hat{x}, \hat{p}] \psi(x) = i \hbar \psi(x)$$
-
-Por lo tanto, obtenemos el resultado esperado:
-$$[\hat{x}, \hat{p}] = i \hbar$$
-:::
-
-### Descomposición de la identidad en una base ortonormal
-
-Si $\{|\phi_m\rangle\}$ es una base ortonormal de un espacio de Hilbert,
-se conoce como _descomposición de la identidad en la base ortonormal_
-a: $$\mathbb{I} = \sum_m |\phi_m\rangle \langle \phi_m|$$ Esto indica
-que cualquier vector en el espacio puede ser escrito como una
-combinación lineal de los vectores de la base $|\phi_m \rangle$.\
-La expresión $|\phi_m\rangle \langle \phi_m|$ es un tipo especial de
-operador llamado _operador de proyección_. Este operador actúa sobre
-cualquier estado cuántico $|\psi \rangle$ en el espacio de Hilbert y lo
-proyecta sobre el estado $|\phi_m \rangle$. Es decir, al aplicar
-$|\phi_m\rangle \langle \phi_m|$ sobre $|\psi\rangle$ se obtiene
-$$(|\phi_m\rangle \langle \phi_m|)|\psi\rangle =|\phi_m\rangle \langle \phi_m| \psi\rangle,$$
-donde $\langle \phi_m| \psi\rangle$ es el coeficiente de proyección (un
-número complejo) que mide cuanto el estado $|\psi\rangle$ está alineado
-con el estado $|\phi_m\rangle$, y el resultado es un estado que es
-paralelo a $|\phi_m \rangle$, pero escalado por ese coeficiente.\
-En otras palabras, este operador selecciona la componente del estado
-$|\psi\rangle$ que está en la direción de $|\phi_m \rangle$.\
-Estos operadores de proyección se usan frecuentemente en cálculos de
-probabilidades y mediciones. Por ejemplo, si el sistema está en el
-estado $|\phi\rangle$, la probabilidad de encontrar (medir) el sistema
-en el estado $|\phi_m\rangle$ es el cuadrado del valor absoluto de la
-proyección:
-$$\text{Prob}(|\phi_m\rangle)=|\langle \phi_m|\psi \rangle|^2.$$ Esta
-proyección se realiza aplicando el operador
-$|\phi_m \rangle \langle \phi_m|$ sobre el estado $|\psi\rangle$, que
-selecciona la componente en la dirección de $|\phi_m\rangle$.
-
-:::{note} Operador de proyección y probabilidades
-
-Considere de nuevo los estados de espín $|+\rangle$ y $|-\rangle$ como
-la base de un sistema de medio espín.\
-Si el sistema se encuentra en el estado
-$$|\psi \rangle = \alpha |+\rangle + \beta |-\rangle,$$ donde $\alpha$ y
-$\beta$ son números complejos que representan las amplitudes de
-probabilidad del sistema de estar en los estados $|+\rangle$ y
-$|-\rangle$, respectivamente.\
-Se define el operador de proyección sobre el estado $|+\rangle$:
-$$\hat{P}_+=|+\rangle \langle + |,$$
-
-de manera que $$\hat{P}_+ |\psi\rangle=\alpha |+\rangle.$$
-
-La probabilidad de medir el espín en el estado $|+\rangle$ es el valor
-absoluto al cuadrado del coeficiente $\alpha$, que es la amplitud de la
-proyección del estado $|\psi\rangle$ sobre $|+\rangle$. Esto se calcula
-usando el producto interno $\langle + | \psi \rangle$:
-
-$$\text{Prob}(+) = |\langle + | \psi \rangle|^2 = |\alpha|^2$$
-
-Por lo tanto, la probabilidad de que el sistema esté en el estado
-$|+\rangle$ es $|\alpha|^2$.
-:::
-
+[^3]: Paul A. M. Dirac, \"The Principles of Quantum Mechanics,\" Oxford
+    University Press, 1930.
 
 
 :::{seealso} Referencias
 
-@cresser [Chapter 10 Operations on States, pag. 143-155]
+@boas2006mathematical [Cap. 3.14 "General Vector Spaces", pág. 72-81]
 
-@riley2006mathematical [Cap. 18 "Eigenfunction methods for
-differential equations", pág. 554-559]
+@riley2006mathematical [Cap. 8 "Matrices and vector spaces", pág. 241-247]
 
 :::

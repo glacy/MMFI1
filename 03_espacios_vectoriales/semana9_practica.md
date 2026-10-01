@@ -4,93 +4,75 @@ description: Ejercicios
 short_title: Ejercicios
 author: " "
 tags: 
-  - gram-schmidt
-  - ortonormalizacion
-  - operadores-proyeccion
-  - observables
+  - espacios-vectoriales
+  - base
+  - producto-interno
   - mecanica-cuantica
-  - valor-esperado
-  - procedimental
-  - conceptual
-subject: Espacios vetoriales - Semana 9
+  - normalizacion
+  - calculo
+  - demostracion
+subject: Espacios vetoriales - Semana 8
 keywords: []
+# downloads:
+#   - file: ./semana2-practica.md
+#     title: semana2-practica.md
+#   - file: ./semana2-practica.pdf
+#     title: semana2-practica.pdf
+# abstract: asdsdasdadasdasdasda
+# kernelspec:
+#   name: python3
+#   display_name: "Python 3"
 ---
 
 :::{hint} Instrucciones
 Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y dibujos si lo considera necesario. Debe incluir los cálculos y procedimientos que le llevan a su respuesta.
 :::
  
+```{exercise}
+:label: ex1-s8
 
+Considere el conjunto de polinomios de tercer orden o menor; es
+    decir, las funciones de la forma
+    $$f(x)=a_0+a_1x+a_2 x^2 + a_3 x^3.$$ Demuestre que dichas funciones
+    forman un espacio vectorial y encuntre una base para dicho espacio.
 
-
-```{exercise}  
-:label: ex1-s9  
-Ortonormalización de Gram–Schmidt 
  
-Considera los siguientes vectores en $\mathbb{C}^2$:  
-$$
-v_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}, \quad 
-v_2 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}.
-$$
-
-1. Aplica el **algoritmo de Gram–Schmidt** para construir una base ortonormal $\{u_1, u_2\}$.  
-2. Verifica que $\langle u_i | u_j \rangle = \delta_{ij}$ para $i,j=1,2$.  
-
-```
-
-  
-```{exercise} 
-:label: ex2-s9  
-Operadores de proyección
-Sea $u_1$ el primer vector ortonormal obtenido en el Ejercicio 1.  
-
-1. Construye el operador de proyección $P_1 = |u_1\rangle \langle u_1|$.  
-2. Aplica $P_1$ a un estado general $|\psi\rangle = \alpha |u_1\rangle + \beta |u_2\rangle$.  
-3. Calcula la probabilidad de obtener el resultado asociado a $u_1$ al medir el estado $|\psi\rangle$.  
-
-```
-
-
-```{exercise} 
-:label: ex3-s9 
-Descomposición de la identidad
-Usando la base ortonormal $\{u_1, u_2\}$:  
-
-1. Escribe la **descomposición de la identidad** en esta base:  
-$$
-I = |u_1\rangle \langle u_1| + |u_2\rangle \langle u_2|.
-$$
-2. Verifica que $I |\psi\rangle = |\psi\rangle$ para un estado arbitrario $|\psi\rangle = \alpha |u_1\rangle + \beta |u_2\rangle$.  
-3. Explica cómo esta descomposición permite expresar operadores lineales en términos de sus componentes sobre la base $\{u_1, u_2\}$.  
-
-```
-
-
-```{exercise} 
-:label: ex4-s9 
-Interpretación Cuántica 
-Considera que los estados $|u_1\rangle$ y $|u_2\rangle$ representan los estados de un **qubit**.  
-
-1. Explica el significado físico del operador de proyección $P_1$ en el contexto de la **medición cuántica**.  
-2. Relaciona la descomposición de la identidad con la suma de todas las probabilidades posibles de medición.  
-3. Discute cómo la ortonormalidad de la base garantiza la conservación de la probabilidad total.  
 
 ```
 
 ```{exercise} 
-:label: ex5-s9 
-Observables
-Si el operador observable $\mathcal{A}$ tiene la forma:  
-$$
-\mathcal{A} = \lambda_1 |u_1\rangle \langle u_1| + \lambda_2 |u_2\rangle \langle u_2|,
-$$
-donde $\lambda_1, \lambda_2 \in \mathbb{R}$,  
+:label: ex2-s8
 
-1. Calcula el **valor esperado** $\langle \mathcal{A} \rangle$ para un estado $|\psi\rangle = \alpha |u_1\rangle + \beta |u_2\rangle$.  
-2. Interpreta físicamente el resultado en términos de las probabilidades de medir $\lambda_1$ y $\lambda_2$.  
+Considere dos estados cuánticos definidos por
+    $|\psi \rangle = \alpha |0\rangle + \beta |1\rangle$ y
+    $|\phi \rangle = \gamma |0\rangle + \delta |1\rangle$ donde
+    $|0\rangle$ y $|1\rangle$ son estados base ortogonales. Calcule el
+    producto interno $\langle \phi|\psi\rangle.$
+
+ 
+
 ```
 
 
+
+```{exercise}
+:label: ex3-s8
+
+Dado un estado
+    $$|\psi\rangle=\displaystyle \frac{1}{\sqrt{2}}\left(|0\rangle+|1\rangle \right),$$
+    calcule $|\langle 0|\psi\rangle|^2.$
+
+```
+
+```{exercise} 
+:label: ex4-s8
+
+Considere un estado descrito por
+    $$|\psi \rangle = c|0\rangle+\frac{1}{2}|1\rangle,$$ Determine el
+    valor de $c$ de manera que el estado esté normalizado.
+
+
+```
 
 
 
