@@ -19,7 +19,7 @@ downloads:
 
 :::{aside} [Donna Strickland](https://es.wikipedia.org/wiki/Donna_Strickland)
 
-es una ingeniera física canadiense que recibió el Premio Nobel de Física en 2018 por su trabajo en la generación de pulsos ópticos ultracortos de alta intensidad, conocido como ``amplificación de pulso de chirp" (CPA). Este trabajo tiene aplicaciones directas en la óptica cuántica y en tecnologías como la cirugía lásers. Las matemáticas detrás de la óptica cuántica y la manipulación de pulsos de luz involucran la representación de estados de luz en espacios vectoriales complejos.
+es una física canadiense, profesora de la Universidad de Waterloo y tercera mujer en la historia en recibir el Premio Nobel de Física (2018, junto con Gérard Mourou y Arthur Ashkin), por el desarrollo de la técnica de **amplificación de pulso con chirp** (CPA, por sus siglas en inglés) que presentó en su tesis doctoral (1985): estirar un pulso láser ultracorto, amplificarlo de forma segura y recomprimirlo para alcanzar intensidades extremas. Esa técnica es hoy la base de aplicaciones que van de la cirugía refractiva láser al mecanizado de precisión y a la física de campos intensos. La manipulación de pulsos de luz en la óptica cuántica — donde un estado de luz se representa como una superposición de modos en un espacio vectorial complejo — es un ejemplo directo del formalismo que construimos esta semana: **estados como vectores, mediciones como productos internos**.
 
 ```{figure} ./../images/DonnaStrickland_635x953.jpg
 :label: fig-DonnaStrickland
@@ -31,195 +31,147 @@ Dra. Donna Strickland (1959 - )
 
 ```{note} Objetivos
 Al completar esta lección, serás capaz de
-1. Definir formalmente un espacio vectorial y reconocer sus axiomas básicos.
 
-2. Explicar el concepto de base y dimensión de un espacio vectorial.
+1. **Definir formalmente un espacio vectorial** a partir de sus axiomas y **reconocer** objetos tan diversos como $\mathbb{R}^n$, las matrices y los espacios de funciones como instancias de una misma estructura.
 
-3. Explicar el concepto de espacio de Hilbert como una generalización de los espacios vectoriales de dimensión finita, definiendo su estructura a través del producto interno, la norma y la ortogonalidad de funciones.
+2. **Construir bases y determinar dimensiones** usando combinaciones lineales, span e independencia lineal, y **expresar** cualquier vector mediante componentes en una base dada.
 
-4. Aplicar la notación de Dirac para representar estados cuánticos, operadores y probabilidades de transición en mecánica cuántica, interpretando el significado físico de bras, kets y productos internos en este contexto.
+3. **Definir el producto interno, la norma y la ortogonalidad**, y **extender** estas nociones geométricas a espacios de dimensión infinita mediante los espacios de Hilbert, con bases ortonormales de funciones y productos internos con función de peso.
 
-
+4. **Aplicar la notación de Dirac** (bra-ket) para representar estados cuánticos, calcular productos internos e interpretar probabilidades de transición y de medición en mecánica cuántica.
 ```
 
-+++ { "part": "abstract" }  
++++ { "part": "abstract" }
 
-Los espacios vectoriales proporcionan un marco unificador para describir fenómenos físicos y sistemas de ingeniería mediante estructuras algebraicas con propiedades lineales bien definidas. Conceptos como bases ortogonales y productos internos permiten representar estados, señales y soluciones de ecuaciones diferenciales en formas matemáticamente convenientes, facilitando el análisis y la simulación. En mecánica cuántica, la notación de Dirac introduce una formulación elegante para expresar estados y observables en espacios de Hilbert, donde la ortogonalidad y la normalización son esenciales para la interpretación probabilística de las mediciones. Estas herramientas, aplicadas a problemas que van desde la teoría cuántica de campos hasta el procesamiento de señales y la robótica, constituyen la base para el modelado y control de sistemas complejos en la ciencia y la ingeniería modernas.
+¿Qué tienen en común una flecha en $\mathbb{R}^3$, un polinomio de grado menor que cuatro, una matriz $m\times n$ y el estado de un cúbit? A primera vista, casi nada: unos son objetos geométricos, otros algebraicos, otros entidades abstractas de la mecánica cuántica. La respuesta del álgebra lineal es que todos son **vectores**: elementos de un conjunto dotado de dos operaciones — suma y producto por un escalar — que satisfacen una lista corta de axiomas. Esa es la definición de **espacio vectorial**, el marco unificador con el que esta semana abre la unidad de estructuras algebraicas del curso. Sobre la estructura algebraica, el **producto interno** añade lo que le faltaba: geometría. Con él se definen la **norma** (longitud), la **ortogonalidad** (ángulos rectos) y las **componentes** (proyecciones sobre una base), y las desigualdades de Schwarz y de Bessel certifican que esa geometría es consistente. El salto conceptual es la generalización a los **espacios de Hilbert**: espacios vectoriales completos con producto interno que admiten dimensión infinita, donde las funciones se expanden en bases ortonormales exactamente como las flechas se descomponen en ejes. En esa arena, la notación bra-ket de Dirac convierte el producto interno en lenguaje físico: los estados son kets, las amplitudes de transición son productos internos y las probabilidades son normas al cuadrado. Todo este andamiaje es el punto de partida de la semana 10 — operadores, ortonormalización de Gram-Schmidt, proyectores y descomposición de la identidad — y del formalismo cuántico que usaremos el resto del curso.
 
 +++
 
+Las semanas anteriores dedicamos el curso a herramientas de cálculo: campos vectoriales y teoremas integrales primero, variable compleja después. Esta semana cambiamos de mirada. En lugar de *operar* con vectores, preguntamos qué **es** un vector — y la respuesta resulta ser mucho más general de lo que sugiere la flecha familiar del plano.
 
+La pregunta que guía esta semana tiene tres capas. Primera, la estructural: ¿qué propiedad comparten los vectores de $\mathbb{R}^n$, los polinomios, las matrices y las funciones continuas que los convierte a todos en "vectores"? Segunda, la geométrica: ¿qué se necesita para hablar de *longitud* y *perpendicularidad* en un espacio cuyos elementos no son flechas? Tercera, la física: ¿dónde viven los estados de un sistema cuántico, y por qué su formalismo estándar es un producto interno disfrazado de notación? Las respuestas — espacio vectorial, producto interno, espacio de Hilbert — se apilan una sobre otra, y cada una hereda el lenguaje de la anterior.
 
-## Espacio vectorial 
+:::{important} Lo que conviene traer fresco
 
-Los [espacios vectoriales]([espacios vectoriales](https://es.wikipedia.org/wiki/Espacio_vectorial)) son una herramienta fundamental en física e
-ingeniería, proporcionando un marco matemático poderoso para modelar y
-resolver problemas complejos en diversas áreas, como la mecánica
-cuántica, el procesamiento de señales, la simulación y la computación
-cuántica o la dinámica de fluidos computacional (CFD).
+Esta semana generaliza nociones de cursos anteriores de álgebra lineal y del propio curso:
 
-Un espacio vectorial es un marco abstracto que generaliza las nociones
-de [vectores](https://es.wikipedia.org/wiki/Vector). Estos espacios no se limitan a los vectores en
-$\mathbb{R}^n$, sino que también pueden incluir funciones, polinomios y
-otros objetos matemáticos que satisfacen las propiedades vectoriales.
-En álgebra lineal, un espacio vectorial (o también llamado espacio
-lineal) es una estructura algebraica creada a partir de un conjunto no
-vacío, una operación interna (llamada suma, definida para los elementos
-del conjunto) y una operación externa (llamada producto por un escalar,
-definida entre dicho conjunto y otro conjunto, con estructura de
-cuerpo[^1]) que satisface ciertas propiedades fundamentales.
-A los elementos de un espacio vectorial se les llama vectores y a los
-elementos del cuerpo se les conoce como escalares.
-
-Formalmente, un espacio vectorial, $V$ sobre un cuerpo $K$ es un par
-$(V, K)$ junto con dos operaciones:
-
-1.  **Suma de vectores**:
-    $$\text{Si } \mathbf{u}, \, \mathbf{v} \in V \Rightarrow \mathbf{w}=\mathbf{u}+\mathbf{v}\in V.$$
-
-2.  **Multiplicación por un escalar**:
-    $$\text{Si } a\in K \,\text{y } \mathbf{v} \in V \Rightarrow \mathbf{w}=a\cdot\mathbf{u}\in V.$$
-
-Estas operaciones deben satisfacer las siguientes propiedades:
-
-1.  **Cierre bajo adición conmutativa y asociativa**:\
-    Para todo $\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$ se cumple que
-    :::{math}
-    \begin{aligned}
-    \mathbf{u}+\mathbf{v}=& \mathbf{v}+\mathbf{u}\\
-            (\mathbf{u}+\mathbf{v})+\mathbf{w}=& \mathbf{u}+(\mathbf{v}+\mathbf{w})
-    \end{aligned}
-    :::
-
-2.  **Cierre bajo multiplicación asociativa y distributiva por un
-    escalar**:\
-    Para todo $a,b \in K$ y $\mathbf{u},\mathbf{v} \in V$
-    :::{math}
-    \begin{aligned}
-           a\cdot(\mathbf{u}+\mathbf{v})=&a\cdot\mathbf{u}+a\cdot\mathbf{v},\\
-            (a+b)\cdot\mathbf{u}=&a\cdot\mathbf{u}+b\cdot\mathbf{u},\\
-            a\cdot(b\cdot\mathbf{u})=&(ab)\cdot\mathbf{u}.
-    \end{aligned}
-    :::
-
-3.  **Elemento neutro aditivo**:\
-    Existe un vector $\mathbf{0}\in V$ tal que
-    $$\mathbf{v}+\mathbf{0}=\mathbf{v}\, \forall \mathbf{v}\in V.$$
-
-4.  **Elemento neutro multiplicativo**:\
-    Para todo $\mathbf{v}\in V$ $$1\cdot\mathbf{v}=\mathbf{v},$$ donde 1
-    es el elemento neutro de la multiplicación en el cuerpo $K$.
-
-5.  **Elemento inverso aditivo**:\
-    Para cada vector $\mathbf{v}\in V$, existe un $-\mathbf{v} \in V$,
-    tal que $$\mathbf{v}+(-\mathbf{v})=\mathbf{0}.$$
-
-:::{note} Espacio euclideo 
-El conjunto
-$\mathbb{R}^n=\{ (x_1,x_2,\ldots,x_n)|$
-$x_i\in \mathbb{R}, i=1,2,\ldots,n \}$ con las operaciones comunes
-(adición y el producto de un vector por un escalar) define un espacio
-vectorial.
+- **Vectores en $\mathbb{R}^2$ y $\mathbb{R}^3$**: suma, producto por un escalar, producto punto y magnitud.
+- **Combinaciones lineales** y solución de sistemas de ecuaciones lineales; operaciones con **matrices**.
+- **Funciones continuas y la integral definida** (unidad 1), y las **series** de funciones de la unidad de variable compleja.
 :::
 
-:::{note} Espacio de funciones 
-El conjunto de todas las funciones
-continuas sobre un intervalo con las operaciones de suma de funciones y
-multiplicación por un escalar es un espacio vectorial.
+# Espacios vectoriales: la estructura común
+
+Los [espacios vectoriales](https://es.wikipedia.org/wiki/Espacio_vectorial) son una herramienta fundamental en física e ingeniería: proporcionan el marco matemático en el que se modelan problemas tan diversos como la mecánica cuántica, el procesamiento de señales, la computación cuántica o la dinámica de fluidos computacional (CFD). Su fuerza está precisamente en la abstracción: **una sola teoría, infinitos ejemplos**.
+
+Un espacio vectorial es un marco que generaliza la noción intuitiva de [vector](https://es.wikipedia.org/wiki/Vector). Estos espacios no se limitan a los vectores de $\mathbb{R}^n$: también pueden incluir funciones, polinomios, matrices y otros objetos matemáticos que satisfagan las mismas reglas. Formalmente, un espacio vectorial $V$ sobre un cuerpo $K$[^1] es un par $(V, K)$ junto con dos operaciones:
+
+1. **Suma de vectores**: a cada par de vectores $\mathbf{u}, \mathbf{v} \in V$ se le asigna un vector $\mathbf{u}+\mathbf{v} \in V$.
+
+2. **Producto por un escalar**: a cada escalar $a \in K$ y cada vector $\mathbf{v} \in V$ se le asigna un vector $a\cdot\mathbf{v} \in V$.
+
+Obsérvese lo esencial de la formulación: las dos operaciones **devuelven elementos del mismo conjunto** (propiedad de cierre). A los elementos de $V$ se les llama *vectores* y a los elementos de $K$, *escalares*. Pero el cierre no basta: las operaciones deben comportarse bien. Las propiedades que exigimos son las siguientes.
+
+**Conmutatividad y asociatividad de la suma.** Para todo $\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$:
+
+$$
+\mathbf{u}+\mathbf{v} = \mathbf{v}+\mathbf{u},
+\qquad
+(\mathbf{u}+\mathbf{v})+\mathbf{w} = \mathbf{u}+(\mathbf{v}+\mathbf{w}).
+$$
+
+**Distributividad y asociatividad con escalares.** Para todo $a, b \in K$ y $\mathbf{u}, \mathbf{v} \in V$:
+
+$$
+a\cdot(\mathbf{u}+\mathbf{v}) = a\cdot\mathbf{u}+a\cdot\mathbf{v},
+\qquad
+(a+b)\cdot\mathbf{u} = a\cdot\mathbf{u}+b\cdot\mathbf{u},
+\qquad
+a\cdot(b\cdot\mathbf{u}) = (ab)\cdot\mathbf{u}.
+$$
+
+**Elemento neutro aditivo.** Existe un vector $\mathbf{0}\in V$ tal que $\mathbf{v}+\mathbf{0}=\mathbf{v}$ para todo $\mathbf{v}\in V$.
+
+**Elemento neutro multiplicativo.** Para todo $\mathbf{v}\in V$, $1\cdot\mathbf{v}=\mathbf{v}$, donde $1$ es el elemento neutro de la multiplicación en el cuerpo $K$.
+
+**Elemento inverso aditivo.** Para cada vector $\mathbf{v}\in V$ existe $-\mathbf{v} \in V$ tal que $\mathbf{v}+(-\mathbf{v})=\mathbf{0}$.
+
+Nada de esto es nuevo para las flechas del plano: la definición *destila* las reglas que ya conocíamos y las convierte en el molde que otros objetos deben llenar. La potencia de la definición está en su alcance: los tres conjuntos siguientes — de apariencias muy distintas — satisfacen todos los axiomas con sus operaciones naturales.
+
+:::{note} El espacio euclidiano $\mathbb{R}^n$
+El conjunto $\mathbb{R}^n = \{(x_1, x_2, \ldots, x_n)\,|\, x_i\in \mathbb{R},\; i=1,2,\ldots,n\}$, con la adición usual de n-adas y el producto de un vector por un escalar, define un espacio vectorial. Es el ejemplo prototípico: el que la intuición usa como referencia.
 :::
 
-:::{note} Espacio de matrices
-El conjunto de todas las matrices de
-tamaño $m\times n$ sobre un cuerpo $K$ con las operaciones de suma de
-matrices y multiplicación por un escalar es un espacio vectorial.
+:::{note} El espacio de las funciones continuas
+El conjunto de todas las funciones continuas sobre un intervalo, con la suma de funciones $(f+g)(x) = f(x)+g(x)$ y el producto por un escalar $(af)(x) = a\,f(x)$, es un espacio vectorial. Aquí el "vector" es una función completa: la estructura sobrevive al salto de lo discreto a lo continuo.
 :::
 
-### Expansión lineal (span) de un conjunto de vectores
+:::{note} El espacio de las matrices
+El conjunto de todas las matrices de tamaño $m\times n$ sobre un cuerpo $K$, con la suma de matrices y el producto por un escalar, es un espacio vectorial. Un objeto "tabular" resulta ser un vector como cualquier otro.
+:::
 
-Si $\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n \}$ es un espacio
-vectorial $V$, se define el $\text{span}(V)$ como el conjunto de todos
-los vectores que pueden escribirse como una combinación lineal del
-conjunto original, es decir, el conjunto $\mathbf{x}\in V$ tal que
-$$\mathbf{x}=c_1 \cdot\mathbf{v}_1 +c_2 \cdot\mathbf{v}_2+\ldots + c_n \cdot \mathbf{v}_n,
-    \label{eq:span}$$ donde $c_1,c_2,\ldots,c_n$ son escalares
-pertenecientes al cuerpo sobre el cual está definido el espacio
-vectorial.
+## Combinaciones lineales, span e independencia
 
-Si $\mathbf{x}=\mathbf{0}$ para alguna escogencia de
-$c_1, c_2, \ldots, c_n$; es decir
+Si $\{\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n\}$ es un conjunto de vectores de un espacio vectorial $V$, se define el **span** del conjunto como el conjunto de todos los vectores que pueden escribirse como combinación lineal de los $\mathbf{v}_i$, es decir, los $\mathbf{x}\in V$ tales que
+
+$$
+\mathbf{x}=c_1 \cdot\mathbf{v}_1 +c_2 \cdot\mathbf{v}_2+\ldots + c_n \cdot \mathbf{v}_n,
+$$
+
+donde $c_1,c_2,\ldots,c_n$ son escalares del cuerpo $K$. En palabras: el span es **todo lo que se puede construir** con los vectores dados usando únicamente las dos operaciones del espacio.
+
+La pregunta natural es si todos los vectores del conjunto son *necesarios*. Supóngase que el vector nulo puede escribirse como combinación lineal no trivial:
+
 :::{math}
-:label: eq-span
-\mathbf{x}=c_1 \cdot\mathbf{v}_1 +c_2 \cdot\mathbf{v}_2+\ldots + c_n \cdot \mathbf{v}_n=\mathbf{0}
-::: 
-    
-se dice que los vectores
-$\mathbf{v}_1, \mathbf{v}_2, \ldots ,\mathbf{v}_n$ son *linealmente
-dependientes*. En el caso contrario, es decir, si la [Ecuación %s](#eq-span)
- no
-se satisface para ninguna escogencia de los coeficientes, se dice que
-los vectores son *linealmente independientes*, y por lo tanto, ningún
-vector del conjunto puede expresarse como una combinación lineal de los
-otros.
-
-:::{note} span de espacio vectorial 
-Considere los vectores
-$\mathbf{v}_1=(1,0)$ y $\mathbf{v}_2=(0,1)$.
-Cualquier vector $\mathbf{w}=(a,b)$ en $\mathbb{R}^2$ (donde $a$ y $b$
-son números reales) se puede escribir como
-$$\mathbf{w}=a\cdot\mathbf{v}_1 + b\cdot\mathbf{v}_2=a\cdot (1,0)+b\cdot (0,1)=(a,b).$$
-Es decir, $$\text{span}\{\mathbf{v}_1, \mathbf{v}_2 \}=\mathbb{R}^2$$
+:label: eq-independencia
+\mathbf{0}=c_1 \cdot\mathbf{v}_1 +c_2 \cdot\mathbf{v}_2+\ldots + c_n \cdot \mathbf{v}_n.
 :::
 
-La **dimensión de un espacio vectorial** es el número máximo de vectores
-linealmente independientes que puede contener, y también es igual al
-número de vectores en cualquier base del espacio.
-Si un conjunto de vectores son linealmente independientes, el span de
-esos vectores define un espacio cuya dimensión es igual al número de
-vectores del conjunto.
+Si {eq}`eq-independencia` se cumple para alguna escogencia de los $c_i$ con algún $c_i \neq 0$, se dice que los vectores $\mathbf{v}_1, \mathbf{v}_2, \ldots, \mathbf{v}_n$ son *linealmente dependientes*: al menos uno de ellos ya estaba "contenido" en los otros y no aporta direcciones nuevas. En el caso contrario — si {eq}`eq-independencia` solo se satisface con $c_1 = c_2 = \cdots = c_n = 0$ — los vectores son *linealmente independientes*, y ningún vector del conjunto puede expresarse como combinación lineal de los demás.
 
-### Vectores base
+:::{note} Span de un conjunto en $\mathbb{R}^2$
+Considere los vectores $\mathbf{v}_1=(1,0)$ y $\mathbf{v}_2=(0,1)$. Cualquier vector $\mathbf{w}=(a,b)$ en $\mathbb{R}^2$ se puede escribir como
 
-Una **base** de un espacio vectorial es un conjunto de vectores
-linealmente independientes y cuyo span cubre todo el espacio. Cada
-vector en el espacio puede expresarse de manera única como combinación
-lineal de los vectores de la base.
-Si $V$ es un espacio vectorial $N$-dimensional, cualquier conjunto de
-$N$ vectores linealmente independientes
-$\mathbf{e}_1,\mathbf{e}_2,\ldots,\mathbf{e}_N$ forman una *base* para
-$V$; en cuyo caso, cualquier elemento $\mathbf{x}$ de $V$ puede
-escribirse como una combinación lineal de
-$\mathbf{e}_1,\mathbf{e}_2,\ldots,\mathbf{e}_N$:
-$$\mathbf{x}=x_1 \cdot \mathbf{e}_1+x_2\cdot \mathbf{e}_2+\ldots +x_N \cdot \mathbf{e}_N = \sum_{i=1}^N x_i \cdot \mathbf{e}_i$$
-Los coeficientes $x_i$ se llaman los *componentes* de $\mathbf{x}$ con
-respecto a la base $\mathbf{e}_i$.
+$$
+\mathbf{w}=a\cdot\mathbf{v}_1 + b\cdot\mathbf{v}_2=a\cdot (1,0)+b\cdot (0,1)=(a,b).
+$$
 
-:::{note} Base de $\mathbb{R}^2$ (dimensión finita)
-Los vectores
-$\mathbf{v}_1=(1,0)$ y $\mathbf{v}_2=(0,1)$ son una base de
-$\mathbb{R}^2$.
+Es decir, $\text{span}\{\mathbf{v}_1, \mathbf{v}_2 \}=\mathbb{R}^2$: dos vectores bastan para generar el plano entero.
 :::
 
-:::{note} Base de $C([a,b])$ (dimensión infinita)
-Considere el espacio
-de funciones continuas definidas en un intervalo cerrado $[a,b]$:
-$$f: [a,b]\rightarrow \mathbb{R}.$$
+La **dimensión de un espacio vectorial** es el número máximo de vectores linealmente independientes que puede contener, y coincide con el número de vectores de cualquier base del espacio. En consecuencia, si un conjunto de $n$ vectores es linealmente independiente, su span define un espacio cuya dimensión es exactamente $n$: la independencia garantiza que ninguna dirección está repetida.
 
-Este espacio suele denotarse como $C([a,b])$.
-La dimensión de este espacio es infinita; pues no es posible encontrar
-un conjunto finito de funciones $f_1,f_2,\ldots,f_n$ tales que cualquier
-otra función continua en $[a,b]$ pueda ser expresada como una
-combinación lineal de estas $n$ funciones.
-:::
+## Bases y componentes
 
-## Producto interno, ortogonalidad y norma 
+Una **base** de un espacio vectorial es un conjunto de vectores linealmente independientes cuyo span cubre todo el espacio: el equilibrio exacto entre *suficientes* (generan todo) y *justos* (ninguno sobra). Cada vector del espacio puede expresarse de manera **única** como combinación lineal de los vectores de la base — y esa unicidad es la que hace de las coordenadas un lenguaje confiable.
 
-El **producto interno** es una operación que asocia dos vectores en un
-espacio vectorial con un número (un escalar).
-Un producto interno en $V$ es una función
-$\langle \cdot , \cdot \rangle : V \times V \rightarrow \mathbb{R} \,\text{\'o } \mathbb{C}$
-que asigna a cada par de vectores $\mathbf{u}, \mathbf{v} \in V$ un
-número $\langle \mathbf{u} , \mathbf{v} \rangle$ que satisface
+Si $V$ es un espacio vectorial $N$-dimensional, cualquier conjunto de $N$ vectores linealmente independientes $\mathbf{e}_1,\mathbf{e}_2,\ldots,\mathbf{e}_N$ forma una base para $V$; en ese caso, cualquier elemento $\mathbf{x}$ de $V$ puede escribirse como
+
 :::{math}
+:label: eq-base-expansion
+\mathbf{x}=x_1 \cdot \mathbf{e}_1+x_2\cdot \mathbf{e}_2+\ldots +x_N \cdot \mathbf{e}_N = \sum_{i=1}^N x_i \cdot \mathbf{e}_i.
+:::
+
+Los coeficientes $x_i$ se llaman las **componentes** de $\mathbf{x}$ con respecto a la base $\{\mathbf{e}_i\}$. El espacio entero queda así "digitalizado": para trabajar con $\mathbf{x}$ basta trabajar con la lista de números $(x_1,\ldots,x_N)$.
+
+:::{note} Una base de $\mathbb{R}^2$ (dimensión finita)
+Los vectores $\mathbf{v}_1=(1,0)$ y $\mathbf{v}_2=(0,1)$ forman una base de $\mathbb{R}^2$: son independientes y su span es el plano entero. La dimensión es 2, como sugiere el nombre.
+:::
+
+:::{note} El espacio $C([a,b])$ (dimensión infinita)
+Considere el espacio de funciones continuas definidas en un intervalo cerrado $[a,b]$, $f: [a,b]\rightarrow \mathbb{R}$, denotado $C([a,b])$. La dimensión de este espacio es infinita: no existe un conjunto finito de funciones $f_1,f_2,\ldots,f_n$ tales que cualquier otra función continua en $[a,b]$ pueda expresarse como combinación lineal de ellas. Por muchas "direcciones" que se acumulen, siempre queda una función continua que escapa.
+:::
+
+Los dos ejemplos anteriores marcan la bifurcación de la semana: la teoría de dimensión finita es el terreno conocido del álgebra lineal, pero la física vive con frecuencia en dimensión infinita. Para cruzar el puente falta una pieza: la geometría.
+
+# El producto interno: geometría sobre la estructura
+
+La estructura de espacio vectorial permite **sumar** y **escalar**, pero no dice nada sobre longitudes, ángulos o perpendicularidad. Eso lo aporta una operación adicional.
+
+El **producto interno** es una operación que asocia a dos vectores de un espacio vectorial un número (un escalar). Un producto interno en $V$ es una función $\langle \cdot , \cdot \rangle : V \times V \rightarrow \mathbb{R}$ (o $\mathbb{C}$) que asigna a cada par de vectores $\mathbf{u}, \mathbf{v} \in V$ un número $\langle \mathbf{u} , \mathbf{v} \rangle$ que satisface
+
+:::{math}
+:label: eq-axiomas-prod-interno
 \begin{aligned}
 \langle \mathbf{u},\mathbf{v}\rangle =& \langle \mathbf{v},\mathbf{u}\rangle^*=\overline{\langle \mathbf{v},\mathbf{u}\rangle}\\
 \langle \mathbf{u},a \mathbf{v}+b \mathbf{w}\rangle =& a \langle \mathbf{u},\mathbf{v}\rangle + b\langle \mathbf{u},\mathbf{w}\rangle \\
@@ -228,168 +180,218 @@ número $\langle \mathbf{u} , \mathbf{v} \rangle$ que satisface
 \end{aligned}
 :::
 
-para todos los vectores $\mathbf{u}, \mathbf{v}, \mathbf{w}\in V$ y
-$a,b$ escalares.
+para todos los vectores $\mathbf{u}, \mathbf{v}, \mathbf{w}\in V$ y escalares $a,b$. La primera línea — *simetría hermítica* — reduce a la simetría ordinaria cuando el cuerpo es real; las conjugaciones complejas son las que harán posible la interpretación probabilística de la mecánica cuántica al final de la semana.
 
-:::{note} Producto punto
-En el espacio euclidiano $\mathbb{R}^n$, el
-producto interno estándar (o producto punto) entre dos vectores
-$\mathbf{u} = (u_1, u_2, \dots, u_n)$ y
-$\mathbf{v} = (v_1, v_2, \dots, v_n)$ se define como:
-$$\langle \mathbf{u}, \mathbf{v} \rangle = \mathbf{u} \cdot \mathbf{v} = u_1 v_1 + u_2 v_2 + \dots + u_n v_n = \sum_{i=1}^n u_i v_i$$
+:::{note} El producto punto como caso particular
+En el espacio euclidiano $\mathbb{R}^n$, el producto interno estándar (o producto punto) entre dos vectores $\mathbf{u} = (u_1, u_2, \dots, u_n)$ y $\mathbf{v} = (v_1, v_2, \dots, v_n)$ es
+
+$$
+\langle \mathbf{u}, \mathbf{v} \rangle = \mathbf{u} \cdot \mathbf{v} = u_1 v_1 + u_2 v_2 + \dots + u_n v_n = \sum_{i=1}^n u_i v_i.
+$$
+
+Todas las reglas de {eq}`eq-axiomas-prod-interno` se verifican directamente para esta fórmula.
 :::
 
-#### Ortogonalidad
+## Ortogonalidad y bases ortonormales
 
-Dos vectores, en un espacio vectorial general, se dice que son
-*ortogonales* si
+Dos vectores de un espacio con producto interno se dicen *ortogonales* si
 
-$$\langle \mathbf{u},\mathbf{v}\rangle =\mathbf{0}.$$
+$$
+\langle \mathbf{u},\mathbf{v}\rangle = 0.
+$$
 
-La *norma* de un vector se define como
-$||\mathbf{u}||=\langle \mathbf{u},\mathbf{u}\rangle^{1/2}$. En general,
-$\langle \mathbf{u},\mathbf{u}\rangle$ puede ser negativo o positivo.
-Los espacios donde $\langle \mathbf{u},\mathbf{u}\rangle \geq 0$ se dice
-que tienen *norma semidefinida positiva*.
-Una base de un espacio vectorial $N$-dimensional se dice *ortonormal* si
-$$\langle \hat{\mathbf{e}}_i,\hat{\mathbf{e}}_j\rangle=\delta_{ij},$$
-donde $$\delta_{ij}=\left\{\begin{matrix}
-    1 & \mbox{para } i=j,\\
-    0 & \mbox{para } i\neq j.\
-\end{matrix}
-\right.$$ se denomida la *delta de Kronecker*.
-En dicha base, podemos expresar cualesquiera dos vectores $\mathbf{u}$ y
-$\mathbf{v}$ como
-$$\mathbf{u}=\sum_{i=1}^N a_i\hat{\mathbf{e}}_i \qquad \mbox{y} \qquad \mathbf{v}=\sum_{i=1}^N b_i\hat{\mathbf{e}}_i,$$
-de donde
-$$\langle \hat{\mathbf{e}}_j,\mathbf{u}\rangle = \sum_{i=1}^N \langle \hat{\mathbf{e}}_j,a_i  \hat{\mathbf{e}}_i\rangle= \sum_{i=1}^N a_i \langle\hat{\mathbf{e}}_j,\hat{\mathbf{e}}_i\rangle =a_j.$$
+Es la generalización de la perpendicularidad: en $\mathbb{R}^2$ recupera los ejes que se cortan a $90^\circ$, pero la definición funciona igual para funciones o matrices.
 
-Por lo tanto, es posible expresar el producto interno de $\mathbf{u}$ y
-$\mathbf{v}$ en términos de sus componentes en una base ortonormal:
+La **norma** de un vector se define a partir del producto interno consigo mismo:
+
 :::{math}
+:label: eq-norma
+\|\mathbf{u}\| = \langle \mathbf{u},\mathbf{u}\rangle^{1/2}.
+:::
+
+Nótese que los axiomas {eq}`eq-axiomas-prod-interno`, por sí solos, no garantizan que $\langle \mathbf{u},\mathbf{u}\rangle \geq 0$; los espacios donde esto se cumple se dicen de *norma semidefinida positiva*. (El espacio-tiempo de la relatividad especial, donde $\langle \mathbf{u},\mathbf{u}\rangle$ puede ser negativo, es el contraejemplo físico más famoso.) Todo lo que sigue asume espacios con producto interno positivo.
+
+Una base $\{\hat{\mathbf{e}}_i\}$ de un espacio $N$-dimensional se dice *ortonormal* si
+
+$$
+\langle \hat{\mathbf{e}}_i,\hat{\mathbf{e}}_j\rangle=\delta_{ij},
+\qquad
+\delta_{ij}=\begin{cases}
+    1 & \text{para } i=j,\\
+    0 & \text{para } i\neq j,
+\end{cases}
+$$
+
+donde $\delta_{ij}$ se denomina *delta de Kronecker*. La condición compacta dos exigencias: ortogonalidad ($i\neq j$) y normalización ($i=j$). En una base así, dos vectores cualesquiera se escriben
+
+$$
+\mathbf{u}=\sum_{i=1}^N a_i\hat{\mathbf{e}}_i
+\qquad \text{y} \qquad
+\mathbf{v}=\sum_{i=1}^N b_i\hat{\mathbf{e}}_i,
+$$
+
+y las componentes se extraen con el propio producto interno:
+
+:::{math}
+:label: eq-componentes
+\langle \hat{\mathbf{e}}_j,\mathbf{u}\rangle = \sum_{i=1}^N \langle \hat{\mathbf{e}}_j,a_i  \hat{\mathbf{e}}_i\rangle= \sum_{i=1}^N a_i \langle\hat{\mathbf{e}}_j,\hat{\mathbf{e}}_i\rangle =a_j,
+:::
+
+resultado con sabor a "proyección": la componente $a_j$ es lo que queda de $\mathbf{u}$ al medirlo contra la dirección $\hat{\mathbf{e}}_j$. Con ello, el producto interno de $\mathbf{u}$ y $\mathbf{v}$ se convierte en pura álgebra de componentes:
+
+:::{math}
+:label: eq-prod-interno-base
 \begin{aligned}
-\langle \mathbf{u},\mathbf{v}\rangle = &\langle a_1\hat{\mathbf{e}}_1+a_2\hat{\mathbf{e}}_2+\ldots + a_N\hat{\mathbf{e}}_N,b_1\hat{\mathbf{e}}_1+b_2\hat{\mathbf{e}}_2+\ldots + b_N\hat{\mathbf{e}}_N \rangle \\
-=& \sum_{i=1}^N a_i^*b_i \langle \hat{\mathbf{e}}_i,\hat{\mathbf{e}}_i\rangle+\sum_{i=1}^N \sum_{j\neq i}^N a_i^*b_i \langle \hat{\mathbf{e}}_i,\hat{\mathbf{e}}_j\rangle \\
+\langle \mathbf{u},\mathbf{v}\rangle = &\biggl\langle \sum_{i=1}^N a_i\hat{\mathbf{e}}_i, \sum_{j=1}^N b_j\hat{\mathbf{e}}_j \biggr\rangle
+= \sum_{i=1}^N a_i^*b_i \underbrace{\langle \hat{\mathbf{e}}_i,\hat{\mathbf{e}}_i\rangle}_{=1}+\sum_{i=1}^N \sum_{j\neq i}^N a_i^*b_j \underbrace{\langle \hat{\mathbf{e}}_i,\hat{\mathbf{e}}_j\rangle}_{=0} \\
 =& \sum_{i=1}^N a_i^*b_i.
 \end{aligned}
 :::
 
-En general, si $\mathbf{e}_1, \mathbf{e}_2,\ldots, \mathbf{e}_N$ no son
-ortogonales, pueden definirse $N^2$ números
-$$G_{ij}=\langle \mathbf{e}_i,\mathbf{e}_j \rangle,$$ de manera que si
-$\mathbf{u}=\displaystyle \sum_{i=1}^N a_i \mathbf{e}_i$ y
-$\mathbf{v}=\displaystyle \sum_{i=1}^N b_i \mathbf{e}_i$
+En una base ortonormal, medir ángulos y longitudes equivale a multiplicar componentes. Pero ¿qué pasa si la base no es ortonormal? Entonces los términos cruzados no se anulan y deben llevarse la cuenta: si $\mathbf{e}_1, \mathbf{e}_2,\ldots, \mathbf{e}_N$ no son ortogonales, se definen los $N^2$ números
+
+$$
+G_{ij}=\langle \mathbf{e}_i,\mathbf{e}_j \rangle,
+$$
+
+de manera que para $\mathbf{u}=\sum_{i=1}^N a_i \mathbf{e}_i$ y $\mathbf{v}=\sum_{j=1}^N b_j \mathbf{e}_j$,
+
 :::{math}
-\begin{aligned}
-    \langle \mathbf{u},\mathbf{v}\rangle =&\displaystyle \biggl\langle \sum_{i=1}^N a_i \mathbf{e}_i , \sum_{j=1}^N b_j \mathbf{e}_j\biggr\rangle \nonumber \\
-    =& \sum_{i=1}^N \sum_{j=1}^N a_i^*b_j \langle \mathbf{e}_i,\mathbf{e}_j \rangle \nonumber \\
-    =&\sum_{i=1}^N \sum_{j=1}^N a_i^*G_{ij}b_j.
-\end{aligned}
+:label: eq-metrica
+\langle \mathbf{u},\mathbf{v}\rangle
+= \sum_{i=1}^N \sum_{j=1}^N a_i^*b_j \langle \mathbf{e}_i,\mathbf{e}_j \rangle
+=\sum_{i=1}^N \sum_{j=1}^N a_i^*\,G_{ij}\,b_j.
 :::
 
-#### Norma
+Los números $G_{ij}$ forman la llamada *matriz de Gram*, que codifica toda la geometría de la base elegida; en una base ortonormal $G$ es la identidad y {eq}`eq-metrica` se reduce a {eq}`eq-prod-interno-base`. La elección de base no cambia la física, pero decide cuánta geometría hay que arrastrar en los cálculos.
 
-El producto interno es la base para definir **la norma** de un vector
-$\mathbf{v}$, $\| \mathbf{v} \|$, como
+## La norma y sus desigualdades
 
-$$\|\mathbf{v}\|^2 = \sqrt{\langle \mathbf{v}, \mathbf{v} \rangle}$$
+La definición {eq}`eq-norma` cumple las propiedades esperadas de una longitud (positiva definida, homogénea, subaditiva) en todo espacio con producto interno positivo. En esos espacios valen además las siguientes relaciones, que usaremos una y otra vez:
 
-En aquellos espacios vectoriales donde
-$\langle \mathbf{u},\mathbf{u}\rangle \geq 0$ para todo
-$\mathbf{u}, \mathbf{v} \in V$ se cumplen las siguientes relaciones
+1. **Desigualdad de Schwarz**
 
-1.  *Desigualdad de Schwarz*
-    $$|\langle \mathbf{u}|\mathbf{v}\rangle|\leq ||\mathbf{u} || \, ||\mathbf{v} ||,$$
-    donde la igualdad se cumple en caso que $\mathbf{u}=a \mathbf{v}$.
+   $$
+   |\langle \mathbf{u},\mathbf{v}\rangle|\leq \|\mathbf{u}\| \, \|\mathbf{v}\|,
+   $$
 
-2.  *Desigualdad triangular*
-    $$||\mathbf{u} +\mathbf{v} || \leq ||\mathbf{u} || + ||\mathbf{v} ||,$$
+   con igualdad si y solo si $\mathbf{u}=a \mathbf{v}$. En $\mathbb{R}^n$ es el enunciado $|\cos\theta|\leq 1$; en general, dice que ningún producto interno puede exceder el producto de las longitudes.
 
-3.  *Desigualdad de Bessel*
-    $$||\mathbf{u}||^2 \geq \sum_i |\langle \hat{\mathbf{e}}_i|\mathbf{u}\rangle|^2,$$
-    o equivalentemente
+2. **Desigualdad triangular**
 
-    $$|\langle \mathbf{u},\mathbf{u}\rangle| \geq  \sum_i |a_i|^2,$$
-    donde $\hat{\mathbf{e}}_i$ con $i=1,2,\ldots,N$ es una base
-    ortonormal del espacio vectorial $N-$dimensional y $a_i$ son las
-    componentes de $\mathbf{u}$ en dicha base.
+   $$
+   \|\mathbf{u} +\mathbf{v}\| \leq \|\mathbf{u}\| + \|\mathbf{v}\|,
+   $$
 
-4.  *Igualdad del paralelogramo*
-    $$||\mathbf{u}+\mathbf{v}||^2 +||\mathbf{u}-\mathbf{v}||^2= 2(||\mathbf{u}||^2+||\mathbf{v}||^2),$$
+   el enunciado algebraico de que el camino directo nunca es más largo que el camino descompuesto: la distancia más corta entre dos puntos es la recta.
 
-## Espacio de Hilbert y notación de Dirac 
+3. **Desigualdad de Bessel**
 
-Un **espacio de Hilbert**[^2] es una generalización del concepto de
-espacio euclídeo. Esta generalización extiende los métodos del álgebra
-lineal y el cálculo aplicados en el espacio euclídeo de dos dimensiones
-y tres dimensiones a los espacios de dimensión arbitraria, incluyendo
-los espacios de dimensión infinita.
+   $$
+   \|\mathbf{u}\|^2 \geq \sum_i |\langle \hat{\mathbf{e}}_i,\mathbf{u}\rangle|^2 = \sum_i |a_i|^2,
+   $$
 
-En términos generales, un espacio de Hilbert es un **espacio vectorial
-completo con respecto a un producto interno**.
+   donde $\hat{\mathbf{e}}_i$ ($i=1,2,\ldots$) es un conjunto ortonormal y $a_i$ las componentes correspondientes de $\mathbf{u}$. Las componentes no pueden cargar más "longitud" que el propio vector; cuando el conjunto ortonormal es una base **completa** (como en dimensión finita), la desigualdad se convierte en la **igualdad de Pitágoras generalizada** $\|\mathbf{u}\|^2 = \sum_i |a_i|^2$.
 
-Considere el espacio de funciones continuas definidas en un intervalo
-cerrado $[a,b]$: $$f: [a,b]\rightarrow \mathbb{R}.$$
+4. **Igualdad del paralelogramo**
 
-Sean $y_n(x)$, $n=0,1,...,\infty$ un conjunto de funciones base, de
-manera que cualquier función "bien portada\" en el intervalo
-$a\leq x\leq b$ puede escribirse como una combinación lineal de dichas
-funciones:
+   $$
+   \|\mathbf{u}+\mathbf{v}\|^2 +\|\mathbf{u}-\mathbf{v}\|^2= 2(\|\mathbf{u}\|^2+\|\mathbf{v}\|^2),
+   $$
 
-$$f(x)=\sum_{n=0}^\infty c_n y_n(x)$$
+   la identidad geométrica del paralelogramo, que en espacios con producto interno es un teorema y no una suposición.
 
-Se define el *producto interno* mediante
-$$\langle f|g \rangle=\int_a^b f^*(x)g(x)\rho(x)dx,$$ donde $\rho(x)$ es
-una función real no negativa en el intervalo $a\leq x\leq b$, denominada
-*función de peso*.
-Dos funciones se dicen *ortonormales* (respecto a la función de peso
-$\rho (x)$) en el intervalo $[a,b]$ si
-$$\langle f|g \rangle =\int_a^b f^*(x)g(x)\rho(x)dx=0,$$ y la *norma* de
-la función se define como 
+# Espacios de Hilbert y notación de Dirac
+
+Con bases, productos internos y normas en mano, la generalización final es casi natural: ¿qué pasa cuando la dimensión se dispara a infinito?
+
+Un **espacio de Hilbert**[^2] es una generalización del espacio euclidiano que extiende los métodos del álgebra lineal y del cálculo — de dos y tres dimensiones — a espacios de dimensión arbitraria, incluidos los de dimensión infinita. En términos generales, un espacio de Hilbert es un **espacio vectorial completo con respecto a un producto interno**: además de las estructuras que ya construimos, exige que toda sucesión de Cauchy de vectores converge a un vector *dentro del espacio*; el espacio no tiene "agujeros" a los que una aproximación legítima pueda acercarse sin llegar.
+
+El escenario canónico es el de funciones. Considere funciones "bien portadas" en un intervalo cerrado $a\leq x\leq b$ y sea $\{y_n(x)\}$, $n=0,1,\ldots$ un conjunto de funciones base, de manera que cualquier función del conjunto puede escribirse como combinación lineal (ahora infinita) de dichas funciones:
+
 :::{math}
-\begin{aligned}
-    ||f||^{1/2}=\langle f|f \rangle^{1/2} =&\left[\int_a^b f^*(x)f(x)\rho(x)dx\right]^{1/2} \nonumber \\ 
-    =&\left[\int_a^b |f(x)|^2 \rho(x)dx\right]^{1/2}.
-\end{aligned}
+:label: eq-serie-funciones
+f(x)=\sum_{n=0}^\infty c_n y_n(x).
 :::
 
-Es común definir un *función normalizada* como $\hat{f}=f/||f||$, la
-cual tiene norma igual a la unidad.
-Un espacio vectorial infinito-dimensional de funciones, que cuente con
-un producto interno definido, se llama *espacio de Hilbert*.
-La notación $\langle \phi | \psi \rangle$, conocida como ***formalismo
-de Dirac*** (o notación bra-ket)[^3], es la notación estándar de la
-mecánica cuántica para describir estados cuánticos y operaciones sobre
-ellos en un espacio de Hilbert. El término $\langle \phi |$ se denomina
-*bra* y el término $| \psi \rangle$, *ket*.
+Esta es la versión en dimensión infinita de la expansión {eq}`eq-base-expansion`: el papel de los ejes lo juegan funciones, y el de las componentes, los coeficientes $c_n$. El producto interno se define mediante la integral
 
-:::{note} Mecánica cuántica
-En mecánica cuántica, el estado de un
-sistema físico se identifica con un vector (ket) en el espacio de
-Hilbert complejo, $\mathcal{H}$.
-Las observables de un sistema (como la posición, el momento, y la
-energía) se representan por operadores lineales en el espacio de
-Hilbert. Estos operadores actúan sobre los vectores del espacio y sus
-valores esperados se calculan utilizando el producto interno. Por
-ejemplo, el operador Hamiltoniano describe la energía total del sistema.
-
--   $|\psi\rangle=\begin{pmatrix}
-         1\\0
-         \end{pmatrix}$ puede representar un estado en un espacio de dos
-    dimensiones.
-
--   $\langle \phi |$ es el conjugado transpuesto de un ket. Representa
-    un elemento del espacio dual del espacio de Hilbert.
-    Por ejemplo, si $|\phi\rangle=\begin{pmatrix}
-         1\\i
-         \end{pmatrix}$ $\langle \phi |=(1\quad -i).$
-
--   Si $|\psi\rangle$ y $| \phi \rangle$ son estados cuánticos,
-    $\langle \phi | \psi\rangle$ es una medida de la probabilidad de
-    transición del estado $|\psi\rangle$ al $|\phi\rangle$.
+:::{math}
+:label: eq-prod-interno-funciones
+\langle f|g \rangle=\int_a^b f^*(x)\,g(x)\,\rho(x)\,dx,
 :::
 
+donde $\rho(x)$ es una función real no negativa en $[a,b]$, denominada **función de peso**: el peso decide cuánto "cuenta" cada región del intervalo al medir. Dos funciones se dicen *ortogonales* (respecto de $\rho$) si $\langle f|g\rangle = 0$, y la **norma** de una función es
 
+:::{math}
+:label: eq-norma-funcion
+\|f\| = \langle f|f \rangle^{1/2} =\left[\int_a^b f^*(x)f(x)\rho(x)\,dx\right]^{1/2} =\left[\int_a^b |f(x)|^2 \rho(x)\,dx\right]^{1/2}.
+:::
+
+Para que esta norma sea finita, el conjunto natural de funciones es el de las *de cuadrado integrables* respecto de $\rho$: un espacio vectorial infinito-dimensional de funciones dotado de un producto interno como {eq}`eq-prod-interno-funciones`, completado, es justamente un **espacio de Hilbert**. Es común definir la *función normalizada* $\hat{f}=f/\|f\|$, con norma igual a la unidad.
+
+La notación $\langle \phi | \psi \rangle$ que ya empleamos en {eq}`eq-prod-interno-funciones` es más que una conveniencia de escritura: es el ***formalismo de Dirac*** (o notación bra-ket)[^3], la notación estándar de la mecánica cuántica para describir estados cuánticos y operaciones sobre ellos en un espacio de Hilbert. El término $\langle \phi |$ se denomina *bra* y el término $| \psi \rangle$, *ket*; su unión, $\langle \phi|\psi\rangle$, es un producto interno.
+
+:::{note} Mecánica cuántica en lenguaje de espacios de Hilbert
+En mecánica cuántica, el estado de un sistema físico se identifica con un vector (ket) $|\psi\rangle$ en un espacio de Hilbert complejo $\mathcal{H}$, y las observables — posición, momento, energía — se representan por operadores lineales que actúan sobre esos vectores; sus valores esperados se calculan con productos internos. Por ejemplo, el operador Hamiltoniano $\hat{H}$ describe la energía total del sistema.
+
+- **Los estados son kets.** El vector $|\psi\rangle=\begin{pmatrix} 1\\0 \end{pmatrix}$ puede representar un estado en un espacio de dos dimensiones (un cúbit).
+
+- **Los bras viven en el espacio dual.** $\langle \phi |$ es el conjugado transpuesto de un ket. Por ejemplo, si $|\phi\rangle=\begin{pmatrix} 1\\i \end{pmatrix}$, entonces $\langle \phi |=(1\quad -i)$.
+
+- **Las probabilidades son productos internos.** Si $|\psi\rangle$ y $|\phi\rangle$ son estados cuánticos, $\langle \phi | \psi\rangle$ mide la amplitud de transición del estado $|\psi\rangle$ al $|\phi\rangle$, y su módulo al cuadrado $|\langle \phi | \psi\rangle|^2$ es la probabilidad de esa transición.
+:::
+
+:::{note} Ejemplo: la geometría decide probabilidades
+Sea $|0\rangle$ y $|1\rangle$ una base ortonormal ($\langle 0|0\rangle=\langle 1|1\rangle=1$, $\langle 0|1\rangle=0$) y el estado
+
+$$
+|\psi\rangle=\frac{1}{\sqrt{2}}\left(|0\rangle+|1\rangle\right).
+$$
+
+Primero, la normalización: por la igualdad de Pitágoras de Bessel en una base ortonormal completa,
+
+$$
+\|\psi\|^2 = \sum_i |a_i|^2 = \left|\tfrac{1}{\sqrt{2}}\right|^2+\left|\tfrac{1}{\sqrt{2}}\right|^2 = \tfrac{1}{2}+\tfrac{1}{2}=1,
+$$
+
+así que el estado está bien construido. Luego, la medición: por {eq}`eq-componentes`,
+
+$$
+\langle 0|\psi\rangle = \frac{1}{\sqrt{2}}
+\qquad\Longrightarrow\qquad
+|\langle 0|\psi\rangle|^2 = \frac{1}{2}.
+$$
+
+La probabilidad de medir el estado $|0\rangle$ es exactamente el cuadrado de la componente: la geometría del espacio de Hilbert *es* la física probabilística. La condición de normalización $\langle\psi|\psi\rangle = 1$ es la que garantiza que las probabilidades sobre toda la base sumen uno.
+:::
+
+La semana que viene la maquinaria se pone en movimiento: cómo **construir** bases ortonormales a partir de conjuntos arbitrarios (Gram-Schmidt), qué son los **operadores de proyección** que extraen componentes como en {eq}`eq-componentes`, y cómo la **descomposición de la identidad** en proyectores organiza todo el formalismo cuántico.
+
+:::{attention} Resumen de la semana
+
+| Concepto | Enunciado | Uso |
+|---|---|---|
+| Espacio vectorial | par $(V,K)$ con suma y producto por escalar que cumplen los axiomas | el molde común de $\mathbb{R}^n$, matrices, polinomios, funciones, estados |
+| Span | conjunto de todas las combinaciones lineales de un conjunto dado | saber qué puede generarse con qué |
+| Independencia lineal | $\sum_i c_i\mathbf{v}_i=\mathbf{0} \Rightarrow c_i=0$ | ninguna dirección está repetida |
+| Base y componentes | $\mathbf{x}=\sum_i x_i\mathbf{e}_i$ con $\{\mathbf{e}_i\}$ independiente y generadora | coordenadas únicas para cada vector |
+| Dimensión | número de vectores de cualquier base | finita ($\mathbb{R}^n$) o infinita ($C([a,b])$) |
+| Producto interno | $\langle\mathbf{u},\mathbf{v}\rangle$ con simetría hermítica y linealidad | añade geometría: ángulos, longitudes, proyecciones |
+| Ortogonalidad y ortonormalidad | $\langle\hat{\mathbf{e}}_i,\hat{\mathbf{e}}_j\rangle=\delta_{ij}$ | componentes por proyección, {eq}`eq-componentes` |
+| Matriz de Gram | $G_{ij}=\langle\mathbf{e}_i,\mathbf{e}_j\rangle$, {eq}`eq-metrica` | geometría de bases no ortogonales |
+| Norma | $\Vert\mathbf{u}\Vert=\langle\mathbf{u},\mathbf{u}\rangle^{1/2}$ | Schwarz, triangular, Bessel, paralelogramo |
+| Espacio de Hilbert | espacio vectorial completo con producto interno | escenario de la mecánica cuántica; $\langle f\vert g\rangle$ integral con peso |
+| Notación de Dirac | $\langle\phi\vert\psi\rangle$ (bra-ket) | amplitudes de transición; probabilidades como normas al cuadrado |
+:::
+
+:::{seealso} Referencias
+
+@boas2006mathematical [Cap. 3.14 "General Vector Spaces", pág. 72-81]
+
+@riley2006mathematical [Cap. 8 "Matrices and vector spaces", pág. 241-247]
+
+:::
 
 [^1]: un *cuerpo* (o *campo*) es una estructura algebraica que permite
     realizar operaciones aritméticas fundamentales con propiedades de
@@ -404,16 +406,11 @@ ejemplo, el operador Hamiltoniano describe la energía total del sistema.
     Hilbert y sus estudiantes proporcionaron partes significativas de la
     infraestructura matemática necesaria para la mecánica cuántica y la
     relatividad general.
-    
 
-[^3]: Paul A. M. Dirac, \"The Principles of Quantum Mechanics,\" Oxford
+[^3]: Paul A. M. Dirac, "The Principles of Quantum Mechanics," Oxford
     University Press, 1930.
 
+:::{note} Transparencia: uso de inteligencia artificial
 
-:::{seealso} Referencias
-
-@boas2006mathematical [Cap. 3.14 "General Vector Spaces", pág. 72-81]
-
-@riley2006mathematical [Cap. 8 "Matrices and vector spaces", pág. 241-247]
-
+Esta lección fue preparada con asistencia de un modelo de lenguaje (GLM, Z.ai) para la reorganización pedagógica del hilo conductor, la verificación de fórmulas y notación, y la corrección de erratas. Todo el contenido fue revisado, verificado y aprobado por el docente del curso, quien asume la responsabilidad académica del material.
 :::

@@ -32,7 +32,7 @@ project:
         - file: ./02_numeros_complejos/semana07/semana07_lectura.md
         - file: ./02_numeros_complejos/semana07/semana07_practica.md
     - title: Semana 8 
-      children:
+      children: 
         - file: ./02_numeros_complejos/semana08/semana08_lectura.md
         - file: ./02_numeros_complejos/semana08/semana08_practica.md
     - title: Semana 9 
