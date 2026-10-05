@@ -25,7 +25,7 @@ es una física canadiense, profesora de la Universidad de Waterloo y tercera muj
 :label: fig-DonnaStrickland
 :alt: retrato de Dra. Donna Strickland
 :align: center
-Dra. Donna Strickland (1959 - )
+Donna Strickland (1959 - ). Foto: Ecole polytechnique / Paris / France ([Wikimedia Commons](https://commons.wikimedia.org/wiki/File%3AEcole_polytechnique_-_49578486041_%28cropped%29.jpg), CC BY-SA 2.0).
 ```
 :::
 
@@ -38,27 +38,17 @@ Al completar esta lección, serás capaz de
 
 3. **Definir el producto interno, la norma y la ortogonalidad**, y **extender** estas nociones geométricas a espacios de dimensión infinita mediante los espacios de Hilbert, con bases ortonormales de funciones y productos internos con función de peso.
 
-4. **Aplicar la notación de Dirac** (bra-ket) para representar estados cuánticos, calcular productos internos e interpretar probabilidades de transición y de medición en mecánica cuántica.
 ```
 
 +++ { "part": "abstract" }
 
-¿Qué tienen en común una flecha en $\mathbb{R}^3$, un polinomio de grado menor que cuatro, una matriz $m\times n$ y el estado de un cúbit? A primera vista, casi nada: unos son objetos geométricos, otros algebraicos, otros entidades abstractas de la mecánica cuántica. La respuesta del álgebra lineal es que todos son **vectores**: elementos de un conjunto dotado de dos operaciones — suma y producto por un escalar — que satisfacen una lista corta de axiomas. Esa es la definición de **espacio vectorial**, el marco unificador con el que esta semana abre la unidad de estructuras algebraicas del curso. Sobre la estructura algebraica, el **producto interno** añade lo que le faltaba: geometría. Con él se definen la **norma** (longitud), la **ortogonalidad** (ángulos rectos) y las **componentes** (proyecciones sobre una base), y las desigualdades de Schwarz y de Bessel certifican que esa geometría es consistente. El salto conceptual es la generalización a los **espacios de Hilbert**: espacios vectoriales completos con producto interno que admiten dimensión infinita, donde las funciones se expanden en bases ortonormales exactamente como las flechas se descomponen en ejes. En esa arena, la notación bra-ket de Dirac convierte el producto interno en lenguaje físico: los estados son kets, las amplitudes de transición son productos internos y las probabilidades son normas al cuadrado. Todo este andamiaje es el punto de partida de la semana 10 — operadores, ortonormalización de Gram-Schmidt, proyectores y descomposición de la identidad — y del formalismo cuántico que usaremos el resto del curso.
-
+¿Qué tienen en común una flecha en $\mathbb{R}^3$, un polinomio de grado menor que cuatro, una matriz $m\times n$ y el estado de un cúbit? A primera vista, casi nada: unos son objetos geométricos, otros algebraicos, otros entidades abstractas de la mecánica cuántica. La respuesta del álgebra lineal es que todos son **vectores**: elementos de un conjunto dotado de dos operaciones — suma y producto por un escalar — que satisfacen una lista corta de axiomas. Esa es la definición de **espacio vectorial**, el marco unificador con el que esta semana abre la unidad de estructuras algebraicas del curso. Sobre la estructura algebraica, el **producto interno** añade lo que le faltaba: geometría. Con él se definen la **norma** (longitud), la **ortogonalidad** (ángulos rectos) y las **componentes** (proyecciones sobre una base), y las desigualdades de Schwarz y de Bessel certifican que esa geometría es consistente. El salto conceptual es la generalización a los **espacios de Hilbert**: espacios vectoriales completos con producto interno que admiten dimensión infinita, donde las funciones se expanden en bases ortonormales exactamente como las flechas se descomponen en ejes. En esa arena, la notación bra-ket de Dirac convierte el producto interno en lenguaje físico: los estados son kets, las amplitudes de transición son productos internos y las probabilidades son normas al cuadrado. 
 +++
 
 Las semanas anteriores dedicamos el curso a herramientas de cálculo: campos vectoriales y teoremas integrales primero, variable compleja después. Esta semana cambiamos de mirada. En lugar de *operar* con vectores, preguntamos qué **es** un vector — y la respuesta resulta ser mucho más general de lo que sugiere la flecha familiar del plano.
 
 La pregunta que guía esta semana tiene tres capas. Primera, la estructural: ¿qué propiedad comparten los vectores de $\mathbb{R}^n$, los polinomios, las matrices y las funciones continuas que los convierte a todos en "vectores"? Segunda, la geométrica: ¿qué se necesita para hablar de *longitud* y *perpendicularidad* en un espacio cuyos elementos no son flechas? Tercera, la física: ¿dónde viven los estados de un sistema cuántico, y por qué su formalismo estándar es un producto interno disfrazado de notación? Las respuestas — espacio vectorial, producto interno, espacio de Hilbert — se apilan una sobre otra, y cada una hereda el lenguaje de la anterior.
 
-:::{important} Lo que conviene traer fresco
-
-Esta semana generaliza nociones de cursos anteriores de álgebra lineal y del propio curso:
-
-- **Vectores en $\mathbb{R}^2$ y $\mathbb{R}^3$**: suma, producto por un escalar, producto punto y magnitud.
-- **Combinaciones lineales** y solución de sistemas de ecuaciones lineales; operaciones con **matrices**.
-- **Funciones continuas y la integral definida** (unidad 1), y las **series** de funciones de la unidad de variable compleja.
-:::
 
 # Espacios vectoriales: la estructura común
 
@@ -99,7 +89,7 @@ $$
 Nada de esto es nuevo para las flechas del plano: la definición *destila* las reglas que ya conocíamos y las convierte en el molde que otros objetos deben llenar. La potencia de la definición está en su alcance: los tres conjuntos siguientes — de apariencias muy distintas — satisfacen todos los axiomas con sus operaciones naturales.
 
 :::{note} El espacio euclidiano $\mathbb{R}^n$
-El conjunto $\mathbb{R}^n = \{(x_1, x_2, \ldots, x_n)\,|\, x_i\in \mathbb{R},\; i=1,2,\ldots,n\}$, con la adición usual de n-adas y el producto de un vector por un escalar, define un espacio vectorial. Es el ejemplo prototípico: el que la intuición usa como referencia.
+El conjunto $\mathbb{R}^n = \{(x_1, x_2, \ldots, x_n)\,|\, x_i\in \mathbb{R},\; i=1,2,\ldots,n\}$, con la adición usual de n-adas y el producto de un vector por un escalar, define un espacio vectorial. Es el ejemplo prototípico.
 :::
 
 :::{note} El espacio de las funciones continuas
@@ -180,7 +170,7 @@ El **producto interno** es una operación que asocia a dos vectores de un espaci
 \end{aligned}
 :::
 
-para todos los vectores $\mathbf{u}, \mathbf{v}, \mathbf{w}\in V$ y escalares $a,b$. La primera línea — *simetría hermítica* — reduce a la simetría ordinaria cuando el cuerpo es real; las conjugaciones complejas son las que harán posible la interpretación probabilística de la mecánica cuántica al final de la semana.
+para todos los vectores $\mathbf{u}, \mathbf{v}, \mathbf{w}\in V$ y escalares $a,b$. 
 
 :::{note} El producto punto como caso particular
 En el espacio euclidiano $\mathbb{R}^n$, el producto interno estándar (o producto punto) entre dos vectores $\mathbf{u} = (u_1, u_2, \dots, u_n)$ y $\mathbf{v} = (v_1, v_2, \dots, v_n)$ es
@@ -331,42 +321,6 @@ donde $\rho(x)$ es una función real no negativa en $[a,b]$, denominada **funci�
 Para que esta norma sea finita, el conjunto natural de funciones es el de las *de cuadrado integrables* respecto de $\rho$: un espacio vectorial infinito-dimensional de funciones dotado de un producto interno como {eq}`eq-prod-interno-funciones`, completado, es justamente un **espacio de Hilbert**. Es común definir la *función normalizada* $\hat{f}=f/\|f\|$, con norma igual a la unidad.
 
 La notación $\langle \phi | \psi \rangle$ que ya empleamos en {eq}`eq-prod-interno-funciones` es más que una conveniencia de escritura: es el ***formalismo de Dirac*** (o notación bra-ket)[^3], la notación estándar de la mecánica cuántica para describir estados cuánticos y operaciones sobre ellos en un espacio de Hilbert. El término $\langle \phi |$ se denomina *bra* y el término $| \psi \rangle$, *ket*; su unión, $\langle \phi|\psi\rangle$, es un producto interno.
-
-:::{note} Mecánica cuántica en lenguaje de espacios de Hilbert
-En mecánica cuántica, el estado de un sistema físico se identifica con un vector (ket) $|\psi\rangle$ en un espacio de Hilbert complejo $\mathcal{H}$, y las observables — posición, momento, energía — se representan por operadores lineales que actúan sobre esos vectores; sus valores esperados se calculan con productos internos. Por ejemplo, el operador Hamiltoniano $\hat{H}$ describe la energía total del sistema.
-
-- **Los estados son kets.** El vector $|\psi\rangle=\begin{pmatrix} 1\\0 \end{pmatrix}$ puede representar un estado en un espacio de dos dimensiones (un cúbit).
-
-- **Los bras viven en el espacio dual.** $\langle \phi |$ es el conjugado transpuesto de un ket. Por ejemplo, si $|\phi\rangle=\begin{pmatrix} 1\\i \end{pmatrix}$, entonces $\langle \phi |=(1\quad -i)$.
-
-- **Las probabilidades son productos internos.** Si $|\psi\rangle$ y $|\phi\rangle$ son estados cuánticos, $\langle \phi | \psi\rangle$ mide la amplitud de transición del estado $|\psi\rangle$ al $|\phi\rangle$, y su módulo al cuadrado $|\langle \phi | \psi\rangle|^2$ es la probabilidad de esa transición.
-:::
-
-:::{note} Ejemplo: la geometría decide probabilidades
-Sea $|0\rangle$ y $|1\rangle$ una base ortonormal ($\langle 0|0\rangle=\langle 1|1\rangle=1$, $\langle 0|1\rangle=0$) y el estado
-
-$$
-|\psi\rangle=\frac{1}{\sqrt{2}}\left(|0\rangle+|1\rangle\right).
-$$
-
-Primero, la normalización: por la igualdad de Pitágoras de Bessel en una base ortonormal completa,
-
-$$
-\|\psi\|^2 = \sum_i |a_i|^2 = \left|\tfrac{1}{\sqrt{2}}\right|^2+\left|\tfrac{1}{\sqrt{2}}\right|^2 = \tfrac{1}{2}+\tfrac{1}{2}=1,
-$$
-
-así que el estado está bien construido. Luego, la medición: por {eq}`eq-componentes`,
-
-$$
-\langle 0|\psi\rangle = \frac{1}{\sqrt{2}}
-\qquad\Longrightarrow\qquad
-|\langle 0|\psi\rangle|^2 = \frac{1}{2}.
-$$
-
-La probabilidad de medir el estado $|0\rangle$ es exactamente el cuadrado de la componente: la geometría del espacio de Hilbert *es* la física probabilística. La condición de normalización $\langle\psi|\psi\rangle = 1$ es la que garantiza que las probabilidades sobre toda la base sumen uno.
-:::
-
-La semana que viene la maquinaria se pone en movimiento: cómo **construir** bases ortonormales a partir de conjuntos arbitrarios (Gram-Schmidt), qué son los **operadores de proyección** que extraen componentes como en {eq}`eq-componentes`, y cómo la **descomposición de la identidad** en proyectores organiza todo el formalismo cuántico.
 
 :::{attention} Resumen de la semana
 
