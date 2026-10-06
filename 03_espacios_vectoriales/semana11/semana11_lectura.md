@@ -4,17 +4,17 @@ description: Operadores hermíticos
 short_title: Operadores hermíticos
 author: " "
 tags: [espacios_vectoriales, operador, hermítico, valores, propios]
-subject: Espacios vectoriales - Semana 9
+subject: Espacios vectoriales - Semana 11
 keywords: [operador, hermítico, valores, propios]
 exports:
- - format: pdf
-   template: curvenote
-   output: ./semana10_lectura.pdf
+  - format: pdf
+    template: curvenote
+    output: ./semana11_lectura.pdf
 downloads:
-  - file: ./semana10_lectura.md
-    title: semana10_lectura.md
-  - file: ./semana10_lectura.pdf
-    title: semana10_lectura.pdf
+  - file: ./semana11_lectura.md
+    title: semana11_lectura.md
+  - file: ./semana11_lectura.pdf
+    title: semana11_lectura.pdf
 ---
 
 :::{aside} [Ana María Rey](https://es.wikipedia.org/wiki/Ana_Mar%C3%ADa_Rey)
@@ -22,8 +22,8 @@ es una física teórica colombiana reconocida internacionalmente por sus aportes
 
 Su trabajo ha sido fundamental para conectar los conceptos matemáticos de los **espacios de Hilbert**, los **operadores auto-adjuntos** y los **valores propios** con experimentos reales en **simuladores cuánticos** y **relojes atómicos** de precisión. En 2019 recibió la *Medalla Maria Goeppert Mayer* de la American Physical Society por su liderazgo en este campo.
 
-```{figure} ./Ana-Maria-Rey.jpg
-:label: fig-Ana-Maria-Rey.jpg
+```{figure} ./../images/Ana-Maria-Rey.jpg
+:label: fig-Ana-Maria-Rey
 :alt: retrato de Dra. Ana Maria Rey
 :align: center
 [Dra. Ana Maria Rey (1970 - )](https://womeninscienceweadmire.icfo.eu/wiswa-2/ana-maria-rey/)

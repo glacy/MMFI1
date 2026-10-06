@@ -4,17 +4,17 @@ description: Espacios vectoriales
 short_title: Operadores lineales
 author: " "
 tags: [espacios_vectoriales, operador, ortogonalización, Gram-Schmidt, descomposición, identidad]
-subject: Espacios vectoriales - Semana 9
+subject: Espacios vectoriales - Semana 10
 keywords: [operador, ortogonalización, Gram-Schmidt, descomposición, identidad]
 exports:
- - format: pdf
-   template: curvenote
-   output: ./semana9_lectura.pdf
+  - format: pdf
+    template: curvenote
+    output: ./semana10_lectura.pdf
 downloads:
-  - file: ./semana9_lectura.md
-    title: semana9_lectura.md
-  - file: ./semana9_lectura.pdf
-    title: semana9_lectura.pdf
+  - file: ./semana10_lectura.md
+    title: semana10_lectura.md
+  - file: ./semana10_lectura.pdf
+    title: semana10_lectura.pdf
 ---
 
 :::{aside} [Sarah Kaiser](https://www.sckaiser.com/)
@@ -23,8 +23,8 @@ es una física e ingeniera reconocida por su trabajo en óptica cuántica y comp
 
 Además de su investigación técnica, es conocida por su labor en divulgación científica y educación, buscando acercar la computación cuántica a estudiantes, ingenieros y científicos de diferentes disciplinas. Ha contribuido con proyectos de Q# (el lenguaje cuántico de Microsoft) y participa activamente en talleres y conferencias para promover la adopción de herramientas cuánticas en la ingeniería moderna.
 
-```{figure} ./Sarah_Kaiser.jpg
-:label: fig-Sarah_Kaiser.jpg
+```{figure} ./../images/Sarah_Kaiser.jpg
+:label: fig-Sarah_Kaiser
 :alt: retrato de Dra. Sarah Kaiser
 :align: center
 Dra. Sarah Kaiser (1985 - )
@@ -90,7 +90,7 @@ los cuales son ortonormales en el rango $0\leq x \leq \infty$.\
 Usando la función de peso $\rho(x)=e^{-x}$, podemos *expandir* la función
 $e^{-x}$ en polinomios de Laguerre:
 $$e^{-x}=\frac{15}{16}-\frac{11}{16}x+\frac{5}{32}x^2-\frac{1}{96}x^3$$
-```{figure} ./expansion_serie.png
+```{figure} ./../images/expansion_serie.png
 :label: fig-expansion_serie
 :alt: graficas de exp{-x} y su aproximacion
 :align: center
