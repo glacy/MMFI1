@@ -38,7 +38,7 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```
 ````
 
-````{exercise}
+<!-- ````{exercise}
 :label: s9_ex2
 
 ```{include} ./ejercicios/s9_ex2.md
@@ -87,7 +87,7 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```{include} ./ejercicios/solucion_s9_ex4.md
 
 ```
-````
+```` -->
 
 ````{exercise}
 :label: s9_ex5
@@ -123,7 +123,7 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```
 ````
 
-````{exercise}
+<!-- ````{exercise}
 :label: s9_ex7
 
 ```{include} ./ejercicios/s9_ex7.md
@@ -138,4 +138,4 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```{include} ./ejercicios/solucion_s9_ex7.md
 
 ```
-````
+```` -->
