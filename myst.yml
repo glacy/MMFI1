@@ -32,9 +32,13 @@ project:
         - file: ./02_numeros_complejos/semana07/semana07_lectura.md
         - file: ./02_numeros_complejos/semana07/semana07_practica.md
     - title: Semana 8 
-      children:
+      children: 
         - file: ./02_numeros_complejos/semana08/semana08_lectura.md
         - file: ./02_numeros_complejos/semana08/semana08_practica.md
+    - title: Semana 9 
+      children:
+        - file: ./03_espacios_vectoriales/semana09/semana09_lectura.md
+        - file: ./03_espacios_vectoriales/semana09/semana09_practica.md
     - file: ./proyecto/2026/proyecto.md
       hidden: true
     - file: ./tareas/2026/tarea1/tarea1_2026.md
