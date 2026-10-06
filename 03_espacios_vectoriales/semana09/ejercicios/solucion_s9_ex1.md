@@ -65,7 +65,7 @@ $$
 a_0\cdot 1 + a_1\cdot x + a_2\cdot x^2 + a_3\cdot x^3 = \mathbf{0}
 $$
 
-(la función nula: cero para **todo** $x$), evaluando en $x=0$ se obtiene $a_0=0$; derivando y evaluando en $x=0$ sucesivamente se obtiene $a_1=0$, $a_2=0$, $a_3=0$. (Equivalentemente: dos polinomios son iguales si y solo si coinciden sus coeficientes.) La única combinación lineal que da el vector nulo es la trivial: el conjunto es linealmente independiente.
+(la función nula: cero para **todo** $x$), evaluando en $x=0$ se obtiene $a_0=0$; derivando y evaluando en $x=0$ sucesivamente se obtiene $a_1=0$, $a_2=0$, $a_3=0$. La única combinación lineal que da el vector nulo es la trivial: el conjunto es linealmente independiente.
 
 *Span.* Todo elemento de $P_3$ es, por la propia definición del conjunto, una combinación lineal de $1, x, x^2, x^3$ con coeficientes $a_0,a_1,a_2,a_3$:
 
