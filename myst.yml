@@ -43,10 +43,10 @@ project:
       hidden: true
     - file: ./tareas/2026/tarea1/tarea1_2026.md
       hidden: true
-    # - file: ./examenes/2026/examen1/examen1_2026.md
-    #   hidden: true
-    - file: ./examenes/2026/examen1_repo/examen1_repo_2026.md
+    - file: ./examenes/2026/examen1/examen1_2026.md
       hidden: true
+    # - file: ./examenes/2026/examen1_repo/examen1_repo_2026.md
+    #   hidden: true
   title: MMFI1
   github: https://github.com/glacy/MMFI1
   jupyter: 
