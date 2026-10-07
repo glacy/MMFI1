@@ -28,10 +28,28 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```
 ````
 
+````{solution} s10_ex1
+:label: solucion-s10_ex1
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s10_ex1.md
+
+```
+````
+
 ````{exercise}
 :label: s10_ex2
 
 ```{include} ./ejercicios/s10_ex2.md
+
+```
+````
+
+````{solution} s10_ex2
+:label: solucion-s10_ex2
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s10_ex2.md
 
 ```
 ````
@@ -44,6 +62,15 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```
 ````
 
+````{solution} s10_ex3
+:label: solucion-s10_ex3
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s10_ex3.md
+
+```
+````
+
 ````{exercise}
 :label: s10_ex4
 
@@ -52,10 +79,28 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 ```
 ````
 
+````{solution} s10_ex4
+:label: solucion-s10_ex4
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s10_ex4.md
+
+```
+````
+
 ````{exercise}
 :label: s10_ex5
 
 ```{include} ./ejercicios/s10_ex5.md
+
+```
+````
+
+````{solution} s10_ex5
+:label: solucion-s10_ex5
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s10_ex5.md
 
 ```
 ````
