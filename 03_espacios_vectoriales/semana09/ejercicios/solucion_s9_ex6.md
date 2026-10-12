@@ -74,7 +74,5 @@ $$
 \dfrac{1}{\pi}\cdot \pi = 1 & n = m,\\[2mm]
 \dfrac{1}{\pi}\cdot 0 = 0 & n \neq m,
 \end{cases}
-\;=\; \delta_{nm}. \checkmark
+\;=\; \delta_{nm}.
 $$
-
-**Moraleja:** el conjunto $\{\sin(nx)/\sqrt{\pi}\}$ es ortonormal; junto con $\{\cos(nx)/\sqrt{\pi}\}$ y la función constante $1/\sqrt{2\pi}$, forma una base ortonormal del espacio de Hilbert de funciones de cuadrado integrables en $[-\pi,\pi]$ — la geometría detrás de las series de Fourier, que usaremos en la unidad de ecuaciones diferenciales parciales.

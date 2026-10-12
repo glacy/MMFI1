@@ -55,11 +55,3 @@ $$
 $$
 \boxed{\;q(x) = 1\cdot p_1(x) + 3\cdot p_2(x) - 2\cdot p_3(x)\;}
 $$
-
-**Verificación:**
-
-$$
-1 + 3(1+x) - 2(x+x^2) = 1 + 3 + 3x - 2x - 2x^2 = 4 + x - 2x^2. \checkmark
-$$
-
-**Comentario:** la misma función tiene componentes distintas según la base — $(1, 3, -2)$ en $\{p_1,p_2,p_3\}$ y $(4, 1, -2)$ en la canónica $\{1,x,x^2\}$ — pero representa el mismo vector. Las coordenadas no son la esencia del vector: dependen del "sistema de ejes" elegido.

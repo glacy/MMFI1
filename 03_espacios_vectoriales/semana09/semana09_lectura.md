@@ -21,7 +21,7 @@ downloads:
 
 es una física canadiense, profesora de la Universidad de Waterloo y tercera mujer en la historia en recibir el Premio Nobel de Física (2018, junto con Gérard Mourou y Arthur Ashkin), por el desarrollo de la técnica de **amplificación de pulso con chirp** (CPA, por sus siglas en inglés) que presentó en su tesis doctoral (1985): estirar un pulso láser ultracorto, amplificarlo de forma segura y recomprimirlo para alcanzar intensidades extremas. Esa técnica es hoy la base de aplicaciones que van de la cirugía refractiva láser al mecanizado de precisión y a la física de campos intensos. La manipulación de pulsos de luz en la óptica cuántica — donde un estado de luz se representa como una superposición de modos en un espacio vectorial complejo — es un ejemplo directo del formalismo que construimos esta semana: **estados como vectores, mediciones como productos internos**.
 
-```{figure} ./../images/DonnaStrickland_635x953.jpg
+```{figure} ./../images/Donna_Strickland.png
 :label: fig-DonnaStrickland
 :alt: retrato de Dra. Donna Strickland
 :align: center
@@ -341,7 +341,7 @@ La notación $\langle \phi | \psi \rangle$ que ya empleamos en {eq}`eq-prod-inte
 
 :::{seealso} Referencias
 
-@boas2006mathematical [Cap. 3.14 "General Vector Spaces", pág. 72-81]
+@boas2006mathematical [Cap. 3.14 "General Vector Spaces", pág. 179-187]
 
 @riley2006mathematical [Cap. 8 "Matrices and vector spaces", pág. 241-247]
 
