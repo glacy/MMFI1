@@ -4,9 +4,13 @@ description: Ejercicios
 short_title: Ejercicios
 author: " "
 tags: 
+  - notacion-dirac
   - gram-schmidt
   - ortonormalizacion
+  - expansion-ortogonal
+  - operadores-lineales
   - operadores-proyeccion
+  - descomposicion-identidad
   - observables
   - mecanica-cuantica
   - valor-esperado
@@ -104,3 +108,37 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 
 ```
 ````
+
+````{exercise}
+:label: s10_ex6
+
+```{include} ./ejercicios/s10_ex6.md
+
+```
+````
+
+````{solution} s10_ex6
+:label: solucion-s10_ex6
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s10_ex6.md
+
+```
+````
+
+<!-- ````{exercise}
+:label: s10_ex7
+
+```{include} ./ejercicios/s10_ex7.md
+
+```
+````
+
+````{solution} s10_ex7
+:label: solucion-s10_ex7
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s10_ex7.md
+
+```
+```` -->

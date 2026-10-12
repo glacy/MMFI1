@@ -2,17 +2,19 @@
 title: Solución Ejercicio 1
 keywords:
   - gram-schmidt
+  - notacion-dirac
   - ortonormalizacion
   - espacios-vectoriales
 tags:
   - gram-schmidt
+  - notacion-dirac
   - ortonormalizacion
   - espacios-vectoriales
   - calculo
 objetivos: []
 ---
 
-**Paso 1: normalizar el primer vector.** Con el producto interno estándar de $\mathbb{C}^2$, $\langle v|w\rangle = v_1^*w_1 + v_2^*w_2$ (aquí las componentes son reales, así que la conjugación no hace efecto), la norma de $v_1$ es
+**Paso 1: normalizar el primer vector.** Con el producto interno estándar de $\mathbb{C}^2$, $\langle v|w\rangle = v_1^*w_1 + v_2^*w_2$ (aquí las componentes son reales, así que la conjugación no hace efecto), la norma de $|v_1\rangle$ es
 
 $$
 \|v_1\| = \sqrt{\langle v_1|v_1\rangle} = \sqrt{|1|^2 + |1|^2} = \sqrt{2}.
@@ -21,13 +23,13 @@ $$
 El primer elemento de la base ortonormal es
 
 $$
-u_1 = \frac{v_1}{\|v_1\|} = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}.
+|u_1\rangle = \frac{|v_1\rangle}{\|v_1\|} = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}.
 $$
 
-**Paso 2: ortogonalizar el segundo vector.** El algoritmo de Gram–Schmidt resta de $v_2$ su componente a lo largo de $u_1$:
+**Paso 2: ortogonalizar el segundo vector.** El algoritmo de Gram–Schmidt resta de $|v_2\rangle$ su componente a lo largo de $|u_1\rangle$:
 
 $$
-w_2 = v_2 - \langle u_1|v_2\rangle\, u_1.
+|\tilde u_2\rangle = |v_2\rangle - \langle u_1|v_2\rangle\, |u_1\rangle.
 $$
 
 Con
@@ -36,12 +38,12 @@ $$
 \langle u_1|v_2\rangle = \frac{1}{\sqrt{2}}\left(1\cdot 1 + 1\cdot(-1)\right) = 0
 $$
 
-se obtiene $w_2 = v_2$: los vectores de partida ya eran ortogonales ($\langle v_1|v_2\rangle = 1\cdot 1 + 1\cdot(-1) = 0$), por lo que el paso de ortogonalización no altera nada.
+se obtiene $|\tilde u_2\rangle = |v_2\rangle$: los vectores de partida ya eran ortogonales ($\langle v_1|v_2\rangle = 1\cdot 1 + 1\cdot(-1) = 0$), por lo que el paso de ortogonalización no altera nada.
 
-**Paso 3: normalizar.** Como $\|w_2\| = \sqrt{2}$,
+**Paso 3: normalizar.** Como $\|\tilde u_2\| = \sqrt{2}$,
 
 $$
-u_2 = \frac{w_2}{\|w_2\|} = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}.
+|u_2\rangle = \frac{|\tilde u_2\rangle}{\|\tilde u_2\|} = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}.
 $$
 
 **Verificación.** Producto interno a producto interno:
