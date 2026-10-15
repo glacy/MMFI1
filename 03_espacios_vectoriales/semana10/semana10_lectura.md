@@ -17,17 +17,15 @@ downloads:
     title: semana10_lectura.pdf
 ---
 
-:::{aside} [Sarah Kaiser](https://www.sckaiser.com/)
+:::{aside} [Ana María Rey](https://jila.colorado.edu/arey/)
 
-es una física e ingeniera reconocida por su trabajo en óptica cuántica y computación cuántica. Se ha especializado en el diseño de sistemas cuánticos fotónicos y en el desarrollo de herramientas de software para la simulación y el control de experimentos cuánticos. Kaiser ha colaborado con empresas tecnológicas y comunidades de código abierto para promover la accesibilidad y el uso de tecnologías cuánticas emergentes.
+es una física colombiana, *fellow* del NIST y del JILA (Boulder, Colorado) y profesora adjunta de la Universidad de Colorado. Formada en la Universidad del Valle y doctorada en la Universidad de Maryland, es pionera en el uso de átomos fríos atrapados en redes ópticas para construir relojes atómicos de precisión récord y *simuladores cuánticos*: sistemas de laboratorio en los que miles de átomos implementan, sitio por sitio, modelos de materia cuántica imposibles de calcular con computadoras convencionales. Por sus aportes ha recibido, entre otras distinciones, la beca MacArthur (2013), el premio Blavatnik de Ciencias Físicas e Ingeniería (2019, primera mujer en esa categoría) y el premio Davisson–Germer (2021). Sus simuladores son una realización experimental directa del formalismo de esta semana: los estados de los átomos son kets en espacios de Hilbert de dimensión enorme, las interacciones que los acoplan son operadores definidos por su acción sobre una base, y las cantidades que miden los experimentos son proyecciones y valores esperados.
 
-Además de su investigación técnica, es conocida por su labor en divulgación científica y educación, buscando acercar la computación cuántica a estudiantes, ingenieros y científicos de diferentes disciplinas. Ha contribuido con proyectos de Q# (el lenguaje cuántico de Microsoft) y participa activamente en talleres y conferencias para promover la adopción de herramientas cuánticas en la ingeniería moderna.
-
-```{figure} ./../images/Sarah_Kaiser.jpg
-:label: fig-Sarah_Kaiser
-:alt: retrato de Dra. Sarah Kaiser
+```{figure} ./../images/Ana-Maria-Rey.jpg
+:label: fig-AnaMariaRey
+:alt: retrato de Dra. Ana María Rey
 :align: center
-Dra. Sarah Kaiser (1985 - )
+Dra. Ana María Rey (1975 - ). Crédito: R. Jacobson/NIST
 ```
 :::
 

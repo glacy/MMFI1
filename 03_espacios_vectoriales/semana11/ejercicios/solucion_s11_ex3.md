@@ -90,4 +90,4 @@ $$
 
 donde $\epsilon_{ijk}$ es el símbolo de Levi-Civita.
 
-**Moraleja:** los operadores de espín no conmutan: medir el espín según dos ejes distintos no es conmutable el orden. Los conmutadores de Pauli son el prototipo de la **álgebra de Lie** de las rotaciones, y el factor $2i$ refleja que el espín del medio entero genera rotaciones de ángulo doble.
+**Moraleja:** los operadores de espín no conmutan: el orden de dos mediciones del espín según ejes distintos altera el resultado. Los conmutadores de Pauli son el prototipo de la **álgebra de Lie** de las rotaciones, y el factor $2i$ refleja que el espín del medio entero genera rotaciones de ángulo doble.
