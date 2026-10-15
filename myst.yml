@@ -43,6 +43,10 @@ project:
       children:
         - file: ./03_espacios_vectoriales/semana10/semana10_lectura.md
         - file: ./03_espacios_vectoriales/semana10/semana10_practica.md
+    - title: Semana 11
+      children:
+        - file: ./03_espacios_vectoriales/semana11/semana11_lectura.md
+        - file: ./03_espacios_vectoriales/semana11/semana11_practica.md
     - file: ./proyecto/2026/proyecto.md
       hidden: true
     - file: ./tareas/2026/tarea1/tarea1_2026.md
