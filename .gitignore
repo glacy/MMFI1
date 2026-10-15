@@ -24,5 +24,6 @@ venv/
 storage/
 scripts/
 node_modules/
+#tareas/2026/*/solucion*
 tareas/2026/tarea2/solucion*
-examenes/2026/
+examenes/2026/examen1_repo/solucion*
