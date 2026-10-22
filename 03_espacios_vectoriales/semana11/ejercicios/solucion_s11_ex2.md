@@ -30,7 +30,7 @@ $$
 A = \begin{pmatrix} 2 & 2i \\ 2i & -1 \end{pmatrix}.
 $$
 
-**Primer inciso: $\mathcal{A}^\dagger|\phi_1\rangle$.** El adjunto es la transpuesta conjugada:
+Primero calculemos $\mathcal{A}^\dagger|\phi_1\rangle$. El adjunto es la transpuesta conjugada:
 
 $$
 A^\dagger = \begin{pmatrix} 2 & -2i \\ -2i & -1 \end{pmatrix}.
@@ -42,7 +42,9 @@ $$
 \boxed{\;\mathcal{A}^\dagger|\phi_1\rangle = 2|\phi_1\rangle - 2i|\phi_2\rangle\;}
 $$
 
-**Segundo inciso: $\langle\phi_2|\mathcal{A}$.** Un bra a la derecha del operador se expande en los bras de la base:
+---
+
+Ahora calculamos $\langle\phi_2|\mathcal{A}$. Un bra a la derecha del operador se expande en los bras de la base:
 
 $$
 \langle\phi_2|\mathcal{A}
@@ -56,6 +58,3 @@ $$
 \boxed{\;\langle\phi_2|\mathcal{A} = 2i\,\langle\phi_1| - \langle\phi_2|\;}
 $$
 
-**Verificación.** $\langle\phi_2|\mathcal{A}|\phi_1\rangle = 2i\langle\phi_1|\phi_1\rangle - \langle\phi_2|\phi_1\rangle = 2i$, en acuerdo con $A_{21}$. $\checkmark$
-
-**Comentario:** $\mathcal{A}$ **no es hermítico**: la condición $A_{12}^* = A_{21}$ fallaría pues $(2i)^* = -2i \ne 2i$. Por eso $\mathcal{A}^\dagger \ne \mathcal{A}$ y la acción del adjunto difiere de la del operador original (en concreto, cambia el signo de los términos con $2i$).

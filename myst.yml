@@ -43,7 +43,7 @@ project:
       children:
         - file: ./03_espacios_vectoriales/semana10/semana10_lectura.md
         - file: ./03_espacios_vectoriales/semana10/semana10_practica.md
-    - title: Semana 11 
+    - title: Semana 11
       children:
         - file: ./03_espacios_vectoriales/semana11/semana11_lectura.md
         - file: ./03_espacios_vectoriales/semana11/semana11_practica.md

@@ -12,13 +12,13 @@ tags:
 objetivos: []
 ---
 
-**Definición.** El operador adjunto $\mathcal{A}^\dagger$ es el único operador tal que, para estados arbitrarios $|\xi\rangle$ y $|\psi\rangle$,
+El operador adjunto $\mathcal{A}^\dagger$ es el único operador tal que, para estados arbitrarios $|\xi\rangle$ y $|\psi\rangle$,
 
 $$
 \langle \xi|\mathcal{A}|\psi\rangle = \langle \psi|\mathcal{A}^\dagger|\xi\rangle^*.
 $$
 
-**Demostración.** La definición vale para *cualquier* operador; en particular, para el operador $\mathcal{A}^\dagger$:
+Esta definición vale para *cualquier* operador; en particular, para el operador $\mathcal{A}^\dagger$:
 
 $$
 \langle \xi|\left(\mathcal{A}^\dagger\right)^\dagger|\psi\rangle
@@ -46,4 +46,3 @@ $$
 \boxed{\;\left(\mathcal{A}^\dagger\right)^\dagger = \mathcal{A}\;}
 $$
 
-**Comentario:** en la representación matricial el resultado es transparente: $\mathcal{A}^\dagger$ es la transpuesta conjugada de $\mathcal{A}$, y aplicar dos veces la operación "transponer y conjugar" devuelve la matriz original, pues $(A^\dagger)^\dagger = \left(\overline{A}^{\,T}\right)^\dagger = \overline{\left(\overline{A}^{\,T}\right)}^{\,T} = A$. Es el análogo operatorio de $(z^*)^* = z$ para números complejos.

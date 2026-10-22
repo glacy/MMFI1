@@ -6,9 +6,15 @@ author: " "
 tags: 
   - operadores-lineales
   - operadores-adjuntos
+  - operadores-hermiticos
+  - operadores-unitarios
   - conmutadores
   - matrices-pauli
-  - operadores-hermiticos
+  - valores-propios
+  - autovectores
+  - descomposicion-espectral
+  - observables
+  - mecanica-cuantica
   - demostracion
   - calculo
 subject: Espacios vectoriales - Semana 11
@@ -134,6 +140,40 @@ Resuelva de forma razonada cada uno de los siguientes ejercicios. Use esquemas y
 :class: dropdown
 
 ```{include} ./ejercicios/solucion_s11_ex7.md
+
+```
+````
+
+````{exercise}
+:label: s11_ex8
+
+```{include} ./ejercicios/s11_ex8.md
+
+```
+````
+
+````{solution} s11_ex8
+:label: solucion-s11_ex8
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s11_ex8.md
+
+```
+````
+
+````{exercise}
+:label: s11_ex9
+
+```{include} ./ejercicios/s11_ex9.md
+
+```
+````
+
+````{solution} s11_ex9
+:label: solucion-s11_ex9
+:class: dropdown
+
+```{include} ./ejercicios/solucion_s11_ex9.md
 
 ```
 ````
