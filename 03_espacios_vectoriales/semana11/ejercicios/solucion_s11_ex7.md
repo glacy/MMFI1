@@ -12,13 +12,13 @@ tags:
 objetivos: []
 ---
 
-**Planteamiento.** Sea $\mathcal{A}$ hermítico, $\mathcal{A}^\dagger = \mathcal{A}$, y sea $|\psi\rangle \neq 0$ un autoestado con autovalor $\lambda$:
+Sea $\mathcal{A}$ hermítico, $\mathcal{A}^\dagger = \mathcal{A}$, y sea $|\psi\rangle \neq 0$ un autoestado con autovalor $\lambda$:
 
 $$
 \mathcal{A}|\psi\rangle = \lambda|\psi\rangle.
 $$
 
-**Demostración.** Se contrae la ecuación de autovalores con el bra $\langle\psi|$:
+Se contrae la ecuación de autovalores con el bra $\langle\psi|$:
 
 $$
 \langle\psi|\mathcal{A}|\psi\rangle = \lambda\,\langle\psi|\psi\rangle.
@@ -42,12 +42,11 @@ $$
 \lambda^*\,\langle\psi|\psi\rangle = \lambda\,\langle\psi|\psi\rangle.
 $$
 
-Como $\langle\psi|\psi\rangle > 0$, se puede cancelar:
-
+Como $\langle\psi|\psi\rangle > 0$, 
 $$
 \lambda^* = \lambda
 \qquad\Longrightarrow\qquad
 \boxed{\;\lambda \in \mathbb{R}\;}
 $$
 
-**Comentario:** este resultado es la piedra angular de la interpretación física de la mecánica cuántica: los únicos resultados posibles de una medición son los autovalores del observable, y una medición debe producir un número real. Por eso los observables se representan exactamente con operadores hermíticos: la hermiticidad fuerza que su espectro —los valores que el aparato de medición puede leer— viva en la recta real.
+Este resultado es la piedra angular de la interpretación física de la mecánica cuántica: los únicos resultados posibles de una medición son los autovalores del observable, y una medición debe producir un número real. Por eso los observables se representan exactamente con operadores hermíticos: la hermiticidad fuerza que su espectro —los valores que el aparato de medición puede leer— viva en la recta real.
