@@ -21,7 +21,7 @@ downloads:
 
 es una física colombiana, *fellow* del NIST y del JILA (Boulder, Colorado) y profesora adjunta de la Universidad de Colorado. Formada en la Universidad del Valle y doctorada en la Universidad de Maryland, es pionera en el uso de átomos fríos atrapados en redes ópticas para construir relojes atómicos de precisión récord y *simuladores cuánticos*: sistemas de laboratorio en los que miles de átomos implementan, sitio por sitio, modelos de materia cuántica imposibles de calcular con computadoras convencionales. Por sus aportes ha recibido, entre otras distinciones, la beca MacArthur (2013), el premio Blavatnik de Ciencias Físicas e Ingeniería (2019, primera mujer en esa categoría) y el premio Davisson–Germer (2021). Sus simuladores son una realización experimental directa del formalismo de esta semana: los estados de los átomos son kets en espacios de Hilbert de dimensión enorme, las interacciones que los acoplan son operadores definidos por su acción sobre una base, y las cantidades que miden los experimentos son proyecciones y valores esperados.
 
-```{figure} ./../images/Ana-Maria-Rey.jpg
+```{figure} ./../images/AnaMariaReylab.jpg
 :label: fig-AnaMariaRey
 :alt: retrato de Dra. Ana María Rey
 :align: center
