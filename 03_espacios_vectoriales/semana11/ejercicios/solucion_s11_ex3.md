@@ -16,7 +16,9 @@ objetivos: []
 
 Se usan los operadores de Pauli definidos en la lectura, en la base ortonormal $\{|+\rangle,|-\rangle\}$, con $\langle +|+\rangle = \langle -|-\rangle = 1$ y $\langle +|-\rangle = \langle -|+\rangle = 0$.
 
-## Parte 1: acción sobre los bras
+---
+
+Primero calculemos la acción sobre los bras
 
 Se actúa con la regla $\langle \pm|(|a\rangle\langle b|) = \langle \pm|a\rangle\langle b|$. Por ejemplo,
 
@@ -40,9 +42,11 @@ $$
 \end{aligned}
 $$
 
-**Chequeo de consistencia:** como cada $\hat{\sigma}_i$ es hermítico, el bra debe ser el adjunto del ket correspondiente; por ejemplo $(\hat{\sigma}_y|+\rangle)^\dagger = (i|-\rangle)^\dagger = -i\langle -|$, en acuerdo con la tabla. $\checkmark$
+Note que como cada $\hat{\sigma}_i$ es hermítico, el bra debe ser el adjunto del ket correspondiente; por ejemplo $(\hat{\sigma}_y|+\rangle)^\dagger = (i|-\rangle)^\dagger = -i\langle -|$, en acuerdo con la tabla. $\checkmark$
 
-## Parte 2: conmutadores
+---
+
+**conmutadores**
 
 Primero, la acción sobre los kets (misma regla, con $\langle b|c\rangle$):
 
@@ -90,4 +94,4 @@ $$
 
 donde $\epsilon_{ijk}$ es el símbolo de Levi-Civita.
 
-**Moraleja:** los operadores de espín no conmutan: el orden de dos mediciones del espín según ejes distintos altera el resultado. Los conmutadores de Pauli son el prototipo de la **álgebra de Lie** de las rotaciones, y el factor $2i$ refleja que el espín del medio entero genera rotaciones de ángulo doble.
+Los operadores de espín no conmutan: el orden de dos mediciones del espín según ejes distintos altera el resultado. Los conmutadores de Pauli son el prototipo de la **álgebra de Lie** de las rotaciones, y el factor $2i$ refleja que el espín del medio entero genera rotaciones de ángulo doble.
