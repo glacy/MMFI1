@@ -413,7 +413,9 @@ La suma de probabilidades es uno — porque $\{|+\rangle\langle+|, |-\rangle\lan
 
 @cresser [10.4 Eigenvalues and Eigenvectors, 160-165]
 
-@riley2006mathematical [Cap. 17 "Eigenfunction methods for differential equations", pág. 559-563]
+@riley2006mathematical [Cap. 18 "Eigenfunction methods for differential equations", pág. 559-563]
+
+@riley2006mathematical [Cap. 19 "Quantum operators", pág. 648-674]
 
 :::
 
