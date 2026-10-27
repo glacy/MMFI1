@@ -25,6 +25,16 @@ $$
 
 donde usamos el resultado clásico del lema de Jordan, $\displaystyle\int_0^\pi e^{-kR\sin\theta}\,d\theta \le \frac{\pi}{kR}$. Aunque $f$ decae solo como $1/R$, la exponencial $e^{ikz}$ "apaga" la contribución del arco en el semiplano superior. Por eso se cierra **arriba** para $k>0$ (cerrar abajo no funcionaría: allí $e^{ikz}$ crece).
 
+```{note}
+Justificación de la cota, en tres pasos. **(i) Simetría:** como $\sin(\pi-\theta) = \sin\theta$, $\displaystyle\int_0^\pi e^{-kR\sin\theta}\,d\theta = 2\int_0^{\pi/2} e^{-kR\sin\theta}\,d\theta$. **(ii) Desigualdad de Jordan:** $\sin\theta$ es cóncava en $[0,\pi/2]$, luego su gráfica queda sobre la cuerda que une $(0,0)$ con $(\pi/2,1)$: $\displaystyle\sin\theta \ge \frac{2\theta}{\pi}$. **(iii)** Como $e^{-x}$ decrece, $e^{-kR\sin\theta} \le e^{-2kR\theta/\pi}$, y
+
+$$
+2\int_0^{\pi/2} e^{-\frac{2kR}{\pi}\theta}\,d\theta
+= \frac{\pi}{kR}\left(1 - e^{-kR}\right)
+\;\le\; \frac{\pi}{kR}. \qquad\blacksquare
+$$
+```
+
 ---
 
 **(b) Residuo e integral de contorno.** Polos de $f$: $z = \pm ib$ (simples). En el semiplano superior solo está $z = ib$, con residuo
