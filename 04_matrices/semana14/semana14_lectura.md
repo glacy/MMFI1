@@ -4,17 +4,17 @@ description: Operadores y matrices
 short_title: Operadores y matrices
 author: " "
 tags: [matrices, operadores, representación, determinantes, autovalores, autovectores]
-subject: Operadores y matrices - Semana 11
+subject: Operadores y matrices - Semana 14
 keywords: [operadores,representación, matrices, determinantes, autovalores, autovectores]
 exports:
  - format: pdf
    template: curvenote
-   output: ./semana11_lectura.pdf
+   output: ./semana14_lectura.pdf
 downloads:
-  - file: ./semana11_lectura.md
-    title: semana11_lectura.md
-  - file: ./semana11_lectura.pdf
-    title: semana11_lectura.pdf
+  - file: ./semana14_lectura.md
+    title: semana14_lectura.md
+  - file: ./semana14_lectura.pdf
+    title: semana14_lectura.pdf
 ---
 
 :::{aside} [Dr. Sabrina Maniscalco](https://www.quantumlah.org/people/profile/sabrina_maniscalco)
@@ -22,7 +22,7 @@ downloads:
 es una física teórica italiana reconocida por su trabajo en *información cuántica, decoherencia y dinámica de sistemas cuánticos abiertos*. Es profesora en la Universidad de Helsinki y directora ejecutiva de la plataforma [*Algorithmiq*](https://algorithmiq.fi/), una empresa que desarrolla algoritmos cuánticos aplicados al descubrimiento de fármacos. Su investigación se centra en entender cómo los sistemas cuánticos interactúan con su entorno y cómo estos efectos pueden aprovecharse o mitigarse en el desarrollo de tecnologías cuánticas prácticas, como computadoras y sensores cuánticos.  
 
 
-```{figure} ./SabrinaManiscalco.png
+```{figure} ./../images/SabrinaManiscalco.png
 :label: fig-SabrinaManiscalco
 :alt: Retrato de la Dra. Sabrina Maniscalco
 :align: center

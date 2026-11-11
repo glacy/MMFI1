@@ -4,17 +4,17 @@ description: Diagonalización de matrices
 short_title: Diagonalización de matrices
 author: " "
 tags: [matrices, diagonalización]
-subject: Operadores y matrices - Semana 12
+subject: Operadores y matrices - Semana 15
 keywords: [matrices, diagonalización]
 exports:
  - format: pdf
    template: curvenote
-   output: ./semana12_lectura.pdf
+   output: ./semana15_lectura.pdf
 # downloads:
-#   - file: ./semana12_lectura.md
-#     title: semana12_lectura.md
-#   - file: ./semana12_lectura.pdf
-#     title: semana12_lectura.pdf
+#   - file: ./semana15_lectura.md
+#     title: semana15_lectura.md
+#   - file: ./semana15_lectura.pdf
+#     title: semana15_lectura.pdf
 ---
 
 :::{aside} [Professor Michelle Simmons](https://www.sqc.com.au/)
@@ -23,7 +23,7 @@ es una ingeniera cuántica australiana reconocida a nivel mundial por su trabajo
 
 Su investigación combina los principios fundamentales de la mecánica cuántica  con el diseño y la ingeniería de materiales.
 
-```{figure} ./Michelle_Simmons.webp
+```{figure} ./../images/Michelle_Simmons.webp
 :label: fig-Michelle_Simmons
 :alt: Retrato de la Dra. Michelle Simmons
 :align: center

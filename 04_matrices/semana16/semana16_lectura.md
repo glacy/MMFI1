@@ -4,17 +4,17 @@ description: Probabilidad, valores esperados e incertidumbre
 short_title: Probabilidad, valores esperados e incertidumbre
 author: " "
 tags: [matrices, probabilidad, valores, esperados, incertidumbre]
-subject: Operadores y matrices - Semana 13
+subject: Operadores y matrices - Semana 16
 keywords: [probabilidad, valores, esperados, incertidumbre]
 exports:
  - format: pdf
    template: curvenote
-   output: ./semana13_lectura.pdf
+   output: ./semana16_lectura.pdf
 downloads:
-  - file: ./semana13_lectura.md
-    title: semana13_lectura.md
-  - file: ./semana13_lectura.pdf
-    title: semana13_lectura.pdf
+  - file: ./semana16_lectura.md
+    title: semana16_lectura.md
+  - file: ./semana16_lectura.pdf
+    title: semana16_lectura.pdf
 ---
 
 :::{aside} [Debbie Leung](https://uwaterloo.ca/institute-for-quantum-computing/people-profiles/debbie-leung)
@@ -22,7 +22,7 @@ downloads:
  es una física teórica y profesora en el [*Institute for Quantum Computing* (IQC)](https://uwaterloo.ca/institute-for-quantum-computing/) de la Universidad de Waterloo, Canadá.  
 Es reconocida internacionalmente por sus contribuciones en teoría de la información cuántica, comunicación cuántica segura y procesamiento de información en sistemas cuánticos.
 Entre sus aportes más destacados se encuentra el desarrollo de protocolos de comunicación cuántica.
-```{figure} ./Debbie-Leung.avif
+```{figure} ./../images/Debbie-Leung.avif
 :label: fig-debbie-leung
 :alt: Debbie Leung 
 :align: center
