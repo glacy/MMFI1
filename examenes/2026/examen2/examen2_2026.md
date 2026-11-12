@@ -36,7 +36,7 @@ downloads:
 ```{include} ./solucion_ex1_e2.md
 
 ```
-```` -->
+````  -->
 
 ## Ejercicio 2 [25 puntos]
 
@@ -56,7 +56,7 @@ downloads:
 ```{include} ./solucion_ex2_e2.md
 
 ```
-```` -->
+````  -->
 
 ## Ejercicio 3 [25 puntos]
 
@@ -76,7 +76,7 @@ downloads:
 ```{include} ./solucion_ex3_e2.md
 
 ```
-```` -->
+```` --> 
 
 ## Ejercicio 4 [25 puntos]
 
@@ -96,4 +96,4 @@ downloads:
 ```{include} ./solucion_ex4_e2.md
 
 ```
-```` -->
+````  -->
