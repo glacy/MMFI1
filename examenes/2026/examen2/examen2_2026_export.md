@@ -44,15 +44,15 @@ exports:
 ```
 
 
-<!-- ```{include} ./solucion_ex1_e2.md
+ ```{include} ./solucion_ex1_e2.md
 
-``` -->
+``` 
 
 
-<!-- ```{raw} latex
+ ```{raw} latex
 \newpage
 
-``` -->
+``` 
 
 ## Ejercicio 2 [25 puntos]
 
@@ -62,15 +62,15 @@ exports:
 ```
 
 
-<!-- ```{include} ./solucion_ex2_e2.md
+ ```{include} ./solucion_ex2_e2.md
 
-``` -->
+``` 
 
 
-<!-- ```{raw} latex
+ ```{raw} latex
 \newpage
 
-``` -->
+``` 
 
 ## Ejercicio 3 [25 puntos]
 
@@ -80,15 +80,15 @@ exports:
 ```
 
 
-<!-- ```{include} ./solucion_ex3_e2.md
+ ```{include} ./solucion_ex3_e2.md
 
-``` -->
+``` 
 
 
-<!-- ```{raw} latex
+ ```{raw} latex
 \newpage
 
-``` -->
+``` 
 
 ## Ejercicio 4 [25 puntos]
 
@@ -98,6 +98,6 @@ exports:
 ```
 
 
-<!-- ```{include} ./solucion_ex4_e2.md
+ ```{include} ./solucion_ex4_e2.md
 
-``` -->
+``` 
