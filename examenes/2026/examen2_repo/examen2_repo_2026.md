@@ -28,7 +28,7 @@ downloads:
 ```
 ````
 
-<!--
+
 ````{solution} ex1_e2_repo
 :label: solucion-ex1_e2_repo
 :class: dropdown
@@ -36,7 +36,7 @@ downloads:
 ```{include} ./solucion_ex1_e2_repo.md
 
 ```
-```` -->
+```` 
 
 
 ## Ejercicio 2 [25 puntos]
@@ -50,14 +50,14 @@ downloads:
 
 ````
 
-<!-- ````{solution} ex2_e2_repo
+ ````{solution} ex2_e2_repo
 :label: solucion-ex2_e2_repo
 :class: dropdown
 
 ```{include} ./solucion_ex2_e2_repo.md
 
 ```
-```` -->
+```` 
 
 ## Ejercicio 3 [25 puntos]
 
@@ -70,14 +70,14 @@ downloads:
 
 ````
 
-<!-- ````{solution} ex3_e2_repo
+ ````{solution} ex3_e2_repo
 :label: solucion-ex3_e2_repo
 :class: dropdown
 
 ```{include} ./solucion_ex3_e2_repo.md
 
 ```
-```` -->
+```` 
 
 ## Ejercicio 4 [25 puntos]
 
@@ -90,11 +90,11 @@ downloads:
 
 ````
 
-<!-- ````{solution} ex4_e2_repo
+ ````{solution} ex4_e2_repo
 :label: solucion-ex4_e2_repo
 :class: dropdown
 
 ```{include} ./solucion_ex4_e2_repo.md
 
 ```
-```` -->
+```` 
